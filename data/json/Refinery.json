@@ -6755,7 +6755,7 @@
 		"Inputs": [
 			{
 				"Id": "DRONE_SHARD",
-				"Name": "Ui Drone Shard",
+				"Name": "Radiant Shard",
 				"Quantity": 1
 			}
 		],
@@ -6765,14 +6765,14 @@
 			"Quantity": 50
 		},
 		"Time": "1800.0",
-		"Operation": "R Droneshard"
+		"Operation": "Subjugation of Glass"
 	},
 	{
 		"Id": "REFINERECIPE_329",
 		"Inputs": [
 			{
 				"Id": "DRONE_SALVAGE",
-				"Name": "Ui Drone Salvage",
+				"Name": "Inverted Mirror",
 				"Quantity": 1
 			}
 		],
@@ -6782,14 +6782,14 @@
 			"Quantity": 95
 		},
 		"Time": "2200.0",
-		"Operation": "R Dronescrap"
+		"Operation": "Purge Corruption"
 	},
 	{
 		"Id": "REFINERECIPE_330",
 		"Inputs": [
 			{
 				"Id": "SHIPBRAIN",
-				"Name": "Ui Ship Brain",
+				"Name": "Hyaline Brain",
 				"Quantity": 1
 			}
 		],
@@ -6799,14 +6799,14 @@
 			"Quantity": 230
 		},
 		"Time": "3200.0",
-		"Operation": "R Shipbrain"
+		"Operation": "Sentience Extraction"
 	},
 	{
 		"Id": "REFINERECIPE_331",
 		"Inputs": [
 			{
 				"Id": "ROBOT2",
-				"Name": "Ui Robot2",
+				"Name": "Atlantideum",
 				"Quantity": 1
 			}
 		],
@@ -6816,14 +6816,14 @@
 			"Quantity": 2
 		},
 		"Time": "30.0",
-		"Operation": "R Robot2"
+		"Operation": "Restore Harmony"
 	},
 	{
 		"Id": "REFINERECIPE_332",
 		"Inputs": [
 			{
 				"Id": "ROBOT2",
-				"Name": "Ui Robot2",
+				"Name": "Atlantideum",
 				"Quantity": 1
 			},
 			{
@@ -6838,14 +6838,14 @@
 			"Quantity": 3
 		},
 		"Time": "60.0",
-		"Operation": "R Robot Fusion"
+		"Operation": "Reality Pollution"
 	},
 	{
 		"Id": "REFINERECIPE_333",
 		"Inputs": [
 			{
 				"Id": "ROBOT2",
-				"Name": "Ui Robot2",
+				"Name": "Atlantideum",
 				"Quantity": 5
 			},
 			{
@@ -6860,7 +6860,7 @@
 			"Quantity": 1
 		},
 		"Time": "3600.0",
-		"Operation": "R Gunkheart"
+		"Operation": "Slime/Echo Infusion"
 	},
 	{
 		"Id": "REFINERECIPE_334",
@@ -6882,7 +6882,7 @@
 			"Quantity": 1
 		},
 		"Time": "90.0",
-		"Operation": "R Lava1 1"
+		"Operation": "Volcanic Transmutation"
 	},
 	{
 		"Id": "REFINERECIPE_335",
@@ -6904,7 +6904,7 @@
 			"Quantity": 2
 		},
 		"Time": "90.0",
-		"Operation": "R Lava1 2"
+		"Operation": "Volcanic Transmutation"
 	},
 	{
 		"Id": "REFINERECIPE_336",
@@ -6933,7 +6933,7 @@
 		"Inputs": [
 			{
 				"Id": "EX_PURPLE",
-				"Name": "Ui Ex Purple",
+				"Name": "Activated Quartzite",
 				"Quantity": 1
 			}
 		],
@@ -6950,7 +6950,7 @@
 		"Inputs": [
 			{
 				"Id": "EX_PURPLE",
-				"Name": "Ui Ex Purple",
+				"Name": "Activated Quartzite",
 				"Quantity": 1
 			},
 			{
@@ -6972,7 +6972,7 @@
 		"Inputs": [
 			{
 				"Id": "EX_PURPLE",
-				"Name": "Ui Ex Purple",
+				"Name": "Activated Quartzite",
 				"Quantity": 1
 			},
 			{
@@ -6994,7 +6994,7 @@
 		"Inputs": [
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 2
 			}
 		],
@@ -7011,7 +7011,7 @@
 		"Inputs": [
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 1
 			},
 			{
@@ -7022,7 +7022,7 @@
 		],
 		"Output": {
 			"Id": "PURPLE2",
-			"Name": "Ui Purple2",
+			"Name": "Quartzite",
 			"Quantity": 2
 		},
 		"Time": "90.0",
@@ -7033,7 +7033,7 @@
 		"Inputs": [
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 1
 			},
 			{
@@ -7055,7 +7055,7 @@
 		"Inputs": [
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 1
 			},
 			{
@@ -7087,7 +7087,7 @@
 			},
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 1
 			}
 		],
@@ -7104,7 +7104,7 @@
 		"Inputs": [
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			}
 		],
@@ -7121,18 +7121,18 @@
 		"Inputs": [
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 1
 			},
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "WATERWORLD1",
-			"Name": "Ui Waterworld1",
+			"Name": "Lithium",
 			"Quantity": 1
 		},
 		"Time": "90.0",
@@ -7143,18 +7143,18 @@
 		"Inputs": [
 			{
 				"Id": "EX_PURPLE",
-				"Name": "Ui Ex Purple",
+				"Name": "Activated Quartzite",
 				"Quantity": 1
 			},
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "WATERWORLD1",
-			"Name": "Ui Waterworld1",
+			"Name": "Lithium",
 			"Quantity": 2
 		},
 		"Time": "90.0",
@@ -7165,7 +7165,7 @@
 		"Inputs": [
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			},
 			{
@@ -7187,7 +7187,7 @@
 		"Inputs": [
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			},
 			{
@@ -7209,7 +7209,7 @@
 		"Inputs": [
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			},
 			{
@@ -7231,23 +7231,23 @@
 		"Inputs": [
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 1
 			},
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			},
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "EX_PURPLE",
-			"Name": "Ui Ex Purple",
+			"Name": "Activated Quartzite",
 			"Quantity": 1
 		},
 		"Time": "90.0",
@@ -7258,17 +7258,17 @@
 		"Inputs": [
 			{
 				"Id": "EX_PURPLE",
-				"Name": "Ui Ex Purple",
+				"Name": "Activated Quartzite",
 				"Quantity": 1
 			},
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			},
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			}
 		],
@@ -7285,7 +7285,7 @@
 		"Inputs": [
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			}
 		],
@@ -7302,18 +7302,18 @@
 		"Inputs": [
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 1
 			},
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "GASGIANT1",
-			"Name": "Ui Gasgiant1",
+			"Name": "Crystallised Helium",
 			"Quantity": 1
 		},
 		"Time": "90.0",
@@ -7324,18 +7324,18 @@
 		"Inputs": [
 			{
 				"Id": "EX_PURPLE",
-				"Name": "Ui Ex Purple",
+				"Name": "Activated Quartzite",
 				"Quantity": 1
 			},
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "GASGIANT1",
-			"Name": "Ui Gasgiant1",
+			"Name": "Crystallised Helium",
 			"Quantity": 2
 		},
 		"Time": "90.0",
@@ -7346,7 +7346,7 @@
 		"Inputs": [
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			},
 			{
@@ -7368,7 +7368,7 @@
 		"Inputs": [
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			},
 			{
@@ -7390,7 +7390,7 @@
 		"Inputs": [
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			},
 			{
@@ -7412,23 +7412,23 @@
 		"Inputs": [
 			{
 				"Id": "PURPLE2",
-				"Name": "Ui Purple2",
+				"Name": "Quartzite",
 				"Quantity": 1
 			},
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			},
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "EX_PURPLE",
-			"Name": "Ui Ex Purple",
+			"Name": "Activated Quartzite",
 			"Quantity": 1
 		},
 		"Time": "90.0",
@@ -7439,17 +7439,17 @@
 		"Inputs": [
 			{
 				"Id": "EX_PURPLE",
-				"Name": "Ui Ex Purple",
+				"Name": "Activated Quartzite",
 				"Quantity": 1
 			},
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			},
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			}
 		],
@@ -7466,7 +7466,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 3
 			}
 		],
@@ -7483,7 +7483,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7505,7 +7505,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7527,7 +7527,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7549,7 +7549,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7571,7 +7571,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7593,7 +7593,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7615,7 +7615,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7637,7 +7637,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7675,7 +7675,7 @@
 		],
 		"Output": {
 			"Id": "GAS4",
-			"Name": "Ui Gas 4",
+			"Name": "Methane",
 			"Quantity": 1
 		},
 		"Time": "40.0",
@@ -7686,7 +7686,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7708,7 +7708,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7730,7 +7730,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7752,7 +7752,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7774,7 +7774,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7796,7 +7796,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7818,12 +7818,12 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
 				"Id": "GASGIANT1",
-				"Name": "Ui Gasgiant1",
+				"Name": "Crystallised Helium",
 				"Quantity": 1
 			}
 		],
@@ -7840,12 +7840,12 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
 				"Id": "WATERWORLD1",
-				"Name": "Ui Waterworld1",
+				"Name": "Lithium",
 				"Quantity": 1
 			}
 		],
@@ -7862,7 +7862,7 @@
 		"Inputs": [
 			{
 				"Id": "GAS4",
-				"Name": "Ui Gas 4",
+				"Name": "Methane",
 				"Quantity": 1
 			},
 			{
@@ -7884,7 +7884,7 @@
 		"Inputs": [
 			{
 				"Id": "RUINSUB",
-				"Name": "Ui Ruin Sub",
+				"Name": "Polished Stone",
 				"Quantity": 1
 			}
 		],
@@ -7894,14 +7894,14 @@
 			"Quantity": 2
 		},
 		"Time": "60.0",
-		"Operation": "R Ruinsub"
+		"Operation": "Recycle Stone"
 	},
 	{
 		"Id": "REFINERECIPE_398",
 		"Inputs": [
 			{
 				"Id": "EX_PURPLE",
-				"Name": "Ui Ex Purple",
+				"Name": "Activated Quartzite",
 				"Quantity": 1
 			},
 			{
@@ -7912,7 +7912,7 @@
 		],
 		"Output": {
 			"Id": "PURPLE2",
-			"Name": "Ui Purple2",
+			"Name": "Quartzite",
 			"Quantity": 1
 		},
 		"Time": "60.0",

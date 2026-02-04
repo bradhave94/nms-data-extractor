@@ -23,6 +23,7 @@ from parsers.ship_components import parse_ship_components
 from parsers.base_parts import parse_base_parts
 from parsers.procedural_tech import parse_procedural_tech
 from utils.categorization import categorize_item
+from utils.parse_localization import build_localization_json
 import json
 
 
@@ -42,7 +43,16 @@ def main():
     print("NMS DATA EXTRACTION - FULL PIPELINE")
     print("=" * 70 + "\n")
 
-    data_dir = Path(__file__).parent / 'data' / 'mbin'
+    repo_root = Path(__file__).parent
+    data_dir = repo_root / 'data' / 'mbin'
+
+    # Step 0: Rebuild localization from locale MXML files
+    print("STEP 0: Rebuilding localization...")
+    print("-" * 70)
+    build_localization_json(repo_root)
+    # Force parsers to load the fresh localization (clear cache)
+    from parsers.base_parser import EXMLParser
+    EXMLParser._localization = None
 
     # Step 1: Extract base data from MXML files
     print("STEP 1: Extracting base data from game files...")

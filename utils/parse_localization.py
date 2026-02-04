@@ -1,4 +1,5 @@
 """Parse localization file to create English translation dictionary"""
+import re
 import xml.etree.ElementTree as ET
 import json
 from pathlib import Path
@@ -8,6 +9,17 @@ _LOWERCASE_WORDS = frozenset({
     'a', 'an', 'the', 'and', 'or', 'but', 'of', 'in', 'on', 'at', 'to', 'for',
     'with', 'by', 'as', 'from', 'into', 'onto', 'upon', 'nor', 'so', 'yet',
 })
+
+
+def strip_markup_tags(text: str) -> str:
+    """
+    Remove game markup tags from localized text.
+    e.g. "<TECHNOLOGY>freighter's emergency log<>" -> "freighter's emergency log"
+    Matches any <...> (including <>, <IMG>...</>, <SPECIAL>...) and removes them.
+    """
+    if not text:
+        return text
+    return re.sub(r'<[^>]*>', '', text)
 
 
 def title_case_name(s: str) -> str:
@@ -68,6 +80,8 @@ def parse_localization(mxml_path: str) -> dict:
         if english_prop is not None:
             english_text = english_prop.get('value', '')
             if loc_id and english_text:
+                # Remove game markup tags (<TECHNOLOGY>, <>, <IMG>...</>, etc.)
+                english_text = strip_markup_tags(english_text)
                 # Apply title case with lowercase conjunctions for name keys
                 if loc_id.endswith('_NAME'):
                     english_text = title_case_name(english_text)
@@ -77,45 +91,62 @@ def parse_localization(mxml_path: str) -> dict:
     return translations
 
 
-if __name__ == '__main__':
-    # Parse all English localization files and merge them
-    mxml_files = [
-        'nms_loc1_english.MXML',
-        'nms_loc4_english.MXML',
-        'nms_loc5_english.MXML',
-        'nms_loc6_english.MXML',
-        'nms_loc7_english.MXML',
-        'nms_update3_english.MXML'
-    ]
+# Locale MXML files to merge (data/mbin or data/EXTRACTED/language)
+LOCALE_MXML_FILES = [
+    'nms_loc1_english.MXML',
+    'nms_loc4_english.MXML',
+    'nms_loc5_english.MXML',
+    'nms_loc6_english.MXML',
+    'nms_loc7_english.MXML',
+    'nms_loc8_english.MXML',
+    'nms_loc9_english.MXML',
+    'nms_update3_english.MXML',
+]
 
-    print("=" * 60)
-    print("Testing Localization Parser")
-    print("=" * 60)
 
+def build_localization_json(base_path: Path = None) -> int:
+    """
+    Rebuild data/json/localization.json from all locale MXML files.
+    Looks in data/mbin and data/EXTRACTED/language. Returns total translation count.
+    """
+    if base_path is None:
+        base_path = Path(__file__).parent.parent
+    search_dirs = [base_path / 'data' / 'mbin', base_path / 'data' / 'EXTRACTED' / 'language']
     all_translations = {}
 
-    for mxml_file in mxml_files:
-        mxml_path = Path(__file__).parent / 'data' / 'mbin' / mxml_file
-        if not mxml_path.exists():
+    for mxml_file in LOCALE_MXML_FILES:
+        mxml_path = None
+        for d in search_dirs:
+            p = d / mxml_file
+            if p.exists():
+                mxml_path = p
+                break
+        if not mxml_path or not mxml_path.exists():
             print(f"[SKIP] {mxml_file} not found")
             continue
 
-        print(f"\nParsing: {mxml_file}")
+        print(f"  Parsing: {mxml_file}")
         translations = parse_localization(str(mxml_path))
-
-        # Merge into all_translations
         all_translations.update(translations)
 
-    # Save combined translations to JSON
-    output_path = Path(__file__).parent / 'data' / 'json' / 'localization.json'
+    output_path = base_path / 'data' / 'json' / 'localization.json'
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(all_translations, f, indent='\t', ensure_ascii=False)
 
-    print(f"\n[OK] Combined total: {len(all_translations)} translations")
-    print(f"[OK] Saved to {output_path.name}")
-    print(f"[OK] File size: {output_path.stat().st_size / 1024:.1f} KB\n")
+    print(f"[OK] Localization: {len(all_translations)} translations -> {output_path.name}\n")
+    return len(all_translations)
+
+
+if __name__ == '__main__':
+    base = Path(__file__).parent.parent
+    print("=" * 60)
+    print("Localization Parser (standalone)")
+    print("=" * 60 + "\n")
+    build_localization_json(base)
 
     # Test a few lookups
+    with open(base / 'data' / 'json' / 'localization.json', encoding='utf-8') as f:
+        all_translations = json.load(f)
     test_keys = ['TECH_FRAGMENT_NAME', 'BP_SALVAGE_NAME', 'CASING_NAME', 'PROTECT_NAME']
     print("Sample translations:")
     for key in test_keys:

@@ -1,4 +1,5 @@
 """Base XML Parser for EXML/MXML files"""
+import re
 import xml.etree.ElementTree as ET
 from typing import Any, Optional, Callable
 import json
@@ -9,6 +10,15 @@ _LOWERCASE_WORDS = frozenset({
     'a', 'an', 'the', 'and', 'or', 'but', 'of', 'in', 'on', 'at', 'to', 'for',
     'with', 'by', 'as', 'from', 'into', 'onto', 'upon', 'nor', 'so', 'yet',
 })
+
+
+def strip_markup_tags(text: str) -> str:
+    """
+    Remove game markup tags from text, e.g. <TECHNOLOGY>...</>, <>, <IMG>...</>.
+    """
+    if not text or not isinstance(text, str):
+        return text
+    return re.sub(r'<[^>]*>', '', text)
 
 
 def title_case_name(s: str) -> str:
@@ -93,6 +103,9 @@ class EXMLParser:
         # Apply title case with lowercase conjunctions for name keys
         if key.endswith('_NAME') and isinstance(translation, str):
             translation = title_case_name(translation)
+
+        # Remove game markup tags (<TECHNOLOGY>, <>, etc.) so output is plain text
+        translation = strip_markup_tags(translation)
 
         return translation
 

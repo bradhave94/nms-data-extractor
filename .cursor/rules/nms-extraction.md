@@ -2,9 +2,7 @@
 description: NMS Data Extraction development guidelines and patterns
 globs:
   - "parsers/**/*.py"
-  - "tests/**/*.py"
   - "utils/**/*.py"
-  - "scripts/**/*.py"
 ---
 
 # NMS Data Extraction Rules
@@ -31,10 +29,7 @@ nms-data-extractor/
 ├── utils/                     # Helper modules
 │   ├── categorization.py      # Item categorization rules
 │   └── parse_localization.py  # Localization merger
-├── scripts/                   # Analysis & utility scripts
-│   ├── compare_extraction.py  # Compare vs reference data
-│   └── list_original_groups.py # List groups in reference files
-├── tests/                     # Individual parser tests
+├── tests/                     # (empty; use extract_all.py for full pipeline)
 ├── docs/                      # Documentation
 └── tools/                     # MBINCompiler.exe
 ```
@@ -87,7 +82,7 @@ Use HGPAKtool with filters to extract only needed files:
 - 6 English localization files from `LANGUAGE/`
 
 ```bash
-tools\hgpaktool.exe -U \
+hgpaktool -U \
   -f="*REALITY/TABLES/nms_reality_gcproducttable.mbin" \
   -f="*REALITY/TABLES/consumableitemtable.mbin" \
   -f="*REALITY/TABLES/nms_reality_gcrecipetable.mbin" \
@@ -247,13 +242,6 @@ For items referenced in recipes/requirements:
 - Item names: `*_NAME` keys → look for `BUI_*`, `TRA_*`, or `EXP_*` prefixes
 - Descriptions: `*_DESC` keys
 - Subtitles: `*_SUB` or `*_SUBTITLE` keys
-
-## Testing
-Each parser should have a test script:
-```python
-# tests/test_[parser].py
-python tests/test_refinery.py  # Tests and outputs sample
-```
 
 ## Version Compatibility
 - HGPAKtool: For NMS 5.50+ (Worlds Part II onwards)

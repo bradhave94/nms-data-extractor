@@ -32,8 +32,9 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# data/EXTRACTED and data/mbin are NOT ignored (kept in repo)
 data/EXTRACTED/
 data/mbin/
 data/images/
-data/items/
+
+
+tools/*

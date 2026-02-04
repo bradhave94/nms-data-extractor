@@ -19549,7 +19549,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_W_CASE",
-			"Name": "Food W Case",
+			"Name": "Gelatinous Membrane",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -19560,7 +19560,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_W_CASE",
-				"Name": "Food W Case",
+				"Name": "Gelatinous Membrane",
 				"Quantity": 1
 			},
 			{
@@ -19571,7 +19571,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_W_MEAT",
-			"Name": "Food W Meat",
+			"Name": "Nightmare Sausage",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -19582,7 +19582,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_W_CASE",
-				"Name": "Food W Case",
+				"Name": "Gelatinous Membrane",
 				"Quantity": 1
 			},
 			{
@@ -19593,7 +19593,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_W_MEAT",
-			"Name": "Food W Meat",
+			"Name": "Nightmare Sausage",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -19604,7 +19604,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_W_CASE",
-				"Name": "Food W Case",
+				"Name": "Gelatinous Membrane",
 				"Quantity": 1
 			},
 			{
@@ -19615,7 +19615,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_W_MEAT",
-			"Name": "Food W Meat",
+			"Name": "Nightmare Sausage",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -19626,7 +19626,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_W_MEAT",
-				"Name": "Food W Meat",
+				"Name": "Nightmare Sausage",
 				"Quantity": 1
 			},
 			{
@@ -19637,7 +19637,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_W_SWEETM",
-			"Name": "Food W Sweetm",
+			"Name": "Syrupy Viscera",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -19978,7 +19978,7 @@
 			},
 			{
 				"Id": "FOOD_W_MEAT",
-				"Name": "Food W Meat",
+				"Name": "Nightmare Sausage",
 				"Quantity": 1
 			}
 		],
@@ -21848,7 +21848,7 @@
 			},
 			{
 				"Id": "FOOD_V_BUG",
-				"Name": "Food Bug Veg",
+				"Name": "Nourishing Slime",
 				"Quantity": 1
 			}
 		],
@@ -21870,13 +21870,13 @@
 			},
 			{
 				"Id": "FOOD_V_BUG",
-				"Name": "Food Bug Veg",
+				"Name": "Nourishing Slime",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_B_BUG",
-			"Name": "Food B Bug",
+			"Name": "Chewy Biscuit",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -21892,13 +21892,13 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_B_BUG",
-			"Name": "Food B Bug",
+			"Name": "Chewy Biscuit",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -21909,7 +21909,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_V_BUG",
-				"Name": "Food Bug Veg",
+				"Name": "Nourishing Slime",
 				"Quantity": 1
 			},
 			{
@@ -21920,7 +21920,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_JAM_BUG",
-			"Name": "Food Jam Bug",
+			"Name": "Sweetened Mucous",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -21936,7 +21936,7 @@
 			},
 			{
 				"Id": "FOOD_V_BUG",
-				"Name": "Food Bug Veg",
+				"Name": "Nourishing Slime",
 				"Quantity": 1
 			}
 		],
@@ -21958,7 +21958,7 @@
 			},
 			{
 				"Id": "FOOD_V_BUG",
-				"Name": "Food Bug Veg",
+				"Name": "Nourishing Slime",
 				"Quantity": 1
 			}
 		],
@@ -21980,13 +21980,13 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_DNUT_BJAM",
-			"Name": "Food Dnut Bjam",
+			"Name": "Mucal Doughnut",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22002,7 +22002,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22013,7 +22013,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_MM_BUGJAM",
-			"Name": "Food Mm Bugjam",
+			"Name": "Squirming Fancy",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22029,7 +22029,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22040,7 +22040,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_MC_BUGJAM",
-			"Name": "Food Mc Bugjam",
+			"Name": "Frosted Mire",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22056,7 +22056,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22067,7 +22067,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CM_BUGJAM",
-			"Name": "Food Cm Bugjam",
+			"Name": "Primordial Sponge",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22083,7 +22083,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22094,7 +22094,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CB_BUGJAM",
-			"Name": "Food Cb Bugjam",
+			"Name": "Nourishing Oozer",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22110,7 +22110,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22121,7 +22121,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CG_BUGJAM",
-			"Name": "Food Cg Bugjam",
+			"Name": "Mucal Curiosity",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22137,7 +22137,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22148,7 +22148,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CK_BUGJAM",
-			"Name": "Food Ck Bugjam",
+			"Name": "Gelatinous Sponge",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22164,7 +22164,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22175,7 +22175,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_MM_BUGJAM",
-			"Name": "Food Mm Bugjam",
+			"Name": "Squirming Fancy",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22191,7 +22191,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22202,7 +22202,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_MC_BUGJAM",
-			"Name": "Food Mc Bugjam",
+			"Name": "Frosted Mire",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22218,7 +22218,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22229,7 +22229,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CM_BUGJAM",
-			"Name": "Food Cm Bugjam",
+			"Name": "Primordial Sponge",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22245,7 +22245,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22256,7 +22256,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CB_BUGJAM",
-			"Name": "Food Cb Bugjam",
+			"Name": "Nourishing Oozer",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22272,7 +22272,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22283,7 +22283,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CG_BUGJAM",
-			"Name": "Food Cg Bugjam",
+			"Name": "Mucal Curiosity",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22299,7 +22299,7 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -22310,7 +22310,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CK_BUGJAM",
-			"Name": "Food Ck Bugjam",
+			"Name": "Gelatinous Sponge",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22331,13 +22331,13 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_ICE_BUG",
-			"Name": "Food Ice Bug",
+			"Name": "Slime Pop",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22358,13 +22358,13 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_ICE_BUG",
-			"Name": "Food Ice Bug",
+			"Name": "Slime Pop",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22385,13 +22385,13 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_ICE_BUG",
-			"Name": "Food Ice Bug",
+			"Name": "Slime Pop",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22412,13 +22412,13 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_ICE_BUG",
-			"Name": "Food Ice Bug",
+			"Name": "Slime Pop",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22434,13 +22434,13 @@
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_PIE_BUGJAM",
-			"Name": "Food Pie Bugjam",
+			"Name": "Muculent Tart",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22456,7 +22456,7 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22478,7 +22478,7 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22500,7 +22500,7 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22522,7 +22522,7 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22544,7 +22544,7 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22566,7 +22566,7 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22588,7 +22588,7 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22610,7 +22610,7 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22632,13 +22632,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_PIE_BMEAT",
-			"Name": "Food Pie Bmeat",
+			"Name": "Seeping Pie",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22649,7 +22649,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22671,7 +22671,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22693,7 +22693,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
@@ -22710,18 +22710,18 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22732,7 +22732,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22743,7 +22743,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22754,7 +22754,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22765,7 +22765,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22776,7 +22776,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22787,7 +22787,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22798,7 +22798,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22809,7 +22809,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22820,7 +22820,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22831,7 +22831,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22842,7 +22842,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22853,7 +22853,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22864,7 +22864,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22875,7 +22875,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22886,7 +22886,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22897,7 +22897,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22908,7 +22908,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22919,7 +22919,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22930,7 +22930,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22941,7 +22941,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22952,7 +22952,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22963,7 +22963,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22974,7 +22974,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -22985,7 +22985,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -22996,7 +22996,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -23007,7 +23007,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23018,7 +23018,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			},
 			{
@@ -23029,7 +23029,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_BUG",
-			"Name": "Food Stew Bug",
+			"Name": "Popping Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23050,13 +23050,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23077,13 +23077,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23104,13 +23104,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23131,13 +23131,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23158,13 +23158,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23185,13 +23185,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23212,13 +23212,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23239,13 +23239,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23266,13 +23266,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23288,13 +23288,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23310,13 +23310,13 @@
 			},
 			{
 				"Id": "FOOD_M_BUG",
-				"Name": "Food Bug Meat",
+				"Name": "Juicy Thorax",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_EGGPIE_BUG",
-			"Name": "Food Eggpie Bug",
+			"Name": "Bugs-in-a-blanket",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23327,7 +23327,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
@@ -23349,13 +23349,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_R_PCATBUT",
-			"Name": "Food R Pcatbut",
+			"Name": "Butter Syrup",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23376,7 +23376,7 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
@@ -23403,7 +23403,7 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
@@ -23430,7 +23430,7 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
@@ -23457,7 +23457,7 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
@@ -23479,13 +23479,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_MM_PCAT",
-			"Name": "Food Mm Pcat",
+			"Name": "Ambrosial Curse",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23501,13 +23501,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_MC_PCAT",
-			"Name": "Food Mc Pcat",
+			"Name": "Nectar Islands",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23523,13 +23523,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CM_PCATBUT",
-			"Name": "Food Cm Pcatbut",
+			"Name": "Cake of Eternal Sleep",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23545,13 +23545,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CK_PCATBUT",
-			"Name": "Food Ck Pcatbut",
+			"Name": "Syrup-drenched Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23567,13 +23567,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CG_PCAT",
-			"Name": "Food Cg Pcat",
+			"Name": "Nectar Sponge Cake",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23589,13 +23589,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CK_PCATBUT",
-			"Name": "Food Ck Pcatbut",
+			"Name": "Syrup-drenched Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23611,7 +23611,7 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
@@ -23633,13 +23633,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_R_PCATBUT",
-			"Name": "Food R Pcatbut",
+			"Name": "Butter Syrup",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23655,13 +23655,13 @@
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_R_PCATGEK",
-			"Name": "Food R Pcatgek",
+			"Name": "Syrupy Proto-butter",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23677,13 +23677,13 @@
 			},
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_MM_PCAT",
-			"Name": "Food Mm Pcat",
+			"Name": "Ambrosial Curse",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23699,13 +23699,13 @@
 			},
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_MC_PCAT",
-			"Name": "Food Mc Pcat",
+			"Name": "Nectar Islands",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23721,13 +23721,13 @@
 			},
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CM_PCATBUT",
-			"Name": "Food Cm Pcatbut",
+			"Name": "Cake of Eternal Sleep",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23743,13 +23743,13 @@
 			},
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CK_PCATBUT",
-			"Name": "Food Ck Pcatbut",
+			"Name": "Syrup-drenched Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23765,13 +23765,13 @@
 			},
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CG_PCAT",
-			"Name": "Food Cg Pcat",
+			"Name": "Nectar Sponge Cake",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23787,13 +23787,13 @@
 			},
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CK_PCATBUT",
-			"Name": "Food Ck Pcatbut",
+			"Name": "Syrup-drenched Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23804,7 +23804,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			},
 			{
@@ -23831,7 +23831,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			},
 			{
@@ -23847,7 +23847,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_R_PCAKEMIX",
-			"Name": "Food R Pcakemix",
+			"Name": "Syrupy Batter",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23858,7 +23858,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			},
 			{
@@ -23874,7 +23874,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_R_PCAKEMIX",
-			"Name": "Food R Pcakemix",
+			"Name": "Syrupy Batter",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23885,7 +23885,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			},
 			{
@@ -23901,7 +23901,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_R_PCAKEMIX",
-			"Name": "Food R Pcakemix",
+			"Name": "Syrupy Batter",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23917,13 +23917,13 @@
 			},
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_DNUT_PCAT",
-			"Name": "Food Dnut Pcat",
+			"Name": "Pollen Puffball",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23934,7 +23934,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -23945,7 +23945,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CK_PCATBUT",
-			"Name": "Food Ck Pcatbut",
+			"Name": "Syrup-drenched Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23956,7 +23956,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -23967,7 +23967,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CREAM",
-			"Name": "Food Cp Cream",
+			"Name": "Creamy Clouds of Nectar",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -23978,7 +23978,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -23989,7 +23989,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CK_PCATBUT",
-			"Name": "Food Ck Pcatbut",
+			"Name": "Syrup-drenched Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24000,7 +24000,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24011,7 +24011,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CHOC",
-			"Name": "Food Cp Choc",
+			"Name": "Chocolate Oozer",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24022,7 +24022,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24033,7 +24033,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CARM",
-			"Name": "Food Cp Carm",
+			"Name": "Syrupy Caramel Slice",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24044,7 +24044,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24055,7 +24055,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_HONEY",
-			"Name": "Food Cp Honey",
+			"Name": "Ambrosial Wonder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24066,7 +24066,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24077,7 +24077,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_APPLE",
-			"Name": "Food Cp Apple",
+			"Name": "Candied 'apples'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24088,7 +24088,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24099,7 +24099,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CACTUS",
-			"Name": "Food Cp Cactus",
+			"Name": "Hybrid Cake",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24110,7 +24110,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24126,7 +24126,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_JGLITCH",
-			"Name": "Food Cp Jglitch",
+			"Name": "Xeno-sponge",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24137,7 +24137,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24153,7 +24153,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_JHOT",
-			"Name": "Food Cp Jhot",
+			"Name": "Syrupy Tingler",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24164,7 +24164,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24180,7 +24180,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_JAM",
-			"Name": "Food Cp Jam",
+			"Name": "Jammy Burster",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24191,7 +24191,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24207,7 +24207,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CACTUS",
-			"Name": "Food Cp Cactus",
+			"Name": "Hybrid Cake",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24218,7 +24218,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24234,7 +24234,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_JAM",
-			"Name": "Food Cp Jam",
+			"Name": "Jammy Burster",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24245,7 +24245,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24261,7 +24261,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_APPLE",
-			"Name": "Food Cp Apple",
+			"Name": "Candied 'apples'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24272,7 +24272,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24283,7 +24283,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CUST",
-			"Name": "Food Cp Cust",
+			"Name": "Sponge of Ambrosia",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24294,7 +24294,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24305,7 +24305,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_FCUST",
-			"Name": "Food Cp Fcust",
+			"Name": "Sweet and Salty Puff",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24316,7 +24316,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24327,7 +24327,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CM_PCATBUT",
-			"Name": "Food Cm Pcatbut",
+			"Name": "Cake of Eternal Sleep",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24338,7 +24338,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24349,7 +24349,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_SCUST",
-			"Name": "Food Cp Scust",
+			"Name": "Starpollen Surprise",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24360,18 +24360,18 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
 				"Id": "FOOD_R_PCATBUT",
-				"Name": "Food R Pcatbut",
+				"Name": "Butter Syrup",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CK_PCATBUT",
-			"Name": "Food Ck Pcatbut",
+			"Name": "Syrup-drenched Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24382,18 +24382,18 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
 				"Id": "FOOD_V_PCAT",
-				"Name": "Food Pcat Veg",
+				"Name": "Syrupy Nectar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_CK_PCATBUT",
-			"Name": "Food Ck Pcatbut",
+			"Name": "Syrup-drenched Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24404,12 +24404,12 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -24420,7 +24420,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_BUGJAM",
-			"Name": "Food Cp Bugjam",
+			"Name": "Splicer's Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24431,12 +24431,12 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
 				"Id": "FOOD_JAM_BUG",
-				"Name": "Food Jam Bug",
+				"Name": "Sweetened Mucous",
 				"Quantity": 1
 			},
 			{
@@ -24447,7 +24447,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_BUGJAM",
-			"Name": "Food Cp Bugjam",
+			"Name": "Splicer's Delight",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24458,7 +24458,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24469,7 +24469,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CREAM",
-			"Name": "Food Cp Cream",
+			"Name": "Creamy Clouds of Nectar",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24480,7 +24480,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24496,7 +24496,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_JGLITCH",
-			"Name": "Food Cp Jglitch",
+			"Name": "Xeno-sponge",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24507,7 +24507,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24523,7 +24523,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_JHOT",
-			"Name": "Food Cp Jhot",
+			"Name": "Syrupy Tingler",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24534,7 +24534,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24550,7 +24550,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_JAM",
-			"Name": "Food Cp Jam",
+			"Name": "Jammy Burster",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24561,7 +24561,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24577,7 +24577,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CACTUS",
-			"Name": "Food Cp Cactus",
+			"Name": "Hybrid Cake",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24588,7 +24588,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24604,7 +24604,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_JAM",
-			"Name": "Food Cp Jam",
+			"Name": "Jammy Burster",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24615,7 +24615,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24631,7 +24631,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_APPLE",
-			"Name": "Food Cp Apple",
+			"Name": "Candied 'apples'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24642,7 +24642,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_PCAKEMIX",
-				"Name": "Food R Pcakemix",
+				"Name": "Syrupy Batter",
 				"Quantity": 1
 			},
 			{
@@ -24653,7 +24653,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_CP_CUST",
-			"Name": "Food Cp Cust",
+			"Name": "Sponge of Ambrosia",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -24664,2851 +24664,2851 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_M_GRUB",
-				"Name": "Ui Grub Pod",
+				"Name": "Juicy Grub",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_V_BUG",
-			"Name": "Food Bug Veg",
+			"Name": "Nourishing Slime",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Grub R"
+		"Operation": "Liquidation"
 	},
 	{
 		"Id": "RECIPE_1123",
 		"Inputs": [
 			{
 				"Id": "FOOD_M_HORROR",
-				"Name": "Food Horror Meat",
+				"Name": "Rancid Flesh",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_R_HORROR",
-			"Name": "Food R Horror",
+			"Name": "Purged Ribs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fiend R"
+		"Operation": "Purge by Fire"
 	},
 	{
 		"Id": "RECIPE_1124",
 		"Inputs": [
 			{
 				"Id": "FOOD_M_GRUB",
-				"Name": "Ui Grub Pod",
+				"Name": "Juicy Grub",
 				"Quantity": 1
 			},
 			{
 				"Id": "FOOD_M_HORROR",
-				"Name": "Food Horror Meat",
+				"Name": "Rancid Flesh",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_STEW_EVIL",
-			"Name": "Food Evil Stew",
+			"Name": "The Worst Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fiend R"
+		"Operation": "Purge by Fire"
 	},
 	{
 		"Id": "RECIPE_1125",
 		"Inputs": [
 			{
 				"Id": "F_ALL_COM_S1",
-				"Name": "Ui Fish All Com S1",
+				"Name": "Tiny Scuttlefish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1126",
 		"Inputs": [
 			{
 				"Id": "F_ALL_COM_S2",
-				"Name": "Ui Fish All Com S2",
+				"Name": "Mud Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1127",
 		"Inputs": [
 			{
 				"Id": "F_ALL_COM_S3",
-				"Name": "Ui Fish All Com S3",
+				"Name": "Pondskipper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1128",
 		"Inputs": [
 			{
 				"Id": "F_ALL_COM_M1",
-				"Name": "Ui Fish All Com M1",
+				"Name": "Reef Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1129",
 		"Inputs": [
 			{
 				"Id": "F_ALL_COM_M2",
-				"Name": "Ui Fish All Com M2",
+				"Name": "Rockfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1130",
 		"Inputs": [
 			{
 				"Id": "F_ALL_COM_L1",
-				"Name": "Ui Fish All Com L1",
+				"Name": "Greenscale Bloater",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1131",
 		"Inputs": [
 			{
 				"Id": "F_ALL_COM_XL",
-				"Name": "Ui Fish All Com Xl",
+				"Name": "Stonescale Shark",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1132",
 		"Inputs": [
 			{
 				"Id": "F_ALL_RARE_S1",
-				"Name": "Ui Fish All Rare S1",
+				"Name": "Needlefish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1133",
 		"Inputs": [
 			{
 				"Id": "F_ALL_RARE_S2",
-				"Name": "Ui Fish All Rare S2",
+				"Name": "Spiny Starfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STARFISH",
-			"Name": "Ui Fish Food Starfish",
+			"Name": "Delicate Legs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1134",
 		"Inputs": [
 			{
 				"Id": "F_ALL_RARE_M1",
-				"Name": "Ui Fish All Rare M1",
+				"Name": "Hypnotic Octopus",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_OCTOPUS",
-			"Name": "Ui Fish Food Octopus",
+			"Name": "Grilled Tentacle",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1135",
 		"Inputs": [
 			{
 				"Id": "F_ALL_RARE_M2",
-				"Name": "Ui Fish All Rare M2",
+				"Name": "Longjaw Snapper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1136",
 		"Inputs": [
 			{
 				"Id": "F_ALL_RARE_L1",
-				"Name": "Ui Fish All Rare L1",
+				"Name": "Whispering Bonefish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1137",
 		"Inputs": [
 			{
 				"Id": "F_ALL_RARE_XL",
-				"Name": "Ui Fish All Rare Xl",
+				"Name": "Giant Ray",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1138",
 		"Inputs": [
 			{
 				"Id": "F_ALL_EPIC_S1",
-				"Name": "Ui Fish All Epic S1",
+				"Name": "Shrieking Oyster",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1139",
 		"Inputs": [
 			{
 				"Id": "F_ALL_EPIC_M1",
-				"Name": "Ui Fish All Epic M1",
+				"Name": "Moon Turtle",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_TURTLE",
-			"Name": "Ui Fish Food Turtle",
+			"Name": "Boiled Flipper",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1140",
 		"Inputs": [
 			{
 				"Id": "F_ALL_EPIC_L1",
-				"Name": "Ui Fish All Epic L1",
+				"Name": "Colossal Shrimp",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_PRAWN",
-			"Name": "Ui Fish Food Prawn",
+			"Name": "Shell Puree",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1141",
 		"Inputs": [
 			{
 				"Id": "F_ALL_EPIC_XL",
-				"Name": "Ui Fish All Epic Xl",
+				"Name": "Thunderfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1142",
 		"Inputs": [
 			{
 				"Id": "F_ALL_LEG_S1",
-				"Name": "Ui Fish All Leg S1",
+				"Name": "Singing Sea-snail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SNAIL",
-			"Name": "Ui Fish Food Snail",
+			"Name": "Snail Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1143",
 		"Inputs": [
 			{
 				"Id": "F_ALL_LEG_M1",
-				"Name": "Ui Fish All Leg M1",
+				"Name": "Golden Jellyfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1144",
 		"Inputs": [
 			{
 				"Id": "F_ALL_LEG_L1",
-				"Name": "Ui Fish All Leg L1",
+				"Name": "Dragonfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1145",
 		"Inputs": [
 			{
 				"Id": "F_ALL_LEG_XL",
-				"Name": "Ui Fish All Leg Xl",
+				"Name": "The Lunker",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1146",
 		"Inputs": [
 			{
 				"Id": "F_TOX_COM_S1",
-				"Name": "Ui Fish Tox Com S1",
+				"Name": "Bileworm",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1147",
 		"Inputs": [
 			{
 				"Id": "F_TOX_COM_S2",
-				"Name": "Ui Fish Tox Com S2",
+				"Name": "Venomous Triggerfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1148",
 		"Inputs": [
 			{
 				"Id": "F_TOX_COM_S3",
-				"Name": "Ui Fish Tox Com S3",
+				"Name": "Sea Cucumber",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1149",
 		"Inputs": [
 			{
 				"Id": "F_TOX_COM_M1",
-				"Name": "Ui Fish Tox Com M1",
+				"Name": "Blistering Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1150",
 		"Inputs": [
 			{
 				"Id": "F_TOX_COM_M2",
-				"Name": "Ui Fish Tox Com M2",
+				"Name": "Toxic Jelly",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1151",
 		"Inputs": [
 			{
 				"Id": "F_TOX_COM_L1",
-				"Name": "Ui Fish Tox Com L1",
+				"Name": "Green-ring Octopus",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_OCTOPUS",
-			"Name": "Ui Fish Food Octopus",
+			"Name": "Grilled Tentacle",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1152",
 		"Inputs": [
 			{
 				"Id": "F_TOX_COM_XL",
-				"Name": "Ui Fish Tox Com Xl",
+				"Name": "Giant Whiskerfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1153",
 		"Inputs": [
 			{
 				"Id": "F_TOX_RARE_S1",
-				"Name": "Ui Fish Tox Rare S1",
+				"Name": "Caustic Urchin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STARFISH",
-			"Name": "Ui Fish Food Starfish",
+			"Name": "Delicate Legs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1154",
 		"Inputs": [
 			{
 				"Id": "F_TOX_RARE_S2",
-				"Name": "Ui Fish Tox Rare S2",
+				"Name": "Weltscale Clam",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1155",
 		"Inputs": [
 			{
 				"Id": "F_TOX_RARE_M1",
-				"Name": "Ui Fish Tox Rare M1",
+				"Name": "Acidic Pufferfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1156",
 		"Inputs": [
 			{
 				"Id": "F_TOX_RARE_M2",
-				"Name": "Ui Fish Tox Rare M2",
+				"Name": "Toxic Stonefish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1157",
 		"Inputs": [
 			{
 				"Id": "F_TOX_RARE_L1",
-				"Name": "Ui Fish Tox Rare L1",
+				"Name": "Venomtooth Wriggler",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1158",
 		"Inputs": [
 			{
 				"Id": "F_TOX_RARE_XL",
-				"Name": "Ui Fish Tox Rare Xl",
+				"Name": "Bitterscale Ray",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1159",
 		"Inputs": [
 			{
 				"Id": "F_TOX_EPIC_S1",
-				"Name": "Ui Fish Tox Epic S1",
+				"Name": "Waspfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1160",
 		"Inputs": [
 			{
 				"Id": "F_TOX_EPIC_M1",
-				"Name": "Ui Fish Tox Epic M1",
+				"Name": "Scorpionfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1161",
 		"Inputs": [
 			{
 				"Id": "F_TOX_EPIC_L1",
-				"Name": "Ui Fish Tox Epic L1",
+				"Name": "Shrieking Venttail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1162",
 		"Inputs": [
 			{
 				"Id": "F_TOX_EPIC_XL",
-				"Name": "Ui Fish Tox Epic Xl",
+				"Name": "Viper Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1163",
 		"Inputs": [
 			{
 				"Id": "F_TOX_LEG_S1",
-				"Name": "Ui Fish Tox Leg S1",
+				"Name": "Emeril Sunstar",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STARFISH",
-			"Name": "Ui Fish Food Starfish",
+			"Name": "Delicate Legs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1164",
 		"Inputs": [
 			{
 				"Id": "F_TOX_LEG_M1",
-				"Name": "Ui Fish Tox Leg M1",
+				"Name": "Vampire Squid",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SQUID",
-			"Name": "Ui Fish Food Squid",
+			"Name": "Steamed Rubber",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1165",
 		"Inputs": [
 			{
 				"Id": "F_TOX_LEG_L1",
-				"Name": "Ui Fish Tox Leg L1",
+				"Name": "Bleached Bonefish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1166",
 		"Inputs": [
 			{
 				"Id": "F_TOX_LEG_XL",
-				"Name": "Ui Fish Tox Leg Xl",
+				"Name": "Translucent Gulper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1167",
 		"Inputs": [
 			{
 				"Id": "F_RAD_COM_S1",
-				"Name": "Ui Fish Rad Com S1",
+				"Name": "Bulging Snapper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1168",
 		"Inputs": [
 			{
 				"Id": "F_RAD_COM_S2",
-				"Name": "Ui Fish Rad Com S2",
+				"Name": "Spotted Protofin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1169",
 		"Inputs": [
 			{
 				"Id": "F_RAD_COM_S3",
-				"Name": "Ui Fish Rad Com S3",
+				"Name": "Field's Dartfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1170",
 		"Inputs": [
 			{
 				"Id": "F_RAD_COM_M1",
-				"Name": "Ui Fish Rad Com M1",
+				"Name": "Forktailed Splicer",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1171",
 		"Inputs": [
 			{
 				"Id": "F_RAD_COM_M2",
-				"Name": "Ui Fish Rad Com M2",
+				"Name": "Inverted Snapper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1172",
 		"Inputs": [
 			{
 				"Id": "F_RAD_COM_L1",
-				"Name": "Ui Fish Rad Com L1",
+				"Name": "Glowing Catfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1173",
 		"Inputs": [
 			{
 				"Id": "F_RAD_COM_XL",
-				"Name": "Ui Fish Rad Com Xl",
+				"Name": "Polyscale Bloater",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1174",
 		"Inputs": [
 			{
 				"Id": "F_RAD_RARE_S1",
-				"Name": "Ui Fish Rad Rare S1",
+				"Name": "Ionised Clam",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1175",
 		"Inputs": [
 			{
 				"Id": "F_RAD_RARE_S2",
-				"Name": "Ui Fish Rad Rare S2",
+				"Name": "Nucleic Skipper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1176",
 		"Inputs": [
 			{
 				"Id": "F_RAD_RARE_M1",
-				"Name": "Ui Fish Rad Rare M1",
+				"Name": "Twisted Gulper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1177",
 		"Inputs": [
 			{
 				"Id": "F_RAD_RARE_M2",
-				"Name": "Ui Fish Rad Rare M2",
+				"Name": "Depleted Razorjaw",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1178",
 		"Inputs": [
 			{
 				"Id": "F_RAD_RARE_L1",
-				"Name": "Ui Fish Rad Rare L1",
+				"Name": "Radiant Sunfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1179",
 		"Inputs": [
 			{
 				"Id": "F_RAD_RARE_XL",
-				"Name": "Ui Fish Rad Rare Xl",
+				"Name": "Boiling Shark",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1180",
 		"Inputs": [
 			{
 				"Id": "F_RAD_EPIC_S1",
-				"Name": "Ui Fish Rad Epic S1",
+				"Name": "Geno-prawn",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_PRAWN",
-			"Name": "Ui Fish Food Prawn",
+			"Name": "Shell Puree",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1181",
 		"Inputs": [
 			{
 				"Id": "F_RAD_EPIC_M1",
-				"Name": "Ui Fish Rad Epic M1",
+				"Name": "Immortal Flatfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1182",
 		"Inputs": [
 			{
 				"Id": "F_RAD_EPIC_L1",
-				"Name": "Ui Fish Rad Epic L1",
+				"Name": "Cyclopic Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1183",
 		"Inputs": [
 			{
 				"Id": "F_RAD_EPIC_XL",
-				"Name": "Ui Fish Rad Epic Xl",
+				"Name": "Alpha Squid",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SQUID",
-			"Name": "Ui Fish Food Squid",
+			"Name": "Steamed Rubber",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1184",
 		"Inputs": [
 			{
 				"Id": "F_RAD_LEG_S1",
-				"Name": "Ui Fish Rad Leg S1",
+				"Name": "Many-eyed Jellyfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1185",
 		"Inputs": [
 			{
 				"Id": "F_RAD_LEG_M1",
-				"Name": "Ui Fish Rad Leg M1",
+				"Name": "Aberrant Duskfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1186",
 		"Inputs": [
 			{
 				"Id": "F_RAD_LEG_L1",
-				"Name": "Ui Fish Rad Leg L1",
+				"Name": "Gamma Squid",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SQUID",
-			"Name": "Ui Fish Food Squid",
+			"Name": "Steamed Rubber",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1187",
 		"Inputs": [
 			{
 				"Id": "F_RAD_LEG_XL",
-				"Name": "Ui Fish Rad Leg Xl",
+				"Name": "Helix Sawfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1188",
 		"Inputs": [
 			{
 				"Id": "F_HOT_COM_S1",
-				"Name": "Ui Fish Hot Com S1",
+				"Name": "Oilfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1189",
 		"Inputs": [
 			{
 				"Id": "F_HOT_COM_S2",
-				"Name": "Ui Fish Hot Com S2",
+				"Name": "Common Sunfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1190",
 		"Inputs": [
 			{
 				"Id": "F_HOT_COM_S3",
-				"Name": "Ui Fish Hot Com S3",
+				"Name": "Ash Snail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SNAIL",
-			"Name": "Ui Fish Food Snail",
+			"Name": "Snail Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1191",
 		"Inputs": [
 			{
 				"Id": "F_HOT_COM_M1",
-				"Name": "Ui Fish Hot Com M1",
+				"Name": "Boiled Snapper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_PRAWN",
-			"Name": "Ui Fish Food Prawn",
+			"Name": "Shell Puree",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1192",
 		"Inputs": [
 			{
 				"Id": "F_HOT_COM_M2",
-				"Name": "Ui Fish Hot Com M2",
+				"Name": "Lavascale Trout",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1193",
 		"Inputs": [
 			{
 				"Id": "F_HOT_COM_L1",
-				"Name": "Ui Fish Hot Com L1",
+				"Name": "Sulphurfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1194",
 		"Inputs": [
 			{
 				"Id": "F_HOT_COM_XL",
-				"Name": "Ui Fish Hot Com Xl",
+				"Name": "Basalt-tooth Bloater",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1195",
 		"Inputs": [
 			{
 				"Id": "F_HOT_RARE_S1",
-				"Name": "Ui Fish Hot Rare S1",
+				"Name": "Lamptip Ray",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1196",
 		"Inputs": [
 			{
 				"Id": "F_HOT_RARE_S2",
-				"Name": "Ui Fish Hot Rare S2",
+				"Name": "Pyrefin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1197",
 		"Inputs": [
 			{
 				"Id": "F_HOT_RARE_M1",
-				"Name": "Ui Fish Hot Rare M1",
+				"Name": "Flashfire Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1198",
 		"Inputs": [
 			{
 				"Id": "F_HOT_RARE_M2",
-				"Name": "Ui Fish Hot Rare M2",
+				"Name": "Solar Roach",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1199",
 		"Inputs": [
 			{
 				"Id": "F_HOT_RARE_L1",
-				"Name": "Ui Fish Hot Rare L1",
+				"Name": "Fumarole Gulper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1200",
 		"Inputs": [
 			{
 				"Id": "F_HOT_RARE_XL",
-				"Name": "Ui Fish Hot Rare Xl",
+				"Name": "Colossal Meltfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1201",
 		"Inputs": [
 			{
 				"Id": "F_HOT_EPIC_S1",
-				"Name": "Ui Fish Hot Epic S1",
+				"Name": "Cadmium Pearlcase",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1202",
 		"Inputs": [
 			{
 				"Id": "F_HOT_EPIC_M1",
-				"Name": "Ui Fish Hot Epic M1",
+				"Name": "Candelabra Octopus",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_OCTOPUS",
-			"Name": "Ui Fish Food Octopus",
+			"Name": "Grilled Tentacle",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1203",
 		"Inputs": [
 			{
 				"Id": "F_HOT_EPIC_L1",
-				"Name": "Ui Fish Hot Epic L1",
+				"Name": "Magma Shark",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1204",
 		"Inputs": [
 			{
 				"Id": "F_HOT_EPIC_XL",
-				"Name": "Ui Fish Hot Epic Xl",
+				"Name": "Hellion Bass",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1205",
 		"Inputs": [
 			{
 				"Id": "F_HOT_LEG_S1",
-				"Name": "Ui Fish Hot Leg S1",
+				"Name": "Starshell Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1206",
 		"Inputs": [
 			{
 				"Id": "F_HOT_LEG_M1",
-				"Name": "Ui Fish Hot Leg M1",
+				"Name": "Mirrorscale Skipper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1207",
 		"Inputs": [
 			{
 				"Id": "F_HOT_LEG_L1",
-				"Name": "Ui Fish Hot Leg L1",
+				"Name": "Jelly of the Veil",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1208",
 		"Inputs": [
 			{
 				"Id": "F_HOT_LEG_XL",
-				"Name": "Ui Fish Hot Leg Xl",
+				"Name": "Ancient Irontail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1209",
 		"Inputs": [
 			{
 				"Id": "F_COLD_COM_S1",
-				"Name": "Ui Fish Cold Com S1",
+				"Name": "Ice Darter",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1210",
 		"Inputs": [
 			{
 				"Id": "F_COLD_COM_S2",
-				"Name": "Ui Fish Cold Com S2",
+				"Name": "Frozen Whelk",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1211",
 		"Inputs": [
 			{
 				"Id": "F_COLD_COM_S3",
-				"Name": "Ui Fish Cold Com S3",
+				"Name": "Frostscale Trout",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1212",
 		"Inputs": [
 			{
 				"Id": "F_COLD_COM_M1",
-				"Name": "Ui Fish Cold Com M1",
+				"Name": "Midnight Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1213",
 		"Inputs": [
 			{
 				"Id": "F_COLD_COM_M2",
-				"Name": "Ui Fish Cold Com M2",
+				"Name": "Thawed Diamondfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1214",
 		"Inputs": [
 			{
 				"Id": "F_COLD_COM_L1",
-				"Name": "Ui Fish Cold Com L1",
+				"Name": "Glacier Carp",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1215",
 		"Inputs": [
 			{
 				"Id": "F_COLD_COM_XL",
-				"Name": "Ui Fish Cold Com Xl",
+				"Name": "Giant Hairy Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1216",
 		"Inputs": [
 			{
 				"Id": "F_COLD_RARE_S1",
-				"Name": "Ui Fish Cold Rare S1",
+				"Name": "Frostshell Clam",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1217",
 		"Inputs": [
 			{
 				"Id": "F_COLD_RARE_S2",
-				"Name": "Ui Fish Cold Rare S2",
+				"Name": "Frozen Isopod",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_PRAWN",
-			"Name": "Ui Fish Food Prawn",
+			"Name": "Shell Puree",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1218",
 		"Inputs": [
 			{
 				"Id": "F_COLD_RARE_M1",
-				"Name": "Ui Fish Cold Rare M1",
+				"Name": "Brineskipper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1219",
 		"Inputs": [
 			{
 				"Id": "F_COLD_RARE_M2",
-				"Name": "Ui Fish Cold Rare M2",
+				"Name": "Pale Snowtail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1220",
 		"Inputs": [
 			{
 				"Id": "F_COLD_RARE_L1",
-				"Name": "Ui Fish Cold Rare L1",
+				"Name": "Frozen Knifejaw",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1221",
 		"Inputs": [
 			{
 				"Id": "F_COLD_RARE_XL",
-				"Name": "Ui Fish Cold Rare Xl",
+				"Name": "Giant Icefin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1222",
 		"Inputs": [
 			{
 				"Id": "F_COLD_EPIC_S1",
-				"Name": "Ui Fish Cold Epic S1",
+				"Name": "Rimescale Snapper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1223",
 		"Inputs": [
 			{
 				"Id": "F_COLD_EPIC_M1",
-				"Name": "Ui Fish Cold Epic M1",
+				"Name": "Iceshell Turtle",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_TURTLE",
-			"Name": "Ui Fish Food Turtle",
+			"Name": "Boiled Flipper",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1224",
 		"Inputs": [
 			{
 				"Id": "F_COLD_EPIC_L1",
-				"Name": "Ui Fish Cold Epic L1",
+				"Name": "Frostbite Ray",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1225",
 		"Inputs": [
 			{
 				"Id": "F_COLD_EPIC_XL",
-				"Name": "Ui Fish Cold Epic Xl",
+				"Name": "Black-eyed Shark",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1226",
 		"Inputs": [
 			{
 				"Id": "F_COLD_LEG_S1",
-				"Name": "Ui Fish Cold Leg S1",
+				"Name": "Crystal Jelly",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1227",
 		"Inputs": [
 			{
 				"Id": "F_COLD_LEG_M1",
-				"Name": "Ui Fish Cold Leg M1",
+				"Name": "Ghostfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1228",
 		"Inputs": [
 			{
 				"Id": "F_COLD_LEG_L1",
-				"Name": "Ui Fish Cold Leg L1",
+				"Name": "Iceblood Gulper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1229",
 		"Inputs": [
 			{
 				"Id": "F_COLD_LEG_XL",
-				"Name": "Ui Fish Cold Leg Xl",
+				"Name": "Nautilia",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SNAIL",
-			"Name": "Ui Fish Food Snail",
+			"Name": "Snail Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1230",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_COM_S1",
-				"Name": "Ui Fish Lush Com S1",
+				"Name": "Shadowfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1231",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_COM_S2",
-				"Name": "Ui Fish Lush Com S2",
+				"Name": "Warty Frogfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1232",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_COM_S3",
-				"Name": "Ui Fish Lush Com S3",
+				"Name": "Common Shimmertail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1233",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_COM_M1",
-				"Name": "Ui Fish Lush Com M1",
+				"Name": "Wandering Kelpfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1234",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_COM_M2",
-				"Name": "Ui Fish Lush Com M2",
+				"Name": "Clearwater Skipper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1235",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_COM_L1",
-				"Name": "Ui Fish Lush Com L1",
+				"Name": "Flourishing Shalefish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1236",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_COM_XL",
-				"Name": "Ui Fish Lush Com Xl",
+				"Name": "Warden Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1237",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_RARE_S1",
-				"Name": "Ui Fish Lush Rare S1",
+				"Name": "Sweetwater Minnow",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1238",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_RARE_S2",
-				"Name": "Ui Fish Lush Rare S2",
+				"Name": "Mellifluous Jellyfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1239",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_RARE_M1",
-				"Name": "Ui Fish Lush Rare M1",
+				"Name": "Blue Ribbontail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1240",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_RARE_M2",
-				"Name": "Ui Fish Lush Rare M2",
+				"Name": "Jungle Redfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1241",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_RARE_L1",
-				"Name": "Ui Fish Lush Rare L1",
+				"Name": "Marrow Shark",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1242",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_RARE_XL",
-				"Name": "Ui Fish Lush Rare Xl",
+				"Name": "Giant Sunray",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1243",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_EPIC_S1",
-				"Name": "Ui Fish Lush Epic S1",
+				"Name": "Wispscale Darter",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1244",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_EPIC_M1",
-				"Name": "Ui Fish Lush Epic M1",
+				"Name": "Deepwater Angler",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1245",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_EPIC_L1",
-				"Name": "Ui Fish Lush Epic L1",
+				"Name": "Sunspine Basker",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1246",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_EPIC_XL",
-				"Name": "Ui Fish Lush Epic Xl",
+				"Name": "Colossal Mossback",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1247",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_LEG_S1",
-				"Name": "Ui Fish Lush Leg S1",
+				"Name": "Glass Angel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1248",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_LEG_M1",
-				"Name": "Ui Fish Lush Leg M1",
+				"Name": "Mist Serpent",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1249",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_LEG_L1",
-				"Name": "Ui Fish Lush Leg L1",
+				"Name": "Reef Guardian",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1250",
 		"Inputs": [
 			{
 				"Id": "F_LUSH_LEG_XL",
-				"Name": "Ui Fish Lush Leg Xl",
+				"Name": "Blind Titancore",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1251",
 		"Inputs": [
 			{
 				"Id": "F_DUST_COM_S1",
-				"Name": "Ui Fish Dust Com S1",
+				"Name": "Fool's Goldfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1252",
 		"Inputs": [
 			{
 				"Id": "F_DUST_COM_S2",
-				"Name": "Ui Fish Dust Com S2",
+				"Name": "Lesser Dustfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1253",
 		"Inputs": [
 			{
 				"Id": "F_DUST_COM_S3",
-				"Name": "Ui Fish Dust Com S3",
+				"Name": "Briny Worm",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1254",
 		"Inputs": [
 			{
 				"Id": "F_DUST_COM_M1",
-				"Name": "Ui Fish Dust Com M1",
+				"Name": "Chalkscale Nibbler",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1255",
 		"Inputs": [
 			{
 				"Id": "F_DUST_COM_M2",
-				"Name": "Ui Fish Dust Com M2",
+				"Name": "Sweeperfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1256",
 		"Inputs": [
 			{
 				"Id": "F_DUST_COM_L1",
-				"Name": "Ui Fish Dust Com L1",
+				"Name": "Twilight Cavefish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1257",
 		"Inputs": [
 			{
 				"Id": "F_DUST_COM_XL",
-				"Name": "Ui Fish Dust Com Xl",
+				"Name": "Greater Rocktooth",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1258",
 		"Inputs": [
 			{
 				"Id": "F_DUST_RARE_S1",
-				"Name": "Ui Fish Dust Rare S1",
+				"Name": "Bladdersac",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1259",
 		"Inputs": [
 			{
 				"Id": "F_DUST_RARE_S2",
-				"Name": "Ui Fish Dust Rare S2",
+				"Name": "Shalebound Starfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STARFISH",
-			"Name": "Ui Fish Food Starfish",
+			"Name": "Delicate Legs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1260",
 		"Inputs": [
 			{
 				"Id": "F_DUST_RARE_M1",
-				"Name": "Ui Fish Dust Rare M1",
+				"Name": "Electric Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1261",
 		"Inputs": [
 			{
 				"Id": "F_DUST_RARE_M2",
-				"Name": "Ui Fish Dust Rare M2",
+				"Name": "Silicate Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1262",
 		"Inputs": [
 			{
 				"Id": "F_DUST_RARE_L1",
-				"Name": "Ui Fish Dust Rare L1",
+				"Name": "Mantis Ray",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1263",
 		"Inputs": [
 			{
 				"Id": "F_DUST_RARE_XL",
-				"Name": "Ui Fish Dust Rare Xl",
+				"Name": "Saltscale Bloater",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1264",
 		"Inputs": [
 			{
 				"Id": "F_DUST_EPIC_S1",
-				"Name": "Ui Fish Dust Epic S1",
+				"Name": "Golden Urchin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STARFISH",
-			"Name": "Ui Fish Food Starfish",
+			"Name": "Delicate Legs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1265",
 		"Inputs": [
 			{
 				"Id": "F_DUST_EPIC_M1",
-				"Name": "Ui Fish Dust Epic M1",
+				"Name": "Bewitching Candlefish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1266",
 		"Inputs": [
 			{
 				"Id": "F_DUST_EPIC_L1",
-				"Name": "Ui Fish Dust Epic L1",
+				"Name": "Ferrite Bowfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1267",
 		"Inputs": [
 			{
 				"Id": "F_DUST_EPIC_XL",
-				"Name": "Ui Fish Dust Epic Xl",
+				"Name": "Cave Prowler",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1268",
 		"Inputs": [
 			{
 				"Id": "F_DUST_LEG_S1",
-				"Name": "Ui Fish Dust Leg S1",
+				"Name": "Fragile Icthyoscale",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1269",
 		"Inputs": [
 			{
 				"Id": "F_DUST_LEG_M1",
-				"Name": "Ui Fish Dust Leg M1",
+				"Name": "Titanworm Larva",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1270",
 		"Inputs": [
 			{
 				"Id": "F_DUST_LEG_L1",
-				"Name": "Ui Fish Dust Leg L1",
+				"Name": "Ossified Deinosuchus",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1271",
 		"Inputs": [
 			{
 				"Id": "F_DUST_LEG_XL",
-				"Name": "Ui Fish Dust Leg Xl",
+				"Name": "Megalodon",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1272",
 		"Inputs": [
 			{
 				"Id": "F_ODD_COM_S1",
-				"Name": "Ui Fish Odd Com S1",
+				"Name": "Vectorfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1273",
 		"Inputs": [
 			{
 				"Id": "F_ODD_COM_S2",
-				"Name": "Ui Fish Odd Com S2",
+				"Name": "Hexscale Minnow",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1274",
 		"Inputs": [
 			{
 				"Id": "F_ODD_COM_S3",
-				"Name": "Ui Fish Odd Com S3",
+				"Name": "Aurora Jellyfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1275",
 		"Inputs": [
 			{
 				"Id": "F_ODD_COM_M1",
-				"Name": "Ui Fish Odd Com M1",
+				"Name": "Murmurfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1276",
 		"Inputs": [
 			{
 				"Id": "F_ODD_COM_M2",
-				"Name": "Ui Fish Odd Com M2",
+				"Name": "Inverted Brainfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED2",
-			"Name": "Ui Fish Food Med 2",
+			"Name": "Grilled Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1277",
 		"Inputs": [
 			{
 				"Id": "F_ODD_COM_L1",
-				"Name": "Ui Fish Odd Com L1",
+				"Name": "Shimmering Lashtail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1278",
 		"Inputs": [
 			{
 				"Id": "F_ODD_COM_XL",
-				"Name": "Ui Fish Odd Com Xl",
+				"Name": "Breach Crawler",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SNAIL",
-			"Name": "Ui Fish Food Snail",
+			"Name": "Snail Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1279",
 		"Inputs": [
 			{
 				"Id": "F_ODD_RARE_S1",
-				"Name": "Ui Fish Odd Rare S1",
+				"Name": "Anemone Anomaly",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STARFISH",
-			"Name": "Ui Fish Food Starfish",
+			"Name": "Delicate Legs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1280",
 		"Inputs": [
 			{
 				"Id": "F_ODD_RARE_S2",
-				"Name": "Ui Fish Odd Rare S2",
+				"Name": "Erased Clam",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1281",
 		"Inputs": [
 			{
 				"Id": "F_ODD_RARE_M1",
-				"Name": "Ui Fish Odd Rare M1",
+				"Name": "Writhing Brainworm",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1282",
 		"Inputs": [
 			{
 				"Id": "F_ODD_RARE_M2",
-				"Name": "Ui Fish Odd Rare M2",
+				"Name": "Stargazer",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED3",
-			"Name": "Ui Fish Food Med 3",
+			"Name": "Smoked Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1283",
 		"Inputs": [
 			{
 				"Id": "F_ODD_RARE_L1",
-				"Name": "Ui Fish Odd Rare L1",
+				"Name": "Non-euclidean Flatfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1284",
 		"Inputs": [
 			{
 				"Id": "F_ODD_RARE_XL",
-				"Name": "Ui Fish Odd Rare Xl",
+				"Name": "Sunspot Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1285",
 		"Inputs": [
 			{
 				"Id": "F_ODD_EPIC_S1",
-				"Name": "Ui Fish Odd Epic S1",
+				"Name": "All-seeing Worm",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1286",
 		"Inputs": [
 			{
 				"Id": "F_ODD_EPIC_M1",
-				"Name": "Ui Fish Odd Epic M1",
+				"Name": "Screaming Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1287",
 		"Inputs": [
 			{
 				"Id": "F_ODD_EPIC_L1",
-				"Name": "Ui Fish Odd Epic L1",
+				"Name": "Giant Witchfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1288",
 		"Inputs": [
 			{
 				"Id": "F_ODD_EPIC_XL",
-				"Name": "Ui Fish Odd Epic Xl",
+				"Name": "Void Squid",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SQUID",
-			"Name": "Ui Fish Food Squid",
+			"Name": "Steamed Rubber",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1289",
 		"Inputs": [
 			{
 				"Id": "F_ODD_LEG_S1",
-				"Name": "Ui Fish Odd Leg S1",
+				"Name": "Abyssal Horror Egg",
 				"Quantity": 1
 			}
 		],
@@ -27518,180 +27518,180 @@
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1290",
 		"Inputs": [
 			{
 				"Id": "F_ODD_LEG_M1",
-				"Name": "Ui Fish Odd Leg M1",
+				"Name": "Atlantidian Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1291",
 		"Inputs": [
 			{
 				"Id": "F_ODD_LEG_L1",
-				"Name": "Ui Fish Odd Leg L1",
+				"Name": "Child of Helios",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1292",
 		"Inputs": [
 			{
 				"Id": "F_ODD_LEG_XL",
-				"Name": "Ui Fish Odd Leg Xl",
+				"Name": "Many-mouthed Lunker",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1293",
 		"Inputs": [
 			{
 				"Id": "S15_FISH",
-				"Name": "Ui S15 Fish",
+				"Name": "The Angler",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_S15",
-			"Name": "Ui Fish Food S15",
+			"Name": "Haunted Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1301",
 		"Inputs": [
 			{
 				"Id": "FOOD_F_JELLY",
-				"Name": "Ui Fish Food Jelly",
+				"Name": "Jellymeat",
 				"Quantity": 1
 			},
 			{
 				"Id": "FOOD_F_EEL",
-				"Name": "Ui Fish Food Eel",
+				"Name": "Fleshy Cylinder",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JEELS",
-			"Name": "Ui Fish Food Jellyeels",
+			"Name": "Jellied Eel",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1294",
 		"Inputs": [
 			{
 				"Id": "ANY_FISH_COOKED",
-				"Name": "Ui Fish Any Cooked",
+				"Name": "Any Cooked Seafood",
 				"Quantity": 1
 			},
 			{
 				"Id": "ANY_FISH_COOKED",
-				"Name": "Ui Fish Any Cooked",
+				"Name": "Any Cooked Seafood",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STEW",
-			"Name": "Ui Fish Food Stew",
+			"Name": "Seafood Stew",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1295",
 		"Inputs": [
 			{
 				"Id": "ANY_FISH_COOKED",
-				"Name": "Ui Fish Any Cooked",
+				"Name": "Any Cooked Seafood",
 				"Quantity": 1
 			},
 			{
 				"Id": "ANY_FISH_COOKED",
-				"Name": "Ui Fish Any Cooked",
+				"Name": "Any Cooked Seafood",
 				"Quantity": 1
 			},
 			{
 				"Id": "ANY_FISH_COOKED",
-				"Name": "Ui Fish Any Cooked",
+				"Name": "Any Cooked Seafood",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STEW2",
-			"Name": "Ui Fish Food Stew Alt",
+			"Name": "Sea's Bounty",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1296",
 		"Inputs": [
 			{
 				"Id": "ANY_FISH_RAW",
-				"Name": "Ui Fish Any Raw",
+				"Name": "Any Raw Seafood",
 				"Quantity": 1
 			},
 			{
 				"Id": "ANY_FISH_RAW",
-				"Name": "Ui Fish Any Raw",
+				"Name": "Any Raw Seafood",
 				"Quantity": 1
 			},
 			{
 				"Id": "ANY_FISH_RAW",
-				"Name": "Ui Fish Any Raw",
+				"Name": "Any Raw Seafood",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MIX",
-			"Name": "Ui Fish Food Mix",
+			"Name": "Salty Platter",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1297",
 		"Inputs": [
 			{
 				"Id": "ANY_FISH",
-				"Name": "Ui Fish Any",
+				"Name": "Any Seafood",
 				"Quantity": 1
 			},
 			{
@@ -27702,18 +27702,18 @@
 		],
 		"Output": {
 			"Id": "FOOD_F_PIE",
-			"Name": "Ui Fish Food Pie",
+			"Name": "Marine Pie",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1298",
 		"Inputs": [
 			{
 				"Id": "ANY_FISH",
-				"Name": "Ui Fish Any",
+				"Name": "Any Seafood",
 				"Quantity": 1
 			},
 			{
@@ -27724,18 +27724,18 @@
 		],
 		"Output": {
 			"Id": "FOOD_F_RICE",
-			"Name": "Ui Fish Food Rice",
+			"Name": "Fish and Rice",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1299",
 		"Inputs": [
 			{
 				"Id": "ANY_FISH",
-				"Name": "Ui Fish Any",
+				"Name": "Any Seafood",
 				"Quantity": 1
 			},
 			{
@@ -27746,18 +27746,18 @@
 		],
 		"Output": {
 			"Id": "FOOD_F_CHIPS",
-			"Name": "Ui Fish Food Chips",
+			"Name": "Starched Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1300",
 		"Inputs": [
 			{
 				"Id": "ANY_FISH",
-				"Name": "Ui Fish Any",
+				"Name": "Any Seafood",
 				"Quantity": 1
 			},
 			{
@@ -27768,33 +27768,33 @@
 		],
 		"Output": {
 			"Id": "FOOD_F_CHIPS",
-			"Name": "Ui Fish Food Chips",
+			"Name": "Starched Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1302",
 		"Inputs": [
 			{
 				"Id": "ANY_FISH_RAW",
-				"Name": "Ui Fish Any Raw",
+				"Name": "Any Raw Seafood",
 				"Quantity": 1
 			},
 			{
 				"Id": "ANY_FISH_RAW",
-				"Name": "Ui Fish Any Raw",
+				"Name": "Any Raw Seafood",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EGGS",
-			"Name": "Ui Fish Food Eggs",
+			"Name": "Assorted Roe",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish Eggs R"
+		"Operation": "Roe Extraction"
 	},
 	{
 		"Id": "RECIPE_1303",
@@ -27806,7 +27806,7 @@
 			},
 			{
 				"Id": "ANY_FISH",
-				"Name": "Ui Fish Any",
+				"Name": "Any Seafood",
 				"Quantity": 1
 			}
 		],
@@ -27823,743 +27823,743 @@
 		"Inputs": [
 			{
 				"Id": "F_GAS_COM_S1",
-				"Name": "Ui Fish Gas Com S1",
+				"Name": "Gas-worm",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1305",
 		"Inputs": [
 			{
 				"Id": "F_GAS_COM_S2",
-				"Name": "Ui Fish Gas Com S2",
+				"Name": "Pressurised Clam",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1306",
 		"Inputs": [
 			{
 				"Id": "F_GAS_COM_S3",
-				"Name": "Ui Fish Gas Com S3",
+				"Name": "Inert Whelk",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1307",
 		"Inputs": [
 			{
 				"Id": "F_GAS_COM_M1",
-				"Name": "Ui Fish Gas Com M1",
+				"Name": "Jelly Prawn",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_PRAWN",
-			"Name": "Ui Fish Food Prawn",
+			"Name": "Shell Puree",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1308",
 		"Inputs": [
 			{
 				"Id": "F_GAS_COM_M2",
-				"Name": "Ui Fish Gas Com M2",
+				"Name": "Encrusted Worm",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1309",
 		"Inputs": [
 			{
 				"Id": "F_GAS_COM_L1",
-				"Name": "Ui Fish Gas Com L1",
+				"Name": "Plasmatic Squid",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SQUID",
-			"Name": "Ui Fish Food Squid",
+			"Name": "Steamed Rubber",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1310",
 		"Inputs": [
 			{
 				"Id": "F_GAS_COM_XL",
-				"Name": "Ui Fish Gas Com Xl",
+				"Name": "Cyclonic Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1311",
 		"Inputs": [
 			{
 				"Id": "F_GAS_RARE_S1",
-				"Name": "Ui Fish Gas Rare S1",
+				"Name": "Ionised Oyster",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1312",
 		"Inputs": [
 			{
 				"Id": "F_GAS_RARE_S2",
-				"Name": "Ui Fish Gas Rare S2",
+				"Name": "Pulp Urchin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STARFISH",
-			"Name": "Ui Fish Food Starfish",
+			"Name": "Delicate Legs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1313",
 		"Inputs": [
 			{
 				"Id": "F_GAS_RARE_M1",
-				"Name": "Ui Fish Gas Rare M1",
+				"Name": "Metallic Shrimp",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_PRAWN",
-			"Name": "Ui Fish Food Prawn",
+			"Name": "Shell Puree",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1314",
 		"Inputs": [
 			{
 				"Id": "F_GAS_RARE_M2",
-				"Name": "Ui Fish Gas Rare M2",
+				"Name": "Mineralised Jellyfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1315",
 		"Inputs": [
 			{
 				"Id": "F_GAS_RARE_L1",
-				"Name": "Ui Fish Gas Rare L1",
+				"Name": "Vapourfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE2",
-			"Name": "Ui Fish Food Large 2",
+			"Name": "Brined Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1316",
 		"Inputs": [
 			{
 				"Id": "F_GAS_RARE_XL",
-				"Name": "Ui Fish Gas Rare Xl",
+				"Name": "Crystalfin Shark",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1317",
 		"Inputs": [
 			{
 				"Id": "F_GAS_EPIC_S1",
-				"Name": "Ui Fish Gas Epic S1",
+				"Name": "Evaporating Snail",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SNAIL",
-			"Name": "Ui Fish Food Snail",
+			"Name": "Snail Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1318",
 		"Inputs": [
 			{
 				"Id": "F_GAS_EPIC_M1",
-				"Name": "Ui Fish Gas Epic M1",
+				"Name": "Quartzshell Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1319",
 		"Inputs": [
 			{
 				"Id": "F_GAS_EPIC_L1",
-				"Name": "Ui Fish Gas Epic L1",
+				"Name": "Tendrilla",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1320",
 		"Inputs": [
 			{
 				"Id": "F_GAS_EPIC_XL",
-				"Name": "Ui Fish Gas Epic Xl",
+				"Name": "Wrackjaw",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_OCTOPUS",
-			"Name": "Ui Fish Food Octopus",
+			"Name": "Grilled Tentacle",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1321",
 		"Inputs": [
 			{
 				"Id": "F_GAS_LEG_S1",
-				"Name": "Ui Fish Gas Leg S1",
+				"Name": "Mandelbrot Worm",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1322",
 		"Inputs": [
 			{
 				"Id": "F_GAS_LEG_M1",
-				"Name": "Ui Fish Gas Leg M1",
+				"Name": "Mother-of-quicksilver",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1323",
 		"Inputs": [
 			{
 				"Id": "F_GAS_LEG_L1",
-				"Name": "Ui Fish Gas Leg L1",
+				"Name": "Hyper-cockle",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CLAM",
-			"Name": "Ui Fish Food Clam",
+			"Name": "Mollusc Flesh",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1324",
 		"Inputs": [
 			{
 				"Id": "F_GAS_LEG_XL",
-				"Name": "Ui Fish Gas Leg Xl",
+				"Name": "The Maw of Titan",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL1",
-			"Name": "Ui Fish Food Xl 1",
+			"Name": "Fishy Slab",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1325",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_COM_S1",
-				"Name": "Ui Fish Deep Com S1",
+				"Name": "De-pressurised Blob",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EGGS",
-			"Name": "Ui Fish Food Eggs",
+			"Name": "Assorted Roe",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1326",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_COM_S2",
-				"Name": "Ui Fish Deep Com S2",
+				"Name": "Deepwater Minnow",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL1",
-			"Name": "Ui Fish Food Small 1",
+			"Name": "Fish Fry",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1327",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_COM_S3",
-				"Name": "Ui Fish Deep Com S3",
+				"Name": "Sac-fish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1328",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_COM_M1",
-				"Name": "Ui Fish Deep Com M1",
+				"Name": "Silent Angler",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_MED1",
-			"Name": "Ui Fish Food Med 1",
+			"Name": "Edible Chum",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1329",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_COM_M2",
-				"Name": "Ui Fish Deep Com M2",
+				"Name": "Whispering Jelly",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_JELLY",
-			"Name": "Ui Fish Food Jelly",
+			"Name": "Jellymeat",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1330",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_COM_L1",
-				"Name": "Ui Fish Deep Com L1",
+				"Name": "Wandering Shellback",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_TURTLE",
-			"Name": "Ui Fish Food Turtle",
+			"Name": "Boiled Flipper",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1331",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_COM_XL",
-				"Name": "Ui Fish Deep Com Xl",
+				"Name": "Bleached Octopus",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_OCTOPUS",
-			"Name": "Ui Fish Food Octopus",
+			"Name": "Grilled Tentacle",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1332",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_RARE_S1",
-				"Name": "Ui Fish Deep Rare S1",
+				"Name": "Spratfin",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL2",
-			"Name": "Ui Fish Food Small 2",
+			"Name": "Whitebait",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1333",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_RARE_S2",
-				"Name": "Ui Fish Deep Rare S2",
+				"Name": "Marine Glowworm",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1334",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_RARE_M1",
-				"Name": "Ui Fish Deep Rare M1",
+				"Name": "Bloated Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_EEL",
-			"Name": "Ui Fish Food Eel",
+			"Name": "Fleshy Cylinder",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1335",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_RARE_M2",
-				"Name": "Ui Fish Deep Rare M2",
+				"Name": "Luminescent Coral",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_PRAWN",
-			"Name": "Ui Fish Food Prawn",
+			"Name": "Shell Puree",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1336",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_RARE_L1",
-				"Name": "Ui Fish Deep Rare L1",
+				"Name": "Shrieking Flatfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE1",
-			"Name": "Ui Fish Food Large 1",
+			"Name": "Marine Steak",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1337",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_RARE_XL",
-				"Name": "Ui Fish Deep Rare Xl",
+				"Name": "Colossal Squid",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SQUID",
-			"Name": "Ui Fish Food Squid",
+			"Name": "Steamed Rubber",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1338",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_EPIC_S1",
-				"Name": "Ui Fish Deep Epic S1",
+				"Name": "Ghost Skipper",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_SMALL3",
-			"Name": "Ui Fish Food Small 3",
+			"Name": "Pickled Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1339",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_EPIC_M1",
-				"Name": "Ui Fish Deep Epic M1",
+				"Name": "Abyssal Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1340",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_EPIC_L1",
-				"Name": "Ui Fish Deep Epic L1",
+				"Name": "Ocean's Star",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_STARFISH",
-			"Name": "Ui Fish Food Starfish",
+			"Name": "Delicate Legs",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1341",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_EPIC_XL",
-				"Name": "Ui Fish Deep Epic Xl",
+				"Name": "Colossal Jawfish",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL2",
-			"Name": "Ui Fish Food Xl 2",
+			"Name": "Whole Roast Fish",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1342",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_LEG_S1",
-				"Name": "Ui Fish Deep Leg S1",
+				"Name": "Sentient Crab",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_CRAB",
-			"Name": "Ui Fish Food Crab",
+			"Name": "Peeled Claws",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1343",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_LEG_M1",
-				"Name": "Ui Fish Deep Leg M1",
+				"Name": "Brain Eel",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_WORM",
-			"Name": "Ui Fish Food Worm",
+			"Name": "Poached Worms",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1344",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_LEG_L1",
-				"Name": "Ui Fish Deep Leg L1",
+				"Name": "The Hunter Below",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_LARGE3",
-			"Name": "Ui Fish Food Large 3",
+			"Name": "Seared Fillet",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1345",
 		"Inputs": [
 			{
 				"Id": "F_DEEP_LEG_XL",
-				"Name": "Ui Fish Deep Leg Xl",
+				"Name": "Leviathan Spawn",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_F_XL3",
-			"Name": "Ui Fish Food Xl 3",
+			"Name": "Seafood 'feast'",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Fish R"
+		"Operation": "Seafood Assembly"
 	},
 	{
 		"Id": "RECIPE_1346",
 		"Inputs": [
 			{
 				"Id": "ANY_BONE",
-				"Name": "Ui Bone Any",
+				"Name": "Any Edible Bone",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_R_FOSSIL",
-			"Name": "Food Fossil",
+			"Name": "Softened Marrow",
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Bone R"
+		"Operation": "Stew Bones"
 	},
 	{
 		"Id": "RECIPE_1347",
 		"Inputs": [
 			{
 				"Id": "ANY_BONE",
-				"Name": "Ui Bone Any",
+				"Name": "Any Edible Bone",
 				"Quantity": 1
 			},
 			{
 				"Id": "ANY_BONE",
-				"Name": "Ui Bone Any",
+				"Name": "Any Edible Bone",
 				"Quantity": 1
 			}
 		],
@@ -28569,25 +28569,25 @@
 			"Quantity": 1
 		},
 		"Time": "5.0",
-		"Operation": "Ui Cook Bone R"
+		"Operation": "Stew Bones"
 	},
 	{
 		"Id": "RECIPE_1348",
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			}
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28598,7 +28598,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28609,7 +28609,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28620,7 +28620,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28631,7 +28631,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28642,7 +28642,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28653,7 +28653,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28664,7 +28664,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28675,7 +28675,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28686,7 +28686,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28697,7 +28697,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28708,7 +28708,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28719,7 +28719,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28730,7 +28730,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28741,7 +28741,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28752,7 +28752,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28763,7 +28763,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28774,7 +28774,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28785,7 +28785,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28796,7 +28796,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28807,7 +28807,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28818,7 +28818,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28829,7 +28829,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28840,7 +28840,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28851,7 +28851,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28862,7 +28862,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28873,7 +28873,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28884,7 +28884,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28895,7 +28895,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28906,7 +28906,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28917,7 +28917,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
@@ -28928,7 +28928,7 @@
 		"Inputs": [
 			{
 				"Id": "FOOD_R_FOSSIL",
-				"Name": "Food Fossil",
+				"Name": "Softened Marrow",
 				"Quantity": 1
 			},
 			{
@@ -28939,7 +28939,7 @@
 		],
 		"Output": {
 			"Id": "FOOD_STEW_FOSS",
-			"Name": "Food Fossil Stew",
+			"Name": "Bone Broth",
 			"Quantity": 1
 		},
 		"Time": "5.0",
