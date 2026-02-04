@@ -35,6 +35,7 @@ Thumbs.db
 data/EXTRACTED/
 data/mbin/
 data/images/
-
+data/metadata/
+data/language/
 
 tools/*

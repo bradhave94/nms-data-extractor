@@ -30,6 +30,34 @@ This will:
 
 **Output:** All 13 JSON files in `data/json/`
 
+### Full refresh (new game version)
+
+To rebuild everything from the latest game files (clean → extract MBINs → convert → extract JSON) in one go:
+
+```bash
+# Set your game path once (Windows: set NMS_PCBANKS=... ; macOS/Linux: export NMS_PCBANKS=...)
+# Or pass it: python full_refresh.py "X:\...\PCBANKS"
+python full_refresh.py
+```
+
+Requires **hgpaktool** and **MBINCompiler.exe** in `tools/`. No LLM or manual steps needed.
+
+### Extract item icons (images)
+
+To unpack game textures and export one PNG per item (for CDN or app use):
+
+```bash
+# Same game path as full_refresh (NMS_PCBANKS or pass as argument)
+python extract_all_images.py
+```
+
+This will: (1) unpack `*TEXTURES/*` from the game into `data/`, (2) normalize to `data/EXTRACTED/textures/`, (3) run `utils.extract_images` to produce **`data/images/{id}.png`** (or `.dds` if ImageMagick is not installed).
+
+- **Requires:** `hgpaktool` on PATH; **optional:** [ImageMagick](https://imagemagick.org/) (`magick`) for DDS→PNG.
+- If you already have `data/EXTRACTED` (e.g. from a previous run), you can skip unpacking and only extract icons:
+  `python -m utils.extract_images`
+  (uses `data/json/` and `data/EXTRACTED/`, writes to `data/images/`).
+
 ### Generated Files
 
 | File | Description |
@@ -53,28 +81,37 @@ This will:
 ```
 nms-data-extractor/
 ├── data/
-│   ├── mbin/                # MXML files (converted from MBIN)
-│   └── json/                # Final JSON output (13 files)
+│   ├── mbin/                # MXML files (converted from MBIN; gitignored)
+│   ├── json/                # Final JSON output (13 category files + localization)
+│   ├── EXTRACTED/           # Game textures (from extract_all_images.py; gitignored)
+│   └── images/              # Item icons {id}.png (from extract_all_images.py; gitignored)
 ├── parsers/
+│   ├── __init__.py
 │   ├── base_parser.py       # Shared utilities & translation
-│   ├── refinery.py          # Refinery & NutrientProcessor
-│   ├── products.py
-│   ├── rawmaterials.py
-│   ├── technology.py
+│   ├── base_parts.py
 │   ├── buildings.py
 │   ├── cooking.py
 │   ├── fish.py
-│   ├── trade.py
+│   ├── procedural_tech.py
+│   ├── products.py
+│   ├── rawmaterials.py
+│   ├── refinery.py          # Refinery & NutrientProcessor
 │   ├── ship_components.py
-│   ├── base_parts.py
-│   └── procedural_tech.py
+│   ├── technology.py
+│   └── trade.py
 ├── utils/
+│   ├── __init__.py
 │   ├── categorization.py    # Categorization rules
+│   ├── clean_data.py        # Wipe data/ for full refresh
+│   ├── compare_data.py      # Compare two data dirs (used by compare_data.py CLI)
+│   ├── consolidate_mbin.py  # Copy MBINs into data/mbin, remove metadata/language
+│   ├── extract_images.py    # EXTRACTED → data/images/{id}.png (used by extract_all_images.py)
 │   └── parse_localization.py  # Localization merger
-├── docs/
-│   └── REQUIRED_MBINS.md    # Files needed for fresh extraction
 ├── extract_all.py           # Main pipeline (run this)
-└── tools/
+├── extract_all_images.py    # Unpack textures + extract item icons to data/images/
+├── full_refresh.py          # Clean + HGPAKtool + MBINCompiler + extract_all
+├── compare_data.py          # Compare two data dirs (e.g. old vs new) → markdown table report
+└── tools/                   # gitignored
     └── MBINCompiler.exe     # Not included in the repo
 ```
 
@@ -94,6 +131,26 @@ nms-data-extractor/
    - 13 JSON files matching your app structure
    - Game IDs preserved
    - English names included
+
+### Compare data (old vs new)
+
+Use `compare_data.py` to diff two data directories (e.g. previous vs current extract) and get a markdown table report:
+
+```bash
+# Default: old = nms/src/data, new = nms/src/datav2
+python compare_data.py
+
+# Custom paths
+python compare_data.py --old "path/to/old/data" --new "path/to/new/data"
+
+# Summary table only
+python compare_data.py --no-details
+
+# Write report to file
+python compare_data.py -o comparison_report.md
+```
+
+Report columns: **Added** (IDs only in new), **Removed** (IDs only in old), **Changed** (same ID, different fields). `CdnUrl` and `Icon` are ignored when detecting changes.
 
 ## Key Features
 
@@ -169,7 +226,7 @@ hgpaktool -U `
   -f="*LANGUAGE/nms_loc8_english.mbin" `
   -f="*LANGUAGE/nms_loc9_english.mbin" `
   -f="*LANGUAGE/nms_update3_english.mbin" `
-  "C:\Program Files (x86)\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+  "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 ```
 
 Then convert MBIN → MXML with **MBINCompiler** (e.g. `tools\MBINCompiler.exe` in `data\mbin`), and run:

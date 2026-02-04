@@ -130,6 +130,7 @@ def build_localization_json(base_path: Path = None) -> int:
         all_translations.update(translations)
 
     output_path = base_path / 'data' / 'json' / 'localization.json'
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(all_translations, f, indent='\t', ensure_ascii=False)
 

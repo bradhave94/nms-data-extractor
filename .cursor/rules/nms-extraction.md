@@ -1,21 +1,29 @@
 ---
-description: NMS Data Extraction development guidelines and patterns
+description: NMS Data Extraction — always include this rule when working on the nms-data-extractor app. Development guidelines, pipeline, and categorization.
 globs:
   - "parsers/**/*.py"
   - "utils/**/*.py"
+  - "extract_all.py"
+  - "docs/**/*.md"
+  - "README.md"
 ---
 
 # NMS Data Extraction Rules
 
+**Always include this rule** when working on the nms-data-extractor app (parsers, categorization, extraction pipeline or docs).
+
+---
+
 ## Project Structure
+
 ```
 nms-data-extractor/
 ├── extract_all.py             # MAIN SCRIPT (run this)
 ├── data/
-│   ├── mbin/                  # 9 MXML data files + 6 localization files
-│   ├── json/                  # 13 output JSON files
-│   └── EXTRACTED/             # Raw PAK (can delete after conversion)
-├── parsers/                   # 10 modular parsers
+│   ├── mbin/                  # MXML data files + localization (convert from MBIN)
+│   ├── json/                  # 13 output JSON files + none.json (uncategorized)
+│   └── EXTRACTED/             # Raw PAK output (optional; can delete after conversion)
+├── parsers/                   # 12 modular parsers
 │   ├── base_parser.py         # Shared utilities & translation
 │   ├── refinery.py            # Refinery & NutrientProcessor
 │   ├── products.py
@@ -25,32 +33,58 @@ nms-data-extractor/
 │   ├── cooking.py
 │   ├── fish.py
 │   ├── trade.py
-│   └── ship_components.py     # Starship customization parts
-├── utils/                     # Helper modules
-│   ├── categorization.py      # Item categorization rules
-│   └── parse_localization.py  # Localization merger
-├── tests/                     # (empty; use extract_all.py for full pipeline)
-├── docs/                      # Documentation
-└── tools/                     # MBINCompiler.exe
+│   ├── ship_components.py     # Starship customization parts
+│   ├── base_parts.py          # Base/freighter building parts
+│   └── procedural_tech.py     # Procedural upgrade modules
+├── utils/
+│   ├── categorization.py     # Item categorization rules (Group → file)
+│   ├── list_original_groups.py # List unique Group values from original data
+│   └── parse_localization.py # Localization merger
+├── docs/
+├── tools/                     # MBINCompiler.exe (not in repo)
+└── README.md
 ```
 
-## Quick Start
+---
 
-### Single Command Extraction
+## Pipeline (extract_all.py)
+
+### Step 0: Rebuild localization
+- Builds `data/json/localization.json` from locale MXML files in `data/mbin/`.
+- Parsers use this for English names/descriptions.
+
+### Step 1: Extract base data (12 parsers)
+Reads MXML from `data/mbin/` and populates `base_data`:
+
+| Parser            | Source MXML                                      | Output / use                    |
+|-------------------|--------------------------------------------------|---------------------------------|
+| Refinery          | nms_reality_gcrecipetable.MXML                   | Refinery.json                   |
+| NutrientProcessor | nms_reality_gcrecipetable.MXML                   | NutrientProcessor.json          |
+| Products          | nms_reality_gcproducttable.MXML                  | Categorized + name lookups     |
+| RawMaterials      | nms_reality_gcsubstancetable.MXML                | RawMaterials.json               |
+| Technology        | nms_reality_gctechnologytable.MXML                | Categorized                     |
+| Buildings         | basebuildingobjectstable.MXML                     | Categorized                     |
+| Cooking           | consumableitemtable.MXML                          | Categorized                     |
+| Fish              | fishdatatable.MXML                                | Fish.json                       |
+| Trade             | nms_reality_gcproducttable.MXML                   | Trade.json                      |
+| ShipComponents    | nms_modularcustomisationproducts.MXML            | Categorized → Others            |
+| BaseParts         | nms_basepartproducts.MXML                         | Categorized                     |
+| ProceduralTech    | nms_reality_gcproceduraltechnologytable.MXML     | Categorized                     |
+
+### Step 2: Categorize into 13 files
+- **Kept as-is (no categorization):** Refinery, NutrientProcessor, Fish, Trade, RawMaterials.
+- **Categorized:** Items from Products, Technology, Buildings, Cooking, ShipComponents, BaseParts, ProceduralTech are routed by `Group` via `utils/categorization.py`.
+- **Order matters:** First matching file wins (e.g. ConstructedTechnology before Technology).
+- **Uncategorized items** are written to `data/json/none.json` for review.
+
+### Step 3: Save
+- Writes 13 JSON files (+ `none.json` when there are uncategorized items) to `data/json/`.
+
+### Run
 ```bash
 python extract_all.py
 ```
-
-That's it! All 13 JSON files will be in `data/json/`
-
-### What It Does
-1. Extracts from 9 MXML game data files
-2. Parses into 10 base categories with full English translation
-3. Categorizes into 13 required files based on Group field
-4. Outputs all files to `data/json/`
-
-### Extraction Time
-- ~4-5 seconds for complete extraction
+- Typical run: ~4–8 seconds.
 
 ---
 
@@ -58,192 +92,74 @@ That's it! All 13 JSON files will be in `data/json/`
 
 | File | Description |
 |------|-------------|
-| **Refinery.json** | Refinery recipes |
-| **NutrientProcessor.json** | Cooking recipes |
-| **Products.json** | Craftable products |
-| **RawMaterials.json** | Mineable substances |
-| **Technology.json** | Installable technologies |
-| **Buildings.json** | Base building parts |
-| **Cooking.json** | Edible items & ingredients |
-| **Fish.json** | Catchable fish |
-| **Trade.json** | Trade goods & smuggled items |
-| **ConstructedTechnology.json** | Buildable tech items |
-| **TechnologyModule.json** | Upgrade modules |
-| **Curiosities.json** | Salvaged items & relics |
-| **Others.json** | Misc items (charts, cosmetics, etc.) |
+| Refinery.json | Refinery recipes |
+| NutrientProcessor.json | Cooking recipes |
+| Products.json | Craftable products (by Group) |
+| RawMaterials.json | Mineable substances |
+| Technology.json | Installable technologies |
+| Buildings.json | Base building parts |
+| Cooking.json | Edible items & ingredients |
+| Fish.json | Catchable fish |
+| Trade.json | Trade goods & smuggled items |
+| ConstructedTechnology.json | Buildable tech items |
+| TechnologyModule.json | Upgrade modules |
+| Curiosities.json | Salvaged items & relics |
+| Others.json | Misc (charts, cosmetics, ship components, etc.) |
 
 ---
 
-## Manual Extraction Process (for updates)
+## Categorization System (utils/categorization.py)
 
-### 1. Extract Game Files (15 files only)
-Use HGPAKtool with filters to extract only needed files:
-- 9 data tables from `METADATA/REALITY/TABLES/`
-- 6 English localization files from `LANGUAGE/`
+### Rules
+- **Exact match only:** Each file has an `exact` set of `Group` values. No keyword/substring matching.
+- **Rule order:** First matching file wins. ConstructedTechnology and TechnologyModule are ordered before Technology.
 
-```bash
-hgpaktool -U \
-  -f="*REALITY/TABLES/nms_reality_gcproducttable.mbin" \
-  -f="*REALITY/TABLES/consumableitemtable.mbin" \
-  -f="*REALITY/TABLES/nms_reality_gcrecipetable.mbin" \
-  -f="*REALITY/TABLES/nms_reality_gctechnologytable.mbin" \
-  -f="*REALITY/TABLES/basebuildingobjectstable.mbin" \
-  -f="*REALITY/TABLES/tradingclassdatatable.mbin" \
-  -f="*REALITY/TABLES/nms_reality_gcsubstancetable.mbin" \
-  -f="*REALITY/TABLES/fishdatatable.mbin" \
-  -f="*REALITY/TABLES/nms_modularcustomisationproducts.mbin" \
-  -f="*LANGUAGE/nms_loc1_english.mbin" \
-  -f="*LANGUAGE/nms_loc4_english.mbin" \
-  -f="*LANGUAGE/nms_loc5_english.mbin" \
-  -f="*LANGUAGE/nms_loc6_english.mbin" \
-  -f="*LANGUAGE/nms_loc7_english.mbin" \
-  -f="*LANGUAGE/nms_update3_english.mbin" \
-  "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
-```
+### How it works
+- `categorize_item(item)` reads `item.get('Group', '').strip()` and returns the target filename or `None`.
+- If `None`, the item is skipped and written to **none.json**.
 
-**Result**: 15 files (~5-10MB) instead of 177,974 files (45GB)
+### Skip rules (return None)
+- Group is empty or missing.
+- **Name filter:** Name missing, or starts with `UI_` / `Ui `, or equals Id, or matches other untranslated patterns.
+  - **Exceptions:** `ship_component_groups` (e.g. Hauler Starship Component) and `name_filter_exempt_groups` (e.g. Edible Product, Exclusive Spacecraft, Unlockable Armour, …) bypass the name filter.
+- **Junk keywords:** Group or name contains developer placeholders (e.g. `Biggs`, `Basic F`, `Wall Art`, `Planet Tech`, `Base Tech`, `Rooms`).
+- Group not in any `CATEGORIZATION_RULES` exact set.
 
-### 2. Convert MBIN to MXML
-```bash
-cd data/mbin
-../../tools/MBINCompiler.exe *.mbin
-```
-
-### 3. Run Main Script
-```bash
-python extract_all.py
-```
-
-## Categorization System
-
-### Rules Location
-Edit `utils/categorization.py` to modify which items go into which files.
-
-### How It Works
-Items are routed based on their `Group` field:
-- **Exact matches**: e.g., `"Ship Tech"` → `Technology.json`
-- **Keyword matches**: e.g., `"Freighter Tech"` contains "Tech" → `Technology.json`
-- **No match**: Item is skipped (not added to any file)
-
-### Categorization Logic
-```python
-CATEGORIZATION_RULES = {
-    'Buildings.json': {
-        'keywords': ['Decoration', 'Unlockable', 'Base Building'],
-        'exact': {'Planetary Base Building', ...}
-    },
-    # ... more rules
-}
-```
-
-### Skip Rules
-Items are automatically skipped if:
-- Name is missing or broken (starts with `UI_`, `Ui `, etc.)
-  - **EXCEPTION**: Ship components are allowed even with `Ui ` names (they use internal keys)
-- Name equals the ID (untranslated)
-- Group doesn't match any categorization rule
-- Group is empty/missing
-- Item matches junk keywords (developer placeholders like 'Biggs', 'Basic F', 'Wall Art')
+### Adding or moving groups
+- Edit `CATEGORIZATION_RULES` in `utils/categorization.py`.
+- To move a group from one file to another, remove it from the first file’s `exact` set and add it to the target file’s set (order matters).
+- To allow untranslated names for a group, add it to `name_filter_exempt_groups` in `categorize_item()`.
 
 ---
 
 ## Starship Components (Special Case)
 
-### Source File
-**`nms_modularcustomisationproducts.mbin`** - Contains all starship customization parts (427 items)
-
-### Subtitle to Group Mapping
-Ship components use subtitle keys instead of standard group names:
-
-| Subtitle Key | Group Name | Count |
-|-------------|------------|-------|
-| `UI_DROPSHIP_PART_SUB` | Hauler Starship Component | 135 |
-| `UI_FIGHTER_PART_SUB` | Fighter Starship Component | 65 |
-| `UI_SAIL_PART_SUB` | Solar Starship Component | 39 |
-| `UI_SCIENTIFIC_PART_SUB` | Explorer Starship Component | 41 |
-| `UI_FOS_HEAD_SUB` | Living Ship Component | 110 |
-| `UI_FOS_LIMBS_SUB` | Living Ship Component | 10 |
-| `UI_FOS_BI_BODY_SUB` | Living Ship Component | 12 |
-| `UI_FOS_BI_TAIL_SUB` | Living Ship Component | 11 |
-| `UI_SHIP_CORE_A_SUB` | Starship Core Component | 1 |
-| `UI_SHIP_CORE_B_SUB` | Starship Core Component | 1 |
-| `UI_SHIP_CORE_C_SUB` | Starship Core Component | 1 |
-| `UI_SHIP_CORE_S_SUB` | Starship Core Component | 1 |
-
-### Translation Notes
-- Ship component names often don't translate properly (`Ui Dropship Cock A`)
-- This is expected - the localization keys aren't in standard language files
-- Items are still valid and categorized correctly by Group
-- The `categorize_item()` function has a special exception for ship component groups
-
-### Categorization
-All ship components go to **Others.json** via exact group matching in `utils/categorization.py`:
-```python
-'Others.json': {
-    'exact': {
-        'Hauler Starship Component',
-        'Fighter Starship Component',
-        'Solar Starship Component',
-        'Explorer Starship Component',
-        'Living Ship Component',
-        'Starship Core Component',
-        # ... other groups
-    }
-}
-```
+- **Source:** `nms_modularcustomisationproducts.MXML` (427 items).
+- **Group** comes from subtitle keys (e.g. `UI_DROPSHIP_PART_SUB` → Hauler Starship Component).
+- All ship component groups are in **Others.json** (exact match).
+- **Name filter exception:** Ship component groups are in `ship_component_groups` so items are kept even when names look untranslated (`Ui …`).
 
 ---
 
-## Parser Development Guidelines
+## Parser Guidelines
 
-### Base Parser Features
-- `EXMLParser.load_localization()` - Auto-loads translations
-- `EXMLParser.translate(key)` - Translates localization keys to English
-- Smart fallback: tries key → BUI_prefix → TRA_prefix → EXP_prefix → readable format
+- Use **game IDs** (e.g. `CASING`, `NANOTUBES`), not synthetic IDs like `prod1`.
+- Use `EXMLParser.load_localization()` and `translate(key)` for English names/descriptions.
+- Match existing JSON field structure; handle missing translations gracefully.
+- Refinery/NutrientProcessor: both from `nms_reality_gcrecipetable.MXML`; split by Cooking flag.
 
-### Name Lookup Pattern
-For items referenced in recipes/requirements:
-1. Load item tables (Products, Substances)
-2. Extract ID and Name key from each item
-3. Try multiple translation patterns:
-   - Direct key translation (e.g., `TECH_FRAGMENT_NAME`)
-   - Prefix patterns (e.g., `BUI_TECHFRAG`)
-   - Fallback to formatted ID
-
-### Structure Requirements
-- Use game IDs (e.g., `TECHFRAG` not `raw56`)
-- Include English names alongside IDs
-- Match existing JSON field structure
-- Handle missing translations gracefully
+---
 
 ## Key Data Mappings
 
-### Refinery/NutrientProcessor
-- Both come from `nms_reality_gcrecipetable.mbin`
-- Split by `Cooking` flag (false=refinery, true=cooking)
-- Include Input/Output names via item lookup
+- **Refinery / NutrientProcessor:** same table; split by `Cooking` flag.
+- **Products / Substances:** used for name and icon lookups in other parsers.
+- **Localization:** built from locale MXMLs in `data/mbin/` (e.g. nms_loc1_english.MXML, nms_update3_english.MXML).
 
-### Products/Substances
-- Products: `nms_reality_gcproducttable.mbin`
-- Substances: `nms_reality_gcsubstancetable.mbin`
-- Used for name lookups in other parsers
-
-## Translation System
-
-### 64,386 English translations from 6 files:
-- `nms_loc1_english.mbin` - Core translations (14,731)
-- `nms_loc4_english.mbin` - Additional content (10,840)
-- `nms_loc5_english.mbin` - Updates (7,074)
-- `nms_loc6_english.mbin` - More updates (10,356)
-- `nms_loc7_english.mbin` - Recent content (10,099)
-- `nms_update3_english.mbin` - Latest updates (11,298)
-
-### Common Translation Patterns:
-- Item names: `*_NAME` keys → look for `BUI_*`, `TRA_*`, or `EXP_*` prefixes
-- Descriptions: `*_DESC` keys
-- Subtitles: `*_SUB` or `*_SUBTITLE` keys
+---
 
 ## Version Compatibility
-- HGPAKtool: For NMS 5.50+ (Worlds Part II onwards)
-- MBINCompiler: Version MUST match game version exactly
-- Check game version before extracting after updates
+
+- **HGPAKtool:** NMS 5.50+ (Worlds Part II onwards).
+- **MBINCompiler:** Version must match game version.
+- After a game update: re-extract MBINs, convert to MXML, run `python extract_all.py`. See README “Workflow: New game version” and `.cursor/skills/new-game-version/` if present.
