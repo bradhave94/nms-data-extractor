@@ -1,6 +1,6 @@
 # NMS Data Extractor
 
-Automated Python system to extract and parse No Man's Sky game data into JSON format.
+Automated Python system to extract and parse No Man's Sky game data into JSON format. Use for my site [nomansskyrecipes.com]([nomansskyrecipes.com](https://nomansskyrecipes.com/))
 
 ## Requirements
 
