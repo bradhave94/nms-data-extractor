@@ -36,6 +36,52 @@ def save_json(data, filename):
     return file_size
 
 
+def apply_slugs(final_files: dict) -> None:
+    """Add Slug field to items based on output file."""
+    slugs = {
+        'RawMaterials.json': 'raw/',
+        'Products.json': 'products/',
+        'Cooking.json': 'cooking/',
+        'Curiosities.json': 'curiosities/',
+        'Corvette.json': 'corvette/',
+        'Fish.json': 'fish/',
+        'ConstructedTechnology.json': 'technology/',
+        'Technology.json': 'technology/',
+        'TechnologyModule.json': 'technology/',
+        'Others.json': 'other/',
+        'Refinery.json': 'refinery/',
+        'NutrientProcessor.json': 'nutrient-processor/',
+        'Buildings.json': 'buildings/',
+        'Trade.json': 'other/',
+    }
+
+    for filename, data in final_files.items():
+        prefix = slugs.get(filename)
+        if not prefix or not isinstance(data, list):
+            continue
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            item_id = item.get('Id') or item.get('id')
+            if not item_id:
+                continue
+            item['Slug'] = f"{prefix}{item_id}"
+
+
+def filter_missing_icons(data):
+    """Remove items with empty IconPath when present."""
+    if not isinstance(data, list):
+        return data, 0
+    filtered = []
+    removed = 0
+    for item in data:
+        if isinstance(item, dict) and 'IconPath' in item and not item.get('IconPath'):
+            removed += 1
+            continue
+        filtered.append(item)
+    return filtered, removed
+
+
 def main():
     start_time = time.time()
 
@@ -111,6 +157,7 @@ def main():
         'Buildings.json': [],
         'ConstructedTechnology.json': [],
         'Cooking.json': [],
+        'Corvette.json': [],
         'Curiosities.json': [],
         'Others.json': [],
         'Products.json': [],
@@ -149,6 +196,9 @@ def main():
 
     # Save uncategorized items to none.json for review
     if uncategorized_items:
+        uncategorized_items, removed_uncategorized = filter_missing_icons(uncategorized_items)
+        if removed_uncategorized:
+            print(f"  [FILTER] Removed {removed_uncategorized} items with empty IconPath from none.json")
         uncategorized_file = Path(__file__).parent / 'data' / 'json' / 'none.json'
         with open(uncategorized_file, 'w', encoding='utf-8') as f:
             json.dump(uncategorized_items, f, indent=2, ensure_ascii=False)
@@ -156,6 +206,20 @@ def main():
 
     # Merge categorized files with kept files
     final_files.update(categorized)
+
+    # Filter out items that lack icon paths (only when IconPath is present)
+    total_removed = 0
+    for filename, data in list(final_files.items()):
+        filtered, removed = filter_missing_icons(data)
+        if removed:
+            print(f"  [FILTER] {filename}: removed {removed} items with empty IconPath")
+            final_files[filename] = filtered
+            total_removed += removed
+    if total_removed:
+        print(f"  [FILTER] Removed {total_removed} items with empty IconPath total\n")
+
+    # Add slug field based on output file
+    apply_slugs(final_files)
 
     # Step 3: Save all 13 files
     print("STEP 3: Saving final files...")

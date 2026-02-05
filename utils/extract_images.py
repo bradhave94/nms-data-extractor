@@ -3,7 +3,7 @@
 Extract all item icons from data/EXTRACTED into {id}.png for CDN upload.
 Output goes to data/images by default.
 
-Reads Id + Icon from the extracted JSON files, finds the source .dds under
+Reads Id + IconPath from the extracted JSON files, finds the source .dds under
 data/EXTRACTED/, and outputs one PNG per item as {id}.png (e.g. CHART_SETTLE.png).
 
 Requires ImageMagick (magick) for DDS->PNG conversion. If not found, copies as .dds.
@@ -17,11 +17,13 @@ import sys
 from pathlib import Path
 
 
-# JSON files that contain items with id + icon (skip Refinery, localization, none)
+# JSON files that contain items with id + icon. Order matters: first occurrence of an id wins.
+# (Skip Refinery.json, localization.json; include none.json so uncategorized items get icons too.)
 ICON_JSON_FILES = [
     "Buildings.json",
     "ConstructedTechnology.json",
     "Cooking.json",
+    "Corvette.json",
     "Curiosities.json",
     "Fish.json",
     "NutrientProcessor.json",
@@ -31,6 +33,7 @@ ICON_JSON_FILES = [
     "Technology.json",
     "TechnologyModule.json",
     "Trade.json",
+    "none.json",  # uncategorized items; processed last so categorized ids take precedence
 ]
 
 
@@ -43,7 +46,8 @@ def sanitize_filename(id_str: str) -> str:
 
 
 def collect_id_icon_pairs(json_dir: Path) -> list[tuple[str, str]]:
-    """Load all JSON files and collect (id, icon) from each item. First occurrence wins per id."""
+    """Load ICON_JSON_FILES and collect (id, icon_path) from each item. First occurrence wins per id.
+    The '[INFO] Found N items with icons' count is len(pairs): unique ids with non-empty IconPath across those files."""
     seen_ids = set()
     pairs = []
     for filename in ICON_JSON_FILES:
@@ -62,7 +66,13 @@ def collect_id_icon_pairs(json_dir: Path) -> list[tuple[str, str]]:
             if not isinstance(item, dict):
                 continue
             id_val = item.get("id") or item.get("Id") or ""
-            icon_val = item.get("icon") or item.get("Icon") or ""
+            icon_val = (
+                item.get("iconPath")
+                or item.get("IconPath")
+                or item.get("icon")
+                or item.get("Icon")
+                or ""
+            )
             if not id_val or not icon_val:
                 continue
             if id_val in seen_ids:
@@ -91,6 +101,7 @@ def extract_icons(
     extracted_root: Path,
     output_dir: Path,
     copy_dds_if_no_magick: bool = True,
+    keep_dds: bool = False,
 ) -> tuple[int, int, bool]:
     """Extract icons. Returns (success_count, skip_count, used_imagemagick)."""
     pairs = collect_id_icon_pairs(json_dir)
@@ -139,7 +150,7 @@ def extract_icons(
             skipped += 1
 
     # When we produced PNGs, remove any leftover .dds from a previous run
-    if has_magick and output_dir.is_dir():
+    if has_magick and output_dir.is_dir() and not keep_dds:
         removed = 0
         for dds_file in output_dir.glob("*.dds"):
             try:
@@ -187,6 +198,11 @@ def main():
         action="store_true",
         help="Only delete .dds files in output directory, then exit (no extraction)",
     )
+    parser.add_argument(
+        "--keep-dds",
+        action="store_true",
+        help="Keep .dds files in output directory even when PNGs are produced",
+    )
     args = parser.parse_args()
 
     if args.delete_dds_only:
@@ -218,6 +234,7 @@ def main():
         args.extracted,
         args.output,
         copy_dds_if_no_magick=not args.no_copy_dds,
+        keep_dds=args.keep_dds,
     )
     print(f"[OK] Extracted: {success}")
     if skipped:

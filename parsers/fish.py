@@ -45,7 +45,7 @@ def _load_product_details():
                 # Icon path from game (matches data/EXTRACTED/textures/...)
                 icon_prop = item.find('.//Property[@name="Icon"]')
                 icon_filename = parser.get_property_value(icon_prop, 'Filename', '') if icon_prop is not None else ''
-                icon = normalize_game_icon_path(icon_filename) if icon_filename else ''
+                icon_path = normalize_game_icon_path(icon_filename) if icon_filename else ''
 
                 if item_id:
                     name = parser.translate(name_key, item_id)
@@ -53,7 +53,7 @@ def _load_product_details():
                     description = parser.translate(description_key, '')
 
                     _product_cache[item_id] = {
-                        'Icon': icon,
+                        'IconPath': icon_path,
                         'Name': name,
                         'Group': group,
                         'Description': description,
@@ -102,13 +102,15 @@ def parse_fish(mxml_path: str) -> list:
 
             # Get product details (name, description, group from product table + localization)
             product_details = products.get(product_id, {})
+            if not product_details.get('IconPath'):
+                continue
 
-            icon = product_details.get('Icon', '') or f"curiosities/{fish_counter}.png"
             name = product_details.get('Name', product_id)
             group = product_details.get('Group', '')
             fish = {
                 'Id': product_id,
-                'Icon': icon,
+                'Icon': f"{product_id}.png",
+                'IconPath': product_details.get('IconPath', ''),
                 'Name': name,
                 'Group': group,
                 'Description': product_details.get('Description', ''),

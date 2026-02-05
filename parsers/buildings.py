@@ -67,12 +67,14 @@ def parse_buildings(mxml_path: str) -> list:
                     first = groups_list[0]
                     group = parser.translate(first['Group'], first['Group'].replace('_', ' ').title())
 
-            # Icon: use IconOverrideProductID if set, else default
+            # Icon: use IconOverrideProductID if set, else empty path
             icon_override = parser.get_property_value(building_elem, 'IconOverrideProductID', '')
             if icon_override and icon_override in product_icons:
-                icon = product_icons[icon_override]
+                icon_path = product_icons[icon_override]
             else:
-                icon = f"building/{building_counter}.png"
+                icon_path = ''
+            if not icon_path:
+                continue
 
             # BuildableOn* booleans
             buildable_planet_base = parser.parse_value(parser.get_property_value(building_elem, 'BuildableOnPlanetBase', 'true'))
@@ -93,7 +95,8 @@ def parse_buildings(mxml_path: str) -> list:
             # Create building entry
             building = {
                 'Id': building_id,
-                'Icon': icon,
+                'Icon': f"{building_id}.png",
+                'IconPath': icon_path,
                 'Name': name,
                 'Group': group,
                 'Description': '',

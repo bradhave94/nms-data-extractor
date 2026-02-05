@@ -37,12 +37,12 @@ def parse_cooking(mxml_path: str) -> list:
                 # Icon path from game (matches data/EXTRACTED/textures/...)
                 icon_prop = item.find('.//Property[@name="Icon"]')
                 icon_filename = parser.get_property_value(icon_prop, 'Filename', '') if icon_prop is not None else ''
-                icon = normalize_game_icon_path(icon_filename) if icon_filename else f"cooking/{counter}.png"
+                icon_path = normalize_game_icon_path(icon_filename) if icon_filename else ''
 
                 if item_id:
                     products_lookup[item_id] = {
                         'counter': counter,
-                        'Icon': icon,
+                        'IconPath': icon_path,
                         'Name': parser.translate(name_key, item_id),
                         'Group': parser.translate(subtitle_key, ''),
                         'Description': parser.translate(description_key, ''),
@@ -74,11 +74,14 @@ def parse_cooking(mxml_path: str) -> list:
             product_info = products_lookup.get(item_id)
             if not product_info:
                 continue  # Skip if not a food product
+            if not product_info.get('IconPath'):
+                continue
 
             # Create cooking entry from product info (Icon from game path)
             cooking = {
                 'Id': item_id,
-                'Icon': product_info.get('Icon', f"cooking/{product_info['counter']}.png"),
+                'Icon': f"{item_id}.png",
+                'IconPath': product_info.get('IconPath', ''),
                 'Name': product_info['Name'],
                 'Group': product_info['Group'],
                 'Description': product_info['Description'],

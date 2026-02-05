@@ -60,7 +60,9 @@ def parse_trade(mxml_path: str) -> list:
             # Extract Icon path from game (matches data/EXTRACTED/textures/...)
             icon_prop = item_elem.find('.//Property[@name="Icon"]')
             icon_filename = parser.get_property_value(icon_prop, 'Filename', '') if icon_prop is not None else ''
-            icon = normalize_game_icon_path(icon_filename) if icon_filename else f"tradeItems/{trade_counter}.png"
+            icon_path = normalize_game_icon_path(icon_filename) if icon_filename else ''
+            if not icon_path:
+                continue
 
             # Extract color
             colour_elem = item_elem.find('.//Property[@name="Colour"]')
@@ -73,7 +75,8 @@ def parse_trade(mxml_path: str) -> list:
             # Create trade item entry
             trade_item = {
                 'Id': item_id,
-                'Icon': icon,
+                'Icon': f"{item_id}.png",
+                'IconPath': icon_path,
                 'Name': name,
                 'Group': subtitle if subtitle else f'Trade Goods ({trade_category})',
                 'Description': description,

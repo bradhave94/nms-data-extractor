@@ -33,7 +33,9 @@ def parse_technology(mxml_path: str) -> list:
             # Extract Icon path from game (matches data/EXTRACTED/textures/...)
             icon_prop = tech_elem.find('.//Property[@name="Icon"]')
             icon_filename = parser.get_property_value(icon_prop, 'Filename', '') if icon_prop is not None else ''
-            icon = normalize_game_icon_path(icon_filename) if icon_filename else f"technology/{tech_counter}.png"
+            icon_path = normalize_game_icon_path(icon_filename) if icon_filename else ''
+            if not icon_path:
+                continue
 
             # Extract color
             colour_elem = tech_elem.find('.//Property[@name="Colour"]')
@@ -99,7 +101,8 @@ def parse_technology(mxml_path: str) -> list:
             # Create technology entry
             technology = {
                 'Id': tech_id,
-                'Icon': icon,
+                'Icon': f"{tech_id}.png",
+                'IconPath': icon_path,
                 'Name': name,
                 'Group': subtitle,
                 'Description': description,

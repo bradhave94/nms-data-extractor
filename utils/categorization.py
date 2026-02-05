@@ -14,6 +14,7 @@ CATEGORIZATION_RULES = {
             'Edible Product',
             'Herbivore Bait',
             'Vile Larva',
+            'Raw Ingredient'
         }
     },
 
@@ -79,6 +80,7 @@ CATEGORIZATION_RULES = {
 
     'Buildings.json': {
         'exact': {
+            'Recycled Construction Component',
             'Advanced Freighter Module',
             'Agricultural Module',
             'Alloy Construction Component',
@@ -133,11 +135,13 @@ CATEGORIZATION_RULES = {
             'Unlockable Decoration',
             'Wooden Construction Component',
             'Worker Terminal',
+            'Fossil Display Case',
         }
     },
 
     'Curiosities.json': {
         'exact': {
+            'Living Ship Component'
             'A Last Link Home',
             'AI Master Key',
             'Advanced Crafted Product',
@@ -768,6 +772,10 @@ CATEGORIZATION_RULES = {
         }
     },
 
+    'Corvette.json': {
+        'prefix': ('Corvette ',),
+    },
+
     'Fish.json': {
         'exact': {
             'Common Fish',
@@ -887,10 +895,13 @@ def categorize_item(item: dict) -> str | None:
         if junk.lower() in group.lower():
             return None
 
-    # Check each file's rules (exact matches only)
+    # Check each file's rules (exact matches first, then prefix)
     for filename, rules in CATEGORIZATION_RULES.items():
-        if group in rules['exact']:
+        if group in rules.get('exact', set()):
             return filename
+        for prefix in rules.get('prefix', ()):
+            if group.startswith(prefix):
+                return filename
 
     # No match found → skip this item
     return None

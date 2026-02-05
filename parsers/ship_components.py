@@ -54,6 +54,8 @@ def parse_ship_components(mxml_path: str) -> list:
             icon_elem = product_elem.find('.//Property[@name="Icon"]/Property[@name="Filename"]')
             icon_raw = icon_elem.get('value', '') if icon_elem is not None else ''
             icon_path = normalize_game_icon_path(icon_raw) if icon_raw else ''
+            if not icon_path:
+                continue
 
             # Map subtitle to group
             group = SUBTITLE_TO_GROUP.get(subtitle_key, 'Starship Component')
@@ -69,7 +71,8 @@ def parse_ship_components(mxml_path: str) -> list:
                 'Group': group,
                 'Description': description,
                 'BaseValue': base_value,
-                'Icon': icon_path,
+                'Icon': f"{item_id}.png",
+                'IconPath': icon_path,
             }
 
             components.append(component)

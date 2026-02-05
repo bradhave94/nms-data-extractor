@@ -39,7 +39,9 @@ def parse_rawmaterials(mxml_path: str) -> list:
             icon_filename = ''
             if icon_prop is not None:
                 icon_filename = parser.get_property_value(icon_prop, 'Filename', '')
-            icon = normalize_game_icon_path(icon_filename) if icon_filename else f"raw/{material_counter}.png"
+            icon_path = normalize_game_icon_path(icon_filename) if icon_filename else ''
+            if not icon_path:
+                continue
 
             # Extract color
             colour_elem = item_elem.find('.//Property[@name="Colour"]')
@@ -58,7 +60,8 @@ def parse_rawmaterials(mxml_path: str) -> list:
             # Create material entry
             material = {
                 'Id': item_id,
-                'Icon': icon,
+                'Icon': f"{item_id}.png",
+                'IconPath': icon_path,
                 'Name': name,
                 'Group': subtitle,
                 'Description': description,

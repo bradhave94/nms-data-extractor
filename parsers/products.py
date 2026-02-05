@@ -8,10 +8,11 @@ def parse_products(mxml_path: str) -> list:
     Parse nms_reality_gcproducttable.MXML to Products.json format.
 
     Target JSON structure:
-    Icon is the game texture path (matches data/EXTRACTED/textures/...). Build CDN URL as baseUrl + Icon.
+    Icon is the item ID. IconPath is the game texture path (matches data/EXTRACTED/textures/...).
     {
         "Id": "prod1",
-        "Icon": "textures/ui/frontend/icons/u4products/product.casing.dds",
+        "Icon": "prod1",
+        "IconPath": "textures/ui/frontend/icons/u4products/product.casing.dds",
         "Name": "Antimatter",
         "Group": "Crafted Technology Component",
         "Description": "...",
@@ -69,7 +70,9 @@ def parse_products(mxml_path: str) -> list:
             icon_filename = ''
             if icon_prop is not None:
                 icon_filename = parser.get_property_value(icon_prop, 'Filename', '')
-            icon = normalize_game_icon_path(icon_filename) if icon_filename else f"products/{product_counter}.png"
+            icon_path = normalize_game_icon_path(icon_filename) if icon_filename else ''
+            if not icon_path:
+                continue
 
             # Extract color
             colour_elem = product_elem.find('.//Property[@name="Colour"]')
@@ -119,7 +122,8 @@ def parse_products(mxml_path: str) -> list:
             # Create product entry
             product = {
                 'Id': product_id,  # Use actual game ID
-                'Icon': icon,
+                'Icon': f"{product_id}.png",
+                'IconPath': icon_path,
                 'Name': name,
                 'Group': subtitle,
                 'Description': description,

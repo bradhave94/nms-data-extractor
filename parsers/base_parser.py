@@ -21,10 +21,19 @@ def strip_markup_tags(text: str) -> str:
     return re.sub(r'<[^>]*>', '', text)
 
 
+def _capitalize_word(word: str, force_capitalize: bool) -> str:
+    """Capitalize a single word, including words in single quotes like 'apple' -> 'Apple'."""
+    if len(word) >= 3 and word.startswith("'") and word.endswith("'"):
+        inner = word[1:-1]
+        return "'" + (inner.capitalize() if force_capitalize else inner.lower()) + "'"
+    return word.capitalize() if force_capitalize else word.lower()
+
+
 def title_case_name(s: str) -> str:
     """
     Title-case a name with conjunctions/articles kept lowercase.
     e.g. "CAKE OF GLASS" -> "Cake of Glass", not "Cake Of Glass".
+    Words in single quotes get the first letter inside the quotes capitalized: 'apple' -> 'Apple'.
     """
     if not s or not s.strip():
         return s
@@ -37,9 +46,9 @@ def title_case_name(s: str) -> str:
         is_first = i == 0
         is_last = i == len(words) - 1
         if is_first or is_last or lower not in _LOWERCASE_WORDS:
-            result.append(word.capitalize())
+            result.append(_capitalize_word(word, force_capitalize=True))
         else:
-            result.append(lower)
+            result.append(_capitalize_word(word, force_capitalize=False))
     return ' '.join(result)
 
 
@@ -80,7 +89,11 @@ class EXMLParser:
     @classmethod
     def translate(cls, key: str, default: str = None) -> str:
         """
-        Translate a localization key to English.
+        Translate a localization key to English. Same lookup is used for all
+        items (categorized and none.json). If the key is missing from
+        localization.json we fall back to default, or to a title-cased key
+        (e.g. UI_STARCHART_BUILDER_NAME -> "Ui Starchart Builder") so names
+        are never blank.
 
         Args:
             key: Localization key (e.g., "TECH_FRAGMENT_NAME")
