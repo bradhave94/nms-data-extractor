@@ -11,11 +11,14 @@ Before running the extractor you need:
    - Requires [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0) (choose “Run desktop apps”).
    - Put **MBINCompiler.exe** in the project’s **`tools/`** folder (create `tools/` if it doesn’t exist).
 
-2. **HGPAKtool**
-   - Download and install on your system from [monkeyman192/HGPAKtool](https://github.com/monkeyman192/HGPAKtool).
-   - Either use a [precompiled binary](https://github.com/monkeyman192/HGPAKtool/releases) or install via pip:
-     `python -m pip install hgpaktool`
-   - Only works with .pak files from **NMS 5.50 (Worlds Part II)** or later.
+2. **Python Dependencies**
+   - Install all required dependencies with: `pip install -r requirements.txt`
+   - This includes **hgpaktool** (PAK file extraction) and **zstandard** (compression support)
+
+3. **Optional: ImageMagick** (for icon extraction)
+   - Download from [imagemagick.org](https://imagemagick.org/)
+   - Used to convert DDS textures to PNG format
+   - If not installed, icon extraction will output `.dds` files instead
 
 ## Quick Start
 
@@ -40,7 +43,7 @@ To rebuild everything from the latest game files (clean → extract MBINs → co
 python full_refresh.py
 ```
 
-Requires **hgpaktool** and **MBINCompiler.exe** in `tools/`. No LLM or manual steps needed.
+Requires **hgpaktool** library and **MBINCompiler.exe** in `tools/`.
 
 ### Extract item icons (images)
 
@@ -53,7 +56,7 @@ python extract_all_images.py
 
 This will: (1) unpack `*TEXTURES/*` from the game into `data/`, (2) normalize to `data/EXTRACTED/textures/`, (3) run `utils.extract_images` to produce **`data/images/{id}.png`** (or `.dds` if ImageMagick is not installed).
 
-- **Requires:** `hgpaktool` on PATH; **optional:** [ImageMagick](https://imagemagick.org/) (`magick`) for DDS→PNG.
+- **Requires:** hgpaktool library (installed via requirements.txt); **optional:** [ImageMagick](https://imagemagick.org/) (`magick`) for DDS→PNG.
 - If you already have `data/EXTRACTED` (e.g. from a previous run), you can skip unpacking and only extract icons:
   `python -m utils.extract_images`
   (uses `data/json/` and `data/EXTRACTED/`, writes to `data/images/`).
@@ -69,6 +72,7 @@ This will: (1) unpack `*TEXTURES/*` from the game into `data/`, (2) normalize to
 | **Technology.json** | Installable technologies |
 | **Buildings.json** | Base building parts |
 | **Cooking.json** | Edible items & ingredients |
+| **Corvette.json** | Corvette parts |
 | **Fish.json** | Catchable fish |
 | **Trade.json** | Trade goods & smuggled items |
 | **ConstructedTechnology.json** | Buildable tech items |
@@ -95,7 +99,7 @@ nms-data-extractor/
 │   ├── procedural_tech.py
 │   ├── products.py
 │   ├── rawmaterials.py
-│   ├── refinery.py          # Refinery & NutrientProcessor
+│   ├── refinery.py
 │   ├── ship_components.py
 │   ├── technology.py
 │   └── trade.py
@@ -200,13 +204,15 @@ The pipeline uses **18 MBIN files** from the game: 10 data tables and 8 English 
 
 `nms_loc1_english.mbin`, `nms_loc4_english.mbin`, `nms_loc5_english.mbin`, `nms_loc6_english.mbin`, `nms_loc7_english.mbin`, `nms_loc8_english.mbin`, `nms_loc9_english.mbin`, `nms_update3_english.mbin` (product/fish names and descriptions come from these).
 
-### Extract with HGPAKtool
+### Automatic Extraction with HGPAKtool Library
 
-If `hgpaktool` is on your PATH you can run it from anywhere. Point it at your game `PCBANKS` folder and use filters so only these 18 files are extracted. Put the output in `data/mbin/` (or extract tables to `data/mbin/` and language to `data/EXTRACTED/language/`).
+The `full_refresh.py` script uses hgpaktool as a Python library. The library is included in `requirements.txt` and will automatically extract the required files from your game's PCBANKS folder.
 
-**Example (PowerShell); replace the path with your No Man's Sky install:**
+If you want to manually extract with the hgpaktool command-line tool (e.g., for testing), you can do so. Point it at your game `PCBANKS` folder and use filters so only these 18 files are extracted.
 
-```powershell
+**Example; replace the path with your No Man's Sky install:**
+
+```
 hgpaktool -U `
   -f="*REALITY/TABLES/nms_reality_gcproducttable.mbin" `
   -f="*REALITY/TABLES/consumableitemtable.mbin" `
@@ -255,47 +261,31 @@ Remove all generated and extracted data so you start from a clean state.
 
 You can delete the folders themselves; the next steps will recreate what’s needed. Keep the **`data/`** directory.
 
-### 2. Get the 18 MBINs with HGPAKtool
+### 2. Run full_refresh.py
 
-- Create **`data/mbin`** if it’s gone.
-- Run **HGPAKtool** against your game’s `PCBANKS` folder, using the 18-file filter (see “Extract with HGPAKtool” above). Use **`-O data`** (or `-O data/mbin` if your tool supports it) so the extracted files are under `data/`.
-- If the tool keeps the game layout (e.g. `data/METADATA/REALITY/TABLES/`, `data/LANGUAGE/`), **copy the 18 `.mbin` files** into **`data/mbin/`** so everything is in one place for the next step.
-
-The 18 files: the 10 data tables and the 8 localization MBINs listed above.
-
-### 3. Convert MBIN → MXML with MBINCompiler
-
-- **MBINCompiler** must match the **game version** (e.g. 5.50); otherwise conversion can fail or be wrong.
-- From the repo root, run MBINCompiler on every `.mbin` in `data/mbin/` so you get `.MXML` next to each one. Example:
-
-  ```powershell
-  cd data\mbin
-  ..\..\tools\MBINCompiler.exe *.mbin
-  ```
-
-- Leave both the `.mbin` and `.MXML` files in `data/mbin/` (the script uses the `.MXML` files).
-
-### 4. Run the extraction script
-
-From the **repo root**:
+Run the script with your game's PCBANKS path:
 
 ```bash
-python extract_all.py
+python full_refresh.py "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 ```
 
-This rebuilds `data/json/localization.json` from the locale MXMLs, then extracts and categorizes into the 13 JSON files in **`data/json/`**.
+The script will:
+- Extract the 18 required MBIN files from your game's PAK files
+- Consolidate them into `data/mbin/`
+- Convert MBIN to MXML with MBINCompiler
+- Extract and categorize into 13 JSON files in `data/json/`
 
 ### Checklist (new game version)
 
 | Step | Action |
 |------|--------|
-| 1 | Delete all contents (or subfolders) of `data/` |
-| 2 | Run HGPAKtool on game PCBANKS; get the 18 MBINs into `data/mbin/` |
-| 3 | Run MBINCompiler on `data/mbin/*.mbin` |
-| 4 | Run `python extract_all.py` |
+| 1 | Install dependencies: `pip install -r requirements.txt` |
+| 2 | Delete all contents (or subfolders) of `data/` |
+| 3 | Run `python full_refresh.py "X:\path\to\PCBANKS"` (script handles extraction, conversion, and JSON generation automatically) |
 
 ---
 
 ## Development
 
 - **Cursor Rules**: `.cursor/rules/nms-extraction.md`
+

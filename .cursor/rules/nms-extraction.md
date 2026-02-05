@@ -63,7 +63,8 @@ Reads MXML from `data/mbin/` and populates `base_data`:
 | Products          | nms_reality_gcproducttable.MXML                  | Categorized + name lookups     |
 | RawMaterials      | nms_reality_gcsubstancetable.MXML                | RawMaterials.json               |
 | Technology        | nms_reality_gctechnologytable.MXML                | Categorized                     |
-| Buildings         | basebuildingobjectstable.MXML                     | Categorized                     |
+| Buildings         | basebuildingobjectstable.MXML                     | Categorized
+| Corvette          | nms_reality_gctechnologytable.MXML                | Categorized                     |
 | Cooking           | consumableitemtable.MXML                          | Categorized                     |
 | Fish              | fishdatatable.MXML                                | Fish.json                       |
 | Trade             | nms_reality_gcproducttable.MXML                   | Trade.json                      |
@@ -98,6 +99,7 @@ python extract_all.py
 | RawMaterials.json | Mineable substances |
 | Technology.json | Installable technologies |
 | Buildings.json | Base building parts |
+| Corvette.json | Corvette modules |
 | Cooking.json | Edible items & ingredients |
 | Fish.json | Catchable fish |
 | Trade.json | Trade goods & smuggled items |

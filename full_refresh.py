@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 r"""
 Full refresh: clean data, extract 18 MBINs (HGPAKtool), consolidate, convert to MXML (MBINCompiler), run extract_all.
-Run from repo root. No LLM required.
 
   python full_refresh.py
   python full_refresh.py "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
@@ -12,6 +11,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+from hgpaktool.api import HGPAKFile, InvalidFileException
 
 REPO_ROOT = Path(__file__).resolve().parent
 
@@ -52,6 +52,30 @@ def run(cmd, check=True, **kwargs):
     subprocess.run(cmd, check=check, cwd=REPO_ROOT, **kwargs)
 
 
+def extract_mbins_with_hgpaktool(pcbanks: str, output_dir: Path, filters: list[str]) -> int:
+    """Extract MBINs using hgpaktool library directly."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    file_count = 0
+
+    # Iterate over .pak files in PCBANKS directory
+    for fname in os.listdir(pcbanks):
+        if not fname.lower().endswith(".pak"):
+            continue
+        pak_path = os.path.join(pcbanks, fname)
+        try:
+            print(f"  Reading {fname}...")
+            with HGPAKFile(pak_path) as pak:
+                file_count += pak.unpack(str(output_dir), filters, upper=False, write_manifest=False)
+        except InvalidFileException:
+            # Skip invalid pak files silently
+            continue
+        except Exception as e:
+            print(f"  Warning: Failed to extract from {fname}: {e}")
+            continue
+
+    return file_count
+
+
 def main():
     pcbanks = get_game_path()
     if not Path(pcbanks).exists():
@@ -63,11 +87,9 @@ def main():
     clean_main()
 
     print("\n--- Step 2: Extract MBINs (HGPAKtool) ---")
-    hgpaktool_cmd = ["hgpaktool", "-U"]
-    for f in MBIN_FILTERS:
-        hgpaktool_cmd.extend(["-f=" + f])
-    hgpaktool_cmd.extend(["-O", "data", pcbanks])
-    run(hgpaktool_cmd)
+    data_dir = REPO_ROOT / "data"
+    file_count = extract_mbins_with_hgpaktool(pcbanks, data_dir, MBIN_FILTERS)
+    print(f"  Extracted {file_count} files from PCBANKS")
 
     print("\n--- Step 2b: Consolidate MBINs into data/mbin, remove metadata/language ---")
     from utils.consolidate_mbin import main as consolidate_main
@@ -83,7 +105,8 @@ def main():
         run([str(compiler), str(mbin)])
 
     print("\n--- Step 4: Extract JSON (extract_all) ---")
-    run([sys.executable, "extract_all.py"])
+    from extract_all import main as extract_all_main
+    extract_all_main()
 
     print("\n--- Full refresh complete ---\n")
 

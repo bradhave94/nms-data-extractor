@@ -4,17 +4,17 @@ Unpack all game files to data/EXTRACTED (full unpack, no filter), normalize
 textures to data/EXTRACTED/textures/, then run utils.extract_images to produce
 data/images/{id}.png (or .dds if ImageMagick is not installed).
 
-Requires: hgpaktool on PATH, NMS_PCBANKS env or one argument (game PCBANKS path).
-Optional: ImageMagick (magick) for DDS->PNG. Run from repo root.
+Requires: hgpaktool library, NMS_PCBANKS env or one argument (game PCBANKS path).
+Optional: ImageMagick (magick) for DDS->PNG.
 Full unpack can take several minutes and temporarily use significant disk space;
 use --no-cleanup to keep data/EXTRACTED for inspection.
 """
 import argparse
 import os
 import shutil
-import subprocess
 import sys
 from pathlib import Path
+from hgpaktool.api import HGPAKFile, InvalidFileException
 
 REPO_ROOT = Path(__file__).resolve().parent
 DATA = REPO_ROOT / "data"
@@ -68,24 +68,38 @@ def get_game_path(pcbanks_arg: str) -> str:
 
 
 def unpack_textures(pcbanks: str) -> bool:
-    """Run HGPAKtool to unpack all game files into data/EXTRACTED (no filter).
+    """Use hgpaktool library to unpack all game files into data/EXTRACTED (no filter).
     Full unpack is required so we get all texture paths including buildable icons
     that may not match filtered path patterns."""
     EXTRACTED.mkdir(parents=True, exist_ok=True)
-    cmd = [
-        "hgpaktool", "-U",
-        "-O", str(EXTRACTED),
-        pcbanks,
-    ]
-    print("[1/4] Unpacking all game files (HGPAKtool, no filter – this may take several minutes)...")
+
+    print("[1/4] Unpacking all game files (HGPAKtool library, no filter – this may take several minutes)...")
+    file_count = 0
+    pak_count = 0
+
     try:
-        subprocess.run(cmd, check=True, cwd=REPO_ROOT)
-    except FileNotFoundError:
-        print("[ERROR] hgpaktool not found. Install it (e.g. pip install hgpaktool) and ensure it's on PATH.")
-        sys.exit(1)
-    except subprocess.CalledProcessError as e:
+        # Iterate over .pak files in PCBANKS directory
+        for fname in os.listdir(pcbanks):
+            if not fname.lower().endswith(".pak"):
+                continue
+            pak_path = os.path.join(pcbanks, fname)
+            try:
+                print(f"  Reading {fname}...")
+                with HGPAKFile(pak_path) as pak:
+                    file_count += pak.unpack(str(EXTRACTED), None, upper=False, write_manifest=False)
+                pak_count += 1
+            except InvalidFileException:
+                # Skip invalid pak files silently
+                continue
+            except Exception as e:
+                print(f"  Warning: Failed to extract from {fname}: {e}")
+                continue
+
+        print(f"  Unpacked {file_count} files from {pak_count} .pak files")
+    except Exception as e:
         print(f"[ERROR] HGPAKtool failed: {e}")
         sys.exit(1)
+
     return EXTRACTED.is_dir()
 
 

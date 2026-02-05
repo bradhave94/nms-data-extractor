@@ -1,0 +1,2 @@
+hgpaktool
+zstandard  # Required for Windows/Linux PAK decompression
