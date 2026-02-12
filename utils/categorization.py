@@ -12,8 +12,8 @@ DEPLOYABLE_SALVAGE_CLASS_PATTERN = re.compile(r'^[CBSA]-Class Deployable Salvage
 # Categorization rules: each file maps Group values to determine which items belong
 # ORDER MATTERS: Earlier rules take precedence over later ones
 CATEGORIZATION_RULES = {
-    # Check Cooking first to prevent overlap with Products
-    'Cooking.json': {
+    # Check Food first to prevent overlap with Products
+    'Food.json': {
         'exact': {
             'Carnivore Bait',
             'Compressed Nutrients',

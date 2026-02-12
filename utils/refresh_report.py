@@ -297,3 +297,18 @@ def generate_refresh_report(repo_root: Path) -> dict[str, Any]:
         "report_json": json_path,
         "totals": totals,
     }
+
+
+def main() -> int:
+    repo_root = Path(__file__).resolve().parents[1]
+    result = generate_refresh_report(repo_root)
+    print(f"[OK] Refresh report generated: {result['report_markdown']}")
+    print(
+        f"[OK] Totals - added: {result['totals']['added']}, "
+        f"removed: {result['totals']['removed']}, changed: {result['totals']['changed']}"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

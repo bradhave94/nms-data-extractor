@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-02-12T14:53:47-05:00",
+  "version_key": "6.20.0.1",
+  "previous_run": {
+    "generated_at": "2026-02-12T14:52:54-05:00",
+    "version_key": "6.20.0.1",
+    "report_markdown": "reports\\by_version\\6.20.0.1\\2026-02-12_14-52-54\\report.md",
+    "report_json": "reports\\by_version\\6.20.0.1\\2026-02-12_14-52-54\\report.json"
+  },
+  "files": {
+    "Buildings.json": {
+      "old_count": 1185,
+      "new_count": 1185,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "ConstructedTechnology.json": {
+      "old_count": 91,
+      "new_count": 91,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Cooking.json": {
+      "old_count": 386,
+      "new_count": 386,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Corvette.json": {
+      "old_count": 638,
+      "new_count": 638,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Curiosities.json": {
+      "old_count": 264,
+      "new_count": 264,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Exocraft.json": {
+      "old_count": 44,
+      "new_count": 44,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Fish.json": {
+      "old_count": 226,
+      "new_count": 226,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "NutrientProcessor.json": {
+      "old_count": 1323,
+      "new_count": 1323,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Others.json": {
+      "old_count": 1005,
+      "new_count": 1005,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Products.json": {
+      "old_count": 101,
+      "new_count": 101,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "RawMaterials.json": {
+      "old_count": 107,
+      "new_count": 107,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Refinery.json": {
+      "old_count": 357,
+      "new_count": 357,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Technology.json": {
+      "old_count": 239,
+      "new_count": 239,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "TechnologyModule.json": {
+      "old_count": 26,
+      "new_count": 26,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Trade.json": {
+      "old_count": 43,
+      "new_count": 43,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Upgrades.json": {
+      "old_count": 492,
+      "new_count": 492,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "controllerLookup.generated.json": {
+      "old_count": 4,
+      "new_count": 4,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "generic"
+    },
+    "none.json": {
+      "old_count": 21,
+      "new_count": 21,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    }
+  }
+}

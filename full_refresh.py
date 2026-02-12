@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 r"""
-Full refresh: clean data, extract 18 MBINs (HGPAKtool), consolidate, convert to MXML (MBINCompiler), run extract_all.
+Full refresh: clean data, extract MBINs (HGPAKtool), consolidate, convert to MXML (MBINCompiler), run extract_all.
 
   python full_refresh.py
   python full_refresh.py "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
@@ -16,7 +16,7 @@ from utils.refresh_report import generate_refresh_report
 
 REPO_ROOT = Path(__file__).resolve().parent
 
-# 18 MBIN filters for HGPAKtool
+# MBIN filters for HGPAKtool
 MBIN_FILTERS = [
     "*REALITY/TABLES/nms_reality_gcproducttable.mbin",
     "*REALITY/TABLES/consumableitemtable.mbin",
@@ -28,6 +28,7 @@ MBIN_FILTERS = [
     "*REALITY/TABLES/nms_modularcustomisationproducts.mbin",
     "*REALITY/TABLES/nms_basepartproducts.mbin",
     "*REALITY/TABLES/nms_reality_gcproceduraltechnologytable.mbin",
+    "*REALITY/TABLES/rewardtable.mbin",
     "*LANGUAGE/nms_loc1_english.mbin",
     "*LANGUAGE/nms_loc4_english.mbin",
     "*LANGUAGE/nms_loc5_english.mbin",

@@ -101,7 +101,7 @@ def _build_lookup_payload(action_labels: dict[str, str]) -> dict[str, list[dict[
     return payload
 
 
-def main() -> int:
+def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Generate NMS controller lookup JSON")
     parser.add_argument(
         "--actions-json",
@@ -115,7 +115,7 @@ def main() -> int:
         default=Path("data/json/controllerLookup.generated.json"),
         help="Output JSON path",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     actions_json_path = args.actions_json
     if actions_json_path is None:

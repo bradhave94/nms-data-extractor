@@ -1,0 +1,760 @@
+[
+  {
+    "Id": "S20_LOG1",
+    "Icon": "S20_LOG1.png",
+    "IconPath": "textures/ui/frontend/icons/u4products/product.logkey.dds",
+    "Name": "Log of the Fireship Arcadia",
+    "Group": ":: Datestamp 22516.01 ::",
+    "Description": "SLASHLOG CORRUPT CLOCK RECOVERING DAMAGED SECTORSSLASH\n\n\"captain found a ::: on the last walk out\nsays it'll bring us luck\nwe'll need it, cruise has been a ::: waste so far\nall the asteroids just dust and ice\n::: nonsense but better than nothing\"",
+    "BaseValueUnits": 1600,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "4D2957",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Rare",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "S20_LOG2",
+    "Icon": "S20_LOG2.png",
+    "IconPath": "textures/ui/frontend/icons/u4products/product.logkey.dds",
+    "Name": "Log of the Fireship Arcadia",
+    "Group": ":: Datestamp 22518.24 ::",
+    "Description": "SLASHLOG CORRUPT CLOCK RECOVERING DAMAGED SECTORSSLASH\n\n\"going from bad to worse\ncan't wait to get home\nnavigation ::: distorted ::: nothing but static\nwarping but ::: just empty systems\n::: lost in some abandoned sector?\"",
+    "BaseValueUnits": 1600,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "4D2957",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Rare",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "S20_LOG3",
+    "Icon": "S20_LOG3.png",
+    "IconPath": "textures/ui/frontend/icons/u4products/product.logkey.dds",
+    "Name": "Log of the Fireship Arcadia",
+    "Group": ":: Datestamp 22522.31 ::",
+    "Description": "SLASHLOG CORRUPT CLOCK RECOVERING DAMAGED SECTORSSLASH\n\n\"the captain ::: gone\ntried to wake them for their watch\nno sign of them ::: nothing on the cameras\ndoor logs are normal, no kit missing\nwhere are they?\nwhere are we\"",
+    "BaseValueUnits": 1600,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "4D2957",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Rare",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "S20_LOG4",
+    "Icon": "S20_LOG4.png",
+    "IconPath": "textures/ui/frontend/icons/u4products/product.logkey.dds",
+    "Name": "Log of the Fireship Arcadia",
+    "Group": ":: Datestamp 22594.16 ::",
+    "Description": "SLASHLOG CORRUPT CLOCK RECOVERING DAMAGED SECTORSSLASH\n\n\"we saw them\nthey ::: out the airlock\njust ::: floating there\ncould hear them ::: singing\n...\nget us home ::: please\"",
+    "BaseValueUnits": 1600,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "4D2957",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Rare",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "S20_LOG5",
+    "Icon": "S20_LOG5.png",
+    "IconPath": "textures/ui/frontend/icons/u4products/product.logkey.dds",
+    "Name": "Log of the Fireship Arcadia",
+    "Group": ":: Datestamp 22512.64 ::",
+    "Description": "SLASHLOG CORRUPT CLOCK RECOVERING DAMAGED SECTORSSLASH\n\n\"they all followed ::: the music\none by one ::: the lights called them\nalone now\ni hear the song now too, even when i ::: sleep\ni'm so lonely ::: when will ::: when\nhelp\"",
+    "BaseValueUnits": 1600,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "4D2957",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Rare",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "U_TECHBOX_ALIEN",
+    "Icon": "U_TECHBOX_ALIEN.png",
+    "IconPath": "textures/ui/frontend/icons/technology/bio/product.stem3.dds",
+    "Name": "%name% Implant",
+    "Group": "Potent Nodule",
+    "Description": "A pre-grown bionic implant, designed to facilitate the fusion of bio-technology to sentient starships. Use [E] to begin the installation process.\n\n%TECH_DESC%",
+    "BaseValueUnits": 480,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 1,
+    "Colour": "1A2733",
+    "CdnUrl": "",
+    "Usages": [],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Rare",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": true,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": "STRONGLASER"
+  },
+  {
+    "Id": "U_TECHPACK_CORE",
+    "Icon": "U_TECHPACK_CORE.png",
+    "IconPath": "textures/ui/frontend/icons/u4products/proctech/techbox.laser.dds",
+    "Name": "%name% Package",
+    "Group": "Archived Technology Package",
+    "Description": "An archived wiring package, designed to allow easy storage of core technology. Use [E] to begin the installation process.\n\n%TECH_DESC%",
+    "BaseValueUnits": 16,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "1A2733",
+    "CdnUrl": "",
+    "Usages": [],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Rare",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": true,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": "STRONGLASER"
+  },
+  {
+    "Id": "U_TECHPACK_ALIE",
+    "Icon": "U_TECHPACK_ALIE.png",
+    "IconPath": "textures/ui/frontend/icons/technology/bio/product.stem3.dds",
+    "Name": "%name% Node",
+    "Group": "Genetic Repository",
+    "Description": "A cryogenically frozen node, designed to facilitate the archival of bio-technology for sentient starships. Use [E] to begin the installation process.\n\n%TECH_DESC%",
+    "BaseValueUnits": 16,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "1A2733",
+    "CdnUrl": "",
+    "Usages": [],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Rare",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": true,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": "STRONGLASER"
+  },
+  {
+    "Id": "WALLDOOR",
+    "Icon": "WALLDOOR.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/decoration.walldoor.dds",
+    "Name": "Shutter Door",
+    "Group": "Wall Access Route",
+    "Description": "An autonomous shutter door, programmed to open in the presence of its constructor.",
+    "BaseValueUnits": 1,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 1,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "LAND2",
+        "Quantity": 30
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "NotEnabled",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_01",
+    "Icon": "BLD_RUINS_01.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.01.dds",
+    "Name": "Ruined Slab",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_02",
+    "Icon": "BLD_RUINS_02.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.02.dds",
+    "Name": "Ruined Monument",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_03",
+    "Icon": "BLD_RUINS_03.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.03.dds",
+    "Name": "Ruined Wall",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_04",
+    "Icon": "BLD_RUINS_04.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.04.dds",
+    "Name": "Ruined Totem",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_05",
+    "Icon": "BLD_RUINS_05.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.05.dds",
+    "Name": "Ruined Arch",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_06",
+    "Icon": "BLD_RUINS_06.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.06.dds",
+    "Name": "Ruined Gateway",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_07",
+    "Icon": "BLD_RUINS_07.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.07.dds",
+    "Name": "Ruined Statue",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_08",
+    "Icon": "BLD_RUINS_08.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.08.dds",
+    "Name": "Ruined Storehouse",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_09",
+    "Icon": "BLD_RUINS_09.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.09.dds",
+    "Name": "Ruined Dome",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_10",
+    "Icon": "BLD_RUINS_10.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.10.dds",
+    "Name": "Ruined Monolith",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_11",
+    "Icon": "BLD_RUINS_11.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.11.dds",
+    "Name": "Large Ruined Archway",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  },
+  {
+    "Id": "BLD_RUINS_12",
+    "Icon": "BLD_RUINS_12.png",
+    "IconPath": "textures/ui/frontend/icons/buildable/ruins/buildable.ruins.12.dds",
+    "Name": "Ruined Column",
+    "Group": "Constructable Relic",
+    "Description": "A recreation of a piece of ancient architecture, the wreckage of a long-forgotten civilisation.\n\nConstructed with polished stone, salvaged from similar structures found on ruined worlds.",
+    "BaseValueUnits": 8,
+    "CurrencyType": "Credits",
+    "MaxStackSize": 0,
+    "Colour": "2C7C9F",
+    "CdnUrl": "",
+    "Usages": [
+      "HasUsedToCraft"
+    ],
+    "BlueprintCost": 8,
+    "BlueprintCostType": "None",
+    "BlueprintSource": 0,
+    "RequiredItems": [
+      {
+        "Id": "RUINSUB",
+        "Quantity": 25
+      },
+      {
+        "Id": "LAND3",
+        "Quantity": 25
+      }
+    ],
+    "StatBonuses": [],
+    "ConsumableRewardTexts": [],
+    "Rarity": "Common",
+    "Legality": "Legal",
+    "TradeCategory": "None",
+    "WikiCategory": "Construction",
+    "Consumable": false,
+    "CookingIngredient": false,
+    "GoodForSelling": false,
+    "EggModifierIngredient": false,
+    "DeploysInto": null
+  }
+]

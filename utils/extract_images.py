@@ -22,7 +22,7 @@ from pathlib import Path
 ICON_JSON_FILES = [
     "Buildings.json",
     "ConstructedTechnology.json",
-    "Cooking.json",
+    "Food.json",
     "Corvette.json",
     "Curiosities.json",
     "Exocraft.json",

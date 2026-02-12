@@ -7,6 +7,7 @@ import sys
 import os
 import time
 import re
+import argparse
 from pathlib import Path
 
 # Add current directory to path
@@ -26,6 +27,7 @@ from parsers.procedural_tech import parse_procedural_tech
 from utils.categorization import categorize_item
 from utils.parse_localization import build_localization_json
 from utils.generate_controller_lookup import main as generate_controller_lookup_main
+from utils.refresh_report import generate_refresh_report
 import json
 
 
@@ -43,7 +45,7 @@ def apply_slugs(final_files: dict) -> None:
     slugs = {
         'RawMaterials.json': 'raw/',
         'Products.json': 'products/',
-        'Cooking.json': 'cooking/',
+        'Food.json': 'food/',
         'Curiosities.json': 'curiosities/',
         'Corvette.json': 'corvette/',
         'Fish.json': 'fish/',
@@ -84,6 +86,44 @@ def filter_missing_icons(data):
             continue
         filtered.append(item)
     return filtered, removed
+
+
+def dedupe_items_by_id(items: list) -> tuple[list, int]:
+    """
+    Remove duplicate item IDs while preserving order.
+    When duplicates exist, merge missing fields from later entries into
+    the first-seen record to retain the richest possible data.
+    """
+    if not isinstance(items, list):
+        return items, 0
+
+    deduped = []
+    first_by_id = {}
+    removed = 0
+
+    for item in items:
+        if not isinstance(item, dict):
+            deduped.append(item)
+            continue
+
+        item_id = item.get('Id')
+        if not isinstance(item_id, str) or not item_id:
+            deduped.append(item)
+            continue
+
+        existing = first_by_id.get(item_id)
+        if existing is None:
+            first_by_id[item_id] = item
+            deduped.append(item)
+            continue
+
+        # Merge only missing-ish values into the first-seen canonical record.
+        for key, value in item.items():
+            if key not in existing or existing.get(key) in (None, '', []):
+                existing[key] = value
+        removed += 1
+
+    return deduped, removed
 
 
 def _has_stats(item: dict) -> bool:
@@ -570,7 +610,15 @@ def enrich_exocraft_metadata(final_files: dict, data_dir: Path) -> int:
     return enriched
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description='NMS full extraction pipeline')
+    parser.add_argument(
+        '--report',
+        action='store_true',
+        help='Generate refresh report and update reports/_latest_snapshot at end of run',
+    )
+    args = parser.parse_args(argv)
+
     start_time = time.time()
 
     print("\n" + "=" * 70)
@@ -588,7 +636,8 @@ def main():
     # Build FE token lookup for prompt replacement (best effort).
     try:
         print("Building controller lookup...")
-        lookup_exit = generate_controller_lookup_main()
+        # Pass explicit argv to avoid consuming extract_all.py CLI flags.
+        lookup_exit = generate_controller_lookup_main([])
         if lookup_exit != 0:
             print("  [WARN] Could not refresh controller lookup (continuing).")
     except Exception as e:
@@ -655,7 +704,7 @@ def main():
     categorized = {
         'Buildings.json': [],
         'ConstructedTechnology.json': [],
-        'Cooking.json': [],
+        'Food.json': [],
         'Corvette.json': [],
         'Curiosities.json': [],
         'Exocraft.json': [],
@@ -719,6 +768,15 @@ def main():
     if total_removed:
         print(f"  [FILTER] Removed {total_removed} items with empty IconPath total\n")
 
+    # Food gets contributions from both Products and Cooking parsers.
+    # Deduplicate by Id while merging missing fields to keep rich records.
+    cooking = final_files.get('Food.json')
+    if isinstance(cooking, list):
+        deduped_cooking, removed_dupes = dedupe_items_by_id(cooking)
+        if removed_dupes:
+            final_files['Food.json'] = deduped_cooking
+            print(f"  [NORMALIZE] Food.json: removed {removed_dupes} duplicate IDs")
+
     # Add slug field based on output file
     apply_slugs(final_files)
 
@@ -781,8 +839,23 @@ def main():
     print(f"Output location: {Path(__file__).parent / 'data' / 'json'}")
     print("=" * 70 + "\n")
 
+    # Step 4: Optionally generate refresh report + update latest snapshot.
+    if args.report:
+        try:
+            report = generate_refresh_report(Path(__file__).parent)
+            report_rel = report["report_markdown"].relative_to(Path(__file__).parent)
+            print(f"[OK] Report: {report_rel}")
+            print(
+                f"[OK] Report totals - added: {report['totals']['added']}, "
+                f"removed: {report['totals']['removed']}, changed: {report['totals']['changed']}"
+            )
+        except Exception as e:
+            print(f"[WARN] Report generation failed: {e}")
+    else:
+        print("[INFO] Report generation skipped (use --report to enable).")
+
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))
