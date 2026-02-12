@@ -7,6 +7,7 @@ import re
 # Dynamic TechnologyModule grouping catches newly added class-based upgrades/nodes
 # without requiring manual exact-list maintenance each release.
 TECH_MODULE_CLASS_PATTERN = re.compile(r'^[CBSA]-Class .+ (Upgrade|Node)$')
+DEPLOYABLE_SALVAGE_CLASS_PATTERN = re.compile(r'^[CBSA]-Class Deployable Salvage$')
 
 # Categorization rules: each file maps Group values to determine which items belong
 # ORDER MATTERS: Earlier rules take precedence over later ones
@@ -918,6 +919,8 @@ def categorize_item(item: dict) -> str | None:
     # Route every upgrade-like item into a dedicated upgrades file.
     # This intentionally has high priority so upgrades are centralized.
     if 'upgrade' in group_lower or 'upgrade' in name_lower:
+        return 'Upgrades.json'
+    if DEPLOYABLE_SALVAGE_CLASS_PATTERN.match(group):
         return 'Upgrades.json'
 
     # Exocraft routing should happen before the generic rule lists so anything
