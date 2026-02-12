@@ -1,6 +1,10 @@
 """Parse Cooking from MXML to JSON"""
 import xml.etree.ElementTree as ET
-from .base_parser import EXMLParser, normalize_game_icon_path
+from .base_parser import (
+    EXMLParser,
+    normalize_game_icon_path,
+    unresolved_localization_key_count,
+)
 from pathlib import Path
 
 
@@ -12,7 +16,7 @@ def parse_cooking(mxml_path: str) -> list:
     """
     root = EXMLParser.load_xml(mxml_path)
     parser = EXMLParser()
-    parser.load_localization()
+    localization = parser.load_localization()
 
     # Load product details from Products table to get names/descriptions
     products_lookup = {}
@@ -27,6 +31,8 @@ def parse_cooking(mxml_path: str) -> list:
                 name_key = parser.get_property_value(item, 'Name', '')
                 subtitle_key = parser.get_property_value(item, 'Subtitle', '')
                 description_key = parser.get_property_value(item, 'Description', '')
+                if unresolved_localization_key_count(localization, name_key, subtitle_key, description_key) >= 2:
+                    continue
                 base_value = parser.parse_value(parser.get_property_value(item, 'BaseValue', '0'))
                 stack_mult = parser.parse_value(parser.get_property_value(item, 'StackMultiplier', '1'))
                 cooking_value = parser.parse_value(parser.get_property_value(item, 'CookingValue', '0'))

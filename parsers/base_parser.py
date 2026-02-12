@@ -3,6 +3,7 @@ import re
 import xml.etree.ElementTree as ET
 from typing import Any, Optional, Callable
 import json
+import os
 from pathlib import Path
 
 # Words that stay lowercase in title case (conjunctions, articles, short prepositions)
@@ -10,6 +11,11 @@ _LOWERCASE_WORDS = frozenset({
     'a', 'an', 'the', 'and', 'or', 'but', 'of', 'in', 'on', 'at', 'to', 'for',
     'with', 'by', 'as', 'from', 'into', 'onto', 'upon', 'nor', 'so', 'yet',
 })
+
+# Hand-tuned fallbacks for known missing localization keys in current game data.
+_MISSING_LOCALIZATION_OVERRIDES = {
+    'UI_BRIDGECONNECT_NAME': 'Bridge Connector',
+}
 
 
 def strip_markup_tags(text: str) -> str:
@@ -19,6 +25,48 @@ def strip_markup_tags(text: str) -> str:
     if not text or not isinstance(text, str):
         return text
     return re.sub(r'<[^>]*>', '', text)
+
+
+def normalize_control_tokens(text: str) -> str:
+    """
+    Convert control placeholders like FE_ALT1 into readable labels.
+    Example: "Use FE_ALT1" -> "Use [ALT 1]"
+    """
+    if not text or not isinstance(text, str):
+        return text
+
+    mode = (os.environ.get("NMS_FE_TOKEN_MODE") or "resolved").strip().lower()
+    if mode in {"raw", "off", "disabled"}:
+        return text
+
+    lookup = EXMLParser.load_controller_lookup()
+    platform = (os.environ.get("NMS_INPUT_PLATFORM") or "Win").strip()
+    token_map = lookup.get(platform, {})
+
+    def _icon_to_readable(icon_path: str) -> str:
+        if not icon_path:
+            return ""
+        upper = icon_path.upper()
+        if upper.startswith("KEYBOARD/"):
+            filename = Path(icon_path).name
+            stem = Path(filename).stem  # e.g. INTERACT.E or KEYWIDE.TAB
+            key = stem.split(".")[-1]
+            return key.upper()
+        if upper.startswith("MOUSE/KEY.MOUSELEFT"):
+            return "LMB"
+        if upper.startswith("MOUSE/KEY.MOUSERIGHT"):
+            return "RMB"
+        return ""
+
+    def _token_label(match: re.Match[str]) -> str:
+        token = match.group(0)
+        icon_path = token_map.get(token, "")
+        readable = _icon_to_readable(icon_path)
+        if readable:
+            return f"[{readable}]"
+        return token
+
+    return re.sub(r'\bFE_[A-Z0-9_]+\b', _token_label, text)
 
 
 def _capitalize_word(word: str, force_capitalize: bool) -> str:
@@ -67,10 +115,58 @@ def normalize_game_icon_path(game_path: str) -> str:
     return normalized
 
 
+def looks_like_localization_key(value: str) -> bool:
+    """
+    Heuristic for unresolved loc keys like UP_CRUI4_SUB or UI_FOO_NAME.
+    """
+    if not value or not isinstance(value, str):
+        return False
+    if '_' not in value:
+        return False
+    return bool(re.fullmatch(r'[A-Z0-9_]+', value))
+
+
+def unresolved_localization_key_count(localization: dict, *keys: str) -> int:
+    """Count key-like localization tokens that are missing from localization data."""
+    return sum(
+        1
+        for key in keys
+        if looks_like_localization_key(key) and key not in localization
+    )
+
+
+def format_stat_type_name(stat_type: str, strip_prefixes: tuple[str, ...] = ()) -> str:
+    """
+    Convert stat enums into human-readable labels.
+    Examples:
+    - Weapon_Projectile_BurstCap -> Weapon Projectile Burst Cap
+    - Weapon_Projectile_BurstCooldown -> Weapon Projectile Burst Cooldown
+    """
+    if not stat_type or not isinstance(stat_type, str):
+        return ''
+
+    cleaned = stat_type
+    for prefix in strip_prefixes:
+        if cleaned.startswith(prefix):
+            cleaned = cleaned[len(prefix):]
+
+    words = []
+    for token in cleaned.split('_'):
+        if not token:
+            continue
+        # Split CamelCase chunks so BurstCap -> Burst Cap.
+        token = re.sub(r'(?<=[a-z0-9])(?=[A-Z])', ' ', token)
+        token = re.sub(r'(?<=[A-Z])(?=[A-Z][a-z])', ' ', token)
+        words.append(token)
+
+    return ' '.join(words).title()
+
+
 class EXMLParser:
     """Base class for EXML/MXML parsing with common utilities"""
 
     _localization = None  # Cache for localization data
+    _controller_lookup = None  # Cache for FE token -> icon lookups
 
     @classmethod
     def load_localization(cls) -> dict:
@@ -85,6 +181,35 @@ class EXMLParser:
                 cls._localization = {}
                 print("[WARN] localization.json not found")
         return cls._localization
+
+    @classmethod
+    def load_controller_lookup(cls) -> dict[str, dict[str, str]]:
+        """Load token->icon mappings by platform from generated lookup JSON."""
+        if cls._controller_lookup is None:
+            lookup_path = Path(__file__).parent.parent / "data" / "json" / "controllerLookup.generated.json"
+            if not lookup_path.exists():
+                cls._controller_lookup = {}
+                return cls._controller_lookup
+            try:
+                with open(lookup_path, "r", encoding="utf-8") as f:
+                    raw = json.load(f)
+                parsed: dict[str, dict[str, str]] = {}
+                for platform, rows in (raw or {}).items():
+                    if not isinstance(platform, str) or not isinstance(rows, list):
+                        continue
+                    platform_map: dict[str, str] = {}
+                    for row in rows:
+                        if not isinstance(row, dict):
+                            continue
+                        key = row.get("Key")
+                        icon = row.get("Icon")
+                        if isinstance(key, str) and isinstance(icon, str):
+                            platform_map[key] = icon
+                    parsed[platform] = platform_map
+                cls._controller_lookup = parsed
+            except (OSError, json.JSONDecodeError):
+                cls._controller_lookup = {}
+        return cls._controller_lookup
 
     @classmethod
     def translate(cls, key: str, default: str = None) -> str:
@@ -105,12 +230,15 @@ class EXMLParser:
         loc = cls.load_localization()
         if default is None:
             default = key
-        translation = loc.get(key, default)
+        translation = loc.get(key, _MISSING_LOCALIZATION_OVERRIDES.get(key, default))
 
         # If no translation found and it looks like a key, make it readable
         if translation == key and '_' in key:
             # Convert TECH_FRAGMENT_NAME -> Tech Fragment Name
             words = key.replace('_NAME', '').replace('_DESC', '').replace('_SUBTITLE', '').split('_')
+            # UI_* keys are common internal prefixes; drop them for cleaner fallback names.
+            if words and words[0] == 'UI':
+                words = words[1:]
             translation = ' '.join(word.capitalize() for word in words if word)
 
         # Apply title case with lowercase conjunctions for name keys
@@ -119,6 +247,8 @@ class EXMLParser:
 
         # Remove game markup tags (<TECHNOLOGY>, <>, etc.) so output is plain text
         translation = strip_markup_tags(translation)
+        # Convert control placeholders to readable labels.
+        translation = normalize_control_tokens(translation)
 
         return translation
 

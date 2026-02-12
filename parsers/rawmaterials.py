@@ -1,6 +1,10 @@
 """Parse RawMaterials (Substances) from MXML to JSON"""
 import xml.etree.ElementTree as ET
-from .base_parser import EXMLParser, normalize_game_icon_path
+from .base_parser import (
+    EXMLParser,
+    normalize_game_icon_path,
+    unresolved_localization_key_count,
+)
 
 
 def parse_rawmaterials(mxml_path: str) -> list:
@@ -11,7 +15,7 @@ def parse_rawmaterials(mxml_path: str) -> list:
     """
     root = EXMLParser.load_xml(mxml_path)
     parser = EXMLParser()
-    parser.load_localization()
+    localization = parser.load_localization()
 
     materials = []
     material_counter = 1
@@ -28,6 +32,8 @@ def parse_rawmaterials(mxml_path: str) -> list:
             name_key = parser.get_property_value(item_elem, 'Name', '')
             subtitle_key = parser.get_property_value(item_elem, 'Subtitle', '')
             description_key = parser.get_property_value(item_elem, 'Description', '')
+            if unresolved_localization_key_count(localization, name_key, subtitle_key, description_key) >= 2:
+                continue
 
             # Translate to English
             name = parser.translate(name_key, name_key)

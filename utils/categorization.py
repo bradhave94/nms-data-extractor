@@ -1,7 +1,12 @@
 """
-Categorization rules for organizing NMS items into the 13 required JSON files
-Based on exact Group matches from original data files
+Categorization rules for organizing NMS items into final JSON files.
+Based on exact Group matches from original data files plus dynamic patterns.
 """
+import re
+
+# Dynamic TechnologyModule grouping catches newly added class-based upgrades/nodes
+# without requiring manual exact-list maintenance each release.
+TECH_MODULE_CLASS_PATTERN = re.compile(r'^[CBSA]-Class .+ (Upgrade|Node)$')
 
 # Categorization rules: each file maps Group values to determine which items belong
 # ORDER MATTERS: Earlier rules take precedence over later ones
@@ -80,6 +85,8 @@ CATEGORIZATION_RULES = {
 
     'Buildings.json': {
         'exact': {
+            'Environmental decoration',
+            'Autonomous Agriculture Unit',
             'Recycled Construction Component',
             'Advanced Freighter Module',
             'Agricultural Module',
@@ -100,7 +107,6 @@ CATEGORIZATION_RULES = {
             'Decorative Aqueduct',
             'Dynamic Signpost',
             'Exclusive Flag',
-            'Exocraft Rapid Deployment',
             'Expedition Management Terminal',
             'Experimental Summoning Technology',
             'Fabricator',
@@ -141,7 +147,7 @@ CATEGORIZATION_RULES = {
 
     'Curiosities.json': {
         'exact': {
-            'Living Ship Component'
+            'Living Ship Component',
             'A Last Link Home',
             'AI Master Key',
             'Advanced Crafted Product',
@@ -571,6 +577,12 @@ CATEGORIZATION_RULES = {
 
     'Technology.json': {
         'exact': {
+            'Industrial Waste Manipulation Device',
+            'Chargeable Power Unit',
+            'Fuel Incineration Device',
+            'Generator Coupling',
+            'Homeworld Repeater',
+            'Deep-Space Salvage Locator',
             'A relic of another place',
             'Active Camouflage Unit',
             'Adaptive Camouflage Suit',
@@ -774,10 +786,14 @@ CATEGORIZATION_RULES = {
 
     'Corvette.json': {
         'prefix': ('Corvette ',),
+        'exact': {
+            'Mission Location System'
+        }
     },
 
     'Fish.json': {
         'exact': {
+            'Fragile Medusoid',
             'Common Fish',
             'Legendary Fish',
             'Rare Fish',
@@ -894,6 +910,34 @@ def categorize_item(item: dict) -> str | None:
     for junk in junk_keywords:
         if junk.lower() in group.lower():
             return None
+
+    name_lower = name.lower()
+    group_lower = group.lower()
+    item_id_lower = item_id.lower()
+
+    # Route every upgrade-like item into a dedicated upgrades file.
+    # This intentionally has high priority so upgrades are centralized.
+    if 'upgrade' in group_lower or 'upgrade' in name_lower:
+        return 'Upgrades.json'
+
+    # Exocraft routing should happen before the generic rule lists so anything
+    # clearly exocraft-related lands in Exocraft.json.
+    if (
+        'exocraft' in group_lower
+        or 'exocraft' in name_lower
+        or 'submarine' in group_lower
+        or 'submarine' in name_lower
+        or 'nautilon' in group_lower
+        or 'nautilon' in name_lower
+        or item_id_lower.startswith('up_veh')
+        or item_id_lower.startswith('u_exo')
+    ):
+        return 'Exocraft.json'
+
+    # Dynamic TechnologyModule pattern:
+    # e.g. "S-Class Aeration Membrane Upgrade", "A-Class Singularity Cortex Node"
+    if TECH_MODULE_CLASS_PATTERN.match(group):
+        return 'TechnologyModule.json'
 
     # Check each file's rules (exact matches first, then prefix)
     for filename, rules in CATEGORIZATION_RULES.items():

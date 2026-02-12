@@ -12,6 +12,7 @@ import subprocess
 import sys
 from pathlib import Path
 from hgpaktool.api import HGPAKFile, InvalidFileException
+from utils.refresh_report import generate_refresh_report
 
 REPO_ROOT = Path(__file__).resolve().parent
 
@@ -107,6 +108,14 @@ def main():
     print("\n--- Step 4: Extract JSON (extract_all) ---")
     from extract_all import main as extract_all_main
     extract_all_main()
+
+    print("\n--- Step 5: Build run report (net new vs previous run) ---")
+    report = generate_refresh_report(REPO_ROOT)
+    totals = report["totals"]
+    print(f"  Version key: {report['version_key']}")
+    print(f"  Added: {totals['added']}  Removed: {totals['removed']}  Changed: {totals['changed']}")
+    print(f"  Markdown: {report['report_markdown']}")
+    print(f"  JSON: {report['report_json']}")
 
     print("\n--- Full refresh complete ---\n")
 

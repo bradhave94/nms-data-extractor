@@ -1,6 +1,6 @@
 """Parse Products from MXML to JSON"""
 import xml.etree.ElementTree as ET
-from .base_parser import EXMLParser, normalize_game_icon_path
+from .base_parser import EXMLParser, normalize_game_icon_path, unresolved_localization_key_count
 
 
 def parse_products(mxml_path: str) -> list:
@@ -40,7 +40,7 @@ def parse_products(mxml_path: str) -> list:
     parser = EXMLParser()
 
     # Load localization for name translations
-    parser.load_localization()
+    localization = parser.load_localization()
 
     products = []
     product_counter = 1
@@ -61,9 +61,17 @@ def parse_products(mxml_path: str) -> list:
             description_key = parser.get_property_value(product_elem, 'Description', '')
 
             # Translate to English
+            has_name_translation = bool(name_key and name_key in localization)
+            has_subtitle_translation = bool(subtitle_key and subtitle_key in localization)
+            has_description_translation = bool(description_key and description_key in localization)
             name = parser.translate(name_key, name_key)
             subtitle = parser.translate(subtitle_key, subtitle_key)
             description = parser.translate(description_key, description_key)
+
+            # Generic unresolved-loc filter: skip entries where 2+ key-like fields
+            # are missing translations (covers BLD_*, UT_*, UP_* placeholders, etc).
+            if unresolved_localization_key_count(localization, name_key, subtitle_key, description_key) >= 2:
+                continue
 
             # Extract Icon path from game (matches data/EXTRACTED/textures/...)
             icon_prop = product_elem.find('.//Property[@name="Icon"]')
@@ -118,6 +126,7 @@ def parse_products(mxml_path: str) -> list:
             trade_category = parser.get_nested_enum(product_elem, 'TradeCategory', 'TradeCategory', '')
             wiki_category = parser.get_property_value(product_elem, 'WikiCategory', '')
             consumable = parser.parse_value(parser.get_property_value(product_elem, 'Consumable', 'false'))
+            deploys_into = parser.get_property_value(product_elem, 'DeploysInto', '')
 
             # Create product entry
             product = {
@@ -147,6 +156,7 @@ def parse_products(mxml_path: str) -> list:
                 'CookingIngredient': parser.parse_value(is_cooking),
                 'GoodForSelling': parser.parse_value(good_for_selling),
                 'EggModifierIngredient': parser.parse_value(egg_modifier),
+                'DeploysInto': deploys_into or None,
             }
 
             products.append(product)

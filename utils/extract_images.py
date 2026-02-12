@@ -25,6 +25,7 @@ ICON_JSON_FILES = [
     "Cooking.json",
     "Corvette.json",
     "Curiosities.json",
+    "Exocraft.json",
     "Fish.json",
     "NutrientProcessor.json",
     "Others.json",
@@ -33,6 +34,7 @@ ICON_JSON_FILES = [
     "Technology.json",
     "TechnologyModule.json",
     "Trade.json",
+    "Upgrades.json",
     "none.json",  # uncategorized items; processed last so categorized ids take precedence
 ]
 
