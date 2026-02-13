@@ -31,6 +31,7 @@ ICON_JSON_FILES = [
     "Others.json",
     "Products.json",
     "RawMaterials.json",
+    "Starships.json",
     "Technology.json",
     "TechnologyModule.json",
     "Trade.json",

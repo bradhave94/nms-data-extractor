@@ -8,6 +8,30 @@ import re
 # without requiring manual exact-list maintenance each release.
 TECH_MODULE_CLASS_PATTERN = re.compile(r'^[CBSA]-Class .+ (Upgrade|Node)$')
 DEPLOYABLE_SALVAGE_CLASS_PATTERN = re.compile(r'^[CBSA]-Class Deployable Salvage$')
+STARSHIP_COMPONENT_GROUP_PATTERN = re.compile(r'^.+ Starship Component$')
+
+# Dedicated Starships routing. Keep these maintainable and explicit.
+STARSHIP_EXACT_GROUPS = {
+    'Spacecraft',
+    'Exclusive Spacecraft',
+    'Living Ship Component',
+    'Starship Core Component',
+    'Starship Customisation Option',
+}
+
+# Explicitly keep these out of Starships.json (fall through to regular rules).
+STARSHIP_EXCLUDED_GROUPS = {
+    'Starship Interior Adornment',
+    'Living Ship Component',
+    'Starship Core Component',
+    'Damaged Starship Component',
+    'Starship Exhaust Override'
+}
+
+# Specific starship groups that should route to Upgrades.json.
+STARSHIP_UPGRADE_GROUPS = {
+    'Starship Core Component',
+}
 
 # Categorization rules: each file maps Group values to determine which items belong
 # ORDER MATTERS: Earlier rules take precedence over later ones
@@ -391,6 +415,7 @@ CATEGORIZATION_RULES = {
     'Others.json': {
         'exact': {
             '%NAME%\'s Genetic Material',
+            'Damaged Starship Component',
             'Alien Cartographic Data',
             'Anomalous Face Transformation',
             'Autophage Staff Backbone',
@@ -434,6 +459,7 @@ CATEGORIZATION_RULES = {
             'Planetary Cultural Chart',
             'Portal Restoration Device',
             'Prepared Meal',
+            'Starship Subcomponent',
             'Psychedelic Spore Device',
             'Pulsing Blue Sac',
             'Rebound Particle',
@@ -628,7 +654,6 @@ CATEGORIZATION_RULES = {
             'Damaged Autophage Component',
             'Damaged Component',
             'Damaged Multi-Tool Component',
-            'Damaged Starship Component',
             'Defensive Shield Technology',
             'Deployable Angling Device',
             'Deployable Fishing Platform',
@@ -922,6 +947,14 @@ def categorize_item(item: dict) -> str | None:
         return 'Upgrades.json'
     if DEPLOYABLE_SALVAGE_CLASS_PATTERN.match(group):
         return 'Upgrades.json'
+    if group in STARSHIP_UPGRADE_GROUPS:
+        return 'Upgrades.json'
+
+    # Centralize starship parts/customization in Starships.json, with opt-out.
+    if group not in STARSHIP_EXCLUDED_GROUPS and (
+        STARSHIP_COMPONENT_GROUP_PATTERN.match(group) or group in STARSHIP_EXACT_GROUPS
+    ):
+        return 'Starships.json'
 
     # Exocraft routing should happen before the generic rule lists so anything
     # clearly exocraft-related lands in Exocraft.json.

@@ -48,7 +48,7 @@ def parse_ship_components(mxml_path: str) -> list:
             name_key = parser.get_property_value(product_elem, 'Name', '')
             subtitle_key = parser.get_property_value(product_elem, 'Subtitle', '')
             desc_key = parser.get_property_value(product_elem, 'Description', '')
-            base_value = int(parser.get_property_value(product_elem, 'BaseValue', '0'))
+            base_value = parser.parse_value(parser.get_property_value(product_elem, 'BaseValue', '0'))
 
             # Get icon path from game (matches data/EXTRACTED/textures/...)
             icon_elem = product_elem.find('.//Property[@name="Icon"]/Property[@name="Filename"]')
@@ -64,6 +64,29 @@ def parse_ship_components(mxml_path: str) -> list:
             name = parser.translate(name_key) or name_key
             description = parser.translate(desc_key) or ''
 
+            # Enriched product metadata
+            hero_icon_raw = parser.get_property_value(
+                product_elem.find('.//Property[@name="HeroIcon"]'),
+                'Filename',
+                '',
+            )
+            hero_icon_path = normalize_game_icon_path(hero_icon_raw) if hero_icon_raw else ''
+
+            colour_elem = product_elem.find('.//Property[@name="Colour"]')
+            colour = parser.parse_colour(colour_elem)
+
+            rarity = parser.get_nested_enum(product_elem, 'Rarity', 'Rarity', '')
+            legality = parser.get_nested_enum(product_elem, 'Legality', 'Legality', '')
+            trade_category = parser.get_nested_enum(product_elem, 'TradeCategory', 'TradeCategory', '')
+            product_category = parser.get_nested_enum(product_elem, 'Type', 'ProductCategory', '')
+            substance_category = parser.get_nested_enum(product_elem, 'Category', 'SubstanceCategory', '')
+            pin_scannable = parser.get_nested_enum(
+                product_elem,
+                'PinObjectiveScannableType',
+                'ScanIconType',
+                '',
+            )
+
             # Build component dict
             component = {
                 'Id': item_id,
@@ -71,8 +94,57 @@ def parse_ship_components(mxml_path: str) -> list:
                 'Group': group,
                 'Description': description,
                 'BaseValue': base_value,
+                'BaseValueUnits': base_value,
+                'CurrencyType': 'Credits',
                 'Icon': f"{item_id}.png",
                 'IconPath': icon_path,
+                'HeroIconPath': hero_icon_path or None,
+                'BuildableShipTechID': parser.get_property_value(product_elem, 'BuildableShipTechID', '') or None,
+                'GroupID': parser.get_property_value(product_elem, 'GroupID', '') or None,
+                'Colour': colour,
+                'Rarity': rarity or None,
+                'Legality': legality or None,
+                'TradeCategory': trade_category or None,
+                'WikiCategory': parser.get_property_value(product_elem, 'WikiCategory', '') or None,
+                'SubstanceCategory': substance_category or None,
+                'ProductCategory': product_category or None,
+                'MaxStackSize': parser.parse_value(parser.get_property_value(product_elem, 'StackMultiplier', '1')),
+                'BlueprintCost': parser.parse_value(parser.get_property_value(product_elem, 'RecipeCost', '0')),
+                'ChargeValue': parser.parse_value(parser.get_property_value(product_elem, 'ChargeValue', '0')),
+                'DefaultCraftAmount': parser.parse_value(
+                    parser.get_property_value(product_elem, 'DefaultCraftAmount', '1')
+                ),
+                'CraftAmountStepSize': parser.parse_value(
+                    parser.get_property_value(product_elem, 'CraftAmountStepSize', '1')
+                ),
+                'CraftAmountMultiplier': parser.parse_value(
+                    parser.get_property_value(product_elem, 'CraftAmountMultiplier', '1')
+                ),
+                'SpecificChargeOnly': parser.parse_value(
+                    parser.get_property_value(product_elem, 'SpecificChargeOnly', 'false')
+                ),
+                'NormalisedValueOnWorld': parser.parse_value(
+                    parser.get_property_value(product_elem, 'NormalisedValueOnWorld', '0')
+                ),
+                'NormalisedValueOffWorld': parser.parse_value(
+                    parser.get_property_value(product_elem, 'NormalisedValueOffWorld', '0')
+                ),
+                'EconomyInfluenceMultiplier': parser.parse_value(
+                    parser.get_property_value(product_elem, 'EconomyInfluenceMultiplier', '0')
+                ),
+                'IsCraftable': parser.parse_value(parser.get_property_value(product_elem, 'IsCraftable', 'false')),
+                'DeploysInto': parser.get_property_value(product_elem, 'DeploysInto', '') or None,
+                'PinObjective': parser.get_property_value(product_elem, 'PinObjective', '') or None,
+                'PinObjectiveTip': parser.get_property_value(product_elem, 'PinObjectiveTip', '') or None,
+                'PinObjectiveMessage': parser.get_property_value(product_elem, 'PinObjectiveMessage', '') or None,
+                'PinObjectiveScannableType': pin_scannable or None,
+                'PinObjectiveEasyToRefine': parser.parse_value(
+                    parser.get_property_value(product_elem, 'PinObjectiveEasyToRefine', 'false')
+                ),
+                'NeverPinnable': parser.parse_value(parser.get_property_value(product_elem, 'NeverPinnable', 'false')),
+                'CanSendToOtherPlayers': parser.parse_value(
+                    parser.get_property_value(product_elem, 'CanSendToOtherPlayers', 'true')
+                ),
             }
 
             components.append(component)

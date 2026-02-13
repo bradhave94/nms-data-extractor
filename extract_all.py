@@ -58,6 +58,7 @@ def apply_slugs(final_files: dict) -> None:
         'Buildings.json': 'buildings/',
         'Trade.json': 'other/',
         'Exocraft.json': 'exocraft/',
+        'Starships.json': 'starships/',
         'Upgrades.json': 'upgrades/',
     }
 
@@ -708,6 +709,7 @@ def main(argv=None):
         'Corvette.json': [],
         'Curiosities.json': [],
         'Exocraft.json': [],
+        'Starships.json': [],
         'Others.json': [],
         'Products.json': [],
         'Technology.json': [],
