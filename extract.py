@@ -368,6 +368,27 @@ def dedupe_ids_across_files(final_files: dict) -> tuple[int, dict[str, int]]:
     return total_removed, removed_by_file
 
 
+def dedupe_starship_adornment_display_duplicates(final_files: dict) -> int:
+    """
+    Remove T_BOBBLE_* tech variants when BOBBLE_* product versions exist.
+    Both share the same Name/Group (Starship Interior Adornment) and display as duplicates.
+    Keep the product (purchasable) version; drop the tech (installable) form.
+    """
+    others = final_files.get('Others.json')
+    if not isinstance(others, list):
+        return 0
+    product_ids = {i.get('Id') for i in others if isinstance(i, dict) and (i.get('Id') or '').startswith('BOBBLE_')}
+    if not product_ids:
+        return 0
+    # T_BOBBLE_X is the tech form of BOBBLE_X; remove it when BOBBLE_X exists
+    drop_ids = {f'T_{pid}' for pid in product_ids}
+    keep = [i for i in others if not (isinstance(i, dict) and (i.get('Id') or '') in drop_ids)]
+    removed = len(others) - len(keep)
+    if removed:
+        final_files['Others.json'] = keep
+    return removed
+
+
 def _has_stats(item: dict) -> bool:
     return bool(
         isinstance(item, dict) and (
@@ -936,6 +957,29 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     print(f"  [REVIEW] Saved {len(uncategorized_items)} uncategorized items to none.json\n")
 
     final_files.update(categorized)
+
+    # Re-route RawMaterials items that belong elsewhere (e.g. Reward Item -> Others.json).
+    # RawMaterials is preseeded from the substance table and normally bypasses categorization.
+    raw_materials = final_files.get('RawMaterials.json', [])
+    if isinstance(raw_materials, list):
+        to_keep = []
+        rerouted = 0
+        for item in raw_materials:
+            if not isinstance(item, dict):
+                to_keep.append(item)
+                continue
+            target_file = categorize_item(item)
+            if target_file and target_file != 'RawMaterials.json':
+                target_data = final_files.get(target_file)
+                if isinstance(target_data, list):
+                    target_data.append(item)
+                    rerouted += 1
+                    continue
+            to_keep.append(item)
+        if rerouted:
+            final_files['RawMaterials.json'] = to_keep
+            print(f"  [NORMALIZE] Moved {rerouted} RawMaterials items to other files (e.g. Reward Item -> Others.json)")
+
     total_removed = 0
     for filename, data in list(final_files.items()):
         filtered, removed = filter_missing_icons(data)
@@ -991,6 +1035,10 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         for filename in sorted(cross_removed_by_file):
             print(f"  [NORMALIZE] {filename}: removed {cross_removed_by_file[filename]} cross-file duplicate IDs")
         print(f"  [NORMALIZE] Removed {total_cross_dupes_removed} cross-file duplicate IDs total")
+
+    adornment_dupes = dedupe_starship_adornment_display_duplicates(final_files)
+    if adornment_dupes:
+        print(f"  [NORMALIZE] Others.json: removed {adornment_dupes} Starship Interior Adornment display duplicates (T_BOBBLE_* tech variants)")
 
     print("STEP 3: Saving final files...")
     print("-" * 70 + "\n")

@@ -414,6 +414,8 @@ CATEGORIZATION_RULES = {
 
     'Others.json': {
         'exact': {
+            'Reward Item',
+            'Technological Currency',
             '%NAME%\'s Genetic Material',
             'Damaged Starship Component',
             'Alien Cartographic Data',
@@ -843,7 +845,6 @@ CATEGORIZATION_RULES = {
             'Mineral',
             'Organic',
             'Precious Metal',
-            'Reward Item',
             'Stellar Metal',
             'Technology',
         }
