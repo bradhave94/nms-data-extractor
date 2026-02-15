@@ -36,10 +36,11 @@ This will:
 Duplicate `Id` entries are automatically deduplicated by default (no flags needed).
 `Food.json` keeps merge-style dedupe; other files use keep-first dedupe to avoid cross-schema field contamination.
 
-For a stricter run that fails on smoke-check errors (including duplicate IDs):
+Strict validation is enabled by default and fails the run on smoke-check errors (including duplicate IDs).
+If you need to bypass strict checks temporarily:
 
 ```bash
-python extract_all.py --strict
+python extract_all.py --no-strict
 ```
 
 ### Full refresh (new game version)

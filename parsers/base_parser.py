@@ -167,6 +167,7 @@ class EXMLParser:
 
     _localization = None  # Cache for localization data
     _controller_lookup = None  # Cache for FE token -> icon lookups
+    _xml_cache: dict[str, tuple[float, ET.Element]] = {}
 
     @classmethod
     def load_localization(cls) -> dict:
@@ -265,7 +266,10 @@ class EXMLParser:
         Returns:
             Property value as string, or default if not found
         """
-        prop = element.find(f'.//Property[@name="{name}"]')
+        # Fast path: direct child lookup first, then deep search fallback.
+        prop = element.find(f'./Property[@name="{name}"]')
+        if prop is None:
+            prop = element.find(f'.//Property[@name="{name}"]')
         return prop.get('value', default) if prop is not None else default
 
     @staticmethod
@@ -386,5 +390,22 @@ class EXMLParser:
         Returns:
             Root element of the XML tree
         """
+        path = Path(filepath)
+        key = str(path.resolve())
+        mtime = path.stat().st_mtime
+
+        cached = EXMLParser._xml_cache.get(key)
+        if cached is not None:
+            cached_mtime, cached_root = cached
+            if cached_mtime == mtime:
+                return cached_root
+
         tree = ET.parse(filepath)
-        return tree.getroot()
+        root = tree.getroot()
+        EXMLParser._xml_cache[key] = (mtime, root)
+        return root
+
+    @classmethod
+    def clear_xml_cache(cls) -> None:
+        """Clear cached XML roots (useful before a fresh extraction run)."""
+        cls._xml_cache.clear()

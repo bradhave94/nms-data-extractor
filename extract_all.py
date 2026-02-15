@@ -640,9 +640,9 @@ def main(argv=None):
         help='Generate refresh report and update reports/_latest_snapshot at end of run',
     )
     parser.add_argument(
-        '--strict',
+        '--no-strict',
         action='store_true',
-        help='Run strict smoke checks after extraction and fail on validation issues',
+        help='Skip strict smoke checks after extraction',
     )
     args = parser.parse_args(argv)
 
@@ -674,6 +674,7 @@ def main(argv=None):
     from parsers.base_parser import EXMLParser
     EXMLParser._localization = None
     EXMLParser._controller_lookup = None
+    EXMLParser.clear_xml_cache()
 
     # Step 1: Extract base data from MXML files
     print("STEP 1: Extracting base data from game files...")
@@ -875,8 +876,10 @@ def main(argv=None):
     print(f"Output location: {Path(__file__).parent / 'data' / 'json'}")
     print("=" * 70 + "\n")
 
-    # Step 4: Optional strict validation.
-    if args.strict:
+    # Step 4: Strict validation (default).
+    if args.no_strict:
+        print("[INFO] Strict smoke checks skipped (--no-strict).")
+    else:
         print("STEP 4: Running strict smoke checks...")
         print("-" * 70)
         from utils.smoke_check import run_smoke_check
