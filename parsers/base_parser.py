@@ -17,6 +17,9 @@ _MISSING_LOCALIZATION_OVERRIDES = {
     'UI_BRIDGECONNECT_NAME': 'Bridge Connector',
 }
 
+_MARKUP_TAG_RE = re.compile(r'<[^>]*>')
+_FE_TOKEN_RE = re.compile(r'\bFE_[A-Z0-9_]+\b')
+
 
 def strip_markup_tags(text: str) -> str:
     """
@@ -24,7 +27,9 @@ def strip_markup_tags(text: str) -> str:
     """
     if not text or not isinstance(text, str):
         return text
-    return re.sub(r'<[^>]*>', '', text)
+    if '<' not in text:
+        return text
+    return _MARKUP_TAG_RE.sub('', text)
 
 
 def normalize_control_tokens(text: str) -> str:
@@ -37,6 +42,8 @@ def normalize_control_tokens(text: str) -> str:
 
     mode = (os.environ.get("NMS_FE_TOKEN_MODE") or "resolved").strip().lower()
     if mode in {"raw", "off", "disabled"}:
+        return text
+    if "FE_" not in text:
         return text
 
     lookup = EXMLParser.load_controller_lookup()
@@ -66,7 +73,7 @@ def normalize_control_tokens(text: str) -> str:
             return f"[{readable}]"
         return token
 
-    return re.sub(r'\bFE_[A-Z0-9_]+\b', _token_label, text)
+    return _FE_TOKEN_RE.sub(_token_label, text)
 
 
 def _capitalize_word(word: str, force_capitalize: bool) -> str:
@@ -266,6 +273,8 @@ class EXMLParser:
         Returns:
             Property value as string, or default if not found
         """
+        if element is None:
+            return default
         # Fast path: direct child lookup first, then deep search fallback.
         prop = element.find(f'./Property[@name="{name}"]')
         if prop is None:
@@ -308,6 +317,10 @@ class EXMLParser:
         # Check for boolean
         if value_str.lower() in ('true', 'false'):
             return value_str.lower() == 'true'
+
+        # Fast skip for obvious non-numeric values to avoid exception-heavy parsing.
+        if value_str[0] not in ('-', '+') and not value_str[0].isdigit():
+            return value_str
 
         # Try numeric parsing
         try:

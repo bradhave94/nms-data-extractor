@@ -115,6 +115,11 @@ def main(argv=None) -> int:
         default=Path("data/json/controllerLookup.generated.json"),
         help="Output JSON path",
     )
+    parser.add_argument(
+        "--allow-missing",
+        action="store_true",
+        help="Exit successfully when ACTIONS.JSON is not found (skip generation).",
+    )
     args = parser.parse_args(argv)
 
     actions_json_path = args.actions_json
@@ -128,6 +133,9 @@ def main(argv=None) -> int:
         actions_json_path = next((p for p in candidates if p.exists()), None)
 
     if actions_json_path is None or not actions_json_path.exists():
+        if args.allow_missing:
+            print("[INFO] ACTIONS.JSON not found; skipping controller lookup generation.")
+            return 0
         print("[ERROR] Could not locate ACTIONS.JSON. Pass --actions-json explicitly.")
         return 1
 
@@ -149,4 +157,3 @@ def main(argv=None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -1,8 +1,9 @@
 """Parse Products from MXML to JSON"""
-from .base_parser import EXMLParser, normalize_game_icon_path, unresolved_localization_key_count
+from .base_parser import EXMLParser
+from .product_lookup import parse_product_element
 
 
-def parse_products(mxml_path: str) -> list:
+def parse_products(mxml_path: str, *, include_subtitle_key: bool = False) -> list:
     """
     Parse nms_reality_gcproducttable.MXML to Products.json format.
 
@@ -53,107 +54,58 @@ def parse_products(mxml_path: str) -> list:
     # Each product is a Property element with value="GcProductData"
     for product_elem in table_prop.findall('./Property[@name="Table"]'):
         try:
-            # Extract basic info
-            product_id = parser.get_property_value(product_elem, 'ID', f'PRODUCT_{product_counter}')
+            fallback_id = f'PRODUCT_{product_counter}'
             name_key = parser.get_property_value(product_elem, 'Name', '')
             subtitle_key = parser.get_property_value(product_elem, 'Subtitle', '')
             description_key = parser.get_property_value(product_elem, 'Description', '')
-
-            # Translate to English
-            name = parser.translate(name_key, name_key)
-            subtitle = parser.translate(subtitle_key, subtitle_key)
-            description = parser.translate(description_key, description_key)
-
-            # Generic unresolved-loc filter: skip entries where 2+ key-like fields
-            # are missing translations (covers BLD_*, UT_*, UP_* placeholders, etc).
-            if unresolved_localization_key_count(localization, name_key, subtitle_key, description_key) >= 2:
+            row = parse_product_element(
+                parser=parser,
+                localization=localization,
+                item=product_elem,
+                include_requirements=True,
+                include_raw_keys=include_subtitle_key,
+                require_icon=True,
+                fallback_id=fallback_id,
+                name_default=name_key,
+                group_default=subtitle_key,
+                description_default=description_key,
+            )
+            if row is None:
                 continue
-
-            # Extract Icon path from game (matches data/EXTRACTED/textures/...)
-            icon_prop = product_elem.find('.//Property[@name="Icon"]')
-            icon_filename = ''
-            if icon_prop is not None:
-                icon_filename = parser.get_property_value(icon_prop, 'Filename', '')
-            icon_path = normalize_game_icon_path(icon_filename) if icon_filename else ''
-            if not icon_path:
-                continue
-
-            # Extract color
-            colour_elem = product_elem.find('.//Property[@name="Colour"]')
-            colour = parser.parse_colour(colour_elem)
-
-            # Extract numeric values
-            base_value = parser.parse_value(parser.get_property_value(product_elem, 'BaseValue', '0'))
-            stack_multiplier = parser.parse_value(parser.get_property_value(product_elem, 'StackMultiplier', '1'))
-            recipe_cost = parser.parse_value(parser.get_property_value(product_elem, 'RecipeCost', '0'))
-
-            # Extract requirements
-            required_items = []
-            requirements_prop = product_elem.find('.//Property[@name="Requirements"]')
-            if requirements_prop is not None:
-                for req_elem in requirements_prop.findall('./Property'):
-                    req_id = parser.get_property_value(req_elem, 'ID', '')
-                    req_amount = parser.get_property_value(req_elem, 'Amount', '1')
-                    if req_id:
-                        required_items.append({
-                            'Id': req_id,
-                            'Quantity': parser.parse_value(req_amount)
-                        })
-
-            # Determine usages (based on boolean properties)
-            usages = []
-            is_craftable = parser.get_property_value(product_elem, 'IsCraftable', 'false')
-            is_cooking = parser.get_property_value(product_elem, 'CookingIngredient', 'false')
-            egg_modifier = parser.get_property_value(product_elem, 'EggModifierIngredient', 'false')
-            good_for_selling = parser.get_property_value(product_elem, 'GoodForSelling', 'false')
-
-            if parser.parse_value(is_craftable):
-                usages.append('HasUsedToCraft')
-            if parser.parse_value(is_cooking):
-                usages.append('HasCookingProperties')
-            if parser.parse_value(egg_modifier):
-                usages.append('IsEggIngredient')
-            if parser.parse_value(good_for_selling):
-                usages.append('HasDevProperties')
-
-            # Nested enums and extra fields
-            rarity = parser.get_nested_enum(product_elem, 'Rarity', 'Rarity', '')
-            legality = parser.get_nested_enum(product_elem, 'Legality', 'Legality', '')
-            trade_category = parser.get_nested_enum(product_elem, 'TradeCategory', 'TradeCategory', '')
-            wiki_category = parser.get_property_value(product_elem, 'WikiCategory', '')
-            consumable = parser.parse_value(parser.get_property_value(product_elem, 'Consumable', 'false'))
-            deploys_into = parser.get_property_value(product_elem, 'DeploysInto', '')
+            product_id = row['Id']
 
             # Create product entry
             product = {
                 'Id': product_id,  # Use actual game ID
                 'Icon': f"{product_id}.png",
-                'IconPath': icon_path,
-                'Name': name,
-                'Group': subtitle,
-                'Description': description,
-                'BaseValueUnits': base_value,
+                'IconPath': row['IconPath'],
+                'Name': row['Name'],
+                'Group': row['Group'],
+                'Description': row['Description'],
+                'BaseValueUnits': row['BaseValueUnits'],
                 'CurrencyType': 'Credits',  # Default to Credits
-                'MaxStackSize': stack_multiplier,
-                'Colour': colour,
+                'MaxStackSize': row['MaxStackSize'],
+                'Colour': row['Colour'],
                 'CdnUrl': '',  # Build from Icon path: baseUrl + icon (e.g. EXTRACTED or your CDN)
-                'Usages': usages,
-                'BlueprintCost': recipe_cost,
+                'Usages': row['Usages'],
+                'BlueprintCost': row['BlueprintCost'],
                 'BlueprintCostType': 'None',  # May need to extract this
                 'BlueprintSource': 0,  # May need to extract this
-                'RequiredItems': required_items,
+                'RequiredItems': row['RequiredItems'],
                 'StatBonuses': [],  # May need to extract this
                 'ConsumableRewardTexts': [],  # May need to extract this
-                'Rarity': rarity or None,
-                'Legality': legality or None,
-                'TradeCategory': trade_category or None,
-                'WikiCategory': wiki_category or None,
-                'Consumable': consumable,
-                'CookingIngredient': parser.parse_value(is_cooking),
-                'GoodForSelling': parser.parse_value(good_for_selling),
-                'EggModifierIngredient': parser.parse_value(egg_modifier),
-                'DeploysInto': deploys_into or None,
+                'Rarity': row['Rarity'],
+                'Legality': row['Legality'],
+                'TradeCategory': row['TradeCategory'],
+                'WikiCategory': row['WikiCategory'],
+                'Consumable': row['Consumable'],
+                'CookingIngredient': row['CookingIngredient'],
+                'GoodForSelling': row['GoodForSelling'],
+                'EggModifierIngredient': row['EggModifierIngredient'],
+                'DeploysInto': row['DeploysInto'],
             }
+            if include_subtitle_key:
+                product['SubtitleKey'] = row.get('SubtitleKey', subtitle_key)
 
             products.append(product)
             product_counter += 1

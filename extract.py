@@ -27,7 +27,6 @@ import time
 from pathlib import Path
 
 from parsers.base_parts import parse_base_parts
-from parsers.buildings import parse_buildings
 from parsers.cooking import parse_cooking
 from parsers.fish import parse_fish
 from parsers.procedural_tech import parse_procedural_tech
@@ -37,7 +36,7 @@ from parsers.refinery import parse_refinery, parse_nutrient_processor
 from parsers.ship_components import parse_ship_components
 from parsers.technology import parse_technology
 from parsers.trade import parse_trade
-from utils.categorization import categorize_item
+from utils.categorization import categorize_item, assert_unique_exact_group_owners
 from utils.clean import clean_data
 from utils.generate_controller_lookup import main as generate_controller_lookup_main
 from utils.images import extract_icons
@@ -304,6 +303,21 @@ def dedupe_items_by_id(items: list, *, merge_missing_fields: bool = True) -> tup
                     existing[key] = value
         removed += 1
     return deduped, removed
+
+
+def _index_items_by_id(items: list) -> tuple[set[str], dict[str, dict]]:
+    ids: set[str] = set()
+    first_by_id: dict[str, dict] = {}
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        item_id = item.get('Id')
+        if not isinstance(item_id, str) or not item_id:
+            continue
+        ids.add(item_id)
+        if item_id not in first_by_id:
+            first_by_id[item_id] = item
+    return ids, first_by_id
 
 
 def dedupe_all_files_by_id(final_files: dict) -> tuple[int, dict[str, int]]:
@@ -697,6 +711,84 @@ def enrich_exocraft_metadata(final_files: dict, data_dir: Path) -> int:
     return enriched
 
 
+def enrich_buildings_metadata(final_files: dict, data_dir: Path) -> int:
+    buildings_items = final_files.get('Buildings.json')
+    if not isinstance(buildings_items, list) or not buildings_items:
+        return 0
+    from parsers.base_parser import EXMLParser
+
+    source_table = data_dir / 'basebuildingobjectstable.MXML'
+    if not source_table.exists():
+        return 0
+
+    parser = EXMLParser()
+    try:
+        root = parser.load_xml(str(source_table))
+    except Exception:
+        return 0
+
+    objects_prop = root.find('.//Property[@name="Objects"]')
+    if objects_prop is None:
+        return 0
+
+    metadata_by_id: dict[str, dict] = {}
+    for building_elem in objects_prop.findall('./Property[@name="Objects"]'):
+        item_id = parser.get_property_value(building_elem, 'ID', '')
+        if not item_id:
+            continue
+
+        groups_list = []
+        groups_prop = building_elem.find('.//Property[@name="Groups"]')
+        if groups_prop is not None:
+            for grp_elem in groups_prop.findall('./Property[@name="Groups"]'):
+                group_name = parser.get_property_value(grp_elem, 'Group', '')
+                subgroup = parser.get_property_value(grp_elem, 'SubGroupName', '')
+                if group_name:
+                    groups_list.append({'Group': group_name, 'SubGroupName': subgroup or None})
+
+        link_grid_data = None
+        link_elem = building_elem.find('.//Property[@name="LinkGridData"]')
+        if link_elem is not None:
+            network_elem = link_elem.find('.//Property[@name="Network"]')
+            link_type = (
+                parser.get_nested_enum(network_elem, 'LinkNetworkType', 'LinkNetworkType', '')
+                if network_elem is not None else ''
+            )
+            rate = parser.parse_value(parser.get_property_value(link_elem, 'Rate', '0'))
+            storage = parser.parse_value(parser.get_property_value(link_elem, 'Storage', '0'))
+            if link_type or rate or storage:
+                link_grid_data = {'Network': link_type or None, 'Rate': rate, 'Storage': storage}
+
+        metadata_by_id[item_id] = {
+            'IconOverrideProductID': parser.get_property_value(building_elem, 'IconOverrideProductID', '') or None,
+            'BuildableOnPlanetBase': parser.parse_value(
+                parser.get_property_value(building_elem, 'BuildableOnPlanetBase', 'true')
+            ),
+            'BuildableOnSpaceBase': parser.parse_value(
+                parser.get_property_value(building_elem, 'BuildableOnSpaceBase', 'false')
+            ),
+            'BuildableOnFreighter': parser.parse_value(
+                parser.get_property_value(building_elem, 'BuildableOnFreighter', 'false')
+            ),
+            'Groups': groups_list if groups_list else None,
+            'LinkGridData': link_grid_data,
+        }
+
+    enriched = 0
+    for item in buildings_items:
+        if not isinstance(item, dict):
+            continue
+        item_id = item.get('Id')
+        if not isinstance(item_id, str):
+            continue
+        extra = metadata_by_id.get(item_id)
+        if not extra:
+            continue
+        item.update(extra)
+        enriched += 1
+    return enriched
+
+
 def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     start_time = time.time()
     print("\n" + "=" * 70)
@@ -711,7 +803,7 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
 
     try:
         print("Building controller lookup...")
-        lookup_exit = generate_controller_lookup_main([])
+        lookup_exit = generate_controller_lookup_main(["--allow-missing"])
         if lookup_exit != 0:
             print("  [WARN] Could not refresh controller lookup (continuing).")
     except Exception as e:
@@ -731,7 +823,6 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         ('Products', 'nms_reality_gcproducttable.MXML', parse_products),
         ('RawMaterials', 'nms_reality_gcsubstancetable.MXML', parse_rawmaterials),
         ('Technology', 'nms_reality_gctechnologytable.MXML', parse_technology),
-        ('Buildings', 'basebuildingobjectstable.MXML', parse_buildings),
         ('Cooking', 'consumableitemtable.MXML', parse_cooking),
         ('Fish', 'fishdatatable.MXML', parse_fish),
         ('Trade', 'nms_reality_gcproducttable.MXML', parse_trade),
@@ -757,6 +848,11 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     print("\n" + "=" * 70)
     print("STEP 2: Categorizing into output files...")
     print("-" * 70 + "\n")
+    try:
+        assert_unique_exact_group_owners()
+    except ValueError as e:
+        print(f"[ERROR] {e}")
+        return 1
 
     final_files = {
         'Refinery.json': base_data.get('Refinery', []),
@@ -765,6 +861,17 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         'Trade.json': base_data.get('Trade', []),
         'RawMaterials.json': base_data.get('RawMaterials', []),
     }
+    preseeded_ids: dict[str, set[str]] = {}
+    preseeded_first_by_id: dict[str, dict[str, dict]] = {}
+    for filename, data in final_files.items():
+        if isinstance(data, list):
+            ids, first_by_id = _index_items_by_id(data)
+            preseeded_ids[filename] = ids
+            preseeded_first_by_id[filename] = first_by_id
+        else:
+            preseeded_ids[filename] = set()
+            preseeded_first_by_id[filename] = {}
+
     categorized = {
         'Buildings.json': [], 'ConstructedTechnology.json': [], 'Food.json': [],
         'Corvette.json': [], 'Curiosities.json': [], 'Exocraft.json': [],
@@ -775,7 +882,6 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     items_to_categorize = []
     items_to_categorize.extend(base_data.get('Products', []))
     items_to_categorize.extend(base_data.get('Technology', []))
-    items_to_categorize.extend(base_data.get('Buildings', []))
     items_to_categorize.extend(base_data.get('Cooking', []))
     items_to_categorize.extend(base_data.get('ShipComponents', []))
     items_to_categorize.extend(base_data.get('BaseParts', []))
@@ -783,6 +889,7 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
 
     total_categorized = 0
     total_skipped = 0
+    total_preseeded_dupe_skips = 0
     uncategorized_items = []
     for item in items_to_categorize:
         target_file = categorize_item(item)
@@ -793,9 +900,32 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         if target_file in categorized:
             categorized[target_file].append(item)
             total_categorized += 1
+            continue
+        if target_file in final_files and isinstance(final_files[target_file], list):
+            if isinstance(item, dict):
+                item_id = item.get('Id')
+                if isinstance(item_id, str) and item_id:
+                    if item_id in preseeded_ids[target_file]:
+                        # Keep specialized parser rows as source-of-truth for seeded files.
+                        existing = preseeded_first_by_id[target_file].get(item_id)
+                        if isinstance(existing, dict):
+                            for key, value in item.items():
+                                if key not in existing or existing.get(key) in (None, '', []):
+                                    existing[key] = value
+                        total_preseeded_dupe_skips += 1
+                        continue
+                    preseeded_ids[target_file].add(item_id)
+                    preseeded_first_by_id[target_file][item_id] = item
+            final_files[target_file].append(item)
+            total_categorized += 1
+            continue
+        total_skipped += 1
+        uncategorized_items.append(item)
 
     print(f"Categorized {total_categorized} items")
     print(f"Skipped {total_skipped} items (saved to none.json for review)\n")
+    if total_preseeded_dupe_skips:
+        print(f"  [NORMALIZE] Skipped {total_preseeded_dupe_skips} duplicate IDs already present in seeded files")
 
     uncategorized_items, removed_uncategorized = filter_missing_icons(uncategorized_items)
     if removed_uncategorized:
@@ -839,6 +969,9 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     exocraft_enriched = enrich_exocraft_metadata(final_files, data_dir)
     if exocraft_enriched:
         print(f"  [ENRICH] Exocraft.json: added extended metadata to {exocraft_enriched} items")
+    buildings_enriched = enrich_buildings_metadata(final_files, data_dir)
+    if buildings_enriched:
+        print(f"  [ENRICH] Buildings.json: added base-building metadata to {buildings_enriched} items")
 
     food = final_files.get('Food.json')
     if isinstance(food, list):

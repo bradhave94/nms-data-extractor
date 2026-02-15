@@ -533,7 +533,6 @@ CATEGORIZATION_RULES = {
     'Products.json': {
         'exact': {
             'Advanced Agricultural Product',
-            'Advanced Crafted Product',
             'Advanced Mineral Product',
             'Bio-luminescent Material',
             'Chemical Curiosity',
@@ -729,7 +728,6 @@ CATEGORIZATION_RULES = {
             'Minotaur Core Replacement',
             'Minotaur Digging Laser',
             'Minotaur Engine Upgrade',
-            'Minotaur Limb Replacement',
             'Minotaur Mining Utility',
             'Minotaur Power Unit',
             'Minotaur Scan Attachment',
@@ -759,7 +757,6 @@ CATEGORIZATION_RULES = {
             'Scatter Blaster Upgrade',
             'Scatter Shot Projectile Weapon',
             'Self-Mounted Advanced Refiner',
-            'Self-Sustaining Auto Creel',
             'Sentient Vessel Node',
             'Sentinel Ship Gun',
             'Ship Tech',
@@ -799,9 +796,7 @@ CATEGORIZATION_RULES = {
             'Temporal Delivery Unit',
             'Terrain Destruction Device',
             'Topographic Survey',
-            'Underwater Oxygen Upgrade',
             'Unique Angling Device',
-            'Vehicle Translocation Device',
             'Vehicle-Borne Refiner',
             'Vertical Take-off System',
             'Weapon Precision Enhancement',
@@ -821,7 +816,6 @@ CATEGORIZATION_RULES = {
         'exact': {
             'Fragile Medusoid',
             'Common Fish',
-            'Legendary Fish',
             'Rare Fish',
             'Uncommon Fish',
         }
@@ -852,10 +846,34 @@ CATEGORIZATION_RULES = {
             'Reward Item',
             'Stellar Metal',
             'Technology',
-            'Tradeable Sub',
         }
     },
 }
+
+
+def find_overlapping_exact_groups() -> dict[str, list[str]]:
+    """Return exact-group names that are owned by more than one output file."""
+    owners: dict[str, list[str]] = {}
+    for filename, rules in CATEGORIZATION_RULES.items():
+        for group in rules.get('exact', set()):
+            owners.setdefault(group, []).append(filename)
+    return {
+        group: sorted(files)
+        for group, files in owners.items()
+        if len(files) > 1
+    }
+
+
+def assert_unique_exact_group_owners() -> None:
+    """Fail fast if any exact group is mapped to multiple files."""
+    overlaps = find_overlapping_exact_groups()
+    if not overlaps:
+        return
+    preview = '; '.join(
+        f"{group} ({', '.join(files)})"
+        for group, files in sorted(overlaps.items())
+    )
+    raise ValueError(f"Overlapping exact-group owners found: {preview}")
 
 
 def categorize_item(item: dict) -> str | None:
