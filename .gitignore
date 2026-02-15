@@ -33,9 +33,10 @@ ENV/
 Thumbs.db
 
 data/EXTRACTED/
-data/mbin/
-data/images/
-data/metadata/
-data/language/
+# Keep MBIN/MXML in git so extraction can run on machines without the game install.
+# data/mbin/
+# data/images/
+# data/metadata/
+# data/language/
 
 tools/*
