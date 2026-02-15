@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
-"""
-Builds per-run refresh reports and snapshots for full_refresh.py.
-
-Report behavior:
-- Detect a version key (explicit env var first, then MBINCompiler version from MXML).
-- Compare current data/json against the previous run snapshot.
-- Write markdown + json reports under reports/by_version/<version>/<timestamp>/.
-- Update a global latest snapshot for next run comparisons.
-"""
+"""Builds per-run refresh reports and snapshots for extraction runs."""
 from __future__ import annotations
 
 import json
@@ -26,13 +18,6 @@ def _sanitize_version(value: str) -> str:
 
 
 def detect_version_key(repo_root: Path) -> str:
-    """
-    Detect version key used to place reports in version folders.
-    Priority:
-      1) NMS_GAME_VERSION or NMS_VERSION environment vars (set by user/CI)
-      2) MBINCompiler version comment from product table MXML
-      3) "unknown-version"
-    """
     import os
 
     explicit = (os.environ.get("NMS_GAME_VERSION") or os.environ.get("NMS_VERSION") or "").strip()
@@ -52,7 +37,6 @@ def detect_version_key(repo_root: Path) -> str:
                         return _sanitize_version(match.group(1))
         except OSError:
             pass
-
     return "unknown-version"
 
 
@@ -73,10 +57,7 @@ def _is_id_list(data: Any) -> bool:
 
 
 def _index_by_id(items: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
-    out: dict[str, dict[str, Any]] = {}
-    for item in items:
-        out[str(item["Id"])] = item
-    return out
+    return {str(item["Id"]): item for item in items}
 
 
 def _compare_file(old_data: Any, new_data: Any) -> dict[str, Any]:
@@ -116,14 +97,13 @@ def _compare_file(old_data: Any, new_data: Any) -> dict[str, Any]:
 
     old_count = len(old_data) if isinstance(old_data, list) else (len(old_data) if isinstance(old_data, dict) else (0 if old_data is None else 1))
     new_count = len(new_data) if isinstance(new_data, list) else (len(new_data) if isinstance(new_data, dict) else (0 if new_data is None else 1))
-    has_changes = old_data != new_data
     return {
         "old_count": old_count,
         "new_count": new_count,
         "added_ids": [],
         "removed_ids": [],
         "changed_ids": [],
-        "has_changes": has_changes,
+        "has_changes": old_data != new_data,
         "mode": "generic",
     }
 
@@ -136,13 +116,7 @@ def _copy_snapshot(source_json_dir: Path, snapshot_dir: Path) -> None:
         shutil.copy2(json_file, snapshot_dir / json_file.name)
 
 
-def _build_markdown(
-    *,
-    version_key: str,
-    generated_at: str,
-    previous_run: dict[str, Any] | None,
-    per_file: dict[str, dict[str, Any]],
-) -> str:
+def _build_markdown(*, version_key: str, generated_at: str, previous_run: dict[str, Any] | None, per_file: dict[str, dict[str, Any]]) -> str:
     old_total = sum(info["old_count"] for info in per_file.values())
     new_total = sum(info["new_count"] for info in per_file.values())
     added_total = sum(len(info["added_ids"]) for info in per_file.values())
@@ -179,9 +153,7 @@ def _build_markdown(
 
     for filename in sorted(per_file):
         info = per_file[filename]
-        lines.append(
-            f"| {filename} | {info['old_count']} | {info['new_count']} | {len(info['added_ids'])} | {len(info['removed_ids'])} | {len(info['changed_ids'])} |"
-        )
+        lines.append(f"| {filename} | {info['old_count']} | {info['new_count']} | {len(info['added_ids'])} | {len(info['removed_ids'])} | {len(info['changed_ids'])} |")
 
     lines.extend(["", "## Net New Highlights", ""])
     changes_found = False
@@ -216,10 +188,6 @@ def _build_markdown(
 
 
 def generate_refresh_report(repo_root: Path) -> dict[str, Any]:
-    """
-    Compare current data/json output to the previous run and write report artifacts.
-    Returns metadata containing generated report path and totals.
-    """
     reports_root = repo_root / "reports"
     latest_snapshot = reports_root / "_latest_snapshot"
     latest_run_meta_path = reports_root / "latest_run.json"
@@ -256,7 +224,6 @@ def generate_refresh_report(repo_root: Path) -> dict[str, Any]:
         previous_run=previous_run,
         per_file=per_file,
     )
-
     report_payload = {
         "generated_at": generated_at,
         "version_key": version_key,
@@ -289,7 +256,6 @@ def generate_refresh_report(repo_root: Path) -> dict[str, Any]:
         "removed": sum(len(info["removed_ids"]) for info in per_file.values()),
         "changed": sum(len(info["changed_ids"]) for info in per_file.values()),
     }
-
     return {
         "version_key": version_key,
         "generated_at": generated_at,
@@ -297,18 +263,3 @@ def generate_refresh_report(repo_root: Path) -> dict[str, Any]:
         "report_json": json_path,
         "totals": totals,
     }
-
-
-def main() -> int:
-    repo_root = Path(__file__).resolve().parents[1]
-    result = generate_refresh_report(repo_root)
-    print(f"[OK] Refresh report generated: {result['report_markdown']}")
-    print(
-        f"[OK] Totals - added: {result['totals']['added']}, "
-        f"removed: {result['totals']['removed']}, changed: {result['totals']['changed']}"
-    )
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())

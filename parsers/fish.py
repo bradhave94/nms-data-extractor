@@ -3,14 +3,13 @@
 Fish names/descriptions come from the product table (nms_reality_gcproducttable) and
 localization (LANGUAGE/*.mbin). If fish names are missing or wrong, extract additional
 locale MBINs from the game, run MBINCompiler to get MXML, then add them to
-utils/parse_localization.py and rebuild localization.json.
+utils/localization.py and rebuild localization.json.
 """
 import re
 from .base_parser import (
     EXMLParser,
-    normalize_game_icon_path,
-    unresolved_localization_key_count,
 )
+from .product_lookup import load_product_lookup
 from pathlib import Path
 
 
@@ -108,57 +107,14 @@ def _load_product_details():
     parser = EXMLParser()
     localization = parser.load_localization()
 
-    # Load from Products table
     products_path = Path(__file__).parent.parent / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
     if products_path.exists():
-        root = parser.load_xml(str(products_path))
-        table_prop = root.find('.//Property[@name="Table"]')
-        if table_prop:
-            for item in table_prop.findall('./Property[@name="Table"]'):
-                item_id = parser.get_property_value(item, 'ID', '')
-                name_key = parser.get_property_value(item, 'Name', '')
-                subtitle_key = parser.get_property_value(item, 'Subtitle', '')
-                description_key = parser.get_property_value(item, 'Description', '')
-                if unresolved_localization_key_count(localization, name_key, subtitle_key, description_key) >= 2:
-                    continue
-                base_value = parser.parse_value(parser.get_property_value(item, 'BaseValue', '0'))
-                stack_mult = parser.parse_value(parser.get_property_value(item, 'StackMultiplier', '1'))
-                cooking_value = parser.parse_value(parser.get_property_value(item, 'CookingValue', '0'))
-                rarity = parser.get_nested_enum(item, 'Rarity', 'Rarity', '')
-                legality = parser.get_nested_enum(item, 'Legality', 'Legality', '')
-                trade_category = parser.get_nested_enum(item, 'TradeCategory', 'TradeCategory', '')
-                wiki_category = parser.get_property_value(item, 'WikiCategory', '')
-                consumable = parser.parse_value(parser.get_property_value(item, 'Consumable', 'false'))
-
-                # Extract color
-                colour_elem = item.find('.//Property[@name="Colour"]')
-                colour = parser.parse_colour(colour_elem)
-
-                # Icon path from game (matches data/EXTRACTED/textures/...)
-                icon_prop = item.find('.//Property[@name="Icon"]')
-                icon_filename = parser.get_property_value(icon_prop, 'Filename', '') if icon_prop is not None else ''
-                icon_path = normalize_game_icon_path(icon_filename) if icon_filename else ''
-
-                if item_id:
-                    name = parser.translate(name_key, item_id)
-                    group = parser.translate(subtitle_key, '')
-                    description = parser.translate(description_key, '')
-
-                    _product_cache[item_id] = {
-                        'IconPath': icon_path,
-                        'Name': name,
-                        'Group': group,
-                        'Description': description,
-                        'BaseValueUnits': base_value,
-                        'MaxStackSize': stack_mult,
-                        'CookingValue': cooking_value,
-                        'Colour': colour,
-                        'Rarity': rarity or None,
-                        'Legality': legality or None,
-                        'TradeCategory': trade_category or None,
-                        'WikiCategory': wiki_category or None,
-                        'Consumable': consumable,
-                    }
+        _product_cache = load_product_lookup(
+            parser=parser,
+            localization=localization,
+            products_mxml_path=products_path,
+            include_requirements=False,
+        )
 
     print(f"[OK] Loaded {len(_product_cache)} product details for lookup")
     return _product_cache

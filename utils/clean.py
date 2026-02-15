@@ -1,16 +1,10 @@
 #!/usr/bin/env python3
-"""
-Clean the data folder: remove all contents, keep data/, create data/json.
-Use before a full refresh (e.g. new game version) so HGPAKtool and extract_all.py have a clean slate.
-
-Run from repo root: python -m utils.clean_data
-"""
-import shutil
+"""Clean the data folder and recreate data/json."""
 from pathlib import Path
+import shutil
 
 
-def main():
-    repo_root = Path(__file__).parent.parent
+def clean_data(repo_root: Path) -> None:
     data_dir = repo_root / "data"
     data_json = data_dir / "json"
 
@@ -30,6 +24,10 @@ def main():
     data_json.mkdir(parents=True, exist_ok=True)
     print("Created data/json/")
     print("Done. data/ is clean and data/json/ exists.")
+
+
+def main() -> None:
+    clean_data(Path(__file__).parent.parent)
 
 
 if __name__ == "__main__":

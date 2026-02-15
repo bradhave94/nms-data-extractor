@@ -1,16 +1,9 @@
 #!/usr/bin/env python3
-"""
-Lightweight post-extraction smoke checks.
-
-Usage:
-  python -m utils.smoke_check
-"""
+"""Lightweight post-extraction smoke checks."""
 from __future__ import annotations
 
-import argparse
 import json
 from pathlib import Path
-
 
 EXPECTED_JSON_FILES = [
     "Buildings.json",
@@ -63,7 +56,6 @@ def run_smoke_check(repo_root: Path, *, fail_on_duplicate_ids: bool = False) -> 
             failures.append(f"{filename}: expected top-level list, got {type(data).__name__}")
             continue
 
-        # Detect duplicate Id values; non-dict rows are ignored here.
         seen_ids: set[str] = set()
         duplicate_ids: set[str] = set()
         for row in data:
@@ -105,19 +97,3 @@ def run_smoke_check(repo_root: Path, *, fail_on_duplicate_ids: bool = False) -> 
 
     print(f"Checked {len(EXPECTED_JSON_FILES)} JSON files in {json_dir}")
     return 0
-
-
-def main() -> int:
-    arg_parser = argparse.ArgumentParser(description="Run lightweight JSON smoke checks.")
-    arg_parser.add_argument(
-        "--strict-duplicates",
-        action="store_true",
-        help="Treat duplicate Id values as a failure instead of warning.",
-    )
-    args = arg_parser.parse_args()
-    repo_root = Path(__file__).resolve().parents[1]
-    return run_smoke_check(repo_root, fail_on_duplicate_ids=args.strict_duplicates)
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())

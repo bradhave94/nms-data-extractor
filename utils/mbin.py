@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""
-After HGPAKtool: copy all .mbin from data/metadata and data/language into data/mbin,
-then delete those two folders. Run from repo root: python -m utils.consolidate_mbin
-"""
-import shutil
+"""Consolidate MBIN files into data/mbin and remove staging folders."""
 from pathlib import Path
+import shutil
 
 
-def main():
-    repo_root = Path(__file__).parent.parent
+def consolidate_mbin(repo_root: Path) -> None:
     data_dir = repo_root / "data"
     mbin_dir = data_dir / "mbin"
     metadata_dir = data_dir / "metadata"
@@ -38,6 +34,10 @@ def main():
             print(f"Removed data/{folder.name}/")
 
     print("Done.")
+
+
+def main() -> None:
+    consolidate_mbin(Path(__file__).parent.parent)
 
 
 if __name__ == "__main__":

@@ -24,23 +24,23 @@ Before running the extractor you need:
 
 ### Extract All Data (One Command)
 ```bash
-python extract_all.py
+python extract.py
 ```
 
 This will:
 1. Extract all data from MXML files
-2. Categorize into 13 required JSON files
+2. Categorize into output JSON files
 
-**Output:** All 13 JSON files in `data/json/`
+**Output:** JSON files in `data/json/`
 
 Duplicate `Id` entries are automatically deduplicated by default (no flags needed).
 `Food.json` keeps merge-style dedupe; other files use keep-first dedupe to avoid cross-schema field contamination.
 
-Strict validation is enabled by default and fails the run on smoke-check errors (including duplicate IDs).
+Strict validation is enabled by default and fails the run on smoke-check errors (including duplicate IDs).  
 If you need to bypass strict checks temporarily:
 
 ```bash
-python extract_all.py --no-strict
+python extract.py --no-strict
 ```
 
 ### Full refresh (new game version)
@@ -48,9 +48,11 @@ python extract_all.py --no-strict
 To rebuild everything from the latest game files (clean → extract MBINs → convert → extract JSON) in one go:
 
 ```bash
-# Set your game path once (Windows: set NMS_PCBANKS=... ; macOS/Linux: export NMS_PCBANKS=...)
-# Or pass it: python full_refresh.py "X:\...\PCBANKS"
-python full_refresh.py
+# Use default PCBANKS path:
+python extract.py --refresh
+
+# Or pass a custom path:
+python extract.py --pcbanks "X:\...\PCBANKS"
 ```
 
 Requires **hgpaktool** library and **MBINCompiler.exe** in `tools/`.
@@ -60,16 +62,18 @@ Requires **hgpaktool** library and **MBINCompiler.exe** in `tools/`.
 To unpack game textures and export one PNG per item (for CDN or app use):
 
 ```bash
-# Same game path as full_refresh (NMS_PCBANKS or pass as argument)
-python extract_all_images.py
+# Reuse existing EXTRACTED folder:
+python extract.py --images --extracted "C:\path\to\EXTRACTED"
+
+# Or extract textures from game files then generate images:
+python extract.py --images --pcbanks "X:\...\PCBANKS"
 ```
 
-This will: (1) unpack `*TEXTURES/*` from the game into `data/`, (2) normalize to `data/EXTRACTED/textures/`, (3) run `utils.extract_images` to produce **`data/images/{id}.png`** (or `.dds` if ImageMagick is not installed).
+`--images` runs image extraction only (it does not run JSON extraction).  
+This will run `utils.images` to produce **`data/images/{id}.png`** (or `.dds` if ImageMagick is not installed).  
+If `--extracted` is not provided, textures are unpacked from game files first.
 
 - **Requires:** hgpaktool library (installed via requirements.txt); **optional:** [ImageMagick](https://imagemagick.org/) (`magick`) for DDS→PNG.
-- If you already have `data/EXTRACTED` (e.g. from a previous run), you can skip unpacking and only extract icons:
-  `python -m utils.extract_images`
-  (uses `data/json/` and `data/EXTRACTED/`, writes to `data/images/`).
 
 ### Smoke checks
 
@@ -77,10 +81,10 @@ Run lightweight validation on extracted JSON output:
 
 ```bash
 # Default: validates file existence/JSON structure; duplicate IDs are warnings
-python -m utils.smoke_check
+python -m utils.smoke
 
 # Strict: duplicate IDs are treated as errors
-python -m utils.smoke_check --strict-duplicates
+python -m utils.smoke --strict-duplicates
 ```
 
 ### Generated Files
@@ -93,7 +97,7 @@ python -m utils.smoke_check --strict-duplicates
 | **RawMaterials.json** | Mineable substances |
 | **Technology.json** | Installable technologies |
 | **Buildings.json** | Base building parts |
-| **Cooking.json** | Edible items & ingredients |
+| **Food.json** | Edible items & ingredients |
 | **Corvette.json** | Corvette parts |
 | **Fish.json** | Catchable fish |
 | **Trade.json** | Trade goods & smuggled items |
@@ -108,9 +112,9 @@ python -m utils.smoke_check --strict-duplicates
 nms-data-extractor/
 ├── data/
 │   ├── mbin/                # MXML files (converted from MBIN; gitignored)
-│   ├── json/                # Final JSON output (13 category files + localization)
-│   ├── EXTRACTED/           # Game textures (from extract_all_images.py; gitignored)
-│   └── images/              # Item icons {id}.png (from extract_all_images.py; gitignored)
+│   ├── json/                # Final JSON output
+│   ├── EXTRACTED/           # Game textures (from extract.py --images; gitignored)
+│   └── images/              # Item icons {id}.png (from extract.py --images; gitignored)
 ├── parsers/
 │   ├── __init__.py
 │   ├── base_parser.py       # Shared utilities & translation
@@ -128,55 +132,33 @@ nms-data-extractor/
 ├── utils/
 │   ├── __init__.py
 │   ├── categorization.py    # Categorization rules
-│   ├── clean_data.py        # Wipe data/ for full refresh
-│   ├── compare_data.py      # Compare two data dirs (used by compare_data.py CLI)
-│   ├── consolidate_mbin.py  # Copy MBINs into data/mbin, remove metadata/language
-│   ├── extract_images.py    # EXTRACTED → data/images/{id}.png (used by extract_all_images.py)
-│   └── parse_localization.py  # Localization merger
-├── extract_all.py           # Main pipeline (run this)
-├── extract_all_images.py    # Unpack textures + extract item icons to data/images/
-├── full_refresh.py          # Clean + HGPAKtool + MBINCompiler + extract_all
-├── compare_data.py          # Compare two data dirs (e.g. old vs new) → markdown table report
+│   ├── clean.py             # Wipe data/ for full refresh
+│   ├── mbin.py              # Copy MBINs into data/mbin, remove metadata/language
+│   ├── images.py            # EXTRACTED → data/images/{id}.png (used by extract.py)
+│   ├── localization.py      # Localization merger
+│   ├── report.py            # Refresh report generation
+│   └── smoke.py             # Post-extraction validation checks
+├── extract.py               # Single entrypoint (json extraction, refresh, images)
 └── tools/                   # gitignored
     └── MBINCompiler.exe     # Not included in the repo
 ```
 
 ## How It Works
 
-1. **Extraction** (`extract_all.py`)
+1. **Extraction** (`extract.py`)
    - Rebuilds localization, then extracts from MXML files
-   - Parses into base categories and categorizes into 13 files
+   - Parses into base categories and categorizes into output files
    - Full English translation from locale MXMLs
 
 2. **Categorization** (`utils/categorization.py`)
    - Routes items based on `Group` field
-   - Splits into 13 required files
+   - Splits items into the project output files
    - Automatic icon path assignment
 
 3. **Output**
-   - 13 JSON files matching your app structure
+   - JSON files matching your app structure
    - Game IDs preserved
    - English names included
-
-### Compare data (old vs new)
-
-Use `compare_data.py` to diff two data directories (e.g. previous vs current extract) and get a markdown table report:
-
-```bash
-# Default: old = nms/src/data, new = nms/src/datav2
-python compare_data.py
-
-# Custom paths
-python compare_data.py --old "path/to/old/data" --new "path/to/new/data"
-
-# Summary table only
-python compare_data.py --no-details
-
-# Write report to file
-python compare_data.py -o comparison_report.md
-```
-
-Report columns: **Added** (IDs only in new), **Removed** (IDs only in old), **Changed** (same ID, different fields). `CdnUrl` and `Icon` are ignored when detecting changes.
 
 ## Key Features
 
@@ -184,7 +166,7 @@ Report columns: **Added** (IDs only in new), **Removed** (IDs only in old), **Ch
 - ✅ Game IDs preserved (e.g., `CASING`, `NANOTUBES`, `TECHFRAG`)
 - ✅ English names included for all items
 - ✅ Complete recipe data with input/output details
-- ✅ Automatic categorization into 13 files
+- ✅ Automatic categorization into output files
 - ✅ Fast extraction (~8 seconds total)
 
 ## Customization
@@ -212,7 +194,7 @@ The pipeline uses **18 MBIN files** from the game: 10 data tables and 8 English 
 | MBIN | Output / use |
 |------|------------------|
 | `nms_reality_gcproducttable.mbin` | Products, Trade, name/icon lookups |
-| `consumableitemtable.mbin` | Cooking.json |
+| `consumableitemtable.mbin` | Food.json |
 | `nms_reality_gcrecipetable.mbin` | Refinery.json, NutrientProcessor.json |
 | `nms_reality_gctechnologytable.mbin` | Technology.json |
 | `basebuildingobjectstable.mbin` | Buildings.json |
@@ -228,7 +210,7 @@ The pipeline uses **18 MBIN files** from the game: 10 data tables and 8 English 
 
 ### Automatic Extraction with HGPAKtool Library
 
-The `full_refresh.py` script uses hgpaktool as a Python library. The library is included in `requirements.txt` and will automatically extract the required files from your game's PCBANKS folder.
+`extract.py --refresh` (default path) and `extract.py --pcbanks ...` (custom path) use hgpaktool as a Python library. The library is included in `requirements.txt` and will automatically extract the required files from your game's PCBANKS folder.
 
 If you want to manually extract with the hgpaktool command-line tool (e.g., for testing), you can do so. Point it at your game `PCBANKS` folder and use filters so only these 18 files are extracted.
 
@@ -260,7 +242,7 @@ hgpaktool -U `
 Then convert MBIN → MXML with **MBINCompiler** (e.g. `tools\MBINCompiler.exe` in `data\mbin`), and run:
 
 ```bash
-python extract_all.py
+python extract.py
 ```
 
 More detail (optional extraction, paths): `docs/REQUIRED_MBINS.md`.
@@ -283,19 +265,25 @@ Remove all generated and extracted data so you start from a clean state.
 
 You can delete the folders themselves; the next steps will recreate what’s needed. Keep the **`data/`** directory.
 
-### 2. Run full_refresh.py
+### 2. Run extract.py with --refresh (or --pcbanks)
 
-Run the script with your game's PCBANKS path:
+Run with the default PCBANKS path:
 
 ```bash
-python full_refresh.py "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+python extract.py --refresh
+```
+
+Or run with a custom path:
+
+```bash
+python extract.py --pcbanks "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 ```
 
 The script will:
 - Extract the 18 required MBIN files from your game's PAK files
 - Consolidate them into `data/mbin/`
 - Convert MBIN to MXML with MBINCompiler
-- Extract and categorize into 13 JSON files in `data/json/`
+- Extract and categorize into output JSON files in `data/json/`
 
 ### Checklist (new game version)
 
@@ -303,7 +291,7 @@ The script will:
 |------|--------|
 | 1 | Install dependencies: `pip install -r requirements.txt` |
 | 2 | Delete all contents (or subfolders) of `data/` |
-| 3 | Run `python full_refresh.py "X:\path\to\PCBANKS"` (script handles extraction, conversion, and JSON generation automatically) |
+| 3 | Run `python extract.py --refresh` (or `python extract.py --pcbanks "X:\path\to\PCBANKS"`) |
 
 ---
 

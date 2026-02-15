@@ -1,10 +1,9 @@
-"""Parse localization file to create English translation dictionary"""
+"""Parse localization MXML files into data/json/localization.json."""
+import json
 import re
 import xml.etree.ElementTree as ET
-import json
 from pathlib import Path
 
-# Conjunctions/articles that stay lowercase in title case
 _LOWERCASE_WORDS = frozenset({
     'a', 'an', 'the', 'and', 'or', 'but', 'of', 'in', 'on', 'at', 'to', 'for',
     'with', 'by', 'as', 'from', 'into', 'onto', 'upon', 'nor', 'so', 'yet',
@@ -12,18 +11,12 @@ _LOWERCASE_WORDS = frozenset({
 
 
 def strip_markup_tags(text: str) -> str:
-    """
-    Remove game markup tags from localized text.
-    e.g. "<TECHNOLOGY>freighter's emergency log<>" -> "freighter's emergency log"
-    Matches any <...> (including <>, <IMG>...</>, <SPECIAL>...) and removes them.
-    """
     if not text:
         return text
     return re.sub(r'<[^>]*>', '', text)
 
 
 def _capitalize_word(word: str, force_capitalize: bool) -> str:
-    """Capitalize a single word, including words in single quotes like 'apple' -> 'Apple'."""
     if len(word) >= 3 and word.startswith("'") and word.endswith("'"):
         inner = word[1:-1]
         return "'" + (inner.capitalize() if force_capitalize else inner.lower()) + "'"
@@ -31,11 +24,6 @@ def _capitalize_word(word: str, force_capitalize: bool) -> str:
 
 
 def title_case_name(s: str) -> str:
-    """
-    Title-case a name with conjunctions/articles kept lowercase.
-    e.g. "CAKE OF GLASS" -> "Cake of Glass", not "Cake Of Glass".
-    Words in single quotes get the first letter inside the quotes capitalized: 'apple' -> 'Apple'.
-    """
     if not s or not s.strip():
         return s
     words = s.strip().split()
@@ -54,44 +42,27 @@ def title_case_name(s: str) -> str:
 
 
 def parse_localization(mxml_path: str) -> dict:
-    """
-    Parse nms_loc1_english.MXML to create a lookup dictionary.
-
-    Args:
-        mxml_path: Path to the localization MXML file
-
-    Returns:
-        Dictionary mapping localization keys to English text
-    """
     tree = ET.parse(mxml_path)
     root = tree.getroot()
-
     translations = {}
 
-    # Navigate to Table property
     table_prop = root.find('.//Property[@name="Table"]')
     if table_prop is None:
         print("Warning: Could not find Table property in localization MXML")
         return translations
 
-    # Each entry is a TkLocalisationEntry
     for entry in table_prop.findall('./Property[@name="Table"]'):
-        # Get the ID (localization key)
         loc_id = entry.get('_id', '')
         if not loc_id:
-            # Try property element
             id_prop = entry.find('.//Property[@name="Id"]')
             if id_prop is not None:
                 loc_id = id_prop.get('value', '')
 
-        # Get the English translation
         english_prop = entry.find('.//Property[@name="English"]')
         if english_prop is not None:
             english_text = english_prop.get('value', '')
             if loc_id and english_text:
-                # Remove game markup tags (<TECHNOLOGY>, <>, <IMG>...</>, etc.)
                 english_text = strip_markup_tags(english_text)
-                # Apply title case with lowercase conjunctions for name keys
                 if loc_id.endswith('_NAME'):
                     english_text = title_case_name(english_text)
                 translations[loc_id] = english_text
@@ -100,7 +71,6 @@ def parse_localization(mxml_path: str) -> dict:
     return translations
 
 
-# Locale MXML files to merge (data/mbin or data/EXTRACTED/language)
 LOCALE_MXML_FILES = [
     'nms_loc1_english.MXML',
     'nms_loc4_english.MXML',
@@ -113,11 +83,7 @@ LOCALE_MXML_FILES = [
 ]
 
 
-def build_localization_json(base_path: Path = None) -> int:
-    """
-    Rebuild data/json/localization.json from all locale MXML files.
-    Looks in data/mbin and data/EXTRACTED/language. Returns total translation count.
-    """
+def build_localization_json(base_path: Path | None = None) -> int:
     if base_path is None:
         base_path = Path(__file__).parent.parent
     search_dirs = [base_path / 'data' / 'mbin', base_path / 'data' / 'EXTRACTED' / 'language']
@@ -125,10 +91,10 @@ def build_localization_json(base_path: Path = None) -> int:
 
     for mxml_file in LOCALE_MXML_FILES:
         mxml_path = None
-        for d in search_dirs:
-            p = d / mxml_file
-            if p.exists():
-                mxml_path = p
+        for directory in search_dirs:
+            candidate = directory / mxml_file
+            if candidate.exists():
+                mxml_path = candidate
                 break
         if not mxml_path or not mxml_path.exists():
             print(f"[SKIP] {mxml_file} not found")
@@ -145,20 +111,3 @@ def build_localization_json(base_path: Path = None) -> int:
 
     print(f"[OK] Localization: {len(all_translations)} translations -> {output_path.name}\n")
     return len(all_translations)
-
-
-if __name__ == '__main__':
-    base = Path(__file__).parent.parent
-    print("=" * 60)
-    print("Localization Parser (standalone)")
-    print("=" * 60 + "\n")
-    build_localization_json(base)
-
-    # Test a few lookups
-    with open(base / 'data' / 'json' / 'localization.json', encoding='utf-8') as f:
-        all_translations = json.load(f)
-    test_keys = ['TECH_FRAGMENT_NAME', 'BP_SALVAGE_NAME', 'CASING_NAME', 'PROTECT_NAME']
-    print("Sample translations:")
-    for key in test_keys:
-        value = all_translations.get(key, 'NOT FOUND')
-        print(f"  {key} = {value}")

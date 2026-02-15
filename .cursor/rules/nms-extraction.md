@@ -3,7 +3,7 @@ description: NMS Data Extraction — always include this rule when working on th
 globs:
   - "parsers/**/*.py"
   - "utils/**/*.py"
-  - "extract_all.py"
+  - "extract.py"
   - "docs/**/*.md"
   - "README.md"
 ---
@@ -18,7 +18,7 @@ globs:
 
 ```
 nms-data-extractor/
-├── extract_all.py             # MAIN SCRIPT (run this)
+├── extract.py                 # MAIN SCRIPT (run this)
 ├── data/
 │   ├── mbin/                  # MXML data files + localization (convert from MBIN)
 │   ├── json/                  # 13 output JSON files + none.json (uncategorized)
@@ -39,7 +39,7 @@ nms-data-extractor/
 ├── utils/
 │   ├── categorization.py     # Item categorization rules (Group → file)
 │   ├── list_original_groups.py # List unique Group values from original data
-│   └── parse_localization.py # Localization merger
+│   └── localization.py      # Localization merger
 ├── docs/
 ├── tools/                     # MBINCompiler.exe (not in repo)
 └── README.md
@@ -47,7 +47,7 @@ nms-data-extractor/
 
 ---
 
-## Pipeline (extract_all.py)
+## Pipeline (extract.py)
 
 ### Step 0: Rebuild localization
 - Builds `data/json/localization.json` from locale MXML files in `data/mbin/`.
@@ -83,7 +83,7 @@ Reads MXML from `data/mbin/` and populates `base_data`:
 
 ### Run
 ```bash
-python extract_all.py
+python extract.py
 ```
 - Typical run: ~4–8 seconds.
 
@@ -164,4 +164,4 @@ python extract_all.py
 
 - **HGPAKtool:** NMS 5.50+ (Worlds Part II onwards).
 - **MBINCompiler:** Version must match game version.
-- After a game update: re-extract MBINs, convert to MXML, run `python extract_all.py`. See README “Workflow: New game version” and `.cursor/skills/new-game-version/` if present.
+- After a game update: re-extract MBINs, convert to MXML, run `python extract.py --pcbanks "X:\...\PCBANKS"`. See README “Workflow: New game version”.
