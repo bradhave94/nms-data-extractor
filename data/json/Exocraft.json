@@ -143,7 +143,7 @@
 		"IconPath": "textures/ui/frontend/icons/products/product.2026.truckbody02.dds",
 		"Name": "Flatbed Chassis Module",
 		"Group": "Exocraft Customisation Option",
-		"Description": "A custom body module for a terrestrial vehicle, compatible with the Colossus large Exocraft.\n\nThe Flatbed Module allows the Colossus to haul heavy stacks of industrial waste across long distances. An electromagnetic containment field minimises cargo loss while navigating uneven terrain.\n\nRecalibrate Exocraft visuals from the Colossus Geobay.",
+		"Description": "A custom body module for a terrestrial vehicle, compatible with the Colossus large Exocraft.\n\nThe Flatbed Module allows the Colossus to haul heavy stacks of industrial waste across long distances. An electromagnetic containment field minimises cargo loss while navigating uneven terrain.\n\nA tipping lever allows the flatbed to dump its contents, for ease of processing.\n\nRecalibrate Exocraft visuals from the Colossus Geobay.",
 		"BaseValueUnits": 12300,
 		"CurrencyType": "Credits",
 		"MaxStackSize": 1,

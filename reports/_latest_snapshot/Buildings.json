@@ -1385,7 +1385,7 @@
 		"IconPath": "textures/ui/frontend/icons/specialshop/special1.datasign.dds",
 		"Name": "Data Display Unit",
 		"Group": "Dynamic Signpost",
-		"Description": "A arrangement of dynamic glass panels, each filled with undoubtedly useful and valuable information.\n\nThis display unit also functions as a source of illumination.",
+		"Description": "An arrangement of dynamic glass panels, each filled with undoubtedly useful and valuable information.\n\nThis display unit also functions as a source of illumination.",
 		"BaseValueUnits": 500,
 		"CurrencyType": "Credits",
 		"MaxStackSize": 1,
