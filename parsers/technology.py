@@ -1,5 +1,4 @@
 """Parse Technology from MXML to JSON"""
-import xml.etree.ElementTree as ET
 from .base_parser import (
     EXMLParser,
     format_stat_type_name,

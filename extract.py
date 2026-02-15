@@ -26,8 +26,6 @@ import subprocess
 import time
 from pathlib import Path
 
-from hgpaktool.api import HGPAKFile, InvalidFileException
-
 from parsers.base_parts import parse_base_parts
 from parsers.buildings import parse_buildings
 from parsers.cooking import parse_cooking
@@ -128,7 +126,19 @@ def resolve_game_path(explicit_path: str) -> str:
     raise SystemExit('Game path required. Pass --pcbanks "X:\\...\\PCBANKS" or set NMS_PCBANKS.')
 
 
+def _load_hgpaktool_api():
+    try:
+        from hgpaktool.api import HGPAKFile, InvalidFileException
+    except ModuleNotFoundError as e:
+        raise SystemExit(
+            "hgpaktool is required only for --refresh/--pcbanks/--images unpack operations. "
+            "Install with: python3 -m pip install -r requirements.txt"
+        ) from e
+    return HGPAKFile, InvalidFileException
+
+
 def extract_mbins_with_hgpaktool(pcbanks: str, output_dir: Path, filters: list[str]) -> int:
+    HGPAKFile, InvalidFileException = _load_hgpaktool_api()
     output_dir.mkdir(parents=True, exist_ok=True)
     file_count = 0
     for fname in os.listdir(pcbanks):
@@ -202,6 +212,7 @@ def normalize_to_extracted(extracted_root: Path) -> None:
 
 
 def unpack_all_game_files_to_extracted(pcbanks_arg: str, extracted_root: Path) -> None:
+    HGPAKFile, InvalidFileException = _load_hgpaktool_api()
     pcbanks = resolve_game_path(pcbanks_arg)
     if not Path(pcbanks).exists():
         raise SystemExit(f"Game path does not exist: {pcbanks}")
@@ -306,6 +317,40 @@ def dedupe_all_files_by_id(final_files: dict) -> tuple[int, dict[str, int]]:
             final_files[filename] = deduped
             removed_by_file[filename] = removed
             total_removed += removed
+    return total_removed, removed_by_file
+
+
+def dedupe_ids_across_files(final_files: dict) -> tuple[int, dict[str, int]]:
+    """
+    Enforce globally unique Id values across all output files.
+    Keep the first seen occurrence according to final_files insertion order.
+    """
+    total_removed = 0
+    removed_by_file: dict[str, int] = {}
+    owner_by_id: dict[str, str] = {}
+    for filename, data in list(final_files.items()):
+        if not isinstance(data, list):
+            continue
+        keep = []
+        removed = 0
+        for item in data:
+            if not isinstance(item, dict):
+                keep.append(item)
+                continue
+            item_id = item.get('Id')
+            if not isinstance(item_id, str) or not item_id:
+                keep.append(item)
+                continue
+            owner = owner_by_id.get(item_id)
+            if owner is None:
+                owner_by_id[item_id] = filename
+                keep.append(item)
+            else:
+                removed += 1
+                total_removed += 1
+        if removed:
+            final_files[filename] = keep
+            removed_by_file[filename] = removed
     return total_removed, removed_by_file
 
 
@@ -752,14 +797,13 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     print(f"Categorized {total_categorized} items")
     print(f"Skipped {total_skipped} items (saved to none.json for review)\n")
 
-    if uncategorized_items:
-        uncategorized_items, removed_uncategorized = filter_missing_icons(uncategorized_items)
-        if removed_uncategorized:
-            print(f"  [FILTER] Removed {removed_uncategorized} items with empty IconPath from none.json")
-        uncategorized_file = REPO_ROOT / 'data' / 'json' / 'none.json'
-        with open(uncategorized_file, 'w', encoding='utf-8') as f:
-            json.dump(uncategorized_items, f, indent=2, ensure_ascii=False)
-        print(f"  [REVIEW] Saved {len(uncategorized_items)} uncategorized items to none.json\n")
+    uncategorized_items, removed_uncategorized = filter_missing_icons(uncategorized_items)
+    if removed_uncategorized:
+        print(f"  [FILTER] Removed {removed_uncategorized} items with empty IconPath from none.json")
+    uncategorized_file = REPO_ROOT / 'data' / 'json' / 'none.json'
+    with open(uncategorized_file, 'w', encoding='utf-8') as f:
+        json.dump(uncategorized_items, f, indent=2, ensure_ascii=False)
+    print(f"  [REVIEW] Saved {len(uncategorized_items)} uncategorized items to none.json\n")
 
     final_files.update(categorized)
     total_removed = 0
@@ -808,6 +852,12 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         for filename in sorted(removed_by_file):
             print(f"  [NORMALIZE] {filename}: removed {removed_by_file[filename]} duplicate IDs")
         print(f"  [NORMALIZE] Removed {total_dupes_removed} duplicate IDs total")
+
+    total_cross_dupes_removed, cross_removed_by_file = dedupe_ids_across_files(final_files)
+    if total_cross_dupes_removed:
+        for filename in sorted(cross_removed_by_file):
+            print(f"  [NORMALIZE] {filename}: removed {cross_removed_by_file[filename]} cross-file duplicate IDs")
+        print(f"  [NORMALIZE] Removed {total_cross_dupes_removed} cross-file duplicate IDs total")
 
     print("STEP 3: Saving final files...")
     print("-" * 70 + "\n")

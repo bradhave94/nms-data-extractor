@@ -120,7 +120,6 @@ def parse_procedural_tech(mxml_path: str) -> list:
             tech_id = parser.get_property_value(tech_elem, 'ID', '')
             group_key = parser.get_property_value(tech_elem, 'Group', '')
             name_key = parser.get_property_value(tech_elem, 'Name', '')
-            subtitle_key = parser.get_property_value(tech_elem, 'Subtitle', '')
             desc_key = parser.get_property_value(tech_elem, 'Description', '')
             template_id = parser.get_property_value(tech_elem, 'Template', '')
             quality = parser.get_property_value(tech_elem, 'Quality', 'Normal')

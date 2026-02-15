@@ -1,5 +1,4 @@
 """Parse Refinery recipes from MXML to JSON"""
-import xml.etree.ElementTree as ET
 from .base_parser import EXMLParser
 from pathlib import Path
 

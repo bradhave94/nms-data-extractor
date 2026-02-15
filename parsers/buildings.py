@@ -1,5 +1,4 @@
 """Parse Buildings from MXML to JSON"""
-import xml.etree.ElementTree as ET
 from pathlib import Path
 from .base_parser import EXMLParser, normalize_game_icon_path
 

@@ -1,5 +1,4 @@
 """Parse Products from MXML to JSON"""
-import xml.etree.ElementTree as ET
 from .base_parser import EXMLParser, normalize_game_icon_path, unresolved_localization_key_count
 
 
@@ -61,9 +60,6 @@ def parse_products(mxml_path: str) -> list:
             description_key = parser.get_property_value(product_elem, 'Description', '')
 
             # Translate to English
-            has_name_translation = bool(name_key and name_key in localization)
-            has_subtitle_translation = bool(subtitle_key and subtitle_key in localization)
-            has_description_translation = bool(description_key and description_key in localization)
             name = parser.translate(name_key, name_key)
             subtitle = parser.translate(subtitle_key, subtitle_key)
             description = parser.translate(description_key, description_key)
