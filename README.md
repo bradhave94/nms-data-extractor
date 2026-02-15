@@ -33,6 +33,15 @@ This will:
 
 **Output:** All 13 JSON files in `data/json/`
 
+Duplicate `Id` entries are automatically deduplicated by default (no flags needed).
+`Food.json` keeps merge-style dedupe; other files use keep-first dedupe to avoid cross-schema field contamination.
+
+For a stricter run that fails on smoke-check errors (including duplicate IDs):
+
+```bash
+python extract_all.py --strict
+```
+
 ### Full refresh (new game version)
 
 To rebuild everything from the latest game files (clean → extract MBINs → convert → extract JSON) in one go:
@@ -60,6 +69,18 @@ This will: (1) unpack `*TEXTURES/*` from the game into `data/`, (2) normalize to
 - If you already have `data/EXTRACTED` (e.g. from a previous run), you can skip unpacking and only extract icons:
   `python -m utils.extract_images`
   (uses `data/json/` and `data/EXTRACTED/`, writes to `data/images/`).
+
+### Smoke checks
+
+Run lightweight validation on extracted JSON output:
+
+```bash
+# Default: validates file existence/JSON structure; duplicate IDs are warnings
+python -m utils.smoke_check
+
+# Strict: duplicate IDs are treated as errors
+python -m utils.smoke_check --strict-duplicates
+```
 
 ### Generated Files
 

@@ -89,11 +89,11 @@ def filter_missing_icons(data):
     return filtered, removed
 
 
-def dedupe_items_by_id(items: list) -> tuple[list, int]:
+def dedupe_items_by_id(items: list, *, merge_missing_fields: bool = True) -> tuple[list, int]:
     """
     Remove duplicate item IDs while preserving order.
-    When duplicates exist, merge missing fields from later entries into
-    the first-seen record to retain the richest possible data.
+    Optionally merge missing fields from later entries into the first-seen
+    record (disabled for schema-sensitive files).
     """
     if not isinstance(items, list):
         return items, 0
@@ -118,13 +118,34 @@ def dedupe_items_by_id(items: list) -> tuple[list, int]:
             deduped.append(item)
             continue
 
-        # Merge only missing-ish values into the first-seen canonical record.
-        for key, value in item.items():
-            if key not in existing or existing.get(key) in (None, '', []):
-                existing[key] = value
+        if merge_missing_fields:
+            # Merge only missing-ish values into the first-seen canonical record.
+            for key, value in item.items():
+                if key not in existing or existing.get(key) in (None, '', []):
+                    existing[key] = value
         removed += 1
 
     return deduped, removed
+
+
+def dedupe_all_files_by_id(final_files: dict) -> tuple[int, dict[str, int]]:
+    """
+    Deduplicate every list-based output file by Id while preserving order.
+    Returns total duplicates removed and per-file removal counts.
+    """
+    total_removed = 0
+    removed_by_file: dict[str, int] = {}
+    for filename, data in list(final_files.items()):
+        if not isinstance(data, list):
+            continue
+        # Keep first item only; do not merge fields across duplicate IDs because
+        # same IDs can represent different schema variants in some outputs.
+        deduped, removed = dedupe_items_by_id(data, merge_missing_fields=False)
+        if removed:
+            final_files[filename] = deduped
+            removed_by_file[filename] = removed
+            total_removed += removed
+    return total_removed, removed_by_file
 
 
 def _has_stats(item: dict) -> bool:
@@ -618,6 +639,11 @@ def main(argv=None):
         action='store_true',
         help='Generate refresh report and update reports/_latest_snapshot at end of run',
     )
+    parser.add_argument(
+        '--strict',
+        action='store_true',
+        help='Run strict smoke checks after extraction and fail on validation issues',
+    )
     args = parser.parse_args(argv)
 
     start_time = time.time()
@@ -770,15 +796,6 @@ def main(argv=None):
     if total_removed:
         print(f"  [FILTER] Removed {total_removed} items with empty IconPath total\n")
 
-    # Food gets contributions from both Products and Cooking parsers.
-    # Deduplicate by Id while merging missing fields to keep rich records.
-    cooking = final_files.get('Food.json')
-    if isinstance(cooking, list):
-        deduped_cooking, removed_dupes = dedupe_items_by_id(cooking)
-        if removed_dupes:
-            final_files['Food.json'] = deduped_cooking
-            print(f"  [NORMALIZE] Food.json: removed {removed_dupes} duplicate IDs")
-
     # Add slug field based on output file
     apply_slugs(final_files)
 
@@ -811,16 +828,33 @@ def main(argv=None):
     if exocraft_enriched:
         print(f"  [ENRICH] Exocraft.json: added extended metadata to {exocraft_enriched} items")
 
+    # Food gets contributions from both Products and Cooking parsers.
+    # Use merge dedupe here to retain richer records.
+    food = final_files.get('Food.json')
+    if isinstance(food, list):
+        deduped_food, removed_food_dupes = dedupe_items_by_id(food, merge_missing_fields=True)
+        if removed_food_dupes:
+            final_files['Food.json'] = deduped_food
+            print(f"  [NORMALIZE] Food.json: removed {removed_food_dupes} duplicate IDs")
+
+    # Normalize all outputs by de-duplicating duplicate Id entries.
+    total_dupes_removed, removed_by_file = dedupe_all_files_by_id(final_files)
+    if total_dupes_removed:
+        for filename in sorted(removed_by_file):
+            print(f"  [NORMALIZE] {filename}: removed {removed_by_file[filename]} duplicate IDs")
+        print(f"  [NORMALIZE] Removed {total_dupes_removed} duplicate IDs total")
+
     # Step 3: Save all output files
     print("STEP 3: Saving final files...")
     print("-" * 70 + "\n")
 
     results = []
     for filename, data in sorted(final_files.items()):
-        if data:  # Only save if we have data
-            file_size = save_json(data, filename)
-            results.append((filename, len(data), file_size))
-            print(f"  {filename:30} {len(data):4} items  {file_size:8.1f} KB")
+        # Always write each target file so stale data from prior runs cannot linger.
+        file_size = save_json(data if data is not None else [], filename)
+        item_count = len(data) if isinstance(data, list) else 0
+        results.append((filename, item_count, file_size))
+        print(f"  {filename:30} {item_count:4} items  {file_size:8.1f} KB")
 
     # Print summary
     elapsed = time.time() - start_time
@@ -841,7 +875,18 @@ def main(argv=None):
     print(f"Output location: {Path(__file__).parent / 'data' / 'json'}")
     print("=" * 70 + "\n")
 
-    # Step 4: Optionally generate refresh report + update latest snapshot.
+    # Step 4: Optional strict validation.
+    if args.strict:
+        print("STEP 4: Running strict smoke checks...")
+        print("-" * 70)
+        from utils.smoke_check import run_smoke_check
+        smoke_exit = run_smoke_check(repo_root, fail_on_duplicate_ids=True)
+        if smoke_exit != 0:
+            print("[ERROR] Strict smoke checks failed.")
+            return 1
+        print("[OK] Strict smoke checks passed.\n")
+
+    # Step 5: Optionally generate refresh report + update latest snapshot.
     if args.report:
         try:
             report = generate_refresh_report(Path(__file__).parent)
