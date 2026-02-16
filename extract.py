@@ -29,6 +29,7 @@ from pathlib import Path
 from parsers.base_parts import parse_base_parts
 from parsers.cooking import parse_cooking
 from parsers.fish import parse_fish
+from parsers.pet_eggs import parse_pet_egg_trait_modifiers
 from parsers.procedural_tech import parse_procedural_tech
 from parsers.products import parse_products
 from parsers.rawmaterials import parse_rawmaterials
@@ -62,6 +63,7 @@ MBIN_FILTERS = [
     "*REALITY/TABLES/nms_basepartproducts.mbin",
     "*REALITY/TABLES/nms_reality_gcproceduraltechnologytable.mbin",
     "*REALITY/TABLES/rewardtable.mbin",
+    "*SIMULATION/ECOSYSTEM/peteggtraitmodifieroverridetable.mbin",
     "*LANGUAGE/nms_loc1_english.mbin",
     "*LANGUAGE/nms_loc4_english.mbin",
     "*LANGUAGE/nms_loc5_english.mbin",
@@ -84,6 +86,7 @@ EXPECTED_MXML_AFTER_REFRESH = [
     "nms_basepartproducts.MXML",
     "nms_reality_gcproceduraltechnologytable.MXML",
     "rewardtable.MXML",
+    "peteggtraitmodifieroverridetable.MXML",
     "nms_loc1_english.MXML",
     "nms_loc4_english.MXML",
     "nms_loc5_english.MXML",
@@ -251,7 +254,7 @@ def apply_slugs(final_files: dict) -> None:
         'TechnologyModule.json': 'technology/', 'Others.json': 'other/', 'Refinery.json': 'refinery/',
         'NutrientProcessor.json': 'nutrient-processor/', 'Buildings.json': 'buildings/',
         'Trade.json': 'other/', 'Exocraft.json': 'exocraft/', 'Starships.json': 'starships/',
-        'Upgrades.json': 'upgrades/',
+        'Upgrades.json': 'upgrades/', 'EggModifiers.json': 'pet-eggs/',
     }
     for filename, data in final_files.items():
         prefix = slugs.get(filename)
@@ -796,6 +799,15 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     print("=" * 70 + "\n")
 
     data_dir = REPO_ROOT / 'data' / 'mbin'
+    extracted_dir_env = os.environ.get("NMS_EXTRACTED", "").strip()
+    extracted_dir = Path(extracted_dir_env).expanduser() if extracted_dir_env else (Path(DEFAULT_PCBANKS).parent / "EXTRACTED")
+
+    pet_trait_mxml = data_dir / 'peteggtraitmodifieroverridetable.MXML'
+    if not pet_trait_mxml.exists():
+        fallback = extracted_dir / 'metadata' / 'simulation' / 'ecosystem' / 'peteggtraitmodifieroverridetable.MXML'
+        if fallback.exists():
+            pet_trait_mxml = fallback
+
 
     print("STEP 0: Rebuilding localization...")
     print("-" * 70)
@@ -829,9 +841,10 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         ('ShipComponents', 'nms_modularcustomisationproducts.MXML', parse_ship_components),
         ('BaseParts', 'nms_basepartproducts.MXML', parse_base_parts),
         ('ProceduralTech', 'nms_reality_gcproceduraltechnologytable.MXML', parse_procedural_tech),
+        ('EggModifiers', pet_trait_mxml, parse_pet_egg_trait_modifiers),
     ]
     for i, (name, mxml_file, parser_func) in enumerate(parsers, 1):
-        mxml_path = data_dir / mxml_file
+        mxml_path = mxml_file if isinstance(mxml_file, Path) else (data_dir / mxml_file)
         print(f"[{i}/{len(parsers)}] Extracting {name}...")
         if not mxml_path.exists():
             print(f"  [SKIP] {mxml_file} not found\n")
@@ -861,6 +874,8 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         'Trade.json': base_data.get('Trade', []),
         'RawMaterials.json': base_data.get('RawMaterials', []),
     }
+    if 'EggModifiers' in base_data:
+        final_files['EggModifiers.json'] = base_data.get('EggModifiers', [])
     preseeded_ids: dict[str, set[str]] = {}
     preseeded_first_by_id: dict[str, dict[str, dict]] = {}
     for filename, data in final_files.items():
