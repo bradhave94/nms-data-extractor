@@ -14517,5 +14517,52 @@
 		"NeverPinnable": false,
 		"CanSendToOtherPlayers": true,
 		"Slug": "curiosities/FOS_BI_TAIL_G"
+	},
+	{
+		"Id": "ROBOT1",
+		"Icon": "ROBOT1.png",
+		"IconPath": "textures/ui/frontend/icons/u4substances/substance.robot.1.dds",
+		"Name": "Pugneum",
+		"NameLower": "Pugneum",
+		"Group": "Anomalous Material",
+		"Description": "This oily, unsettling liquid leaks from the circuitry of Sentinels.\n\nPrized by the Vy'keen, Pugneum is thought to share some essential properties with Nanites. It hums in a sinister fashion upon contact with organic matter.",
+		"BaseValueUnits": 138,
+		"CurrencyType": "Credits",
+		"Colour": "4D2957",
+		"CdnUrl": "",
+		"Usages": [
+			"IsEggIngredient"
+		],
+		"BlueprintCost": 0,
+		"BlueprintCostType": "None",
+		"BlueprintSource": 0,
+		"RequiredItems": [],
+		"StatBonuses": [],
+		"ConsumableRewardTexts": [],
+		"Category": "Special",
+		"Rarity": "Rare",
+		"Legality": "Legal",
+		"TradeCategory": "None",
+		"CookingIngredient": false,
+		"GoodForSelling": false,
+		"EasyToRefine": false,
+		"EggModifierIngredient": true,
+		"WikiEnabled": true,
+		"OnlyFoundInPurpleSystems": false,
+		"OnlyFoundInPurpleSytems": false,
+		"ChargeValue": 1,
+		"MaxStackSize": 1,
+		"EconomyInfluenceMultiplier": 0.25,
+		"PriceModifiers": {
+			"SpaceStationMarkup": 0.0,
+			"LowPriceMod": -0.1,
+			"HighPriceMod": 0.1,
+			"BuyBaseMarkup": 0.25,
+			"BuyMarkupMod": 0.0
+		},
+		"PinObjectiveScannableType": "None",
+		"WikiMissionID": "WIKI_ROBOT1",
+		"Symbol": "Pg",
+		"Slug": "curiosities/ROBOT1"
 	}
 ]

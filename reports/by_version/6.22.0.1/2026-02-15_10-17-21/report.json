@@ -1,0 +1,182 @@
+{
+  "generated_at": "2026-02-15T10:17:21-05:00",
+  "version_key": "6.22.0.1",
+  "previous_run": {
+    "generated_at": "2026-02-15T09:51:18-05:00",
+    "version_key": "6.22.0.1",
+    "report_markdown": "reports/by_version/6.22.0.1/2026-02-15_09-51-18/report.md",
+    "report_json": "reports/by_version/6.22.0.1/2026-02-15_09-51-18/report.json"
+  },
+  "files": {
+    "Buildings.json": {
+      "old_count": 1185,
+      "new_count": 1185,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "ConstructedTechnology.json": {
+      "old_count": 91,
+      "new_count": 91,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Corvette.json": {
+      "old_count": 638,
+      "new_count": 638,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Curiosities.json": {
+      "old_count": 264,
+      "new_count": 264,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Exocraft.json": {
+      "old_count": 44,
+      "new_count": 44,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Fish.json": {
+      "old_count": 226,
+      "new_count": 226,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Food.json": {
+      "old_count": 386,
+      "new_count": 386,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "NutrientProcessor.json": {
+      "old_count": 1323,
+      "new_count": 1323,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Others.json": {
+      "old_count": 649,
+      "new_count": 642,
+      "added_ids": [],
+      "removed_ids": [
+        "T_BOBBLE_APOLLO",
+        "T_BOBBLE_ART",
+        "T_BOBBLE_ATLAS",
+        "T_BOBBLE_NADA",
+        "T_BOBBLE_NULL",
+        "T_BOBBLE_OCTO",
+        "T_BOBBLE_POLO"
+      ],
+      "changed_ids": [],
+      "has_changes": true,
+      "mode": "id-list"
+    },
+    "Products.json": {
+      "old_count": 105,
+      "new_count": 105,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "RawMaterials.json": {
+      "old_count": 66,
+      "new_count": 66,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Refinery.json": {
+      "old_count": 357,
+      "new_count": 357,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Starships.json": {
+      "old_count": 351,
+      "new_count": 351,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Technology.json": {
+      "old_count": 223,
+      "new_count": 223,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "TechnologyModule.json": {
+      "old_count": 26,
+      "new_count": 26,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Trade.json": {
+      "old_count": 43,
+      "new_count": 43,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "Upgrades.json": {
+      "old_count": 496,
+      "new_count": 496,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    },
+    "none.json": {
+      "old_count": 21,
+      "new_count": 21,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_ids": [],
+      "has_changes": false,
+      "mode": "id-list"
+    }
+  }
+}
