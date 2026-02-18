@@ -110,6 +110,7 @@ CATEGORIZATION_RULES = {
 
     'Buildings.json': {
         'exact': {
+            'Construction module',
             'Environmental decoration',
             'Autonomous Agriculture Unit',
             'Recycled Construction Component',
@@ -490,7 +491,6 @@ CATEGORIZATION_RULES = {
             'Bespoke Personal Identification',
             'Collected Flotsam',
             'Commercial Cartographic Data',
-            'Construction module',
             'Exosuit Visual Enhancement',
             'Freighter Engine Flare Override',
             'Jetpack Exhaust Override',

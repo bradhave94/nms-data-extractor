@@ -451,7 +451,23 @@ def enrich_upgrade_stats(final_files: dict, base_data: dict) -> int:
     return enriched
 
 
+# Captures the qualifier prefix and strips the item name from the group, e.g.:
+#   "A-Class Blaze Javelin Upgrade"  → qualifier="A-Class",   short_group="A-Class Upgrade"
+#   "Supreme Mining Beam Upgrade"    → qualifier="Supreme",    short_group="Supreme Upgrade"
+#   "Banned Boltcaster Upgrade"      → qualifier="Banned",     short_group="Banned Upgrade"
+_QUALIFIED_UPGRADE_RE = re.compile(
+    r'^([CBSA]-Class|Significant|Powerful|Supreme|Banned|Illegal|SeaTrash)\s+.+\s+(Upgrade)$',
+    re.IGNORECASE,
+)
+
+
 def normalize_upgrade_display_names(final_files: dict) -> int:
+    """For qualified upgrade groups (class tier or quality prefix):
+    - Strip the item name from the group to form a short group, e.g. "A-Class Upgrade"
+    - Set Name to "<original Name> | <short group>", e.g. "Blaze Javelin | A-Class Upgrade"
+    - Set Group to the short group, e.g. "A-Class Upgrade"
+    Plain groups like "Blaze Javelin Upgrade" or "Consumable Frigate Upgrade" are left alone.
+    """
     upgrades = final_files.get('Upgrades.json')
     if not isinstance(upgrades, list) or not upgrades:
         return 0
@@ -460,10 +476,22 @@ def normalize_upgrade_display_names(final_files: dict) -> int:
         if not isinstance(item, dict):
             continue
         group = item.get('Group')
-        if not isinstance(group, str) or not group or 'upgrade' not in group.lower():
+        if not isinstance(group, str) or not group:
             continue
-        if item.get('Name') != group:
-            item['Name'] = group
+        m = _QUALIFIED_UPGRADE_RE.match(group)
+        if not m:
+            continue
+        qualifier = m.group(1)
+        short_group = f'{qualifier} Upgrade'
+        original_name = (item.get('Name') or '').strip()
+        # Localization strings for some item groups (e.g. corvette upgrades) are stored
+        # entirely in lowercase — title-case them so the display name is consistent.
+        if original_name and original_name[0].islower():
+            original_name = original_name.title()
+        new_name = f'{original_name} {short_group}' if original_name else short_group
+        if item.get('Name') != new_name or item.get('Group') != short_group:
+            item['Name'] = new_name
+            item['Group'] = short_group
             changed += 1
     return changed
 
