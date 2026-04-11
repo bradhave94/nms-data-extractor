@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.22.0.1)-->
+<!--File created using MBINCompiler version (6.30.0.1)-->
 <Data template="cTkLocalisationTable">
 	<Property name="Table">
 		<Property name="Table" value="TkLocalisationEntry" _id="SCAN_NO_TECH">
@@ -13624,7 +13624,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_045">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_045" />
-			<Property name="English" value="Kiya Kandar" />
+			<Property name="English" value="Levi Naess" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -13644,7 +13644,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_046">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_046" />
-			<Property name="English" value="Levi Naess" />
+			<Property name="English" value="Louise Murray" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -13664,7 +13664,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_047">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_047" />
-			<Property name="English" value="Louise Murray" />
+			<Property name="English" value="Mads Simonsen" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -13684,7 +13684,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_048">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_048" />
-			<Property name="English" value="Mads Simonsen" />
+			<Property name="English" value="Martin Griffiths" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -13704,7 +13704,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_049">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_049" />
-			<Property name="English" value="Martin Griffiths" />
+			<Property name="English" value="Matthew Green" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -13724,7 +13724,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_050">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_050" />
-			<Property name="English" value="Matthew Green" />
+			<Property name="English" value="BREAK" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14104,7 +14104,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_069">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_069" />
-			<Property name="English" value="Rick Rodgers" />
+			<Property name="English" value="Ryan Doyle" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14124,7 +14124,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_070">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_070" />
-			<Property name="English" value="Ryan Doyle" />
+			<Property name="English" value="Salvatore Giuffrida" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14144,7 +14144,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_071">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_071" />
-			<Property name="English" value="Salvatore Giuffrida" />
+			<Property name="English" value="Sara Caballero Bruno" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14164,7 +14164,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_072">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_072" />
-			<Property name="English" value="Sara Caballero Bruno" />
+			<Property name="English" value="Sean Murray" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14184,7 +14184,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_073">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_073" />
-			<Property name="English" value="Sean Murray" />
+			<Property name="English" value="Si Jaques" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14204,7 +14204,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_074">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_074" />
-			<Property name="English" value="Si Jaques" />
+			<Property name="English" value="Simon Moos" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14224,7 +14224,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_075">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_075" />
-			<Property name="English" value="Simon Moos" />
+			<Property name="English" value="Tim Woodley" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14244,7 +14244,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_076">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_076" />
-			<Property name="English" value="Tim Woodley" />
+			<Property name="English" value="Tom Winter" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14264,7 +14264,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_077">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_077" />
-			<Property name="English" value="Tom Winter" />
+			<Property name="English" value="Will Braham" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -14284,7 +14284,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_078">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_078" />
-			<Property name="English" value="Will Braham" />
+			<Property name="English" value="BREAK" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16524,7 +16524,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_190">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_190" />
-			<Property name="English" value="Kristen McGorry" />
+			<Property name="English" value="Kiya Kandar" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16544,7 +16544,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_191">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_191" />
-			<Property name="English" value="Lauran Carter" />
+			<Property name="English" value="Kristen McGorry" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16564,7 +16564,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_192">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_192" />
-			<Property name="English" value="BREAK" />
+			<Property name="English" value="Lauran Carter" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16824,7 +16824,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_205">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_205" />
-			<Property name="English" value="Ryan Didcote" />
+			<Property name="English" value="Rick Rodgers" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16844,7 +16844,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_206">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_206" />
-			<Property name="English" value="Salwa Azar" />
+			<Property name="English" value="Ryan Didcote" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16864,7 +16864,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_207">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_207" />
-			<Property name="English" value="Sam Lucas" />
+			<Property name="English" value="Salwa Azar" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16884,7 +16884,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_208">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_208" />
-			<Property name="English" value="Sam Swain" />
+			<Property name="English" value="Sam Lucas" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16904,7 +16904,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_209">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_209" />
-			<Property name="English" value="Sandy White" />
+			<Property name="English" value="Sam Swain" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16924,7 +16924,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_210">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_210" />
-			<Property name="English" value="Sarah Webb" />
+			<Property name="English" value="Sandy White" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16944,7 +16944,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_211">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_211" />
-			<Property name="English" value="Shanie Grant" />
+			<Property name="English" value="Sarah Webb" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16964,7 +16964,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_212">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_212" />
-			<Property name="English" value="Shona Feltham" />
+			<Property name="English" value="Shanie Grant" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -16984,7 +16984,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_213">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_213" />
-			<Property name="English" value="Simon Carter" />
+			<Property name="English" value="Shona Feltham" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -17004,7 +17004,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_214">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_214" />
-			<Property name="English" value="Sophie Hodgetts" />
+			<Property name="English" value="Simon Carter" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -17024,7 +17024,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_215">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_215" />
-			<Property name="English" value="Steve McGreal" />
+			<Property name="English" value="Sophie Hodgetts" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -17044,7 +17044,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_216">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_216" />
-			<Property name="English" value="Stewart Lynch" />
+			<Property name="English" value="Steve McGreal" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -17064,7 +17064,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_217">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_217" />
-			<Property name="English" value="Susan Wong" />
+			<Property name="English" value="Stewart Lynch" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -17084,7 +17084,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_218">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_218" />
-			<Property name="English" value="Suzy Wallace" />
+			<Property name="English" value="Susan Wong" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -17104,7 +17104,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_219">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_219" />
-			<Property name="English" value="Will Porter" />
+			<Property name="English" value="Suzy Wallace" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -17124,7 +17124,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="DNT_CREDITS_HG_LINE_220">
 			<Property name="Id" value="DNT_CREDITS_HG_LINE_220" />
-			<Property name="English" value="BREAK" />
+			<Property name="English" value="Will Porter" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -131942,6 +131942,26 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="EXP_BATTLE">
+			<Property name="Id" value="EXP_BATTLE" />
+			<Property name="English" value="battle" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="EXP_BE">
 			<Property name="Id" value="EXP_BE" />
 			<Property name="English" value="be" />
@@ -133225,6 +133245,26 @@
 		<Property name="Table" value="TkLocalisationEntry" _id="EXP_CERTAIN">
 			<Property name="Id" value="EXP_CERTAIN" />
 			<Property name="English" value="certain" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="EXP_CHAMPION">
+			<Property name="Id" value="EXP_CHAMPION" />
+			<Property name="English" value="champion" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -154002,6 +154042,26 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="TRA_BATTLE">
+			<Property name="Id" value="TRA_BATTLE" />
+			<Property name="English" value="battle" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="TRA_BE">
 			<Property name="Id" value="TRA_BE" />
 			<Property name="English" value="be" />
@@ -155445,6 +155505,26 @@
 		<Property name="Table" value="TkLocalisationEntry" _id="TRA_CERTAIN">
 			<Property name="Id" value="TRA_CERTAIN" />
 			<Property name="English" value="certain" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="TRA_CHAMPION">
+			<Property name="Id" value="TRA_CHAMPION" />
+			<Property name="English" value="champion" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -178645,6 +178725,26 @@
 		<Property name="Table" value="TkLocalisationEntry" _id="WAR_CHAMBER">
 			<Property name="Id" value="WAR_CHAMBER" />
 			<Property name="English" value="chamber" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="WAR_CHAMPION">
+			<Property name="Id" value="WAR_CHAMPION" />
+			<Property name="English" value="champion" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -278684,7 +278784,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="NPC_HIRE_VEHICLES_LANG_3">
 			<Property name="Id" value="NPC_HIRE_VEHICLES_LANG_3" />
-			<Property name="English" value="Once we have the &lt;TECHNOLOGY&gt;Exocraft Radar&lt;&gt;, we can map this planet. Traveller, know that my race were once more than just warriors; we were explorers, defenders of these worlds. Before the Sentinels. Before Hirk and his great folly..." />
+			<Property name="English" value="Once we have the &lt;TECHNOLOGY&gt;Exocraft Radar&lt;&gt;, we can map this planet. Traveller, know that my race were once more than just warriors; we were explorers, defenders of these worlds. Before the Sentinels. Before Hirk and their great folly..." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />

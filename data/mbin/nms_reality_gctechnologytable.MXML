@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.22.0.1)-->
+<!--File created using MBINCompiler version (6.30.0.1)-->
 <Data template="cGcTechnologyTable">
 	<Property name="Table">
 		<Property name="Table" value="GcTechnology" _id="PROTECT">
@@ -1901,7 +1901,7 @@
 			<Property name="Group" value="" />
 			<Property name="Name" value="UI_SUIT_REFINER2_NAME" />
 			<Property name="NameLower" value="UI_SUIT_REFINER2_NAME_L" />
-			<Property name="Subtitle" value="UI_SUIT_REFINER_SUB" />
+			<Property name="Subtitle" value="UI_SUIT_REFINER2_SUB" />
 			<Property name="Description" value="UI_SUIT_REFINER2_DESC" />
 			<Property name="Teach" value="true" />
 			<Property name="HintStart" value="" />

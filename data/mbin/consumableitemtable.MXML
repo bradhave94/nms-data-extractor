@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.22.0.1)-->
+<!--File created using MBINCompiler version (6.30.0.1)-->
 <Data template="cGcConsumableItemTable">
 	<Property name="Table">
+		<Property name="Table" value="GcConsumableItem" _id="CHART_PB_CHALL">
+			<Property name="ID" value="CHART_PB_CHALL" />
+			<Property name="RewardID" value="R_PB_INV_CHALL" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_CHART_LABEL" />
+			<Property name="ButtonSubLocID" value="UI_CHART_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="RewardFailedLocID" value="INTRCT_NOROOM_L" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable" />
+		</Property>
+		<Property name="Table" value="GcConsumableItem" _id="CHART_PB_CHALNX">
+			<Property name="ID" value="CHART_PB_CHALNX" />
+			<Property name="RewardID" value="R_PB_INV_CHALNX" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_CHART_LABEL" />
+			<Property name="ButtonSubLocID" value="UI_CHART_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="RewardFailedLocID" value="INTRCT_NOROOM_L" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable" />
+		</Property>
+		<Property name="Table" value="GcConsumableItem" _id="CHART_PB_CHAMP">
+			<Property name="ID" value="CHART_PB_CHAMP" />
+			<Property name="RewardID" value="R_PB_INV_CHAMP" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_CHART_LABEL" />
+			<Property name="ButtonSubLocID" value="UI_CHART_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="RewardFailedLocID" value="INTRCT_NOROOM_L" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable" />
+		</Property>
 		<Property name="Table" value="GcConsumableItem" _id="S19_TP">
 			<Property name="ID" value="S19_TP" />
 			<Property name="RewardID" value="R_S19_STATION" />

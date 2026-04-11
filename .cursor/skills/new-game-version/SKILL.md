@@ -10,7 +10,7 @@ When a new No Man's Sky update is released, do a full refresh so all JSON comes 
 **One-shot (no LLM needed):** From repo root:
 
 ```bash
-python extract.py --pcbanks "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+python extract.py --pcbanks "H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 ```
 
 This runs: clean → HGPAKtool → consolidate_mbin → MBINCompiler → extract_all.
@@ -24,7 +24,7 @@ This runs: clean → HGPAKtool → consolidate_mbin → MBINCompiler → extract
 
 ## Game path (needed for Step 2)
 
-- Game path is `X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS`
+- Game path is `H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS`
 
 ---
 
@@ -33,7 +33,7 @@ This runs: clean → HGPAKtool → consolidate_mbin → MBINCompiler → extract
 **Execute:** From repo root:
 
 ```bash
-python extract.py --pcbanks "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+python extract.py --pcbanks "H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 ```
 
 This produces the JSON files in `data/json/`.

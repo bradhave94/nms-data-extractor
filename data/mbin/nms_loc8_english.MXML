@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.22.0.1)-->
+<!--File created using MBINCompiler version (6.30.0.1)-->
 <Data template="cTkLocalisationTable">
 	<Property name="Table">
 		<Property name="Table" value="TkLocalisationEntry" _id="UPDATE14_TITLE">
@@ -26722,8 +26722,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="STARBIRTH_ITEM_SUBTITLE">
-			<Property name="Id" value="STARBIRTH_ITEM_SUBTITLE" />
+		<Property name="Table" value="TkLocalisationEntry" _id="STARBIRTH_ITEM_SUBTITLE_ALT">
+			<Property name="Id" value="STARBIRTH_ITEM_SUBTITLE_ALT" />
 			<Property name="English" value="Cosmic Brand" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -95662,8 +95662,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_OVER_MSG">
-			<Property name="Id" value="UI_EXPED_OVER_MSG" />
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_OVER_MSG_ALT">
+			<Property name="Id" value="UI_EXPED_OVER_MSG_ALT" />
 			<Property name="English" value="Congratulations, Traveller. The expedition is &lt;STELLAR&gt;complete&lt;&gt;. Your exclusive expedition phase rewards are now automatically available on all saves.&#xA;&#xA;With the ending of the expedition, &lt;SPECIAL&gt;new paths&lt;&gt; have been opened in the universe. Return to the &lt;SPECIAL&gt;Space Anomaly&lt;&gt; to speak with Priest Entity Nada and Specialist Polo." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -116002,8 +116002,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="UI_SIGNAL_SCANNER_DESC_ALT">
-			<Property name="Id" value="UI_SIGNAL_SCANNER_DESC_ALT" />
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_SIGNAL_SCANNER_DESC_S13">
+			<Property name="Id" value="UI_SIGNAL_SCANNER_DESC_S13" />
 			<Property name="English" value="Outpost signal detection &lt;SPECIAL&gt;ERROR&lt;&gt; &lt;IMG&gt;SLASH&lt;&gt; Navigation subroutines &lt;STELLAR&gt;online&lt;&gt; &lt;IMG&gt;SLASH&lt;&gt;&lt;NEWLINE&gt;Please select navigational task:" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -145402,8 +145402,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="UI_SUIT_REFINER_SUB">
-			<Property name="Id" value="UI_SUIT_REFINER_SUB" />
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_SUIT_REFINER2_SUB">
+			<Property name="Id" value="UI_SUIT_REFINER2_SUB" />
 			<Property name="English" value="Self-Mounted Advanced Refiner" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />

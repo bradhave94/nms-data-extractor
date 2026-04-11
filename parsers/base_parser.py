@@ -12,6 +12,13 @@ _LOWERCASE_WORDS = frozenset({
     'with', 'by', 'as', 'from', 'into', 'onto', 'upon', 'nor', 'so', 'yet',
 })
 
+# Abbreviations that should be uppercased (or mixed-case) rather than title-cased.
+_UPPERCASE_WORDS: dict[str, str] = {
+    'pvp': 'PvP', 'pve': 'PvE', 'npc': 'NPC', 'dna': 'DNA',
+    'ui': 'UI', 'vr': 'VR', 'hud': 'HUD', 'xp': 'XP',
+    'hp': 'HP', 'dot': 'DoT', 'hot': 'HoT', 'aoe': 'AoE',
+}
+
 # Hand-tuned fallbacks for known missing localization keys in current game data.
 _MISSING_LOCALIZATION_OVERRIDES = {
     'UI_BRIDGECONNECT_NAME': 'Bridge Connector',
@@ -19,6 +26,25 @@ _MISSING_LOCALIZATION_OVERRIDES = {
 
 _MARKUP_TAG_RE = re.compile(r'<[^>]*>')
 _FE_TOKEN_RE = re.compile(r'\bFE_[A-Z0-9_]+\b')
+_CAMEL_SPLIT_RE = re.compile(r'(?<=[a-z0-9])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])')
+
+
+def humanize_id(raw_id: str) -> str:
+    """
+    Convert an internal game ID into a human-readable name.
+    Handles UPPER_SNAKE_CASE and camelCase/PascalCase.
+    Examples:
+        SWIMCOW -> Swim Cow
+        FLYINGSNAKE -> Flying Snake
+        CargoCylinder -> Cargo Cylinder
+        ROBO_PET -> Robo Pet
+        LeftArmourPlate -> Left Armour Plate
+    """
+    if not raw_id or not isinstance(raw_id, str):
+        return raw_id or ''
+    if '_' in raw_id:
+        return title_case_name(raw_id.replace('_', ' '))
+    return title_case_name(_CAMEL_SPLIT_RE.sub(' ', raw_id))
 
 
 def strip_markup_tags(text: str) -> str:
@@ -89,6 +115,7 @@ def title_case_name(s: str) -> str:
     Title-case a name with conjunctions/articles kept lowercase.
     e.g. "CAKE OF GLASS" -> "Cake of Glass", not "Cake Of Glass".
     Words in single quotes get the first letter inside the quotes capitalized: 'apple' -> 'Apple'.
+    Known abbreviations like PVP/PVE are preserved in their conventional form.
     """
     if not s or not s.strip():
         return s
@@ -100,7 +127,10 @@ def title_case_name(s: str) -> str:
         lower = word.lower()
         is_first = i == 0
         is_last = i == len(words) - 1
-        if is_first or is_last or lower not in _LOWERCASE_WORDS:
+        abbrev = _UPPERCASE_WORDS.get(lower)
+        if abbrev:
+            result.append(abbrev)
+        elif is_first or is_last or lower not in _LOWERCASE_WORDS:
             result.append(_capitalize_word(word, force_capitalize=True))
         else:
             result.append(_capitalize_word(word, force_capitalize=False))
@@ -120,6 +150,20 @@ def normalize_game_icon_path(game_path: str) -> str:
     # Lowercase, forward slashes (game uses backslashes or forward)
     normalized = game_path.strip().replace('\\', '/').lower()
     return normalized
+
+
+def shared_texture_icon_name(dds_path: str) -> str | None:
+    """Convert a DDS texture path to the CDN icon filename used by the image extractor.
+
+    Uses {parent_dir}--{stem}.png to avoid collisions between files with the
+    same name in different directories (e.g. moves/move.pet.attack vs
+    moves/buttonbg/move.pet.attack).
+    """
+    if not dds_path:
+        return None
+    from pathlib import PurePosixPath
+    p = PurePosixPath(dds_path)
+    return f"{p.parent.name}--{p.stem}.png".lower()
 
 
 def looks_like_localization_key(value: str) -> bool:

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.22.0.1)-->
+<!--File created using MBINCompiler version (6.30.0.1)-->
 <Data template="cTkLocalisationTable">
 	<Property name="Table">
 		<Property name="Table" value="TkLocalisationEntry" _id="NAMEGEN_PLANET_ADORN_1">
@@ -84902,9 +84902,9 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="NPC_CORE_ACT1_10A_LANG_CHECK_OP">
-			<Property name="Id" value="NPC_CORE_ACT1_10A_LANG_CHECK_OP" />
-			<Property name="English" value="NPC_CORE_ACT1_5A_OPT_A" />
+		<Property name="Table" value="TkLocalisationEntry" _id="NPC_CORE_ACT1_10A_CHECK_OPT_A">
+			<Property name="Id" value="NPC_CORE_ACT1_10A_CHECK_OPT_A" />
+			<Property name="English" value="Confirm" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -84922,9 +84922,9 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="NPC_CORE_ACT1_10A_LANG_CHECK_OP" _index="1">
-			<Property name="Id" value="NPC_CORE_ACT1_10A_LANG_CHECK_OP" />
-			<Property name="English" value="NPC_CORE_ACT1_4D_OPT_B" />
+		<Property name="Table" value="TkLocalisationEntry" _id="NPC_CORE_ACT1_10A_CHECK_OPT_B">
+			<Property name="Id" value="NPC_CORE_ACT1_10A_CHECK_OPT_B" />
+			<Property name="English" value="Decline" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -84942,8 +84942,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="NPC_CORE_ACT1_10A_LANG_CHECK_RE">
-			<Property name="Id" value="NPC_CORE_ACT1_10A_LANG_CHECK_RE" />
+		<Property name="Table" value="TkLocalisationEntry" _id="NPC_CORE_ACT1_10A_CHECK_RES">
+			<Property name="Id" value="NPC_CORE_ACT1_10A_CHECK_RES" />
 			<Property name="English" value="Hmm. Well. Do what you need to do. You know where to find me when you're ready." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -141524,7 +141524,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="NPC_EXO_WAIT_RES_A_6">
 			<Property name="Id" value="NPC_EXO_WAIT_RES_A_6" />
-			<Property name="English" value="Traveller, know that my race were once more than just warriors; we were explorers, defenders of these worlds. Before the Sentinels, before Hirk and his great folly.&#xA;Untold centuries ago, two Vy'keen approached the Great Monolith: Hirk and Nal, battle-brothers, sworn to deliver knowledge to the people! But in their jealousy, Hirk lied and murdered their brother Nal, claiming that they and they alone knew the righteous path.&#xA;Nal's followers fled, killed almost to the last warrior. But there were those who never forgot. The Cult of Nal attempts to uncover the truth that was lost. We seek to restore the crimson truth, to heal the hearts of the ignorant!&#xA;You participate in a great work, Traveller. History will remember your name." />
+			<Property name="English" value="Traveller, know that my race were once more than just warriors; we were explorers, defenders of these worlds. Before the Sentinels, before Hirk and their great folly.&#xA;Untold centuries ago, two Vy'keen approached the Great Monolith: Hirk and Nal, battle-brothers, sworn to deliver knowledge to the people! But in their jealousy, Hirk lied and murdered their brother Nal, claiming that they and they alone knew the righteous path.&#xA;Nal's followers fled, killed almost to the last warrior. But there were those who never forgot. The Cult of Nal attempts to uncover the truth that was lost. We seek to restore the crimson truth, to heal the hearts of the ignorant!&#xA;You participate in a great work, Traveller. History will remember your name." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -151564,7 +151564,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXOTUT3_MSG2">
 			<Property name="Id" value="UI_EXOTUT3_MSG2" />
-			<Property name="English" value="Construct the Exocraft Mining Laser&#xA; Use &lt;IMG&gt;INVENTORY&lt;&gt; to access Exocraft Systems" />
+			<Property name="English" value="Construct the Exocraft Mining Laser&#xA;Use &lt;IMG&gt;INVENTORY&lt;&gt; to access Exocraft Systems" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -151584,7 +151584,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXOTUT3_MSG3">
 			<Property name="Id" value="UI_EXOTUT3_MSG3" />
-			<Property name="English" value="Construct the Exocraft Radar Upgrade Sigma&#xA; Use &lt;IMG&gt;INVENTORY&lt;&gt; to access Exocraft Systems" />
+			<Property name="English" value="Construct the Radar Amplifier&#xA;Use &lt;IMG&gt;INVENTORY&lt;&gt; to access Exocraft Systems" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -162724,7 +162724,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="NPC_MISSION_FREI_A_2">
 			<Property name="Id" value="NPC_MISSION_FREI_A_2" />
-			<Property name="English" value="The client seeks aggressive mediation in a dispute with a former colleague. The target has left the business to pursue legitimate freighter captaincy. The client, however, has a long memory. They cannot simply be swept into the past. They would see the new captain reminded of his previous commitments." />
+			<Property name="English" value="The client seeks aggressive mediation in a dispute with a former colleague. The target has left the business to pursue legitimate freighter captaincy. The client, however, has a long memory. They cannot simply be swept into the past. They would see the new captain reminded of their previous commitments." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -163044,7 +163044,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="NPC_MISSION_FREI_D_8">
 			<Property name="Id" value="NPC_MISSION_FREI_D_8" />
-			<Property name="English" value="The client runs a freighter company, and one of their transports is under attack in local space. Usually they would write off the loss of a freighter against their insurance, but the captain of the ship is on his final mission before retirement. The death of such an experienced spacefarer would add significantly to their premiums, and as such they seek all hands to aid the defence of the vessel." />
+			<Property name="English" value="The client runs a freighter company, and one of their transports is under attack in local space. Usually they would write off the loss of a freighter against their insurance, but the captain of the ship is on their final mission before retirement. The death of such an experienced spacefarer would add significantly to their premiums, and as such they seek all hands to aid the defence of the vessel." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -191342,8 +191342,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_REQ_LOOP_OPT_">
-			<Property name="Id" value="TRA_NPC_U3ANOMALY_REQ_LOOP_OPT_" />
+		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_LOOP_OPT_A1">
+			<Property name="Id" value="TRA_NPC_U3ANOMALY_LOOP_OPT_A1" />
 			<Property name="English" value="Purchase Suit Technology" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -191362,8 +191362,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_REQ_LOOP_OPT_" _index="1">
-			<Property name="Id" value="TRA_NPC_U3ANOMALY_REQ_LOOP_OPT_" />
+		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_LOOP_OPT_B1">
+			<Property name="Id" value="TRA_NPC_U3ANOMALY_LOOP_OPT_B1" />
 			<Property name="English" value="Purchase Weapon Technology" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -191382,8 +191382,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_REQ_LOOP_OPT_" _index="2">
-			<Property name="Id" value="TRA_NPC_U3ANOMALY_REQ_LOOP_OPT_" />
+		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_LOOP_OPT_C1">
+			<Property name="Id" value="TRA_NPC_U3ANOMALY_LOOP_OPT_C1" />
 			<Property name="English" value="Purchase Ship Technology" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -191402,8 +191402,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_REQ_LOOP_RES_">
-			<Property name="Id" value="TRA_NPC_U3ANOMALY_REQ_LOOP_RES_" />
+		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_LOOP_RES_A1">
+			<Property name="Id" value="TRA_NPC_U3ANOMALY_LOOP_RES_A1" />
 			<Property name="English" value="Clever. A strong suit, a long life, friend! I just wish that I could be there to see it..." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -191422,8 +191422,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_REQ_LOOP_RES_" _index="1">
-			<Property name="Id" value="TRA_NPC_U3ANOMALY_REQ_LOOP_RES_" />
+		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_LOOP_RES_B1">
+			<Property name="Id" value="TRA_NPC_U3ANOMALY_LOOP_RES_B1" />
 			<Property name="English" value="Fight only to survive, friend. Treasure the galaxy and all its wonder! You will go far, I am sure of it!" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
@@ -191442,8 +191442,8 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
-		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_REQ_LOOP_RES_" _index="2">
-			<Property name="Id" value="TRA_NPC_U3ANOMALY_REQ_LOOP_RES_" />
+		<Property name="Table" value="TkLocalisationEntry" _id="TRA_NPC_U3ANOMALY_LOOP_RES_C1">
+			<Property name="Id" value="TRA_NPC_U3ANOMALY_LOOP_RES_C1" />
 			<Property name="English" value="Go further, go faster, see it all! Have no regrets, friend! I am proud of you!" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />

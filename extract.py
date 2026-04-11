@@ -293,27 +293,16 @@ def apply_slugs(final_files: dict) -> None:
 
     creatures_data = final_files.get('Creatures.json')
     if isinstance(creatures_data, dict):
-        for section_name, section_data in creatures_data.items():
-            if not isinstance(section_data, list):
-                continue
-            if section_name == 'Species':
-                section_prefix = 'creatures/'
-            elif section_name == 'BattleMoves':
-                section_prefix = 'creatures/moves/'
-            else:
-                section_prefix = f"creatures/{section_name.lower()}/"
-            for item in section_data:
-                if not isinstance(item, dict):
-                    continue
-                item_id = item.get('Id') or item.get('id')
-                if item_id:
-                    item['Slug'] = f"{section_prefix}{item_id}"
-
-    creatures_data = final_files.get('Creatures.json')
-    if isinstance(creatures_data, dict):
         section_prefixes = {
             'Species': 'creatures/',
-            'BattleMoves': 'battle-moves/',
+            'BattleMoves': 'creatures/moves/',
+            'MoveSets': 'creatures/movesets/',
+            'ArenaModes': 'creatures/modes/',
+            'ArenaLeague': 'creatures/league/',
+            'PetShop': 'creatures/shop/',
+            'PetAccessories': 'creatures/accessories/',
+            'EggOverrides': 'creatures/egg-overrides/',
+            'Behaviours': 'creatures/behaviours/',
         }
         for section, prefix in section_prefixes.items():
             section_items = creatures_data.get(section)
@@ -999,15 +988,7 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     if 'Creatures' in base_data:
         creatures_data['Species'] = base_data['Creatures']
     if 'BattleMoves' in base_data:
-        battle_moves = base_data['BattleMoves']
-        if isinstance(battle_moves, list):
-            for move in battle_moves:
-                if not isinstance(move, dict):
-                    continue
-                move_id = move.get('Id') or move.get('id')
-                if move_id:
-                    move['Slug'] = f"battle-moves/{move_id}"
-        creatures_data['BattleMoves'] = battle_moves
+        creatures_data['BattleMoves'] = base_data['BattleMoves']
     if 'MoveSets' in base_data:
         creatures_data['MoveSets'] = base_data['MoveSets']
     if 'ArenaModes' in base_data:
