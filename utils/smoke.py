@@ -10,6 +10,7 @@ EXPECTED_JSON_FILES = [
     "Buildings.json",
     "ConstructedTechnology.json",
     "Corvette.json",
+    "Creatures.json",
     "Curiosities.json",
     "Exocraft.json",
     "Fish.json",
@@ -25,6 +26,20 @@ EXPECTED_JSON_FILES = [
     "Trade.json",
     "Upgrades.json",
 ]
+
+# Files whose top-level structure is a dict with section keys, not a flat list.
+_DICT_STRUCTURED_FILES = {"Creatures.json"}
+_CREATURES_REQUIRED_SECTIONS = {
+    "Species",
+    "BattleMoves",
+    "MoveSets",
+    "ArenaModes",
+    "ArenaLeague",
+    "PetShop",
+    "PetAccessories",
+    "EggOverrides",
+    "Behaviours",
+}
 
 
 def _load_json(path: Path):
@@ -62,6 +77,23 @@ def run_smoke_check(
             continue
 
         if not isinstance(data, list):
+            if filename in _DICT_STRUCTURED_FILES:
+                if not isinstance(data, dict):
+                    failures.append(f"{filename}: expected top-level dict, got {type(data).__name__}")
+                    continue
+                if filename == "Creatures.json":
+                    missing_sections = sorted(_CREATURES_REQUIRED_SECTIONS - set(data.keys()))
+                    if missing_sections:
+                        failures.append(
+                            f"{filename}: missing required sections: {', '.join(missing_sections)}"
+                        )
+                    for section in sorted(_CREATURES_REQUIRED_SECTIONS & set(data.keys())):
+                        section_data = data.get(section)
+                        if not isinstance(section_data, list):
+                            failures.append(
+                                f"{filename}: section '{section}' expected list, got {type(section_data).__name__}"
+                            )
+                continue
             failures.append(f"{filename}: expected top-level list, got {type(data).__name__}")
             continue
 

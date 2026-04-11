@@ -7,7 +7,7 @@ Examples:
   python extract.py
 
   # Full refresh from game files, then parse JSON
-  python extract.py --pcbanks "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+  python extract.py --pcbanks "H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 
   # Extract images only
   python extract.py --images --extracted "C:\path\to\EXTRACTED"
@@ -28,8 +28,14 @@ from pathlib import Path
 
 from parsers.base_parts import parse_base_parts
 from parsers.cooking import parse_cooking
+from parsers.creatures import parse_creatures
+from parsers.battle_moves import parse_battle_moves
+from parsers.arena import (
+    parse_move_sets, parse_arena_modes, parse_arena_league_medals,
+    parse_pet_shop, parse_pet_accessories, parse_pet_behaviours,
+)
 from parsers.fish import parse_fish
-from parsers.pet_eggs import parse_pet_egg_trait_modifiers
+from parsers.pet_eggs import parse_pet_egg_trait_modifiers, parse_pet_egg_species_overrides
 from parsers.procedural_tech import parse_procedural_tech
 from parsers.products import parse_products
 from parsers.rawmaterials import parse_rawmaterials
@@ -49,7 +55,7 @@ from utils.smoke import run_smoke_check
 REPO_ROOT = Path(__file__).resolve().parent
 DATA = REPO_ROOT / "data"
 EXTRACTED = DATA / "EXTRACTED"
-DEFAULT_PCBANKS = r"X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+DEFAULT_PCBANKS = r"H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 
 MBIN_FILTERS = [
     "*REALITY/TABLES/nms_reality_gcproducttable.mbin",
@@ -72,6 +78,15 @@ MBIN_FILTERS = [
     "*LANGUAGE/nms_loc8_english.mbin",
     "*LANGUAGE/nms_loc9_english.mbin",
     "*LANGUAGE/nms_update3_english.mbin",
+    "*SIMULATION/ECOSYSTEM/creaturedatatable.mbin",
+    "*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovestable.mbin",
+    "*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovesetstable.mbin",
+    "*SIMULATION/GAMETABLES/gametablesdatatable.mbin",
+    "*REALITY/TABLES/petshopitemstable.mbin",
+    "*SIMULATION/ECOSYSTEM/petaccessorytable.mbin",
+    "*SIMULATION/ECOSYSTEM/peteggspeciesoverridetable.mbin",
+    "*SIMULATION/ECOSYSTEM/creaturepetbehaviourtable.mbin",
+    "*GAMESTATE/STATS/leveledstatstable.mbin",
 ]
 
 EXPECTED_MXML_AFTER_REFRESH = [
@@ -95,6 +110,15 @@ EXPECTED_MXML_AFTER_REFRESH = [
     "nms_loc8_english.MXML",
     "nms_loc9_english.MXML",
     "nms_update3_english.MXML",
+    "creaturedatatable.MXML",
+    "petbattlermovestable.MXML",
+    "petbattlermovesetstable.MXML",
+    "gametablesdatatable.MXML",
+    "petshopitemstable.MXML",
+    "petaccessorytable.MXML",
+    "peteggspeciesoverridetable.MXML",
+    "creaturepetbehaviourtable.MXML",
+    "leveledstatstable.MXML",
 ]
 
 
@@ -266,6 +290,41 @@ def apply_slugs(final_files: dict) -> None:
             item_id = item.get('Id') or item.get('id')
             if item_id:
                 item['Slug'] = f"{prefix}{item_id}"
+
+    creatures_data = final_files.get('Creatures.json')
+    if isinstance(creatures_data, dict):
+        for section_name, section_data in creatures_data.items():
+            if not isinstance(section_data, list):
+                continue
+            if section_name == 'Species':
+                section_prefix = 'creatures/'
+            elif section_name == 'BattleMoves':
+                section_prefix = 'creatures/moves/'
+            else:
+                section_prefix = f"creatures/{section_name.lower()}/"
+            for item in section_data:
+                if not isinstance(item, dict):
+                    continue
+                item_id = item.get('Id') or item.get('id')
+                if item_id:
+                    item['Slug'] = f"{section_prefix}{item_id}"
+
+    creatures_data = final_files.get('Creatures.json')
+    if isinstance(creatures_data, dict):
+        section_prefixes = {
+            'Species': 'creatures/',
+            'BattleMoves': 'battle-moves/',
+        }
+        for section, prefix in section_prefixes.items():
+            section_items = creatures_data.get(section)
+            if not isinstance(section_items, list):
+                continue
+            for item in section_items:
+                if not isinstance(item, dict):
+                    continue
+                item_id = item.get('Id') or item.get('id')
+                if item_id:
+                    item['Slug'] = f"{prefix}{item_id}"
 
 
 def filter_missing_icons(data):
@@ -891,6 +950,15 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         ('BaseParts', 'nms_basepartproducts.MXML', parse_base_parts),
         ('ProceduralTech', 'nms_reality_gcproceduraltechnologytable.MXML', parse_procedural_tech),
         ('EggModifiers', pet_trait_mxml, parse_pet_egg_trait_modifiers),
+        ('Creatures', 'creaturedatatable.MXML', parse_creatures),
+        ('BattleMoves', 'petbattlermovestable.MXML', parse_battle_moves),
+        ('MoveSets', 'petbattlermovesetstable.MXML', parse_move_sets),
+        ('ArenaModes', 'gametablesdatatable.MXML', parse_arena_modes),
+        ('ArenaLeague', 'leveledstatstable.MXML', parse_arena_league_medals),
+        ('PetShop', 'petshopitemstable.MXML', parse_pet_shop),
+        ('PetAccessories', 'petaccessorytable.MXML', parse_pet_accessories),
+        ('EggOverrides', 'peteggspeciesoverridetable.MXML', parse_pet_egg_species_overrides),
+        ('PetBehaviours', 'creaturepetbehaviourtable.MXML', parse_pet_behaviours),
     ]
     for i, (name, mxml_file, parser_func) in enumerate(parsers, 1):
         mxml_path = mxml_file if isinstance(mxml_file, Path) else (data_dir / mxml_file)
@@ -925,6 +993,37 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     }
     if 'EggModifiers' in base_data:
         final_files['EggModifiers.json'] = base_data.get('EggModifiers', [])
+
+    # Build Creatures.json as a nested object (not a flat list)
+    creatures_data = {}
+    if 'Creatures' in base_data:
+        creatures_data['Species'] = base_data['Creatures']
+    if 'BattleMoves' in base_data:
+        battle_moves = base_data['BattleMoves']
+        if isinstance(battle_moves, list):
+            for move in battle_moves:
+                if not isinstance(move, dict):
+                    continue
+                move_id = move.get('Id') or move.get('id')
+                if move_id:
+                    move['Slug'] = f"battle-moves/{move_id}"
+        creatures_data['BattleMoves'] = battle_moves
+    if 'MoveSets' in base_data:
+        creatures_data['MoveSets'] = base_data['MoveSets']
+    if 'ArenaModes' in base_data:
+        creatures_data['ArenaModes'] = base_data['ArenaModes']
+    if 'ArenaLeague' in base_data:
+        creatures_data['ArenaLeague'] = base_data['ArenaLeague']
+    if 'PetShop' in base_data:
+        creatures_data['PetShop'] = base_data['PetShop']
+    if 'PetAccessories' in base_data:
+        creatures_data['PetAccessories'] = base_data['PetAccessories']
+    if 'EggOverrides' in base_data:
+        creatures_data['EggOverrides'] = base_data['EggOverrides']
+    if 'PetBehaviours' in base_data:
+        creatures_data['Behaviours'] = base_data['PetBehaviours']
+    if creatures_data:
+        final_files['Creatures.json'] = creatures_data
     preseeded_ids: dict[str, set[str]] = {}
     preseeded_first_by_id: dict[str, dict[str, dict]] = {}
     for filename, data in final_files.items():
@@ -1087,8 +1186,10 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     print("-" * 70 + "\n")
     results = []
     for filename, data in sorted(final_files.items()):
-        file_size = save_json(data if data is not None else [], filename)
-        item_count = len(data) if isinstance(data, list) else 0
+        file_size = save_json(data if data is not None else ([] if filename != 'Creatures.json' else {}), filename)
+        item_count = len(data) if isinstance(data, list) else (
+            sum(len(v) for v in data.values() if isinstance(v, list)) if isinstance(data, dict) else 0
+        )
         results.append((filename, item_count, file_size))
         print(f"  {filename:30} {item_count:4} items  {file_size:8.1f} KB")
 

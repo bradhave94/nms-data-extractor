@@ -36,7 +36,7 @@ This will:
 Duplicate `Id` entries are automatically deduplicated by default (no flags needed).
 `Food.json` keeps merge-style dedupe; other files use keep-first dedupe to avoid cross-schema field contamination.
 
-Strict validation is enabled by default and fails the run on smoke-check errors (including duplicate IDs).  
+Strict validation is enabled by default and fails the run on smoke-check errors (including duplicate IDs).
 If you need to bypass strict checks temporarily:
 
 ```bash
@@ -69,8 +69,8 @@ python extract.py --images --extracted "C:\path\to\EXTRACTED"
 python extract.py --images --pcbanks "X:\...\PCBANKS"
 ```
 
-`--images` runs image extraction only (it does not run JSON extraction).  
-This will run `utils.images` to produce **`data/images/{id}.png`** (or `.dds` if ImageMagick is not installed).  
+`--images` runs image extraction only (it does not run JSON extraction).
+This will run `utils.images` to produce **`data/images/{id}.png`** (or `.dds` if ImageMagick is not installed).
 If `--extracted` is not provided, textures are unpacked from game files first.
 
 - **Requires:** hgpaktool library (installed via requirements.txt); **optional:** [ImageMagick](https://imagemagick.org/) (`magick`) for DDS→PNG.
@@ -105,6 +105,7 @@ python -m utils.smoke --strict-duplicates
 | **TechnologyModule.json** | Upgrade modules |
 | **Curiosities.json** | Salvaged items & relics |
 | **Others.json** | Misc items (charts, cosmetics, etc.) |
+| **Creatures.json** | Creature species, battle moves, move sets, arena modes, medals, pet shop, accessories, egg overrides, behaviours |
 
 ## Project Structure
 
@@ -118,10 +119,14 @@ nms-data-extractor/
 ├── parsers/
 │   ├── __init__.py
 │   ├── base_parser.py       # Shared utilities & translation
+│   ├── arena.py             # Move sets, arena modes, medals, pet shop, accessories, behaviours
 │   ├── base_parts.py
+│   ├── battle_moves.py      # Xeno Arena battle abilities
 │   ├── buildings.py
 │   ├── cooking.py
+│   ├── creatures.py         # Creature species data
 │   ├── fish.py
+│   ├── pet_eggs.py
 │   ├── procedural_tech.py
 │   ├── products.py
 │   ├── rawmaterials.py
@@ -187,9 +192,9 @@ CATEGORIZATION_RULES = {
 
 ## Files Needed for Fresh Extraction
 
-The pipeline uses **18 MBIN files** from the game: 10 data tables and 8 English localization files. You do not need to extract all 177,974 game files.
+The pipeline uses **27 MBIN files** from the game: 19 data tables and 8 English localization files. You do not need to extract all 177,974 game files.
 
-### Data tables (10)
+### Data tables (19)
 
 | MBIN | Output / use |
 |------|------------------|
@@ -203,6 +208,15 @@ The pipeline uses **18 MBIN files** from the game: 10 data tables and 8 English 
 | `nms_modularcustomisationproducts.mbin` | Others.json (ship components) |
 | `nms_basepartproducts.mbin` | Buildings (freighter parts) |
 | `nms_reality_gcproceduraltechnologytable.mbin` | ConstructedTechnology, TechnologyModule |
+| `creaturedatatable.mbin` | Creatures.json (species) |
+| `petbattlermovestable.mbin` | Creatures.json (battle moves) |
+| `petbattlermovesetstable.mbin` | Creatures.json (move sets) |
+| `gametablesdatatable.mbin` | Creatures.json (arena modes) |
+| `petshopitemstable.mbin` | Creatures.json (pet shop) |
+| `petaccessorytable.mbin` | Creatures.json (accessories) |
+| `peteggspeciesoverridetable.mbin` | Creatures.json (egg overrides) |
+| `creaturepetbehaviourtable.mbin` | Creatures.json (behaviours) |
+| `leveledstatstable.mbin` | Creatures.json (arena league medals) |
 
 ### Localization (8)
 
@@ -228,6 +242,15 @@ hgpaktool -U `
   -f="*REALITY/TABLES/nms_modularcustomisationproducts.mbin" `
   -f="*REALITY/TABLES/nms_basepartproducts.mbin" `
   -f="*REALITY/TABLES/nms_reality_gcproceduraltechnologytable.mbin" `
+  -f="*SIMULATION/ECOSYSTEM/creaturedatatable.mbin" `
+  -f="*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovestable.mbin" `
+  -f="*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovesetstable.mbin" `
+  -f="*SIMULATION/GAMETABLES/gametablesdatatable.mbin" `
+  -f="*REALITY/TABLES/petshopitemstable.mbin" `
+  -f="*SIMULATION/ECOSYSTEM/petaccessorytable.mbin" `
+  -f="*SIMULATION/ECOSYSTEM/peteggspeciesoverridetable.mbin" `
+  -f="*SIMULATION/ECOSYSTEM/creaturepetbehaviourtable.mbin" `
+  -f="*GAMESTATE/STATS/leveledstatstable.mbin" `
   -f="*LANGUAGE/nms_loc1_english.mbin" `
   -f="*LANGUAGE/nms_loc4_english.mbin" `
   -f="*LANGUAGE/nms_loc5_english.mbin" `
@@ -236,7 +259,7 @@ hgpaktool -U `
   -f="*LANGUAGE/nms_loc8_english.mbin" `
   -f="*LANGUAGE/nms_loc9_english.mbin" `
   -f="*LANGUAGE/nms_update3_english.mbin" `
-  "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+  "H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 ```
 
 Then convert MBIN → MXML with **MBINCompiler** (e.g. `tools\MBINCompiler.exe` in `data\mbin`), and run:
@@ -276,11 +299,11 @@ python extract.py --refresh
 Or run with a custom path:
 
 ```bash
-python extract.py --pcbanks "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+python extract.py --pcbanks "H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
 ```
 
 The script will:
-- Extract the 18 required MBIN files from your game's PAK files
+- Extract the 27 required MBIN files from your game's PAK files
 - Consolidate them into `data/mbin/`
 - Convert MBIN to MXML with MBINCompiler
 - Extract and categorize into output JSON files in `data/json/`

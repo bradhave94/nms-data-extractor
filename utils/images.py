@@ -4,7 +4,11 @@ import json
 import re
 import shutil
 import subprocess
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from parsers.base_parser import shared_texture_icon_name
 
 
 ICON_JSON_FILES = [
@@ -24,8 +28,17 @@ ICON_JSON_FILES = [
     "TechnologyModule.json",
     "Trade.json",
     "Upgrades.json",
+    "Creatures.json",
     "none.json",
 ]
+
+_STANDARD_ICON_FIELDS = ("IconPath", "iconPath", "Icon", "icon")
+
+_EXTRA_ICON_PATH_FIELDS = (
+    "CategoryIconPath", "CategoryBgIconPath",
+    "BuffIconPath", "DebuffIconPath",
+    "BattleAffinityIconPath", "BattleAffinityBinocsIconPath",
+)
 
 
 def sanitize_filename(id_str: str) -> str:
@@ -34,9 +47,37 @@ def sanitize_filename(id_str: str) -> str:
     return re.sub(r'[\\/:*?"<>|]', "_", str(id_str)).strip() or "unknown"
 
 
+def _dds_output_name(dds_path: str) -> str:
+    """Derive a stable output name for a shared texture asset.
+
+    Delegates to shared_texture_icon_name and strips the .png suffix
+    since extract_icons appends the extension itself.
+    """
+    icon_name = shared_texture_icon_name(dds_path)
+    if icon_name and icon_name.endswith(".png"):
+        return icon_name[:-4]
+    return icon_name or "unknown"
+
+
+def _iter_item_lists(data) -> list[list]:
+    """Yield all item lists from either a flat list or a dict of lists."""
+    if isinstance(data, list):
+        return [data]
+    if isinstance(data, dict):
+        return [v for v in data.values() if isinstance(v, list)]
+    return []
+
+
 def collect_id_icon_pairs(json_dir: Path) -> list[tuple[str, str]]:
+    """Collect (output_name, source_dds_path) pairs from all JSON files.
+
+    Standard IconPath fields → output name is the item Id.
+    Extra *IconPath fields (shared textures) → output name is the DDS filename stem.
+    """
     seen_ids = set()
+    seen_texture_stems = set()
     pairs = []
+
     for filename in ICON_JSON_FILES:
         path = json_dir / filename
         if not path.exists():
@@ -47,25 +88,34 @@ def collect_id_icon_pairs(json_dir: Path) -> list[tuple[str, str]]:
         except (json.JSONDecodeError, OSError) as e:
             print(f"[WARN] Skip {filename}: {e}")
             continue
-        if not isinstance(data, list):
-            continue
-        for item in data:
-            if not isinstance(item, dict):
-                continue
-            id_val = item.get("id") or item.get("Id") or ""
-            icon_val = (
-                item.get("iconPath")
-                or item.get("IconPath")
-                or item.get("icon")
-                or item.get("Icon")
-                or ""
-            )
-            if not id_val or not icon_val:
-                continue
-            if id_val in seen_ids:
-                continue
-            seen_ids.add(id_val)
-            pairs.append((id_val, icon_val))
+
+        for item_list in _iter_item_lists(data):
+            for item in item_list:
+                if not isinstance(item, dict):
+                    continue
+                id_val = item.get("id") or item.get("Id") or ""
+
+                # Standard per-item icon: {Id}.png → source DDS
+                if id_val and id_val not in seen_ids:
+                    icon_val = ""
+                    for field in _STANDARD_ICON_FIELDS:
+                        icon_val = item.get(field, "") or ""
+                        if icon_val:
+                            break
+                    if icon_val:
+                        seen_ids.add(id_val)
+                        pairs.append((id_val, icon_val))
+
+                # Shared texture assets: {dds_stem}.png → source DDS
+                for field in _EXTRA_ICON_PATH_FIELDS:
+                    dds_path = item.get(field, "") or ""
+                    if not dds_path:
+                        continue
+                    stem = _dds_output_name(dds_path)
+                    if stem not in seen_texture_stems:
+                        seen_texture_stems.add(stem)
+                        pairs.append((stem, dds_path))
+
     return pairs
 
 
