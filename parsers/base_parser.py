@@ -24,6 +24,20 @@ _MISSING_LOCALIZATION_OVERRIDES = {
     'UI_BRIDGECONNECT_NAME': 'Bridge Connector',
 }
 
+_AFFINITY_DISPLAY_NAMES = {
+    "Normal": "None",
+    "Fire": "Fire",
+    "Cold": "Frost",
+    "Toxic": "Toxic",
+    "Barren": "Desert",
+    "Lush": "Tropical",
+    "Radioactive": "Radioactive",
+    "Mech": "Mechanical",
+    "Weird": "Anomalous",
+    "None": "None",
+    "UsePetAffinity": "Matches Creature Affinity",
+}
+
 _MARKUP_TAG_RE = re.compile(r'<[^>]*>')
 _FE_TOKEN_RE = re.compile(r'\bFE_[A-Z0-9_]+\b')
 _CAMEL_SPLIT_RE = re.compile(r'(?<=[a-z0-9])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])')
@@ -211,6 +225,42 @@ def format_stat_type_name(stat_type: str, strip_prefixes: tuple[str, ...] = ()) 
         words.append(token)
 
     return ' '.join(words).title()
+
+
+def affinity_display_name(value: str | None) -> str | None:
+    """
+    Convert raw game affinity enums to canonical site labels.
+
+    Game values:
+      Lush, Cold, Barren, Weird, Mech
+    Site labels:
+      Tropical, Frost, Desert, Anomalous, Mechanical
+    """
+    if not value or not isinstance(value, str):
+        return None
+    normalized = value.strip()
+    if not normalized:
+        return None
+    mapped = _AFFINITY_DISPLAY_NAMES.get(normalized)
+    if mapped:
+        return mapped
+    return title_case_name(normalized.replace('_', ' '))
+
+
+def canonical_pet_affinity(value: str | None) -> str | None:
+    """
+    Normalize game affinity enums for arena UI/data usage.
+
+    In current data, "Normal" effectively means "no special affinity".
+    """
+    if not value or not isinstance(value, str):
+        return None
+    normalized = value.strip()
+    if not normalized:
+        return None
+    if normalized in {"Normal", "None"}:
+        return None
+    return normalized
 
 
 class EXMLParser:

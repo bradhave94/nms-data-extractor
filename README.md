@@ -192,9 +192,9 @@ CATEGORIZATION_RULES = {
 
 ## Files Needed for Fresh Extraction
 
-The pipeline uses **27 MBIN files** from the game: 19 data tables and 8 English localization files. You do not need to extract all 177,974 game files.
+The pipeline uses **30 MBIN files** from the game: 22 data tables and 8 English localization files. You do not need to extract all 177,974 game files.
 
-### Data tables (19)
+### Data tables (22)
 
 | MBIN | Output / use |
 |------|------------------|
@@ -209,6 +209,7 @@ The pipeline uses **27 MBIN files** from the game: 19 data tables and 8 English 
 | `nms_basepartproducts.mbin` | Buildings (freighter parts) |
 | `nms_reality_gcproceduraltechnologytable.mbin` | ConstructedTechnology, TechnologyModule |
 | `creaturedatatable.mbin` | Creatures.json (species) |
+| `creaturefilenametable.mbin` | Creatures.json (model scene paths for species thumbnails) |
 | `petbattlermovestable.mbin` | Creatures.json (battle moves) |
 | `petbattlermovesetstable.mbin` | Creatures.json (move sets) |
 | `gametablesdatatable.mbin` | Creatures.json (arena modes) |
@@ -243,6 +244,7 @@ hgpaktool -U `
   -f="*REALITY/TABLES/nms_basepartproducts.mbin" `
   -f="*REALITY/TABLES/nms_reality_gcproceduraltechnologytable.mbin" `
   -f="*SIMULATION/ECOSYSTEM/creaturedatatable.mbin" `
+  -f="*SIMULATION/ECOSYSTEM/creaturefilenametable.mbin" `
   -f="*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovestable.mbin" `
   -f="*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovesetstable.mbin" `
   -f="*SIMULATION/GAMETABLES/gametablesdatatable.mbin" `

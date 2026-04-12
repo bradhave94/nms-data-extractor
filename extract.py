@@ -28,7 +28,11 @@ from pathlib import Path
 
 from parsers.base_parts import parse_base_parts
 from parsers.cooking import parse_cooking
-from parsers.creatures import parse_creatures
+from parsers.creatures import (
+    build_affinity_icon_catalog,
+    parse_creature_filenames,
+    parse_creatures,
+)
 from parsers.battle_moves import parse_battle_moves
 from parsers.arena import (
     parse_move_sets, parse_arena_modes, parse_arena_league_medals,
@@ -79,6 +83,7 @@ MBIN_FILTERS = [
     "*LANGUAGE/nms_loc9_english.mbin",
     "*LANGUAGE/nms_update3_english.mbin",
     "*SIMULATION/ECOSYSTEM/creaturedatatable.mbin",
+    "*SIMULATION/ECOSYSTEM/creaturefilenametable.mbin",
     "*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovestable.mbin",
     "*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovesetstable.mbin",
     "*SIMULATION/GAMETABLES/gametablesdatatable.mbin",
@@ -111,6 +116,7 @@ EXPECTED_MXML_AFTER_REFRESH = [
     "nms_loc9_english.MXML",
     "nms_update3_english.MXML",
     "creaturedatatable.MXML",
+    "creaturefilenametable.MXML",
     "petbattlermovestable.MXML",
     "petbattlermovesetstable.MXML",
     "gametablesdatatable.MXML",
@@ -889,6 +895,76 @@ def enrich_buildings_metadata(final_files: dict, data_dir: Path) -> int:
     return enriched
 
 
+def enrich_creatures_with_model_paths(base_data: dict) -> int:
+    species_rows = base_data.get('Creatures')
+    model_rows = base_data.get('CreatureFilenameMap')
+    if not isinstance(species_rows, list) or not isinstance(model_rows, list):
+        return 0
+
+    model_by_id: dict[str, dict] = {}
+    for row in model_rows:
+        if not isinstance(row, dict):
+            continue
+        row_id = row.get('Id')
+        if isinstance(row_id, str) and row_id:
+            model_by_id[row_id] = row
+
+    enriched = 0
+    for species in species_rows:
+        if not isinstance(species, dict):
+            continue
+        species_id = species.get('Id')
+        if not isinstance(species_id, str) or not species_id:
+            continue
+        model = model_by_id.get(species_id)
+        if not model:
+            continue
+        species['ModelScenePath'] = model.get('ModelScenePath')
+        species['ExtraModelScenePath'] = model.get('ExtraModelScenePath')
+        enriched += 1
+    return enriched
+
+
+def enrich_creature_move_set_pool(base_data: dict) -> int:
+    """
+    Most battle-capable species do not have explicit MoveSets in creaturedatatable.
+    Surface the global move-set pool so the site can render likely archetypes
+    instead of a blank state.
+    """
+    species_rows = base_data.get('Creatures')
+    move_set_rows = base_data.get('MoveSets')
+    if not isinstance(species_rows, list) or not isinstance(move_set_rows, list):
+        return 0
+
+    move_set_ids: list[str] = []
+    for row in move_set_rows:
+        if not isinstance(row, dict):
+            continue
+        move_set_id = row.get('Id')
+        if isinstance(move_set_id, str) and move_set_id:
+            move_set_ids.append(move_set_id)
+
+    if not move_set_ids:
+        return 0
+
+    enriched = 0
+    for species in species_rows:
+        if not isinstance(species, dict):
+            continue
+        if not species.get('CanBeUsedInBattle'):
+            continue
+
+        explicit_sets = species.get('MoveSets')
+        if isinstance(explicit_sets, list) and explicit_sets:
+            species['MoveSetSource'] = 'Explicit'
+            continue
+
+        species['PotentialMoveSets'] = move_set_ids
+        species['MoveSetSource'] = 'GlobalPool'
+        enriched += 1
+    return enriched
+
+
 def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     start_time = time.time()
     print("\n" + "=" * 70)
@@ -940,6 +1016,7 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         ('ProceduralTech', 'nms_reality_gcproceduraltechnologytable.MXML', parse_procedural_tech),
         ('EggModifiers', pet_trait_mxml, parse_pet_egg_trait_modifiers),
         ('Creatures', 'creaturedatatable.MXML', parse_creatures),
+        ('CreatureFilenameMap', 'creaturefilenametable.MXML', parse_creature_filenames),
         ('BattleMoves', 'petbattlermovestable.MXML', parse_battle_moves),
         ('MoveSets', 'petbattlermovesetstable.MXML', parse_move_sets),
         ('ArenaModes', 'gametablesdatatable.MXML', parse_arena_modes),
@@ -964,6 +1041,15 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
             import traceback
             traceback.print_exc()
 
+    model_enriched = enrich_creatures_with_model_paths(base_data)
+    if model_enriched:
+        print(f"  [ENRICH] Creatures: linked model scene paths for {model_enriched} species\n")
+    move_pool_enriched = enrich_creature_move_set_pool(base_data)
+    if move_pool_enriched:
+        print(f"  [ENRICH] Creatures: added potential move set pools for {move_pool_enriched} battle species\n")
+    base_data['CreatureAffinities'] = build_affinity_icon_catalog()
+    print(f"  [ENRICH] Creatures: catalogued {len(base_data['CreatureAffinities'])} affinity icon entries\n")
+
     print("\n" + "=" * 70)
     print("STEP 2: Categorizing into output files...")
     print("-" * 70 + "\n")
@@ -987,6 +1073,8 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     creatures_data = {}
     if 'Creatures' in base_data:
         creatures_data['Species'] = base_data['Creatures']
+    if 'CreatureAffinities' in base_data:
+        creatures_data['Affinities'] = base_data['CreatureAffinities']
     if 'BattleMoves' in base_data:
         creatures_data['BattleMoves'] = base_data['BattleMoves']
     if 'MoveSets' in base_data:

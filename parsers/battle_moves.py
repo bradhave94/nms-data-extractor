@@ -1,6 +1,12 @@
 """Parse creature battle moves from petbattlermovestable.MXML."""
 import re
-from .base_parser import EXMLParser, normalize_game_icon_path, shared_texture_icon_name
+from .base_parser import (
+    EXMLParser,
+    affinity_display_name,
+    canonical_pet_affinity,
+    normalize_game_icon_path,
+    shared_texture_icon_name,
+)
 
 _AFFINITY_LOC_KEYS = [
     ("Normal", "NONE"),
@@ -242,10 +248,15 @@ def parse_battle_moves(mxml_path: str) -> list:
                     break
             if primary_affinity:
                 break
+        canonical_primary_affinity = (
+            primary_affinity
+            if primary_affinity == "UsePetAffinity"
+            else canonical_pet_affinity(primary_affinity)
+        )
 
         default_display_name = canonical_name
-        if primary_affinity and primary_affinity in names_by_affinity:
-            default_display_name = names_by_affinity[primary_affinity]
+        if canonical_primary_affinity and canonical_primary_affinity in names_by_affinity:
+            default_display_name = names_by_affinity[canonical_primary_affinity]
         elif names_by_affinity.get("Normal"):
             default_display_name = names_by_affinity["Normal"]
 
@@ -257,7 +268,9 @@ def parse_battle_moves(mxml_path: str) -> list:
             "NameStub": name_stub or None,
             "Description": description or None,
             "Target": target or None,
-            "Affinity": primary_affinity,
+            "AffinityRaw": primary_affinity,
+            "Affinity": canonical_primary_affinity,
+            "AffinityDisplay": affinity_display_name(canonical_primary_affinity or "None"),
             "Category": icon_style or None,
             "CategoryIcon": shared_texture_icon_name(icon_path) if icon_path else None,
             "CategoryIconPath": icon_path,

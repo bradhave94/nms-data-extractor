@@ -31,6 +31,7 @@ EXPECTED_JSON_FILES = [
 _DICT_STRUCTURED_FILES = {"Creatures.json"}
 _CREATURES_REQUIRED_SECTIONS = {
     "Species",
+    "Affinities",
     "BattleMoves",
     "MoveSets",
     "ArenaModes",

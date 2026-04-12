@@ -1,13 +1,13 @@
 # NMS Full Refresh Report
 
-- Generated: `2026-04-11T21:51:01-04:00`
+- Generated: `2026-04-11T20:55:27-04:00`
 - Version key: `6.30.0.1`
-- Previous run: `2026-04-11T21:23:52-04:00` (6.30.0.1)
+- Previous run: `2026-04-11T20:53:47-04:00` (6.30.0.1)
 
 ## Totals
 
-- Old total items: **6532**
-- New total items: **6532**
+- Old total items: **6531**
+- New total items: **6531**
 - Added IDs: **0**
 - Removed IDs: **0**
 - Changed IDs: **0**
@@ -19,7 +19,7 @@
 | Buildings.json | 1221 | 1221 | 0 | 0 | 0 |
 | ConstructedTechnology.json | 91 | 91 | 0 | 0 | 0 |
 | Corvette.json | 638 | 638 | 0 | 0 | 0 |
-| Creatures.json | 10 | 10 | 0 | 0 | 0 |
+| Creatures.json | 9 | 9 | 0 | 0 | 0 |
 | Curiosities.json | 264 | 264 | 0 | 0 | 0 |
 | EggModifiers.json | 24 | 24 | 0 | 0 | 0 |
 | Exocraft.json | 44 | 44 | 0 | 0 | 0 |
