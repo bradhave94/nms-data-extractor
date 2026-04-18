@@ -36,7 +36,9 @@ from parsers.creatures import (
 from parsers.battle_moves import parse_battle_moves
 from parsers.arena import (
     parse_move_sets, parse_arena_modes, parse_arena_league_medals,
+    parse_arena_ai_configs, parse_arena_rewards,
     parse_pet_shop, parse_pet_accessories, parse_pet_behaviours,
+    parse_creature_globals,
 )
 from parsers.fish import parse_fish
 from parsers.pet_eggs import parse_pet_egg_trait_modifiers, parse_pet_egg_species_overrides
@@ -92,6 +94,7 @@ MBIN_FILTERS = [
     "*SIMULATION/ECOSYSTEM/peteggspeciesoverridetable.mbin",
     "*SIMULATION/ECOSYSTEM/creaturepetbehaviourtable.mbin",
     "*GAMESTATE/STATS/leveledstatstable.mbin",
+    "*gccreatureglobals.mbin",
 ]
 
 EXPECTED_MXML_AFTER_REFRESH = [
@@ -125,6 +128,7 @@ EXPECTED_MXML_AFTER_REFRESH = [
     "peteggspeciesoverridetable.MXML",
     "creaturepetbehaviourtable.MXML",
     "leveledstatstable.MXML",
+    "gccreatureglobals.MXML",
 ]
 
 
@@ -305,10 +309,13 @@ def apply_slugs(final_files: dict) -> None:
             'MoveSets': 'creatures/movesets/',
             'ArenaModes': 'creatures/modes/',
             'ArenaLeague': 'creatures/league/',
+            'ArenaAIConfigs': 'creatures/ai-configs/',
+            'ArenaRewards': 'creatures/rewards/',
             'PetShop': 'creatures/shop/',
             'PetAccessories': 'creatures/accessories/',
             'EggOverrides': 'creatures/egg-overrides/',
             'Behaviours': 'creatures/behaviours/',
+            'CreatureGlobals': 'creatures/globals/',
         }
         for section, prefix in section_prefixes.items():
             section_items = creatures_data.get(section)
@@ -1021,10 +1028,13 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         ('MoveSets', 'petbattlermovesetstable.MXML', parse_move_sets),
         ('ArenaModes', 'gametablesdatatable.MXML', parse_arena_modes),
         ('ArenaLeague', 'leveledstatstable.MXML', parse_arena_league_medals),
+        ('ArenaAIConfigs', 'gametablesdatatable.MXML', parse_arena_ai_configs),
+        ('ArenaRewards', 'rewardtable.MXML', parse_arena_rewards),
         ('PetShop', 'petshopitemstable.MXML', parse_pet_shop),
         ('PetAccessories', 'petaccessorytable.MXML', parse_pet_accessories),
         ('EggOverrides', 'peteggspeciesoverridetable.MXML', parse_pet_egg_species_overrides),
         ('PetBehaviours', 'creaturepetbehaviourtable.MXML', parse_pet_behaviours),
+        ('CreatureGlobals', 'gccreatureglobals.MXML', parse_creature_globals),
     ]
     for i, (name, mxml_file, parser_func) in enumerate(parsers, 1):
         mxml_path = mxml_file if isinstance(mxml_file, Path) else (data_dir / mxml_file)
@@ -1035,7 +1045,7 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         try:
             data = parser_func(str(mxml_path))
             base_data[name] = data
-            print(f"  [OK] {len(data)} items extracted\n")
+            print(f"  [OK] {len(data) if isinstance(data, list) else 1} items extracted\n")
         except Exception as e:
             print(f"  [ERROR] Failed: {e}\n")
             import traceback
@@ -1047,6 +1057,27 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     move_pool_enriched = enrich_creature_move_set_pool(base_data)
     if move_pool_enriched:
         print(f"  [ENRICH] Creatures: added potential move set pools for {move_pool_enriched} battle species\n")
+
+    globals_data = base_data.get('CreatureGlobals')
+    if isinstance(globals_data, dict):
+        special_names = globals_data.get('SpecialCreatureNames', {})
+        if special_names and isinstance(base_data.get('Creatures'), list):
+            enriched_names = 0
+            for species in base_data['Creatures']:
+                if not isinstance(species, dict):
+                    continue
+                species_id = species.get('Id')
+                if species_id and species_id in special_names:
+                    info = special_names[species_id]
+                    if info.get('Name') and species.get('Name') != info['Name']:
+                        species['Name'] = info['Name']
+                        enriched_names += 1
+                    if info.get('Species') and not species.get('SpeciesSubtitle'):
+                        species['SpeciesSubtitle'] = info['Species']
+                    if info.get('Trait'):
+                        species['SpecialTrait'] = info['Trait']
+            if enriched_names:
+                print(f"  [ENRICH] Creatures: applied special creature names for {enriched_names} species\n")
     base_data['CreatureAffinities'] = build_affinity_icon_catalog()
     print(f"  [ENRICH] Creatures: catalogued {len(base_data['CreatureAffinities'])} affinity icon entries\n")
 
@@ -1083,6 +1114,10 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         creatures_data['ArenaModes'] = base_data['ArenaModes']
     if 'ArenaLeague' in base_data:
         creatures_data['ArenaLeague'] = base_data['ArenaLeague']
+    if 'ArenaAIConfigs' in base_data:
+        creatures_data['ArenaAIConfigs'] = base_data['ArenaAIConfigs']
+    if 'ArenaRewards' in base_data:
+        creatures_data['ArenaRewards'] = base_data['ArenaRewards']
     if 'PetShop' in base_data:
         creatures_data['PetShop'] = base_data['PetShop']
     if 'PetAccessories' in base_data:
@@ -1091,6 +1126,8 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         creatures_data['EggOverrides'] = base_data['EggOverrides']
     if 'PetBehaviours' in base_data:
         creatures_data['Behaviours'] = base_data['PetBehaviours']
+    if 'CreatureGlobals' in base_data:
+        creatures_data['CreatureGlobals'] = base_data['CreatureGlobals']
     if creatures_data:
         final_files['Creatures.json'] = creatures_data
     preseeded_ids: dict[str, set[str]] = {}

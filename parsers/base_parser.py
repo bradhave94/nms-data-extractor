@@ -25,7 +25,7 @@ _MISSING_LOCALIZATION_OVERRIDES = {
 }
 
 _AFFINITY_DISPLAY_NAMES = {
-    "Normal": "None",
+    "Normal": "Physical",
     "Fire": "Fire",
     "Cold": "Frost",
     "Toxic": "Toxic",
@@ -34,7 +34,7 @@ _AFFINITY_DISPLAY_NAMES = {
     "Radioactive": "Radioactive",
     "Mech": "Mechanical",
     "Weird": "Anomalous",
-    "None": "None",
+    "None": "Physical",
     "UsePetAffinity": "Matches Creature Affinity",
 }
 

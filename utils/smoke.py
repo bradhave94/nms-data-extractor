@@ -36,11 +36,16 @@ _CREATURES_REQUIRED_SECTIONS = {
     "MoveSets",
     "ArenaModes",
     "ArenaLeague",
+    "ArenaAIConfigs",
+    "ArenaRewards",
     "PetShop",
     "PetAccessories",
     "EggOverrides",
     "Behaviours",
+    "CreatureGlobals",
 }
+
+_CREATURES_DICT_SECTIONS = {"CreatureGlobals"}
 
 
 def _load_json(path: Path):
@@ -90,7 +95,12 @@ def run_smoke_check(
                         )
                     for section in sorted(_CREATURES_REQUIRED_SECTIONS & set(data.keys())):
                         section_data = data.get(section)
-                        if not isinstance(section_data, list):
+                        if section in _CREATURES_DICT_SECTIONS:
+                            if not isinstance(section_data, dict):
+                                failures.append(
+                                    f"{filename}: section '{section}' expected dict, got {type(section_data).__name__}"
+                                )
+                        elif not isinstance(section_data, list):
                             failures.append(
                                 f"{filename}: section '{section}' expected list, got {type(section_data).__name__}"
                             )

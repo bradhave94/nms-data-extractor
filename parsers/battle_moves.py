@@ -64,6 +64,35 @@ _DEBUFF_ICON_MAP = {
     "Cooldown": "TEXTURES/UI/FRONTEND/ICONS/PETS/BUFFS/DEBUFF.COOLDOWN.DDS",
 }
 
+_PAYLOAD_TYPE_TO_EFFECT_LOC = {
+    "DealDamage": "UI_PB_MOVE_EFFECT_DAMAGE",
+    "Heal": "UI_PB_MOVE_EFFECT_HEAL",
+    "DamageOverTime": "UI_PB_MOVE_EFFECT_DOT",
+    "HealOverTime": "UI_PB_MOVE_EFFECT_HOT",
+    "Shield": "UI_PB_MOVE_EFFECT_SHIELD",
+    "Reflect": "UI_PB_MOVE_EFFECT_REFLECT",
+    "Absorb": "UI_PB_MOVE_EFFECT_ABSORB",
+    "Stun": "UI_PB_MOVE_EFFECT_STUN",
+    "Revive": "UI_PB_MOVE_EFFECT_REVIVE",
+    "ResetCooldowns": "UI_PB_MOVE_EFFECT_RESET_CD",
+    "SelfDestruct": "UI_PB_MOVE_EFFECT_SELF_DESTRUCT",
+    "ForceFlee": "UI_PB_MOVE_EFFECT_SWITCH",
+    "DealDamageRamp": "UI_PB_MOVE_EFFECT_DAMRAMP",
+    "Ramp": "UI_PB_MOVE_EFFECT_RAMP",
+    "StatModify": "UI_PB_MOVE_EFFECT_STAT_MOD",
+    "DispelBuffs": "UI_PB_MOVE_EFFECT_DISPEL",
+    "LockPet": "UI_PB_MOVE_EFFECT_LOCK_PET",
+    "LockMove": "UI_PB_MOVE_EFFECT_LOCK_MOVE",
+    "ChangeAffinity": "UI_PB_MOVE_EFFECT_AFFINITY",
+    "DelayAttack": "UI_PB_MOVE_EFFECT_DELAY_ATT",
+    "DelayHeal": "UI_PB_MOVE_EFFECT_DELAY_HEAL",
+    "DeathDamage": "UI_PB_MOVE_EFFECT_DEATH_DAM",
+    "DeathHeal": "UI_PB_MOVE_EFFECT_DEATH_HEAL",
+}
+
+_PLACEHOLDER_RE = re.compile(r'%[A-Z_]+%')
+_MULTI_SPACE_RE = re.compile(r'  +')
+
 _STUB_RE = re.compile(r'\s*-\s*STUB\s+REPLACEMENT\s*', re.IGNORECASE)
 _DOUBLE_AFTER_RE = re.compile(r'\bafter\s+after\b', re.IGNORECASE)
 
@@ -78,6 +107,49 @@ def _clean_description(raw: str) -> str:
     if text and text[0].islower():
         text = text[0].upper() + text[1:]
     return text
+
+
+def _resolve_effect_loc_key(payload: dict) -> str | None:
+    """Return the full localization key for a payload's effect description."""
+    ptype = payload.get("PayloadType") or ""
+    base = _PAYLOAD_TYPE_TO_EFFECT_LOC.get(ptype)
+    if not base:
+        return None
+    if ptype == "StatModify":
+        benefit = payload.get("Benefit", "")
+        return base + ("_DOWN" if benefit == "Negative" else "_UP")
+    if ptype == "DispelBuffs":
+        detail = payload.get("PayloadDetail", {})
+        is_negative = detail.get("DispelNegativeEffects", False)
+        return base + ("_DEBUFF" if is_negative else "_BUFF")
+    return base
+
+
+def _strip_placeholders(template: str) -> str:
+    """Remove %PLACEHOLDER% tokens and clean up residual whitespace/punctuation."""
+    text = _PLACEHOLDER_RE.sub('', template)
+    text = _MULTI_SPACE_RE.sub(' ', text).strip()
+    text = text.rstrip(',')
+    return text
+
+
+def _build_effect_description(phases: list, localization: dict) -> str | None:
+    """Build a human-readable effect description from all payloads across phases."""
+    seen_keys: set[str] = set()
+    parts: list[str] = []
+    for phase in phases:
+        for payload in (phase.get("Payloads") or []):
+            if payload.get("IsSilent"):
+                continue
+            loc_key = _resolve_effect_loc_key(payload)
+            if not loc_key or loc_key in seen_keys:
+                continue
+            seen_keys.add(loc_key)
+            template = localization.get(loc_key, "")
+            if not template:
+                continue
+            parts.append(_strip_placeholders(template))
+    return "; ".join(parts) if parts else None
 
 
 def _parse_payload_item(parser: EXMLParser, payload_elem) -> dict:
@@ -260,6 +332,8 @@ def parse_battle_moves(mxml_path: str) -> list:
         elif names_by_affinity.get("Normal"):
             default_display_name = names_by_affinity["Normal"]
 
+        effect_description = _build_effect_description(phases, localization)
+
         moves.append({
             "Id": move_id,
             "Name": canonical_name,
@@ -267,6 +341,7 @@ def parse_battle_moves(mxml_path: str) -> list:
             "NamesByAffinity": names_by_affinity if names_by_affinity else None,
             "NameStub": name_stub or None,
             "Description": description or None,
+            "EffectDescription": effect_description,
             "Target": target or None,
             "AffinityRaw": primary_affinity,
             "Affinity": canonical_primary_affinity,
