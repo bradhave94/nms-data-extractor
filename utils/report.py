@@ -283,6 +283,22 @@ def _diff_changed_fields(previous: dict[str, Any], current: dict[str, Any]) -> l
     return changed
 
 
+def _expedition_variant(item: dict[str, Any], baseline_by_id: dict) -> dict[str, Any] | None:
+    match = re.match(r"^S(\d+)_", str(item.get("Id", "")))
+    if not match or not item.get("Name") or not item.get("IconPath"):
+        return None
+    candidates = [previous for _, previous in baseline_by_id.values()
+                  if previous.get("Name", "").casefold() == item["Name"].casefold()
+                  and previous.get("IconPath") == item["IconPath"]]
+    if not candidates:
+        return None
+    original = min(candidates, key=lambda candidate: (
+        candidate.get("Group") != item.get("Group"), len(candidate["Id"]), candidate["Id"],
+    ))
+    return {"Kind": "expedition", "Expedition": int(match.group(1)),
+            "BaseItemId": original["Id"], "BaseItemName": original["Name"]}
+
+
 def build_new_json_document(
     repo_root: Path,
     *,
@@ -318,6 +334,9 @@ def build_new_json_document(
             if any(original_id in baseline_by_id or original_id in all_by_id for original_id in original_ids):
                 continue
             entry["Change"] = "added"
+            variant = _expedition_variant(item, baseline_by_id)
+            if variant:
+                entry["ReleaseVariant"] = variant
             added_items.append(entry)
             continue
         _source, previous_item = baseline

@@ -105,6 +105,18 @@ class ReleaseChangesTest(unittest.TestCase):
         ])
         self.assertEqual([i["Id"] for i in self.document()["Items"]], ["FRE_NEW"])
 
+    def test_expedition_variant_is_included_with_context(self):
+        original = {"Id": "BEACON", "Name": "Myth Beacon", "IconPath": "beacon.dds", "Consumable": False}
+        self.write(self.baseline, "Buildings.json", [original])
+        self.write(self.current, "Buildings.json", [original,
+            {**original, "Id": "S23_BEACON", "Consumable": True},
+            {**original, "Id": "S23_NEW", "Name": "New Item", "IconPath": "new.dds"},
+        ])
+        added = {i["Id"]: i for i in self.document()["Items"]}
+        self.assertEqual(added["S23_BEACON"]["ReleaseVariant"]["BaseItemId"], "BEACON")
+        self.assertEqual(added["S23_BEACON"]["ReleaseVariant"]["Expedition"], 23)
+        self.assertNotIn("ReleaseVariant", added["S23_NEW"])
+
     def test_reissued_reward_is_not_new_but_different_reward_is(self):
         original = {"Id": "ORIGINAL", "Name": "Firework Pack", "IconPath": "firework.dds",
                     "TradeCategory": "SpecialShop", "GiveRewardOnSpecialPurchase": "FIREWORKS"}
