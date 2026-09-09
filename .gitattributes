@@ -1,0 +1,4 @@
+# Integrity manifests hash exact bytes; never translate generated data or inputs.
+data/json/** -text
+data/mbin/** -text
+reports/** -text
