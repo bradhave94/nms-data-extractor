@@ -55,7 +55,7 @@ from utils.generate_controller_lookup import main as generate_controller_lookup_
 from utils.images import extract_icons
 from utils.localization import build_localization_json
 from utils.mbin import consolidate_mbin
-from utils.report import generate_refresh_report
+from utils.report import generate_refresh_report, update_new_json
 from utils.smoke import run_smoke_check
 
 REPO_ROOT = Path(__file__).resolve().parent
@@ -1324,6 +1324,16 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
             print("[ERROR] Strict smoke checks failed.")
             return 1
         print("[OK] Strict smoke checks passed.\n")
+
+    try:
+        new_result = update_new_json(REPO_ROOT)
+        summary = new_result["summary"]
+        print(
+            f"[OK] new.json: {new_result['item_count']} new items "
+            f"(+{summary['Changed']} changed, -{summary['Removed']} removed)"
+        )
+    except Exception as e:
+        print(f"[WARN] new.json generation failed: {e}")
 
     if report:
         try:

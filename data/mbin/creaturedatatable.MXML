@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.30.0.1)-->
+<!--File created using MBINCompiler version (6.40.0.1)-->
 <Data template="cGcCreatureDataTable">
 	<Property name="Table">
 		<Property name="Table" value="GcCreatureData" _id="FISH">
@@ -159,6 +159,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -340,6 +341,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -517,6 +519,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -654,6 +657,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -780,6 +784,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -841,6 +846,7 @@
 				<Property name="PetTag" value="139266" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -1007,6 +1013,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -1183,7 +1190,8 @@
 			<Property name="PetBattlerTags" value="GcGameTablePetTag">
 				<Property name="PetTag" value="None" />
 			</Property>
-			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -1375,6 +1383,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -1653,6 +1662,7 @@
 				<Property name="PetTag" value="1073744000" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.050000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Barren" />
@@ -1906,6 +1916,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.150000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -2141,6 +2152,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -2336,6 +2348,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -2531,6 +2544,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -2784,6 +2798,7 @@
 				<Property name="PetTag" value="526338" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -3108,6 +3123,7 @@
 				<Property name="PetTag" value="2306" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -3385,6 +3401,7 @@
 				<Property name="PetTag" value="1089536" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -3430,7 +3447,7 @@
 			</Property>
 			<Property name="KillStatID" value="" />
 			<Property name="KillingBlowMessageID" value="" />
-			<Property name="EggType" value="DEFAULT" />
+			<Property name="EggType" value="ROBO" />
 			<Property name="Data">
 				<Property name="Data" value="GcCreatureMovementData" _index="0">
 					<Property name="GcCreatureMovementData">
@@ -3630,6 +3647,7 @@
 				<Property name="PetTag" value="5251072" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Mech" />
@@ -4802,6 +4820,7 @@
 				<Property name="PetTag" value="17833984" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -5181,6 +5200,7 @@
 				<Property name="PetTag" value="1074798592" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -5310,6 +5330,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -5684,6 +5705,7 @@
 				<Property name="PetTag" value="34643968" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -6049,6 +6071,7 @@
 				<Property name="PetTag" value="68166656" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -6372,6 +6395,7 @@
 				<Property name="PetTag" value="538189824" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.200000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Lush" />
@@ -6784,6 +6808,7 @@
 				<Property name="PetTag" value="269492240" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.200000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Lush" />
@@ -7149,6 +7174,7 @@
 				<Property name="PetTag" value="538976260" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -7455,6 +7481,7 @@
 				<Property name="PetTag" value="2109444" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -7867,6 +7894,7 @@
 				<Property name="PetTag" value="83894276" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -8142,6 +8170,7 @@
 				<Property name="PetTag" value="57348" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -8441,6 +8470,7 @@
 				<Property name="PetTag" value="122880" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -8707,6 +8737,7 @@
 				<Property name="PetTag" value="74816" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -9353,6 +9384,7 @@
 				<Property name="PetTag" value="8324" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -10016,6 +10048,7 @@
 				<Property name="PetTag" value="8200" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -10734,6 +10767,7 @@
 				<Property name="PetTag" value="134225923" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -10916,6 +10950,7 @@
 				<Property name="PetTag" value="167780354" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -11252,6 +11287,7 @@
 				<Property name="PetTag" value="5251104" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.300000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Mech" />
@@ -11621,6 +11657,7 @@
 				<Property name="PetTag" value="133123" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -11770,6 +11807,7 @@
 				<Property name="PetTag" value="545268224" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -12881,6 +12919,7 @@
 				<Property name="PetTag" value="536872960" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -13391,6 +13430,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -13653,6 +13693,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -13881,6 +13922,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="3.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -14041,6 +14083,7 @@
 				<Property name="PetTag" value="813694976" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -14181,6 +14224,7 @@
 				<Property name="PetTag" value="805308416" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -14535,6 +14579,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.200000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -14745,6 +14790,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -14928,6 +14974,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.400000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Toxic" />
@@ -15111,6 +15158,7 @@
 				<Property name="PetTag" value="100671490" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.200000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Toxic" />
@@ -15306,6 +15354,7 @@
 				<Property name="PetTag" value="100671490" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -15517,6 +15566,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -15700,6 +15750,7 @@
 				<Property name="PetTag" value="68166144" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Toxic" />
@@ -15833,6 +15884,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -15979,6 +16031,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -16156,6 +16209,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -16333,6 +16387,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -16555,6 +16610,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -16732,6 +16788,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -16833,6 +16890,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -17013,6 +17071,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -17190,6 +17249,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -17429,6 +17489,7 @@
 				<Property name="PetTag" value="134219784" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.330000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Weird" />
@@ -17674,6 +17735,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -18061,6 +18123,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -18300,6 +18363,7 @@
 				<Property name="PetTag" value="4196864" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Mech" />
@@ -18539,6 +18603,7 @@
 				<Property name="PetTag" value="37750784" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Mech" />
@@ -18930,6 +18995,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -20034,6 +20100,7 @@
 				<Property name="PetTag" value="805308416" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Weird" />
@@ -20200,6 +20267,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -20366,6 +20434,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -20560,6 +20629,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -20726,6 +20796,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -20892,6 +20963,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -21058,6 +21130,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -21224,6 +21297,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -21390,6 +21464,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -21451,6 +21526,7 @@
 				<Property name="PetTag" value="33693698" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -21617,6 +21693,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="false" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Normal" />
@@ -21866,6 +21943,7 @@
 				<Property name="PetTag" value="1097744" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.300000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Lush" />
@@ -22140,6 +22218,7 @@
 				<Property name="PetTag" value="38805504" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Mech" />
@@ -22259,6 +22338,7 @@
 				<Property name="PetTag" value="33693698" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Mech" />
@@ -22600,6 +22680,7 @@
 				<Property name="PetTag" value="5251104" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Mech" />
@@ -22702,7 +22783,7 @@
 						<Property name="MoveRange" value="100.000000" />
 						<Property name="MoveSpeedScale" value="1.000000" />
 						<Property name="TurnRadiusScale" value="1.000000" />
-						<Property name="HeightMin" value="0.700000" />
+						<Property name="HeightMin" value="0.500000" />
 						<Property name="HeightMax" value="2.000000" />
 						<Property name="LimitHeightRange" value="false" />
 						<Property name="HeightRangeMin" value="0.000000" />
@@ -22719,21 +22800,21 @@
 								<Property name="ValidDescriptors" />
 								<Property name="NavOffsetY" value="0.000000" />
 								<Property name="NavOffsetZ" value="0.000000" />
-								<Property name="GroundHeightOffset" value="2.500000" />
+								<Property name="GroundHeightOffset" value="2.000000" />
 								<Property name="GroundEffect" value="" />
 								<Property name="GroundEffectHeightForMaxAlpha" value="0.200000" />
 								<Property name="GroundEffectHeightForMinAlpha" value="0.600000" />
 								<Property name="RayCastUp" value="2.000000" />
 								<Property name="RayCastDown" value="8.000000" />
-								<Property name="GroundAlign" value="false" />
-								<Property name="HeightForMaxGroundAlign" value="1.000000" />
-								<Property name="HeightForMinGroundAlign" value="2.600000" />
-								<Property name="GroundAlignTimeModifier" value="0.400000" />
+								<Property name="GroundAlign" value="true" />
+								<Property name="HeightForMaxGroundAlign" value="1.500000" />
+								<Property name="HeightForMinGroundAlign" value="4.000000" />
+								<Property name="GroundAlignTimeModifier" value="0.300000" />
 								<Property name="GroundAvoid" value="true" />
 								<Property name="HeightForMaxGroundAvoid" value="1.500000" />
-								<Property name="HeightForMinGroundAvoid" value="2.000000" />
+								<Property name="HeightForMinGroundAvoid" value="4.000000" />
 								<Property name="ElevationAvoid" value="true" />
-								<Property name="HeightForMaxElevationAvoid" value="5.000000" />
+								<Property name="HeightForMaxElevationAvoid" value="6.000000" />
 								<Property name="HeightForMinElevationAvoid" value="4.000000" />
 								<Property name="ElevationAvoidStrength" value="1.000000" />
 								<Property name="CanJump" value="false" />
@@ -22785,31 +22866,31 @@
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureSwarmDataParams" _index="0">
 								<Property name="ValidDescriptors" />
-								<Property name="MaxSpeed" value="1.700000" />
+								<Property name="MaxSpeed" value="2.000000" />
 								<Property name="SwimFastSpeedMul" value="1.300000" />
 								<Property name="SwimAnimSpeedMin" value="0.500000" />
 								<Property name="SwimAnimSpeedMax" value="2.000000" />
 								<Property name="SwimMaxAcceleration" value="0.300000" />
 								<Property name="SwimTurn" value="2.500000" />
 								<Property name="ApplyScaleToSpeed" value="false" />
-								<Property name="SteeringSpringSmoothTime" value="1.000000" />
+								<Property name="SteeringSpringSmoothTime" value="0.600000" />
 								<Property name="ApplyScaleToSteeringSmoothTime" value="false" />
-								<Property name="Coherence" value="10.000000" />
-								<Property name="Alignment" value="0.500000" />
+								<Property name="Coherence" value="0.000000" />
+								<Property name="Alignment" value="0.000000" />
 								<Property name="SeparateStrength" value="1.000000" />
-								<Property name="Spacing" value="6.000000" />
-								<Property name="Follow" value="1.500000" />
-								<Property name="AlignTime" value="1.500000" />
-								<Property name="BankingTime" value="0.600000" />
-								<Property name="MaxBankingAmount" value="0.000000" />
-								<Property name="TurnRequiredForMaxBanking" value="0.300000" />
-								<Property name="MinPitchAmount" value="0.000000" />
+								<Property name="Spacing" value="5.000000" />
+								<Property name="Follow" value="6.000000" />
+								<Property name="AlignTime" value="0.600000" />
+								<Property name="BankingTime" value="0.800000" />
+								<Property name="MaxBankingAmount" value="0.700000" />
+								<Property name="TurnRequiredForMaxBanking" value="0.500000" />
+								<Property name="MinPitchAmount" value="0.100000" />
 								<Property name="MaxPitchAmount" value="1.000000" />
-								<Property name="SpeedForMinPitch" value="0.100000" />
-								<Property name="SpeedForMaxPitch" value="0.300000" />
-								<Property name="UpwardMovementForMaxPitch" value="0.500000" />
+								<Property name="SpeedForMinPitch" value="1.300000" />
+								<Property name="SpeedForMaxPitch" value="2.000000" />
+								<Property name="UpwardMovementForMaxPitch" value="0.000000" />
 								<Property name="FaceMoveDirStrength" value="0.700000" />
-								<Property name="FaceMoveDirYawOnly" value="false" />
+								<Property name="FaceMoveDirYawOnly" value="true" />
 								<Property name="CanLand" value="false" />
 								<Property name="LandAdjustDist" value="1.000000" />
 								<Property name="LandClampBegin" value="0.750000" />
@@ -22830,11 +22911,11 @@
 								<Property name="WalkTurnTime" value="1.000000" />
 								<Property name="UseAnimThrustCycle" value="true" />
 								<Property name="AnimThrustCycleAnim" value="SWIM" />
-								<Property name="AnimThrustCycleStart" value="0.200000" />
-								<Property name="AnimThrustCyclePeak" value="0.330000" />
-								<Property name="AnimThrustCycleEnd" value="0.700000" />
+								<Property name="AnimThrustCycleStart" value="0.800000" />
+								<Property name="AnimThrustCyclePeak" value="0.200000" />
+								<Property name="AnimThrustCycleEnd" value="0.600000" />
 								<Property name="AnimThrustCycleMax" value="1.000000" />
-								<Property name="AnimThrustCycleMin" value="0.500000" />
+								<Property name="AnimThrustCycleMin" value="0.850000" />
 							</Property>
 						</Property>
 					</Property>
@@ -22844,6 +22925,7 @@
 				<Property name="PetTag" value="536872960" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.330000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Weird" />
@@ -23003,6 +23085,7 @@
 				<Property name="PetTag" value="None" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Mech" />
@@ -23055,7 +23138,7 @@
 						<Property name="Offset">
 							<Property name="X" value="0.000000" />
 							<Property name="Y" value="1.700000" />
-							<Property name="Z" value="-0.550000" />
+							<Property name="Z" value="2.800000" />
 						</Property>
 						<Property name="RotationOffset">
 							<Property name="X" value="0.200000" />
@@ -23072,45 +23155,9 @@
 						<Property name="LegSpread" value="true" />
 						<Property name="ScaleForNeutralLegSpread" value="0.175000" />
 						<Property name="ScaleForMinLegSpread" value="0.125000" />
-						<Property name="ScaleForMaxLegSpread" value="0.450000" />
+						<Property name="ScaleForMaxLegSpread" value="0.380000" />
 						<Property name="RequiresMatchingPartModifier" value="false" />
-						<Property name="PartModifiers">
-							<Property name="PartModifiers" value="GcCreatureRidingPartModifier" _index="0">
-								<Property name="PartName" value="_HEAD_3" />
-								<Property name="JointName" value="NeckJNT" />
-								<Property name="MinScale" value="0.000000" />
-								<Property name="MaxScale" value="100.000000" />
-								<Property name="AdditionalScaleJoint" value="" />
-								<Property name="BreakIfNotSelected" value="false" />
-								<Property name="RelativeOffset" value="false" />
-								<Property name="Offset">
-									<Property name="X" value="0.000000" />
-									<Property name="Y" value="1.820000" />
-									<Property name="Z" value="2.360001" />
-								</Property>
-								<Property name="RotationOffset">
-									<Property name="X" value="5.500000" />
-									<Property name="Y" value="0.000000" />
-									<Property name="Z" value="0.000000" />
-								</Property>
-								<Property name="AnimOffset">
-									<Property name="X" value="0.000000" />
-									<Property name="Y" value="0.000000" />
-									<Property name="Z" value="0.000000" />
-								</Property>
-								<Property name="VROffset">
-									<Property name="X" value="0.000000" />
-									<Property name="Y" value="0.000000" />
-									<Property name="Z" value="0.000000" />
-								</Property>
-								<Property name="HeadCounterRotation" value="1.000000" />
-								<Property name="LegSpreadOffset" value="-0.110000" />
-								<Property name="OverrideAnims" value="false" />
-								<Property name="IdleRidingAnim" value="" />
-								<Property name="DefaultRidingAnim" value="" />
-								<Property name="RidingAnims" />
-							</Property>
-						</Property>
+						<Property name="PartModifiers" />
 						<Property name="IdleRidingAnim" value="RIDE_FLY" />
 						<Property name="DefaultRidingAnim" value="RIDE_FLY" />
 						<Property name="RidingAnims" />
@@ -23286,6 +23333,7 @@
 				<Property name="PetTag" value="1073744000" />
 			</Property>
 			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="0.050000" />
 			<Property name="PetBattleFlyerExtraOffset" value="0.050000" />
 			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
 				<Property name="PetBattlerAffinity" value="Toxic" />

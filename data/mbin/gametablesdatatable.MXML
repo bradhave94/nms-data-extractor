@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.30.0.1)-->
+<!--File created using MBINCompiler version (6.40.0.1)-->
 <Data template="cGcGameTablesDataTable">
 	<Property name="GameTableConfigs">
 		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PVP_STANDARD">
@@ -51,11 +51,13 @@
 	<Property name="GameTableSpawnData">
 		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVP_STANDARD">
 			<Property name="Id" value="PB_SPAWN_PVP_STANDARD" />
+			<Property name="AllowedInAbandonedSystems" value="true" />
 			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
 			<Property name="NPCSpawns" />
 		</Property>
 		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_STANDARD">
 			<Property name="Id" value="PB_SPAWN_PVE_STANDARD" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
 			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
 			<Property name="NPCSpawns">
 				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
@@ -67,6 +69,7 @@
 		</Property>
 		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_CHALLENGER">
 			<Property name="Id" value="PB_SPAWN_PVE_CHALLENGER" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
 			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
 			<Property name="NPCSpawns">
 				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
@@ -85,6 +88,7 @@
 		</Property>
 		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_PIRATE">
 			<Property name="Id" value="PB_SPAWN_PVE_PIRATE" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
 			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
 			<Property name="NPCSpawns">
 				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
@@ -96,6 +100,7 @@
 		</Property>
 		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_CHAMP">
 			<Property name="Id" value="PB_SPAWN_PVE_CHAMP" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
 			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
 			<Property name="NPCSpawns">
 				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
@@ -116,6 +121,7 @@
 		</Property>
 		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_NEXUS">
 			<Property name="Id" value="PB_SPAWN_PVE_NEXUS" />
+			<Property name="AllowedInAbandonedSystems" value="true" />
 			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
 			<Property name="NPCSpawns">
 				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
@@ -127,6 +133,7 @@
 		</Property>
 		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="DICE_SPAWN_PVE_STANDARD">
 			<Property name="Id" value="DICE_SPAWN_PVE_STANDARD" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
 			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
 			<Property name="NPCSpawns" />
 		</Property>
@@ -360,6 +367,18 @@
 			<Property name="RewardIdLoss" value="R_PB_PVE_HARD_L" />
 			<Property name="ExperienceRewardMultiplier" value="1.000000" />
 			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_CHAMP_POSTBATTLE">
+			<Property name="Id" value="PB_GAME_CHAMP_POSTBATTLE" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers" />
+			<Property name="RewardIdWin" value="" />
+			<Property name="RewardIdLoss" value="" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="?PB_CHAMP_BEATEN" />
 			<Property name="PuzzleMissionOverrideTable" />
 		</Property>
 		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="DICE_GAME_PVE_STANDARD">

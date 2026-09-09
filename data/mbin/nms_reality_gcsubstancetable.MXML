@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.30.0.1)-->
+<!--File created using MBINCompiler version (6.40.0.1)-->
 <Data template="cGcSubstanceTable">
 	<Property name="Table">
 		<Property name="Table" value="GcRealitySubstanceData" _id="FUEL1">
@@ -6567,6 +6567,201 @@
 			<Property name="EasyToRefine" value="false" />
 			<Property name="EggModifierIngredient" value="false" />
 		</Property>
+		<Property name="Table" value="GcRealitySubstanceData" _id="TEAM_RED">
+			<Property name="Name" value="UI_SWARMPAGE_TEAM_RED" />
+			<Property name="NameLower" value="UI_S22_TEAM_RED_ALT" />
+			<Property name="ID" value="TEAM_RED" />
+			<Property name="Symbol" value="UI_REWARDPOP_SYM" />
+			<Property name="Icon" value="TkTextureResource">
+				<Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/SWARM/TEAM01.DDS" />
+			</Property>
+			<Property name="DebrisFile" value="TkModelResource">
+				<Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+				<Property name="Seed" value="0" />
+			</Property>
+			<Property name="Subtitle" value="UI_REWARDPOP_SUB" />
+			<Property name="Description" value="UI_REWARDPOP_DESC" />
+			<Property name="Colour">
+				<Property name="R" value="0.870588243" />
+				<Property name="G" value="0.862745106" />
+				<Property name="B" value="0.819607854" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="WorldColour">
+				<Property name="R" value="0.870588243" />
+				<Property name="G" value="0.862745106" />
+				<Property name="B" value="0.819607854" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="BaseValue" value="20" />
+			<Property name="Category" value="GcRealitySubstanceCategory">
+				<Property name="SubstanceCategory" value="Special" />
+			</Property>
+			<Property name="Rarity" value="GcRarity">
+				<Property name="Rarity" value="Rare" />
+			</Property>
+			<Property name="Legality" value="GcLegality">
+				<Property name="Legality" value="Legal" />
+			</Property>
+			<Property name="ChargeValue" value="1" />
+			<Property name="StackMultiplier" value="4" />
+			<Property name="Cost" value="GcItemPriceModifiers">
+				<Property name="SpaceStationMarkup" value="0.000000" />
+				<Property name="LowPriceMod" value="0.250000" />
+				<Property name="HighPriceMod" value="0.500000" />
+				<Property name="BuyBaseMarkup" value="0.200000" />
+				<Property name="BuyMarkupMod" value="0.000000" />
+			</Property>
+			<Property name="NormalisedValueOnWorld" value="1.69871805E-06" />
+			<Property name="NormalisedValueOffWorld" value="1.69871805E-06" />
+			<Property name="TradeCategory" value="GcTradeCategory">
+				<Property name="TradeCategory" value="None" />
+			</Property>
+			<Property name="WikiEnabled" value="false" />
+			<Property name="EconomyInfluenceMultiplier" value="0.250000" />
+			<Property name="PinObjective" value="UI_FIND_OBJ" />
+			<Property name="PinObjectiveTip" value="" />
+			<Property name="PinObjectiveMessage" value="" />
+			<Property name="PinObjectiveScannableType" value="GcScannerIconTypes">
+				<Property name="ScanIconType" value="None" />
+			</Property>
+			<Property name="WikiMissionID" value="" />
+			<Property name="OnlyFoundInPurpleSytems" value="false" />
+			<Property name="CookingIngredient" value="false" />
+			<Property name="GoodForSelling" value="false" />
+			<Property name="EasyToRefine" value="false" />
+			<Property name="EggModifierIngredient" value="false" />
+		</Property>
+		<Property name="Table" value="GcRealitySubstanceData" _id="TEAM_GREEN">
+			<Property name="Name" value="UI_SWARMPAGE_TEAM_GREEN" />
+			<Property name="NameLower" value="UI_S22_TEAM_GREEN_ALT" />
+			<Property name="ID" value="TEAM_GREEN" />
+			<Property name="Symbol" value="UI_REWARDPOP_SYM" />
+			<Property name="Icon" value="TkTextureResource">
+				<Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/SWARM/TEAM03.DDS" />
+			</Property>
+			<Property name="DebrisFile" value="TkModelResource">
+				<Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+				<Property name="Seed" value="0" />
+			</Property>
+			<Property name="Subtitle" value="UI_REWARDPOP_SUB" />
+			<Property name="Description" value="UI_REWARDPOP_DESC" />
+			<Property name="Colour">
+				<Property name="R" value="0.870588243" />
+				<Property name="G" value="0.862745106" />
+				<Property name="B" value="0.819607854" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="WorldColour">
+				<Property name="R" value="0.870588243" />
+				<Property name="G" value="0.862745106" />
+				<Property name="B" value="0.819607854" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="BaseValue" value="20" />
+			<Property name="Category" value="GcRealitySubstanceCategory">
+				<Property name="SubstanceCategory" value="Special" />
+			</Property>
+			<Property name="Rarity" value="GcRarity">
+				<Property name="Rarity" value="Rare" />
+			</Property>
+			<Property name="Legality" value="GcLegality">
+				<Property name="Legality" value="Legal" />
+			</Property>
+			<Property name="ChargeValue" value="1" />
+			<Property name="StackMultiplier" value="4" />
+			<Property name="Cost" value="GcItemPriceModifiers">
+				<Property name="SpaceStationMarkup" value="0.000000" />
+				<Property name="LowPriceMod" value="0.250000" />
+				<Property name="HighPriceMod" value="0.500000" />
+				<Property name="BuyBaseMarkup" value="0.200000" />
+				<Property name="BuyMarkupMod" value="0.000000" />
+			</Property>
+			<Property name="NormalisedValueOnWorld" value="1.69871805E-06" />
+			<Property name="NormalisedValueOffWorld" value="1.69871805E-06" />
+			<Property name="TradeCategory" value="GcTradeCategory">
+				<Property name="TradeCategory" value="None" />
+			</Property>
+			<Property name="WikiEnabled" value="false" />
+			<Property name="EconomyInfluenceMultiplier" value="0.250000" />
+			<Property name="PinObjective" value="UI_FIND_OBJ" />
+			<Property name="PinObjectiveTip" value="" />
+			<Property name="PinObjectiveMessage" value="" />
+			<Property name="PinObjectiveScannableType" value="GcScannerIconTypes">
+				<Property name="ScanIconType" value="None" />
+			</Property>
+			<Property name="WikiMissionID" value="" />
+			<Property name="OnlyFoundInPurpleSytems" value="false" />
+			<Property name="CookingIngredient" value="false" />
+			<Property name="GoodForSelling" value="false" />
+			<Property name="EasyToRefine" value="false" />
+			<Property name="EggModifierIngredient" value="false" />
+		</Property>
+		<Property name="Table" value="GcRealitySubstanceData" _id="TEAM_BLUE">
+			<Property name="Name" value="UI_SWARMPAGE_TEAM_BLUE" />
+			<Property name="NameLower" value="UI_S22_TEAM_BLUE_ALT" />
+			<Property name="ID" value="TEAM_BLUE" />
+			<Property name="Symbol" value="UI_REWARDPOP_SYM" />
+			<Property name="Icon" value="TkTextureResource">
+				<Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/SWARM/TEAM02.DDS" />
+			</Property>
+			<Property name="DebrisFile" value="TkModelResource">
+				<Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+				<Property name="Seed" value="0" />
+			</Property>
+			<Property name="Subtitle" value="UI_REWARDPOP_SUB" />
+			<Property name="Description" value="UI_REWARDPOP_DESC" />
+			<Property name="Colour">
+				<Property name="R" value="0.870588243" />
+				<Property name="G" value="0.862745106" />
+				<Property name="B" value="0.819607854" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="WorldColour">
+				<Property name="R" value="0.870588243" />
+				<Property name="G" value="0.862745106" />
+				<Property name="B" value="0.819607854" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="BaseValue" value="20" />
+			<Property name="Category" value="GcRealitySubstanceCategory">
+				<Property name="SubstanceCategory" value="Special" />
+			</Property>
+			<Property name="Rarity" value="GcRarity">
+				<Property name="Rarity" value="Rare" />
+			</Property>
+			<Property name="Legality" value="GcLegality">
+				<Property name="Legality" value="Legal" />
+			</Property>
+			<Property name="ChargeValue" value="1" />
+			<Property name="StackMultiplier" value="4" />
+			<Property name="Cost" value="GcItemPriceModifiers">
+				<Property name="SpaceStationMarkup" value="0.000000" />
+				<Property name="LowPriceMod" value="0.250000" />
+				<Property name="HighPriceMod" value="0.500000" />
+				<Property name="BuyBaseMarkup" value="0.200000" />
+				<Property name="BuyMarkupMod" value="0.000000" />
+			</Property>
+			<Property name="NormalisedValueOnWorld" value="1.69871805E-06" />
+			<Property name="NormalisedValueOffWorld" value="1.69871805E-06" />
+			<Property name="TradeCategory" value="GcTradeCategory">
+				<Property name="TradeCategory" value="None" />
+			</Property>
+			<Property name="WikiEnabled" value="false" />
+			<Property name="EconomyInfluenceMultiplier" value="0.250000" />
+			<Property name="PinObjective" value="UI_FIND_OBJ" />
+			<Property name="PinObjectiveTip" value="" />
+			<Property name="PinObjectiveMessage" value="" />
+			<Property name="PinObjectiveScannableType" value="GcScannerIconTypes">
+				<Property name="ScanIconType" value="None" />
+			</Property>
+			<Property name="WikiMissionID" value="" />
+			<Property name="OnlyFoundInPurpleSytems" value="false" />
+			<Property name="CookingIngredient" value="false" />
+			<Property name="GoodForSelling" value="false" />
+			<Property name="EasyToRefine" value="false" />
+			<Property name="EggModifierIngredient" value="false" />
+		</Property>
 		<Property name="Table" value="GcRealitySubstanceData" _id="SUNGOLD">
 			<Property name="Name" value="UI_SUNGOLD_NAME" />
 			<Property name="NameLower" value="UI_SUNGOLD_NAME_L" />
@@ -6947,6 +7142,71 @@
 			<Property name="PinObjective" value="UI_GATHER_OBJ" />
 			<Property name="PinObjectiveTip" value="UI_PIN_TIMEMILK_OBJ_TIP" />
 			<Property name="PinObjectiveMessage" value="UI_PIN_TIMEMILK_MSG" />
+			<Property name="PinObjectiveScannableType" value="GcScannerIconTypes">
+				<Property name="ScanIconType" value="None" />
+			</Property>
+			<Property name="WikiMissionID" value="" />
+			<Property name="OnlyFoundInPurpleSytems" value="false" />
+			<Property name="CookingIngredient" value="false" />
+			<Property name="GoodForSelling" value="false" />
+			<Property name="EasyToRefine" value="false" />
+			<Property name="EggModifierIngredient" value="false" />
+		</Property>
+		<Property name="Table" value="GcRealitySubstanceData" _id="SWARMDUST">
+			<Property name="Name" value="UI_SWARMDUST_NAME" />
+			<Property name="NameLower" value="UI_SWARMDUST_NAME_L" />
+			<Property name="ID" value="SWARMDUST" />
+			<Property name="Symbol" value="UI_NANITE_SYM" />
+			<Property name="Icon" value="TkTextureResource">
+				<Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/SUBSTANCES/SUBSTANCE.SWARMDUST.DDS" />
+			</Property>
+			<Property name="DebrisFile" value="TkModelResource">
+				<Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+				<Property name="Seed" value="0" />
+			</Property>
+			<Property name="Subtitle" value="UI_SWARMDUST_SUB" />
+			<Property name="Description" value="UI_SWARMDUST_DESC" />
+			<Property name="Colour">
+				<Property name="R" value="0.101960786" />
+				<Property name="G" value="0.152941182" />
+				<Property name="B" value="0.200000" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="WorldColour">
+				<Property name="R" value="0.101960786" />
+				<Property name="G" value="0.152941182" />
+				<Property name="B" value="0.200000" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="BaseValue" value="1616" />
+			<Property name="Category" value="GcRealitySubstanceCategory">
+				<Property name="SubstanceCategory" value="Special" />
+			</Property>
+			<Property name="Rarity" value="GcRarity">
+				<Property name="Rarity" value="Rare" />
+			</Property>
+			<Property name="Legality" value="GcLegality">
+				<Property name="Legality" value="Legal" />
+			</Property>
+			<Property name="ChargeValue" value="1" />
+			<Property name="StackMultiplier" value="1" />
+			<Property name="Cost" value="GcItemPriceModifiers">
+				<Property name="SpaceStationMarkup" value="0.000000" />
+				<Property name="LowPriceMod" value="-0.100000" />
+				<Property name="HighPriceMod" value="0.100000" />
+				<Property name="BuyBaseMarkup" value="0.250000" />
+				<Property name="BuyMarkupMod" value="0.000000" />
+			</Property>
+			<Property name="NormalisedValueOnWorld" value="0.00010352565" />
+			<Property name="NormalisedValueOffWorld" value="0.00010352565" />
+			<Property name="TradeCategory" value="GcTradeCategory">
+				<Property name="TradeCategory" value="None" />
+			</Property>
+			<Property name="WikiEnabled" value="false" />
+			<Property name="EconomyInfluenceMultiplier" value="0.250000" />
+			<Property name="PinObjective" value="UI_GATHER_OBJ" />
+			<Property name="PinObjectiveTip" value="UI_PIN_SWARMDUST_OBJ_TIP" />
+			<Property name="PinObjectiveMessage" value="UI_PIN_SWARMDUST_MSG" />
 			<Property name="PinObjectiveScannableType" value="GcScannerIconTypes">
 				<Property name="ScanIconType" value="None" />
 			</Property>

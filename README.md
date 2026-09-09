@@ -55,6 +55,8 @@ python extract.py --refresh
 python extract.py --pcbanks "X:\...\PCBANKS"
 ```
 
+After a game update, run once with `--report` to refresh `reports/_latest_snapshot` and regenerate `data/json/new.json` (delta vs the previous update).
+
 Requires **hgpaktool** library and **MBINCompiler.exe** in `tools/`.
 
 ### Extract item icons (images)
@@ -104,6 +106,7 @@ python -m utils.smoke --strict-duplicates
 | **ConstructedTechnology.json** | Buildable tech items |
 | **TechnologyModule.json** | Upgrade modules |
 | **Curiosities.json** | Salvaged items & relics |
+| **new.json** | New item IDs since the last `--report` snapshot (`Items`); also lists `ChangedItems` / `RemovedIds` |
 | **Others.json** | Misc items (charts, cosmetics, etc.) |
 | **Creatures.json** | Creature species, battle moves, move sets, arena modes, medals, pet shop, accessories, egg overrides, behaviours |
 

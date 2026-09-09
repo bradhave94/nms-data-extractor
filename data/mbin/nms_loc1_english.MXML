@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.30.0.1)-->
+<!--File created using MBINCompiler version (6.40.0.1)-->
 <Data template="cTkLocalisationTable">
 	<Property name="Table">
 		<Property name="Table" value="TkLocalisationEntry" _id="SCAN_NO_TECH">
@@ -40964,7 +40964,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="NOTIFY_SPACE_POLICE_FLEE_A">
 			<Property name="Id" value="NOTIFY_SPACE_POLICE_FLEE_A" />
-			<Property name="English" value="Sentinel interceptors remaining: &lt;FUEL&gt;%AMOUNT%&lt;&gt;&#xA;Avoid damage to &lt;TECHNOLOGY&gt;re-enable pulse engines&lt;&gt;&#xA;%FLIGHT_TIP%" />
+			<Property name="English" value="Sentinel interceptors remaining: &lt;FUEL&gt;%AMOUNT%&lt;&gt;&#xA;Avoid damage to &lt;TECHNOLOGY&gt;re-enable %TECH%&lt;&gt;&#xA;%FLIGHT_TIP%" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -40984,7 +40984,27 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="NOTIFY_SPACE_POLICE_FLEE_B">
 			<Property name="Id" value="NOTIFY_SPACE_POLICE_FLEE_B" />
-			<Property name="English" value="Sentinel interceptors remaining: &lt;FUEL&gt;%AMOUNT%&lt;&gt;&#xA;&lt;TECHNOLOGY&gt;Pulse Drive&lt;&gt; re-enabled in: &lt;TECHNOLOGY&gt;%TIME%&lt;&gt;&#xA;%FLIGHT_TIP%" />
+			<Property name="English" value="Sentinel interceptors remaining: &lt;FUEL&gt;%AMOUNT%&lt;&gt;&#xA;&lt;TECHNOLOGY&gt;%TECH%&lt;&gt; re-enabled in: &lt;TECHNOLOGY&gt;%TIME%&lt;&gt;&#xA;%FLIGHT_TIP%" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="NOTIFY_SPACE_POLICE_FLEE_C">
+			<Property name="Id" value="NOTIFY_SPACE_POLICE_FLEE_C" />
+			<Property name="English" value="Sentinel interceptors remaining: &lt;FUEL&gt;%AMOUNT%&lt;&gt;&#xA;Hold &lt;IMG&gt;PULSEJUMP&lt;&gt; to engage the &lt;TECHNOLOGY&gt;%TECH%&lt;&gt; and &lt;STELLAR&gt;escape&lt;&gt;&#xA;%FLIGHT_TIP%" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -41004,7 +41024,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="NOTIFY_SPACE_POLICE_PULSE">
 			<Property name="Id" value="NOTIFY_SPACE_POLICE_PULSE" />
-			<Property name="English" value="Reinforcement interceptors incoming: &lt;FUEL&gt;%TIME%s&lt;&gt;&#xA;Hold &lt;IMG&gt;PULSEJUMP&lt;&gt; to engage the &lt;TECHNOLOGY&gt;pulse engine&lt;&gt; and &lt;STELLAR&gt;escape&lt;&gt;" />
+			<Property name="English" value="Reinforcement interceptors incoming: &lt;FUEL&gt;%TIME%s&lt;&gt;&#xA;Hold &lt;IMG&gt;PULSEJUMP&lt;&gt; to engage the &lt;TECHNOLOGY&gt;%TECH%&lt;&gt; and &lt;STELLAR&gt;escape&lt;&gt;" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -41024,7 +41044,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="NOTIFY_SPACE_POLICE_PULSE_BAN">
 			<Property name="Id" value="NOTIFY_SPACE_POLICE_PULSE_BAN" />
-			<Property name="English" value="Reinforcement interceptors incoming: &lt;FUEL&gt;%TIME%s&lt;&gt;&#xA;Avoid damage to &lt;TECHNOLOGY&gt;re-enable pulse engines&lt;&gt;&#xA;%FLIGHT_TIP%" />
+			<Property name="English" value="Reinforcement interceptors incoming: &lt;FUEL&gt;%TIME%s&lt;&gt;&#xA;Avoid damage to &lt;TECHNOLOGY&gt;re-enable %TECH%&lt;&gt;&#xA;%FLIGHT_TIP%" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />

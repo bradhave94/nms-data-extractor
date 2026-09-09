@@ -9,7 +9,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-IGNORED_REPORT_FILES = {"localization.json"}
+IGNORED_REPORT_FILES = {"localization.json", "new.json"}
+NEW_JSON_FILENAME = "new.json"
 
 
 def _sanitize_version(value: str) -> str:
@@ -60,6 +61,23 @@ def _index_by_id(items: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return {str(item["Id"]): item for item in items}
 
 
+def _index_items_by_id(data: Any) -> dict[str, dict[str, Any]]:
+    """Index item dicts that expose Id from a flat list or sectioned object (e.g. Creatures.json)."""
+    if data is None:
+        return {}
+    if isinstance(data, list):
+        return _index_by_id(data)
+    if isinstance(data, dict):
+        indexed: dict[str, dict[str, Any]] = {}
+        for value in data.values():
+            if isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict) and item.get("Id") is not None:
+                        indexed[str(item["Id"])] = item
+        return indexed
+    return {}
+
+
 def _compare_file(old_data: Any, new_data: Any) -> dict[str, Any]:
     if old_data is None and new_data is None:
         return {
@@ -72,9 +90,9 @@ def _compare_file(old_data: Any, new_data: Any) -> dict[str, Any]:
             "mode": "missing",
         }
 
-    if _is_id_list(old_data or []) and _is_id_list(new_data or []):
-        old_by_id = _index_by_id(old_data or [])
-        new_by_id = _index_by_id(new_data or [])
+    old_by_id = _index_items_by_id(old_data)
+    new_by_id = _index_items_by_id(new_data)
+    if old_by_id or new_by_id:
         old_ids = set(old_by_id)
         new_ids = set(new_by_id)
         added_ids = sorted(new_ids - old_ids)
@@ -187,6 +205,186 @@ def _build_markdown(*, version_key: str, generated_at: str, previous_run: dict[s
     return "\n".join(lines)
 
 
+def compare_against_snapshot(repo_root: Path) -> tuple[dict[str, dict[str, Any]], str, dict[str, Any] | None]:
+    """Diff current data/json against reports/_latest_snapshot."""
+    reports_root = repo_root / "reports"
+    latest_snapshot = reports_root / "_latest_snapshot"
+    current_json_dir = repo_root / "data" / "json"
+    version_key = detect_version_key(repo_root)
+
+    previous_run = None
+    latest_run_meta_path = reports_root / "latest_run.json"
+    if latest_run_meta_path.exists():
+        previous_run = _load_json(latest_run_meta_path)
+        if not isinstance(previous_run, dict):
+            previous_run = None
+
+    if not latest_snapshot.is_dir():
+        return {}, version_key, previous_run
+
+    current_files = {p.name for p in current_json_dir.glob("*.json") if p.name not in IGNORED_REPORT_FILES}
+    previous_files = {p.name for p in latest_snapshot.glob("*.json") if p.name not in IGNORED_REPORT_FILES}
+    per_file: dict[str, dict[str, Any]] = {}
+    for filename in sorted(current_files | previous_files):
+        old_data = _load_json(latest_snapshot / filename)
+        new_data = _load_json(current_json_dir / filename)
+        per_file[filename] = _compare_file(old_data, new_data)
+    return per_file, version_key, previous_run
+
+
+def _load_all_current_items_by_id(repo_root: Path) -> dict[str, tuple[str, dict[str, Any]]]:
+    """Map Id -> (source filename, item) across all output JSON except meta files."""
+    return _load_all_items_by_id_from_dir(repo_root / "data" / "json")
+
+
+def _load_all_items_by_id_from_dir(json_dir: Path) -> dict[str, tuple[str, dict[str, Any]]]:
+    """Map Id -> (source filename, item) across all JSON in a directory."""
+    combined: dict[str, tuple[str, dict[str, Any]]] = {}
+    if not json_dir.is_dir():
+        return combined
+    for path in sorted(json_dir.glob("*.json")):
+        if path.name in IGNORED_REPORT_FILES:
+            continue
+        for iid, item in _index_items_by_id(_load_json(path)).items():
+            combined[iid] = (path.name, item)
+    return combined
+
+
+_SKIP_CHANGE_DIFF_KEYS = frozenset(
+    {
+        "SourceFile",
+        "Change",
+        "Previous",
+        "ChangedFields",
+        "CdnUrl",
+        "HeroIconPath",
+        "AltDescription",
+        "Hint",
+        "PinObjective",
+        "PinObjectiveTip",
+        "PinObjectiveMessage",
+    }
+)
+
+
+def _diff_changed_fields(previous: dict[str, Any], current: dict[str, Any]) -> list[str]:
+    keys = set(previous) | set(current)
+    changed: list[str] = []
+    for key in sorted(keys):
+        if key in _SKIP_CHANGE_DIFF_KEYS:
+            continue
+        if previous.get(key) != current.get(key):
+            changed.append(key)
+    return changed
+
+
+def build_new_json_document(
+    repo_root: Path,
+    per_file: dict[str, dict[str, Any]],
+    *,
+    version_key: str,
+    previous_run: dict[str, Any] | None,
+    generated_at: str | None = None,
+    baseline_snapshot_dir: Path | None = None,
+) -> dict[str, Any]:
+    """Aggregate added/changed items since the last snapshot into one consumable payload."""
+    current_json_dir = repo_root / "data" / "json"
+    all_by_id = _load_all_current_items_by_id(repo_root)
+    if baseline_snapshot_dir is None:
+        preferred = repo_root / "reports" / "_baseline_snapshot"
+        baseline_snapshot_dir = preferred if preferred.is_dir() else repo_root / "reports" / "_latest_snapshot"
+    baseline_by_id = _load_all_items_by_id_from_dir(baseline_snapshot_dir)
+    added_items: list[dict[str, Any]] = []
+    changed_items: list[dict[str, Any]] = []
+    seen_added: set[str] = set()
+    seen_changed: set[str] = set()
+
+    for filename in sorted(per_file):
+        info = per_file[filename]
+        new_by_id = _index_items_by_id(_load_json(current_json_dir / filename))
+        for iid in info.get("added_ids", []):
+            if iid in seen_added:
+                continue
+            item = new_by_id.get(iid)
+            source_file = filename
+            if item is None:
+                located = all_by_id.get(iid)
+                if located is None:
+                    continue
+                source_file, item = located
+            seen_added.add(iid)
+            entry = dict(item)
+            entry["SourceFile"] = source_file
+            entry["Change"] = "added"
+            added_items.append(entry)
+        for iid in info.get("changed_ids", []):
+            if iid in seen_changed:
+                continue
+            item = new_by_id.get(iid)
+            source_file = filename
+            if item is None:
+                located = all_by_id.get(iid)
+                if located is None:
+                    continue
+                source_file, item = located
+            seen_changed.add(iid)
+            entry = dict(item)
+            entry["SourceFile"] = source_file
+            entry["Change"] = "changed"
+            baseline = baseline_by_id.get(iid)
+            if baseline is not None:
+                _source, previous_item = baseline
+                entry["Previous"] = dict(previous_item)
+                entry["ChangedFields"] = _diff_changed_fields(previous_item, entry)
+            changed_items.append(entry)
+
+    removed_ids: list[dict[str, str]] = []
+    for filename in sorted(per_file):
+        for iid in per_file[filename].get("removed_ids", []):
+            removed_ids.append({"Id": iid, "SourceFile": filename})
+
+    return {
+        "VersionKey": version_key,
+        "PreviousVersionKey": (previous_run or {}).get("version_key"),
+        "GeneratedAt": generated_at or datetime.now().astimezone().isoformat(timespec="seconds"),
+        "Summary": {
+            "Added": len(added_items),
+            "Changed": len(changed_items),
+            "Removed": len(removed_ids),
+        },
+        "RemovedIds": removed_ids,
+        "Items": added_items,
+        "ChangedItems": changed_items,
+    }
+
+
+def write_new_json(repo_root: Path, document: dict[str, Any]) -> Path:
+    path = repo_root / "data" / "json" / NEW_JSON_FILENAME
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(document, f, indent="\t", ensure_ascii=False)
+    return path
+
+
+def update_new_json(repo_root: Path) -> dict[str, Any]:
+    """Write data/json/new.json from diff vs reports/_latest_snapshot (before snapshot is advanced)."""
+    per_file, version_key, previous_run = compare_against_snapshot(repo_root)
+    generated_at = datetime.now().astimezone().isoformat(timespec="seconds")
+    document = build_new_json_document(
+        repo_root,
+        per_file,
+        version_key=version_key,
+        previous_run=previous_run,
+        generated_at=generated_at,
+    )
+    path = write_new_json(repo_root, document)
+    return {
+        "path": path,
+        "version_key": version_key,
+        "item_count": document["Summary"]["Added"],
+        "summary": document["Summary"],
+    }
+
+
 def generate_refresh_report(repo_root: Path) -> dict[str, Any]:
     reports_root = repo_root / "reports"
     latest_snapshot = reports_root / "_latest_snapshot"
@@ -203,15 +401,7 @@ def generate_refresh_report(repo_root: Path) -> dict[str, Any]:
         if not isinstance(previous_run, dict):
             previous_run = None
 
-    current_files = {p.name for p in current_json_dir.glob("*.json") if p.name not in IGNORED_REPORT_FILES}
-    previous_files = {p.name for p in latest_snapshot.glob("*.json") if p.name not in IGNORED_REPORT_FILES}
-    all_files = sorted(current_files | previous_files)
-
-    per_file: dict[str, dict[str, Any]] = {}
-    for filename in all_files:
-        old_data = _load_json(latest_snapshot / filename)
-        new_data = _load_json(current_json_dir / filename)
-        per_file[filename] = _compare_file(old_data, new_data)
+    per_file, _, _ = compare_against_snapshot(repo_root)
 
     run_dir = reports_root / "by_version" / version_key / run_stamp
     run_dir.mkdir(parents=True, exist_ok=True)

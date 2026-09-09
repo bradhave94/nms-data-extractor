@@ -29,6 +29,7 @@ ICON_JSON_FILES = [
     "Trade.json",
     "Upgrades.json",
     "Creatures.json",
+    "new.json",
     "none.json",
 ]
 

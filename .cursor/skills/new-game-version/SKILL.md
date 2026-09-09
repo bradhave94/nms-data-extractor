@@ -26,6 +26,12 @@ This runs: clean → HGPAKtool → consolidate_mbin → MBINCompiler → extract
 
 - Game path is `H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS`
 
+## MBINCompiler (required before Step 1)
+
+- Download the release that matches the game version from [MBINCompiler releases](https://github.com/monkeyman192/MBINCompiler/releases) (e.g. `v6.40.0-pre1` for NMS 6.4 / The Swarm).
+- Replace `tools/MBINCompiler.exe` and `tools/libMBIN.dll` (and `mapping.json` if present).
+- Example: `gh release download v6.40.0-pre1 --repo monkeyman192/MBINCompiler --pattern MBINCompiler.exe --pattern libMBIN.dll --pattern mapping.json --dir tools --clobber`
+
 ---
 
 ## Step 1: Run the unified extraction script

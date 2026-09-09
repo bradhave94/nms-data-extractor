@@ -23,10 +23,18 @@ def consolidate_mbin(repo_root: Path) -> None:
                 copied += 1
                 print(f"  {path.relative_to(data_dir)} -> mbin/")
 
+    for path in data_dir.glob("*.mbin"):
+        if path.is_file():
+            dest = mbin_dir / path.name
+            shutil.copy2(path, dest)
+            path.unlink()
+            copied += 1
+            print(f"  {path.name} -> mbin/")
+
     if copied:
         print(f"Copied {copied} .mbin files to data/mbin/")
     else:
-        print("No .mbin files found in data/metadata or data/language/")
+        print("No .mbin files found in data/metadata, data/language, or data/")
 
     for folder in (metadata_dir, language_dir):
         if folder.exists():
