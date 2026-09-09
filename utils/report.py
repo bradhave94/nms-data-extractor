@@ -8,6 +8,8 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from utils.building_variants import load_space_base_variants
+from utils.reward_variants import reward_identity
 
 IGNORED_REPORT_FILES = {"localization.json", "new.json"}
 NEW_JSON_FILENAME = "new.json"
@@ -254,6 +256,8 @@ _SKIP_CHANGE_DIFF_KEYS = frozenset(
     {
         "SourceFile",
         "Slug",
+        "SpaceBaseVariantOf",
+        "RewardVariantOf",
         "Change",
         "Previous",
         "ChangedFields",
@@ -294,6 +298,9 @@ def build_new_json_document(
     if not baseline_snapshot_dir.is_dir():
         raise ValueError(f"Previous-release snapshot is missing: {baseline_snapshot_dir}")
     baseline_by_id = _load_all_items_by_id_from_dir(baseline_snapshot_dir)
+    space_base_variants = load_space_base_variants(repo_root / "data" / "mbin")
+    previous_rewards = {signature for _, item in baseline_by_id.values()
+                        if (signature := reward_identity(item)) is not None}
     added_items: list[dict[str, Any]] = []
     changed_items: list[dict[str, Any]] = []
 
@@ -302,6 +309,14 @@ def build_new_json_document(
         entry["SourceFile"] = source_file
         baseline = baseline_by_id.get(iid)
         if baseline is None:
+            if item.get("RewardVariantOf") in all_by_id:
+                continue
+            if reward_identity(item) in previous_rewards:
+                continue
+            # A new product ID can describe an existing building in a new context.
+            original_ids = item.get("SpaceBaseVariantOf", space_base_variants.get(iid, []))
+            if any(original_id in baseline_by_id or original_id in all_by_id for original_id in original_ids):
+                continue
             entry["Change"] = "added"
             added_items.append(entry)
             continue

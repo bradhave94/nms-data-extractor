@@ -50,6 +50,8 @@ from parsers.ship_components import parse_ship_components
 from parsers.technology import parse_technology
 from parsers.trade import parse_trade
 from utils.categorization import categorize_item, assert_unique_exact_group_owners
+from utils.building_variants import enrich_space_base_variants
+from utils.reward_variants import enrich_reward_variants
 from utils.clean import clean_data
 from utils.generate_controller_lookup import main as generate_controller_lookup_main
 from utils.images import extract_icons
@@ -1262,6 +1264,8 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     if exocraft_enriched:
         print(f"  [ENRICH] Exocraft.json: added extended metadata to {exocraft_enriched} items")
     buildings_enriched = enrich_buildings_metadata(final_files, data_dir)
+    enrich_space_base_variants(final_files, data_dir)
+    enrich_reward_variants(final_files)
     if buildings_enriched:
         print(f"  [ENRICH] Buildings.json: added base-building metadata to {buildings_enriched} items")
 

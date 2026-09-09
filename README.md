@@ -106,7 +106,7 @@ python -m utils.smoke --strict-duplicates
 | **ConstructedTechnology.json** | Buildable tech items |
 | **TechnologyModule.json** | Upgrade modules |
 | **Curiosities.json** | Salvaged items & relics |
-| **new.json** | New IDs across the entire previous snapshot (`Items`); category moves are excluded. `ChangedItems` contains field changes with matching `Previous` values for item-page details. `RemovedIds` contains IDs absent from every current category. |
+| **new.json** | New IDs across the entire previous snapshot (`Items`); category moves, space-base product overrides of existing buildings, and identical reissued special-shop rewards are excluded. `ChangedItems` contains field changes with matching `Previous` values for item-page details. `RemovedIds` contains IDs absent from every current category. |
 | **Others.json** | Misc items (charts, cosmetics, etc.) |
 | **Creatures.json** | Creature species, battle moves, move sets, arena modes, medals, pet shop, accessories, egg overrides, behaviours |
 
