@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.40.0.1)-->
+<!--File created using MBINCompiler version (7.00.0.1)-->
 <Data template="cTkLocalisationTable">
 	<Property name="Table">
 		<Property name="Table" value="TkLocalisationEntry" _id="UPDATE9_TITLE">
@@ -51144,7 +51144,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_WHALE_BEACON_DESC">
 			<Property name="Id" value="UI_WHALE_BEACON_DESC" />
-			<Property name="English" value="A signal receiver and amplifier, tuned to the wavelength of the unconscious mind. It is every colour all at once, splitting the surrounding light into a shimmering rainbow.&#xA;&#xA;&lt;FUEL&gt;Warning:&lt;&gt; Carrying this antenna into deep space may attract the attention of &lt;SPECIAL&gt;cosmic megafauna&lt;&gt;." />
+			<Property name="English" value="A signal receiver and amplifier, tuned to the wavelength of the unconscious mind. It is every colour all at once, splitting the surrounding light into a shimmering rainbow.&#xA;&#xA;Use Relay Song (&lt;IMG&gt;FE_ALT1&lt;&gt;) while in deep space to search for &lt;SPECIAL&gt;cosmic megafauna&lt;&gt;." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -51224,7 +51224,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_POI_BIOFRIG_DESC">
 			<Property name="Id" value="UI_POI_BIOFRIG_DESC" />
-			<Property name="English" value="The Dream Aerial is tuned to the wavelength of the unconscious mind. Carrying it into deep space may attract the attention of &lt;SPECIAL&gt;cosmic megafauna&lt;&gt;." />
+			<Property name="English" value="The Dream Aerial is tuned to the wavelength of the unconscious mind." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -51244,7 +51244,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_POI_BIOFRIG_OBJ1">
 			<Property name="Id" value="UI_POI_BIOFRIG_OBJ1" />
-			<Property name="English" value="Carry the aerial into deep space" />
+			<Property name="English" value="Relay whalesong from the aerial" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -51264,7 +51264,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_POI_BIOFRIG_OBJ1_TIP">
 			<Property name="Id" value="UI_POI_BIOFRIG_OBJ1_TIP" />
-			<Property name="English" value="The Dream Aerial will awaken in deep space.&#xA;Activate your ship's &lt;TECHNOLOGY&gt;Pulse Drive&lt;&gt; to search for &lt;SPECIAL&gt;cosmic megafauna&lt;&gt;." />
+			<Property name="English" value="The Dream Aerial can locate &lt;SPECIAL&gt;cosmic megafauna&lt;&gt;.&#xA;Carry it into deep space and use Relay Song (&lt;IMG&gt;FE_ALT1&lt;&gt;) to search for these ancient beasts..." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -51324,7 +51324,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_POI_BIOFRIG_SEARCH_MSG0">
 			<Property name="Id" value="UI_POI_BIOFRIG_SEARCH_MSG0" />
-			<Property name="English" value="The &lt;SPECIAL&gt;Dream Aerial&lt;&gt; is slumbering...&#xA;Your frigate fleet is currently &lt;FUEL&gt;full&lt;&gt;&#xA;The Aerial can attract &lt;SPECIAL&gt;cosmic megafauna&lt;&gt; to your frigate fleet&#xA;Dismiss frigates from the &lt;TECHNOLOGY&gt;Fleet Management&lt;&gt; terminal on your freighter bridge" />
+			<Property name="English" value="Your frigate fleet is currently &lt;FUEL&gt;full&lt;&gt;&#xA;The Dream Aerial can attract &lt;SPECIAL&gt;cosmic megafauna&lt;&gt; to your frigate fleet&#xA;Dismiss frigates from the &lt;TECHNOLOGY&gt;Fleet Management&lt;&gt; terminal on your freighter bridge" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -51445,6 +51445,46 @@
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_POI_BIOFRIG_MSG2">
 			<Property name="Id" value="UI_POI_BIOFRIG_MSG2" />
 			<Property name="English" value="Whalesong detected on hailing frequency&#xA;Answer the Communicator by pressing &lt;IMG&gt;QUICK_MENU&lt;&gt;" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_POI_BIOFRIG_MSG_CRAFT">
+			<Property name="Id" value="UI_POI_BIOFRIG_MSG_CRAFT" />
+			<Property name="English" value="The Dream Aerial is &lt;FUEL&gt;missing&lt;&gt;&#xA;Craft items in empty Inventory slots with &lt;IMG&gt;PRODMENU&lt;&gt;&#xA;&lt;STELLAR&gt;Pin&lt;&gt; the Dream Aerial blueprint for detailed guidance" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_POI_BIOFRIG_MSG_USE">
+			<Property name="Id" value="UI_POI_BIOFRIG_MSG_USE" />
+			<Property name="English" value="Relay the &lt;SPECIAL&gt;Dream Aerial&lt;&gt; melody into &lt;SPECIAL&gt;deep space&lt;&gt;&#xA;Locate the Aerial in your Inventory (&lt;IMG&gt;INVENTORY&lt;&gt;) and play with Relay Song (&lt;IMG&gt;FE_ALT1&lt;&gt;)" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -73104,7 +73144,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="BLD_T_ROOF4_NAME">
 			<Property name="Id" value="BLD_T_ROOF4_NAME" />
-			<Property name="English" value="U-SKYLIGHT TIMBER TRAPEZOID ROOF" />
+			<Property name="English" value="U-SKYLIGHT TIMBER ROOF" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -97562,9 +97602,29 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_UNWLOOT_MSG1A">
+			<Property name="Id" value="UI_EXPED_UNWLOOT_MSG1A" />
+			<Property name="English" value="Acquire an &lt;COMMODITY&gt;aquatic treasure&lt;&gt; from an &lt;TECHNOLOGY&gt;underwater ruin&lt;&gt;&#xA;Water detected on &lt;STELLAR&gt;nearby planet&lt;&gt;&#xA;Reach a planet with &lt;TECHNOLOGY&gt;water&lt;&gt; to begin your search" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_UNWLOOT_MSG2">
 			<Property name="Id" value="UI_EXPED_UNWLOOT_MSG2" />
-			<Property name="English" value="Acquire an &lt;COMMODITY&gt;aquatic treasure&lt;&gt; from an &lt;TECHNOLOGY&gt;underwater ruin&lt;&gt;: 0/1&#xA;Begin your search in &lt;TECHNOLOGY&gt;deep water&lt;&gt;" />
+			<Property name="English" value="Acquire an &lt;COMMODITY&gt;aquatic treasure&lt;&gt; from an &lt;TECHNOLOGY&gt;underwater ruin&lt;&gt;: 0/1&#xA;&lt;TRADEABLE&gt;Water detected&lt;&gt; on current planet&#xA;Begin your search in &lt;TECHNOLOGY&gt;deep water&lt;&gt;" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -97622,6 +97682,26 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_UNWLOOT_MSG4_ALT">
+			<Property name="Id" value="UI_EXPED_UNWLOOT_MSG4_ALT" />
+			<Property name="English" value="Acquire an &lt;COMMODITY&gt;aquatic treasure&lt;&gt; from an &lt;TECHNOLOGY&gt;underwater ruin&lt;&gt;: 0/1&#xA;Complete the &lt;EXPED&gt;%MILESTONE%&lt;&gt; milestone to earn &lt;STELLAR&gt;Nautilon submarine&lt;&gt; plans&#xA;Select milestones from the Expedition log (&lt;IMG&gt;OPTIONS&lt;&gt;)" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_UNWLOOT_MSG5">
 			<Property name="Id" value="UI_EXPED_UNWLOOT_MSG5" />
 			<Property name="English" value="Acquire an &lt;COMMODITY&gt;aquatic treasure&lt;&gt; from an &lt;TECHNOLOGY&gt;underwater ruin&lt;&gt;: 0/1&#xA;Install and upgrade the Nautilon's &lt;TECHNOLOGY&gt;High-Powered Sonar&lt;&gt;&#xA;Purchase Nautilon upgrades from &lt;STELLAR&gt;Perses&lt;&gt; on the &lt;SPECIAL&gt;Space Anomaly&lt;&gt;" />
@@ -97642,9 +97722,49 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_UNWLOOT_MSG5_ALT">
+			<Property name="Id" value="UI_EXPED_UNWLOOT_MSG5_ALT" />
+			<Property name="English" value="Acquire an &lt;COMMODITY&gt;aquatic treasure&lt;&gt; from an &lt;TECHNOLOGY&gt;underwater ruin&lt;&gt;: 0/1&#xA;Install and upgrade the Nautilon's &lt;TECHNOLOGY&gt;High-Powered Sonar&lt;&gt;" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_UNWLOOT_MSG6">
 			<Property name="Id" value="UI_EXPED_UNWLOOT_MSG6" />
 			<Property name="English" value="Acquire an &lt;COMMODITY&gt;aquatic treasure&lt;&gt; from an &lt;TECHNOLOGY&gt;underwater ruin&lt;&gt;: 0/1&#xA;Use the Nautilon's &lt;TECHNOLOGY&gt;High-Power Sonar&lt;&gt; to locate underwater objects&#xA;Access the Sonar from the Quick Menu (&lt;IMG&gt;QUICK_MENU&lt;&gt;)" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_UNWLOOT_MSG7">
+			<Property name="Id" value="UI_EXPED_UNWLOOT_MSG7" />
+			<Property name="English" value="Acquire an &lt;COMMODITY&gt;aquatic treasure&lt;&gt; from an &lt;TECHNOLOGY&gt;underwater ruin&lt;&gt;: 0/1&#xA;Use the Nautilon's &lt;TECHNOLOGY&gt;High-Power Sonar&lt;&gt; to locate underwater objects" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -125624,7 +125744,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_SENT_MISS5_OBJ3_TIP">
 			<Property name="Id" value="UI_SENT_MISS5_OBJ3_TIP" />
-			<Property name="English" value="Tethys has prepared the &lt;SPECIAL&gt;Hacked Brain&lt;&gt; for disconnection from the Sentinel network.&#xA;All that is required now is for the brain to hear the &lt;FUEL&gt;Voice of the Atlas&lt;&gt;.&#xA;activate the Starship &lt;TECHNOLOGY&gt;Pulse Drive&lt;&gt; to present the brain to the &lt;FUEL&gt;crimson&lt;&gt; void." />
+			<Property name="English" value="Tethys has prepared the &lt;SPECIAL&gt;Hacked Brain&lt;&gt; for disconnection from the Sentinel network.&#xA;All that is required now is for the brain to hear the &lt;FUEL&gt;Voice of the Atlas&lt;&gt;.&#xA;Activate the Starship &lt;TECHNOLOGY&gt;Pulse Drive&lt;&gt; to present the brain to the &lt;FUEL&gt;crimson&lt;&gt; void." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -125724,7 +125844,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_SENT_MISS5_POI_MSG3">
 			<Property name="Id" value="UI_SENT_MISS5_POI_MSG3" />
-			<Property name="English" value="Tethys has prepared the &lt;SPECIAL&gt;Hacked Brain&lt;&gt; for disconnection&#xA;Fly into space to present the brain to the &lt;FUEL&gt;crimson&lt;&gt; void&#xA;activate the &lt;TECHNOLOGY&gt;Pulse Drive&lt;&gt; to search for a Beacon" />
+			<Property name="English" value="Tethys has prepared the &lt;SPECIAL&gt;Hacked Brain&lt;&gt; for disconnection&#xA;Fly into space to present the brain to the &lt;FUEL&gt;crimson&lt;&gt; void&#xA;Activate the &lt;TECHNOLOGY&gt;Pulse Drive&lt;&gt; to search for a Beacon" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -190725,6 +190845,26 @@
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_GLITCH_PACK_NAME">
 			<Property name="Id" value="UI_GLITCH_PACK_NAME" />
 			<Property name="English" value="&lt;SPECIAL&gt;Assorted glitches&lt;&gt;" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_GLITCH_PACK_NAME_NUM">
+			<Property name="Id" value="UI_GLITCH_PACK_NAME_NUM" />
+			<Property name="English" value="&lt;SPECIAL&gt;Glitches&lt;&gt; x %NUM%" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />

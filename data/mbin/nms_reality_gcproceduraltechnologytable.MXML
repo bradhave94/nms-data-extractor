@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.40.0.1)-->
+<!--File created using MBINCompiler version (7.00.0.1)-->
 <Data template="cGcProceduralTechnologyTable">
 	<Property name="Table">
 		<Property name="Table" value="GcProceduralTechnologyData" _id="UP_LASER1">
@@ -5177,7 +5177,7 @@
 					<Property name="ValueMin" value="0.100000" />
 					<Property name="ValueMax" value="0.350000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
-						<Property name="WeightingCurve" value="MinIsUncommon" />
+						<Property name="WeightingCurve" value="MaxIsUncommon" />
 					</Property>
 					<Property name="AlwaysChoose" value="false" />
 				</Property>
@@ -5276,7 +5276,7 @@
 					<Property name="ValueMin" value="0.100000" />
 					<Property name="ValueMax" value="0.350000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
-						<Property name="WeightingCurve" value="MinIsUncommon" />
+						<Property name="WeightingCurve" value="MaxIsUncommon" />
 					</Property>
 					<Property name="AlwaysChoose" value="false" />
 				</Property>
@@ -12503,7 +12503,7 @@
 					<Property name="ValueMin" value="0.900000" />
 					<Property name="ValueMax" value="0.850000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
-						<Property name="WeightingCurve" value="MinIsRare" />
+						<Property name="WeightingCurve" value="MaxIsRare" />
 					</Property>
 					<Property name="AlwaysChoose" value="false" />
 				</Property>
@@ -12547,7 +12547,7 @@
 					<Property name="ValueMin" value="0.850000" />
 					<Property name="ValueMax" value="0.800000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
-						<Property name="WeightingCurve" value="MinIsRare" />
+						<Property name="WeightingCurve" value="MaxIsUncommon" />
 					</Property>
 					<Property name="AlwaysChoose" value="false" />
 				</Property>
@@ -12591,7 +12591,7 @@
 					<Property name="ValueMin" value="0.800000" />
 					<Property name="ValueMax" value="0.800000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
-						<Property name="WeightingCurve" value="MinIsUncommon" />
+						<Property name="WeightingCurve" value="NoWeighting" />
 					</Property>
 					<Property name="AlwaysChoose" value="false" />
 				</Property>
@@ -13919,8 +13919,8 @@
 					<Property name="Stat" value="GcStatsTypes">
 						<Property name="StatsType" value="Freighter_Fleet_Fuel" />
 					</Property>
-					<Property name="ValueMin" value="0.990000" />
-					<Property name="ValueMax" value="0.950000" />
+					<Property name="ValueMin" value="0.950000" />
+					<Property name="ValueMax" value="0.990000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
 						<Property name="WeightingCurve" value="MinIsUncommon" />
 					</Property>
@@ -13963,8 +13963,8 @@
 					<Property name="Stat" value="GcStatsTypes">
 						<Property name="StatsType" value="Freighter_Fleet_Fuel" />
 					</Property>
-					<Property name="ValueMin" value="0.950000" />
-					<Property name="ValueMax" value="0.900000" />
+					<Property name="ValueMin" value="0.900000" />
+					<Property name="ValueMax" value="0.950000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
 						<Property name="WeightingCurve" value="MinIsUncommon" />
 					</Property>
@@ -14007,8 +14007,8 @@
 					<Property name="Stat" value="GcStatsTypes">
 						<Property name="StatsType" value="Freighter_Fleet_Fuel" />
 					</Property>
-					<Property name="ValueMin" value="0.900000" />
-					<Property name="ValueMax" value="0.850000" />
+					<Property name="ValueMin" value="0.850000" />
+					<Property name="ValueMax" value="0.900000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
 						<Property name="WeightingCurve" value="MinIsUncommon" />
 					</Property>
@@ -14051,8 +14051,8 @@
 					<Property name="Stat" value="GcStatsTypes">
 						<Property name="StatsType" value="Freighter_Fleet_Fuel" />
 					</Property>
-					<Property name="ValueMin" value="0.850000" />
-					<Property name="ValueMax" value="0.800000" />
+					<Property name="ValueMin" value="0.800000" />
+					<Property name="ValueMax" value="0.850000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
 						<Property name="WeightingCurve" value="MinIsUncommon" />
 					</Property>
@@ -15063,10 +15063,10 @@
 					<Property name="Stat" value="GcStatsTypes">
 						<Property name="StatsType" value="Ship_Launcher_TakeOffCost" />
 					</Property>
-					<Property name="ValueMin" value="0.950000" />
-					<Property name="ValueMax" value="0.900000" />
+					<Property name="ValueMin" value="0.900000" />
+					<Property name="ValueMax" value="0.950000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
-						<Property name="WeightingCurve" value="MaxIsSuperRare" />
+						<Property name="WeightingCurve" value="MinIsSuperRare" />
 					</Property>
 					<Property name="AlwaysChoose" value="false" />
 				</Property>
@@ -15129,8 +15129,8 @@
 					<Property name="Stat" value="GcStatsTypes">
 						<Property name="StatsType" value="Ship_Launcher_TakeOffCost" />
 					</Property>
-					<Property name="ValueMin" value="0.900000" />
-					<Property name="ValueMax" value="0.850000" />
+					<Property name="ValueMin" value="0.850000" />
+					<Property name="ValueMax" value="0.900000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
 						<Property name="WeightingCurve" value="MinIsRare" />
 					</Property>
@@ -15195,8 +15195,8 @@
 					<Property name="Stat" value="GcStatsTypes">
 						<Property name="StatsType" value="Ship_Launcher_TakeOffCost" />
 					</Property>
-					<Property name="ValueMin" value="0.850000" />
-					<Property name="ValueMax" value="0.800000" />
+					<Property name="ValueMin" value="0.800000" />
+					<Property name="ValueMax" value="0.850000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
 						<Property name="WeightingCurve" value="MinIsRare" />
 					</Property>
@@ -15639,6 +15639,50 @@
 					<Property name="ValueMax" value="8.000000" />
 					<Property name="WeightingCurve" value="GcWeightingCurve">
 						<Property name="WeightingCurve" value="MaxIsRare" />
+					</Property>
+					<Property name="AlwaysChoose" value="false" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Table" value="GcProceduralTechnologyData" _id="CV_TRACT1">
+			<Property name="ID" value="CV_TRACT1" />
+			<Property name="Template" value="T_CR_TRT" />
+			<Property name="Group" value="BIGGS_TRACTOR" />
+			<Property name="Name" value="UT_CR_TRACT_NAME" />
+			<Property name="NameLower" value="UT_CR_TRACT_NAME_L" />
+			<Property name="Subtitle" value="UP_CRUI_SUB" />
+			<Property name="Description" value="UT_CR_TRACT_DESC" />
+			<Property name="Colour">
+				<Property name="R" value="0.129411772" />
+				<Property name="G" value="0.466666669" />
+				<Property name="B" value="0.784313738" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="Quality" value="Epic" />
+			<Property name="Category" value="GcProceduralTechnologyCategory">
+				<Property name="ProceduralTechnologyCategory" value="Mining" />
+			</Property>
+			<Property name="IsBiggsProcTech" value="true" />
+			<Property name="NumStatsMin" value="1" />
+			<Property name="NumStatsMax" value="1" />
+			<Property name="WeightingCurve" value="GcWeightingCurve">
+				<Property name="WeightingCurve" value="NoWeighting" />
+			</Property>
+			<Property name="UpgradeColour">
+				<Property name="R" value="1.000000" />
+				<Property name="G" value="1.000000" />
+				<Property name="B" value="1.000000" />
+				<Property name="A" value="1.000000" />
+			</Property>
+			<Property name="StatLevels">
+				<Property name="StatLevels" value="GcProceduralTechnologyStatLevel" _index="0">
+					<Property name="Stat" value="GcStatsTypes">
+						<Property name="StatsType" value="Ship_TractorBeam" />
+					</Property>
+					<Property name="ValueMin" value="1.000000" />
+					<Property name="ValueMax" value="1.000000" />
+					<Property name="WeightingCurve" value="GcWeightingCurve">
+						<Property name="WeightingCurve" value="NoWeighting" />
 					</Property>
 					<Property name="AlwaysChoose" value="false" />
 				</Property>

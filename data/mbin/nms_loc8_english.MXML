@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.40.0.1)-->
+<!--File created using MBINCompiler version (7.00.0.1)-->
 <Data template="cTkLocalisationTable">
 	<Property name="Table">
 		<Property name="Table" value="TkLocalisationEntry" _id="UPDATE14_TITLE">
@@ -70265,6 +70265,26 @@
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_BUILD_EXO_ANY_MSG">
 			<Property name="Id" value="UI_EXPED_BUILD_EXO_ANY_MSG" />
 			<Property name="English" value="Deploy an &lt;TECHNOLOGY&gt;Exocraft Geobay&lt;&gt;&#xA;Access the &lt;TECHNOLOGY&gt;Build Menu&lt;&gt; with &lt;IMG&gt;BUILD_MENU&lt;&gt;&#xA;&lt;STELLAR&gt;Pin&lt;&gt; construction steps with &lt;IMG&gt;PIN_BUILD&lt;&gt;" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_EXPED_BUILD_EXO_ANY_MSGA">
+			<Property name="Id" value="UI_EXPED_BUILD_EXO_ANY_MSGA" />
+			<Property name="English" value="Deploy an &lt;TECHNOLOGY&gt;Exocraft Geobay&lt;&gt;&#xA;Complete the &lt;EXPED&gt;%MILESTONE%&lt;&gt; milestone to earn Geobay plans&#xA;Select milestones from the Expedition log (&lt;IMG&gt;OPTIONS&lt;&gt;)" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />

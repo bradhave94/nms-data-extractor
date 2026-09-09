@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.40.0.1)-->
+<!--File created using MBINCompiler version (7.00.0.1)-->
 <Data template="cGcCreatureGlobals">
 	<Property name="SpherePusherOffset">
 		<Property name="Small" value="0.400000" />
@@ -260,6 +260,7 @@
 	<Property name="PostRideMoveTime" value="2.000000" />
 	<Property name="RideIdleTime" value="4.000000" />
 	<Property name="MinRideSize" value="2.000000" />
+	<Property name="MinRideSizeProtoflyer" value="1.400000" />
 	<Property name="MaxCreatureSize" value="8.000000" />
 	<Property name="MaxRideLeanCounterRotate" value="30.000000" />
 	<Property name="PetMinSummonDistance" value="3.000000" />
@@ -291,8 +292,8 @@
 	<Property name="CreatureHearingRange" value="10.000000" />
 	<Property name="CreatureSightRange" value="100.000000" />
 	<Property name="CreatureMoveIdle" value="0.100000" />
-	<Property name="CreatureTurnMin" value="1.000000" />
-	<Property name="CreatureTurnMax" value="0.100000" />
+	<Property name="CreatureTurnMin" value="0.100000" />
+	<Property name="CreatureTurnMax" value="1.000000" />
 	<Property name="CreatureBrakeForce" value="10.000000" />
 	<Property name="CreatureMinAnimMoveSpeed" value="0.100000" />
 	<Property name="CreatureLookBeforeGoingTime" value="1.500000" />
@@ -316,6 +317,7 @@
 		<Property name="StrengthScale" value="1.000000" />
 		<Property name="ThirdPersonDamp" value="1.000000" />
 		<Property name="VRStrength" value="0.000000" />
+		<Property name="ShakeIfOffScreen" value="true" />
 		<Property name="CapturedData" value="GcCameraShakeCapturedData">
 			<Property name="Active" value="true" />
 			<Property name="ShakeStrength" value="0.010000" />

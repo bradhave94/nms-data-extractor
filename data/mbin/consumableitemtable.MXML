@@ -1,7 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.40.0.1)-->
+<!--File created using MBINCompiler version (7.00.0.1)-->
 <Data template="cGcConsumableItemTable">
 	<Property name="Table">
+		<Property name="Table" value="GcConsumableItem" _id="S23_BEACON">
+			<Property name="ID" value="S23_BEACON" />
+			<Property name="RewardID" value="R_S23_BEACON" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_USE_S2_BEACON" />
+			<Property name="ButtonSubLocID" value="UI_USE_S2_BEACON_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="NORMANDY_BEACON" />
+			</Property>
+			<Property name="RewardFailedLocID" value="INTRCT_NOROOM_L" />
+			<Property name="DestroyItemWhenConsumed" value="false" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable" />
+		</Property>
+		<Property name="Table" value="GcConsumableItem" _id="S23_PROD">
+			<Property name="ID" value="S23_PROD" />
+			<Property name="RewardID" value="R_S23_PROD" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_S23PROD_LABEL" />
+			<Property name="ButtonSubLocID" value="UI_S23PROD_LABEL_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="RewardFailedLocID" value="" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable" />
+		</Property>
+		<Property name="Table" value="GcConsumableItem" _id="CHART_HULK">
+			<Property name="ID" value="CHART_HULK" />
+			<Property name="RewardID" value="R_CHRT_HULK" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_CHART_LABEL" />
+			<Property name="ButtonSubLocID" value="UI_CHART_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="RewardFailedLocID" value="INTRCT_NOROOM_L" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable">
+				<Property name="RewardOverrideTable" value="GcRewardMissionOverride" _index="0">
+					<Property name="Mission" value="HULK_CHRT_TUT" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Reward" value="R_CHRT_HULK_ONL" />
+					<Property name="ForceLocalMissionSelection" value="" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Table" value="GcConsumableItem" _id="CHART_SPACEBASE">
+			<Property name="ID" value="CHART_SPACEBASE" />
+			<Property name="RewardID" value="R_CHRT_SBASE" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_CHART_LABEL" />
+			<Property name="ButtonSubLocID" value="UI_CHART_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="RewardFailedLocID" value="INTRCT_NOROOM_L" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable" />
+		</Property>
+		<Property name="Table" value="GcConsumableItem" _id="S23_ODD_EGG">
+			<Property name="ID" value="S23_ODD_EGG" />
+			<Property name="RewardID" value="R_S23_EAT_EGG" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_CONSUME" />
+			<Property name="ButtonSubLocID" value="UI_S23_ODD_EGG_LABEL_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="UI_BIOSHIP_ADDORGAN" />
+			</Property>
+			<Property name="RewardFailedLocID" value="INTRCT_NOROOM_L" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable" />
+		</Property>
 		<Property name="Table" value="GcConsumableItem" _id="CHART_PB_CHALL">
 			<Property name="ID" value="CHART_PB_CHALL" />
 			<Property name="RewardID" value="R_PB_INV_CHALL" />
@@ -2112,8 +2219,28 @@
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
 			</Property>
-			<Property name="RewardFailedLocID" value="UI_ABAND_LOCATOR_FAIL_OSD" />
-			<Property name="DestroyItemWhenConsumed" value="false" />
+			<Property name="RewardFailedLocID" value="UI_ABAND_LOCATOR_FAIL_ALT_OSD" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
+			<Property name="AddCommunityTierClassIcon" value="false" />
+			<Property name="SuppressResourceMessage" value="false" />
+			<Property name="CustomOSD" value="" />
+			<Property name="RequiresCanAffordCost" value="" />
+			<Property name="RequiresMissionActive" value="" />
+			<Property name="OverrideMissionMustBeSelected" value="false" />
+			<Property name="RewardOverrideTable" />
+		</Property>
+		<Property name="Table" value="GcConsumableItem" _id="WHALE_BEACON">
+			<Property name="ID" value="WHALE_BEACON" />
+			<Property name="RewardID" value="R_REVEAL_WHALE" />
+			<Property name="TutorialRewardID" value="" />
+			<Property name="ButtonLocID" value="UI_WHALE_BEACON_LABEL" />
+			<Property name="ButtonSubLocID" value="UI_WHALE_BEACON_LABEL_SUB" />
+			<Property name="CloseInventoryWhenUsed" value="true" />
+			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="UI_WHALESONG" />
+			</Property>
+			<Property name="RewardFailedLocID" value="UI_WHALE_REVEAL_FAIL_OSD" />
+			<Property name="DestroyItemWhenConsumed" value="true" />
 			<Property name="AddCommunityTierClassIcon" value="false" />
 			<Property name="SuppressResourceMessage" value="false" />
 			<Property name="CustomOSD" value="" />
@@ -3027,7 +3154,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ2" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -4166,8 +4293,8 @@
 			<Property name="ID" value="FOOD_B_HERB" />
 			<Property name="RewardID" value="DE_FOOD_ENERGY1" />
 			<Property name="TutorialRewardID" value="" />
-			<Property name="ButtonLocID" value="UI_CONSUME_JET" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_JET_SUB" />
+			<Property name="ButtonLocID" value="UI_CONSUME_ENERGY" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_ENERGY_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -7566,8 +7693,8 @@
 			<Property name="ID" value="FOOD_STEW_BALL" />
 			<Property name="RewardID" value="DE_FOOD_ENERGY2" />
 			<Property name="TutorialRewardID" value="" />
-			<Property name="ButtonLocID" value="UI_CONSUME_STAM" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_STAM_SUB" />
+			<Property name="ButtonLocID" value="UI_CONSUME_ENERGY" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_ENERGY_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8467,7 +8594,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8487,7 +8614,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8507,7 +8634,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8527,7 +8654,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8547,7 +8674,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8567,7 +8694,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8587,7 +8714,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8607,7 +8734,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8627,7 +8754,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8647,7 +8774,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8667,7 +8794,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8687,7 +8814,7 @@
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
 			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />
@@ -8906,8 +9033,8 @@
 			<Property name="ID" value="FOOD_F_EGGS" />
 			<Property name="RewardID" value="DE_FOOD_HAZ3" />
 			<Property name="TutorialRewardID" value="" />
-			<Property name="ButtonLocID" value="UI_CONSUME_HEALTH" />
-			<Property name="ButtonSubLocID" value="UI_CONSUME_HEALTH_SUB" />
+			<Property name="ButtonLocID" value="UI_CONSUME_HAZ" />
+			<Property name="ButtonSubLocID" value="UI_CONSUME_HAZ_SUB" />
 			<Property name="CloseInventoryWhenUsed" value="false" />
 			<Property name="AudioEventOnOpen" value="GcAudioWwiseEvents">
 				<Property name="AkEvent" value="INVALID_EVENT" />

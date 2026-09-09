@@ -168,6 +168,10 @@ CATEGORIZATION_RULES = {
             'Wooden Construction Component',
             'Worker Terminal',
             'Fossil Display Case',
+            'Space Station Decoration',
+            'Orbital Base Module',
+            'Constructable Relic',
+            'Wall Access Route',
         }
     },
 
@@ -235,6 +239,16 @@ CATEGORIZATION_RULES = {
             'Valuable Ore',
             'Valuable Rock Sample',
             'Very high value curiosity',
+            'Common Salvage Material',
+            'Rare Salvage Material',
+            'Specialist Salvage Material',
+            'Valuable Comet Fragment',
+            'Semi-Sentient Protein Strand',
+            'Pulsating Biomass',
+            'Priceless Fragment',
+            'Antivitreous Device Memento',
+            'Genetic Mutator',
+            'Window to a Dream',
         }
     },
 
@@ -534,6 +548,20 @@ CATEGORIZATION_RULES = {
             'Vile Larval Sac',
             'Voice of the Wordless Atlas',
             'Voltaic Component',
+            'Deep-Space Cartographic Data',
+            'Anomalous Cartographic Data',
+            'Arena League Invitation',
+            'Shellseeker Companion',
+            'Liquid-Suspended Consciousness',
+            'Spectral Anomaly',
+            'Abyssal Horror',
+            'Gentle Giant Embryo',
+            'Viable Genetic Material',
+            ':: Datestamp 22512.64 ::',
+            ':: Datestamp 22516.01 ::',
+            ':: Datestamp 22518.24 ::',
+            ':: Datestamp 22522.31 ::',
+            ':: Datestamp 22594.16 ::',
         }
     },
 
@@ -605,6 +633,9 @@ CATEGORIZATION_RULES = {
             'Universal Ammo Module',
             'Universal Technology Platform',
             'Auto-Regenerating Lifeform',
+            'Archived Technology Package',
+            'Genetic Repository',
+            'Potent Nodule',
         }
     },
 
@@ -764,6 +795,7 @@ CATEGORIZATION_RULES = {
             'Scatter Blaster Upgrade',
             'Scatter Shot Projectile Weapon',
             'Self-Mounted Advanced Refiner',
+            'Self-Mounted Refiner Unit',
             'Sentient Vessel Node',
             'Sentinel Ship Gun',
             'Ship Tech',
@@ -964,6 +996,12 @@ def categorize_item(item: dict) -> str | None:
     name_lower = name.lower()
     group_lower = group.lower()
     item_id_lower = item_id.lower()
+
+    # Cosmos salvage and expedition-log groups keep arriving with new names.
+    if group_lower.endswith(' salvage material'):
+        return 'Curiosities.json'
+    if group.startswith(':: Datestamp'):
+        return 'Others.json'
 
     # Route every upgrade-like item into a dedicated upgrades file.
     # This intentionally has high priority so upgrades are centralized.

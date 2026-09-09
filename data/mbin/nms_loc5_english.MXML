@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.40.0.1)-->
+<!--File created using MBINCompiler version (7.00.0.1)-->
 <Data template="cTkLocalisationTable">
 	<Property name="Table">
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_VR_RECENTRE">
@@ -29845,6 +29845,26 @@
 		<Property name="Table" value="TkLocalisationEntry" _id="QUICK_MENU_SUM_NEXUS_NO_SPACE">
 			<Property name="Id" value="QUICK_MENU_SUM_NEXUS_NO_SPACE" />
 			<Property name="English" value="Space Anomaly Unavailable :: Planetary Interference" />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="QUICK_MENU_SUM_NEXUS_NEXUS">
+			<Property name="Id" value="QUICK_MENU_SUM_NEXUS_NEXUS" />
+			<Property name="English" value="Space Anomaly Unavailable :: Spacetime Recursion" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -129084,7 +129104,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_GEODE_SPACE_HINT_MSG">
 			<Property name="Id" value="UI_GEODE_SPACE_HINT_MSG" />
-			<Property name="English" value="&lt;STELLAR&gt;Analyze&lt;&gt; the &lt;STELLAR&gt;Tritium Hypercluster&lt;&gt; with &lt;IMG&gt;FE_ALT1&lt;&gt;&#xA;To analyze, first locate in the Inventory (&lt;IMG&gt;INVENTORY&lt;&gt;)&#xA;Hyperclusters contain large quantities of &lt;TECHNOLOGY&gt;Tritium&lt;&gt;" />
+			<Property name="English" value="&lt;STELLAR&gt;Analyse&lt;&gt; the &lt;STELLAR&gt;Tritium Hypercluster&lt;&gt; with &lt;IMG&gt;FE_ALT1&lt;&gt;&#xA;To analyse, first locate in the Inventory (&lt;IMG&gt;INVENTORY&lt;&gt;)&#xA;Hyperclusters contain large quantities of &lt;TECHNOLOGY&gt;Tritium&lt;&gt;" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -129204,7 +129224,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_GEODE_ASTEROID_HINT_MSG">
 			<Property name="Id" value="UI_GEODE_ASTEROID_HINT_MSG" />
-			<Property name="English" value="&lt;STELLAR&gt;Analyze&lt;&gt; the &lt;STELLAR&gt;Gold Nugget&lt;&gt; with &lt;IMG&gt;FE_ALT1&lt;&gt;&#xA;To analyze, first locate in the Inventory (&lt;IMG&gt;INVENTORY&lt;&gt;)&#xA;Gold Nuggets contain large quantities of &lt;COMMODITY&gt;Gold&lt;&gt;" />
+			<Property name="English" value="&lt;STELLAR&gt;Analyse&lt;&gt; the &lt;STELLAR&gt;Gold Nugget&lt;&gt; with &lt;IMG&gt;FE_ALT1&lt;&gt;&#xA;To analyse, first locate in the Inventory (&lt;IMG&gt;INVENTORY&lt;&gt;)&#xA;Gold Nuggets contain large quantities of &lt;COMMODITY&gt;Gold&lt;&gt;" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />

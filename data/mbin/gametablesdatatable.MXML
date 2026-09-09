@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.40.0.1)-->
+<!--File created using MBINCompiler version (7.00.0.1)-->
 <Data template="cGcGameTablesDataTable">
 	<Property name="GameTableConfigs">
 		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PVP_STANDARD">
@@ -162,7 +162,7 @@
 			<Property name="RewardIdWin" value="R_PB_D_NEXUS_W" />
 			<Property name="RewardIdLoss" value="R_PB_D_NEXUS_L" />
 			<Property name="ExperienceRewardMultiplier" value="1.000000" />
-			<Property name="DefaultPuzzle" value="NEXUS_TABLE" />
+			<Property name="DefaultPuzzle" value="?NEXUS_TABLE" />
 			<Property name="PuzzleMissionOverrideTable">
 				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="0">
 					<Property name="Mission" value="D_NEXUS_PB_1" />
@@ -177,7 +177,7 @@
 				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="1">
 					<Property name="Mission" value="NEXUS1" />
 					<Property name="OptionalMissionSeed" value="NONE" />
-					<Property name="Puzzle" value="NEXUS_TABLE_PRE_TUT" />
+					<Property name="Puzzle" value="?NEXUS_TABLE_PRE_TUT" />
 					<Property name="ForceMissionSeed" value="false" />
 					<Property name="AltPriorityMissionForSelection" value="" />
 					<Property name="RequireMainMissionSelected" value="false" />
@@ -187,7 +187,7 @@
 				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="2">
 					<Property name="Mission" value="NEXUS1A" />
 					<Property name="OptionalMissionSeed" value="NONE" />
-					<Property name="Puzzle" value="NEXUS_TABLE_PRE_TUT" />
+					<Property name="Puzzle" value="?NEXUS_TABLE_PRE_TUT" />
 					<Property name="ForceMissionSeed" value="false" />
 					<Property name="AltPriorityMissionForSelection" value="" />
 					<Property name="RequireMainMissionSelected" value="false" />
@@ -197,7 +197,7 @@
 				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="3">
 					<Property name="Mission" value="NEXUS1A_SEASON" />
 					<Property name="OptionalMissionSeed" value="NONE" />
-					<Property name="Puzzle" value="NEXUS_TABLE_PRE_TUT" />
+					<Property name="Puzzle" value="?NEXUS_TABLE_PRE_TUT" />
 					<Property name="ForceMissionSeed" value="false" />
 					<Property name="AltPriorityMissionForSelection" value="" />
 					<Property name="RequireMainMissionSelected" value="false" />
@@ -231,7 +231,7 @@
 			<Property name="RewardIdWin" value="R_PB_TUT_W" />
 			<Property name="RewardIdLoss" value="R_PB_TUT_L" />
 			<Property name="ExperienceRewardMultiplier" value="0.200000" />
-			<Property name="DefaultPuzzle" value="NEXUS_TABLE" />
+			<Property name="DefaultPuzzle" value="?NEXUS_TABLE" />
 			<Property name="PuzzleMissionOverrideTable">
 				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="0">
 					<Property name="Mission" value="PB_TUT_NEXGT" />

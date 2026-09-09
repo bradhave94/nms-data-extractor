@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (6.40.0.1)-->
+<!--File created using MBINCompiler version (7.00.0.1)-->
 <Data template="cGcCreatureDataTable">
 	<Property name="Table">
 		<Property name="Table" value="GcCreatureData" _id="FISH">
@@ -33,7 +33,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -89,7 +89,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="7" />
@@ -200,7 +200,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureSwarmData" _index="0">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="1" />
@@ -265,7 +265,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -308,7 +308,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFlockMovementData" _index="2">
+				<Property name="Data" value="GcCreatureFlockMovementData">
 					<Property name="GcCreatureFlockMovementData">
 						<Property name="MinFlockMembers" value="7" />
 						<Property name="MaxFlockMembers" value="12" />
@@ -382,7 +382,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -393,7 +393,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -449,7 +449,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="4" />
@@ -560,7 +560,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -571,7 +571,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims" />
 						<Property name="MoveRange" value="100.000000" />
@@ -587,7 +587,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="6" />
@@ -698,7 +698,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims" />
 						<Property name="MoveRange" value="100.000000" />
@@ -714,7 +714,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="8" />
@@ -825,7 +825,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims" />
 						<Property name="MoveRange" value="100.000000" />
@@ -887,7 +887,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -943,7 +943,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="7" />
@@ -1054,7 +1054,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -1065,7 +1065,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -1121,7 +1121,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="3" />
@@ -1232,7 +1232,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -1243,7 +1243,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -1299,7 +1299,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="4" />
@@ -1364,7 +1364,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="3">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.500000" />
 						<Property name="FlapSpeedMax" value="5.000000" />
@@ -1424,7 +1424,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureRidingData" _index="0">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="TailJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -1492,7 +1492,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="1">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -1522,7 +1522,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -1578,7 +1578,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="3" />
@@ -1643,7 +1643,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="4">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.400000" />
 						<Property name="FlapSpeedMax" value="1.000000" />
@@ -1703,7 +1703,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureRidingData" _index="0">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back2JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -1735,7 +1735,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="1">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -1765,7 +1765,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHealthData" _index="2">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -1776,7 +1776,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="3">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -1832,7 +1832,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="4">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="3" />
@@ -1897,7 +1897,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="5">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.800000" />
 						<Property name="FlapSpeedMax" value="1.500000" />
@@ -1957,7 +1957,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcBirdData" _index="0">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="1.000000" />
 						<Property name="FlapSpeedMax" value="4.000000" />
@@ -1971,7 +1971,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -2027,7 +2027,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="6" />
@@ -2193,7 +2193,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureSwarmData" _index="0">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="1" />
@@ -2258,7 +2258,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="1">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.400000" />
 						<Property name="FlapSpeedMax" value="1.000000" />
@@ -2272,7 +2272,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -2315,7 +2315,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFlockMovementData" _index="3">
+				<Property name="Data" value="GcCreatureFlockMovementData">
 					<Property name="GcCreatureFlockMovementData">
 						<Property name="MinFlockMembers" value="9" />
 						<Property name="MaxFlockMembers" value="15" />
@@ -2389,7 +2389,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureSwarmData" _index="0">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="1" />
@@ -2454,7 +2454,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="1">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.400000" />
 						<Property name="FlapSpeedMax" value="1.000000" />
@@ -2468,7 +2468,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -2511,7 +2511,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFlockMovementData" _index="3">
+				<Property name="Data" value="GcCreatureFlockMovementData">
 					<Property name="GcCreatureFlockMovementData">
 						<Property name="MinFlockMembers" value="7" />
 						<Property name="MaxFlockMembers" value="12" />
@@ -2585,7 +2585,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -2596,7 +2596,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="1">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.800000" />
 						<Property name="FlapSpeedMax" value="1.500000" />
@@ -2610,7 +2610,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -2666,7 +2666,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="6" />
@@ -2731,7 +2731,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="4">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -2761,7 +2761,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="5">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="BodyJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -2839,7 +2839,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -2850,7 +2850,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="1">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.800000" />
 						<Property name="FlapSpeedMax" value="1.500000" />
@@ -2864,7 +2864,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -2920,7 +2920,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="4" />
@@ -2985,7 +2985,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="4">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -3015,7 +3015,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="5">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="ThoraxJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -3171,7 +3171,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -3253,7 +3253,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -3294,7 +3294,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -3307,7 +3307,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back3JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -3348,7 +3348,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -3449,7 +3449,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="ROBO" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -3531,7 +3531,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -3572,7 +3572,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -3585,7 +3585,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back3JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -3626,7 +3626,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -3695,7 +3695,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -3777,7 +3777,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -3818,7 +3818,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -3831,7 +3831,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="NeckJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -4739,7 +4739,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -4868,7 +4868,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -4950,7 +4950,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -4991,7 +4991,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -5004,7 +5004,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="joint1" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -5147,7 +5147,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -5241,7 +5241,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -5271,7 +5271,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -5312,7 +5312,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -5378,7 +5378,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -5460,7 +5460,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -5501,7 +5501,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -5514,7 +5514,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back3JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -5666,7 +5666,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -5746,7 +5746,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -5828,7 +5828,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -5869,7 +5869,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -5882,7 +5882,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Neck1JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -6004,7 +6004,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -6112,7 +6112,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -6194,7 +6194,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -6235,7 +6235,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="2">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Neck1JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -6357,7 +6357,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="3">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -6370,7 +6370,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -6436,7 +6436,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -6518,7 +6518,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -6559,7 +6559,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -6572,7 +6572,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="RootJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -6769,7 +6769,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -6856,7 +6856,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -6864,7 +6864,7 @@
 								<Property name="AnimLeft" value="" />
 								<Property name="AnimRight" value="" />
 								<Property name="AnimSpeed" value="1.000000" />
-								<Property name="MinSpeedScale" value="1.000000" />
+								<Property name="MinSpeedScale" value="0.600000" />
 								<Property name="MaxSpeedScale" value="1.000000" />
 								<Property name="MaxPredatorSpeedScale" value="1.000000" />
 								<Property name="MinPetSpeedScale" value="0.200000" />
@@ -6938,7 +6938,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -6979,7 +6979,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -6992,7 +6992,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="RootJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -7069,7 +7069,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -7215,7 +7215,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -7297,7 +7297,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -7338,7 +7338,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -7351,7 +7351,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="RootJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -7428,7 +7428,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -7522,7 +7522,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -7604,7 +7604,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -7645,7 +7645,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -7658,7 +7658,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Neck1JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -7801,7 +7801,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -7942,7 +7942,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -8024,7 +8024,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -8065,7 +8065,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -8078,7 +8078,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back3JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -8119,7 +8119,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -8218,7 +8218,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -8300,7 +8300,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -8341,7 +8341,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -8354,7 +8354,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back3JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -8431,7 +8431,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -8511,7 +8511,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -8593,7 +8593,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -8634,7 +8634,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -8647,7 +8647,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back3JNT" />
 						<Property name="AdditionalScaleJoint" value="Neck1JNT" />
@@ -8684,7 +8684,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -8778,7 +8778,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -8860,7 +8860,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -8901,7 +8901,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -8914,7 +8914,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back2JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -9315,7 +9315,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -9438,7 +9438,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureVocalData" _index="0">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -9479,7 +9479,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -9561,7 +9561,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -9574,7 +9574,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back2JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -9957,7 +9957,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -10096,7 +10096,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -10178,7 +10178,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -10191,7 +10191,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="2">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="RootJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -10644,7 +10644,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="3">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -10808,7 +10808,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -10890,7 +10890,7 @@
 						<Property name="IgnoreRotationInPounce" value="true" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -10903,7 +10903,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="2">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="riding_jnt" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -10940,7 +10940,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="3">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots" />
 					</Property>
@@ -10991,7 +10991,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -11021,7 +11021,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -11034,7 +11034,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="2">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="SpringJNT1" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -11277,7 +11277,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="3">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots" />
 					</Property>
@@ -11328,7 +11328,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -11410,7 +11410,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="1">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="RootJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -11618,7 +11618,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="2">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -11711,7 +11711,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -11754,7 +11754,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureWeirdMovementData" _index="1">
+				<Property name="Data" value="GcCreatureWeirdMovementData">
 					<Property name="GcCreatureWeirdMovementData">
 						<Property name="MoveMode" value="Roll" />
 						<Property name="Node" value="_Roll_SingleJoint" />
@@ -11855,7 +11855,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -11869,7 +11869,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="1">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="5.000000" />
 						<Property name="FlapSpeedMax" value="1.000000" />
@@ -11883,7 +11883,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -11939,7 +11939,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="5" />
@@ -12389,7 +12389,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="4">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -12601,7 +12601,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="5">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="ZeroJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -12985,7 +12985,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureVocalData" _index="0">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -13026,7 +13026,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -13069,7 +13069,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureCrystalMovementData" _index="2">
+				<Property name="Data" value="GcCreatureCrystalMovementData">
 					<Property name="GcCreatureCrystalMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureCrystalMovementDataParams" _index="0">
@@ -13478,7 +13478,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -13489,7 +13489,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="1">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="5.000000" />
 						<Property name="FlapSpeedMax" value="1.000000" />
@@ -13503,7 +13503,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -13559,7 +13559,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="2" />
@@ -13624,7 +13624,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="4">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -13741,7 +13741,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -13752,7 +13752,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="1">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="5.000000" />
 						<Property name="FlapSpeedMax" value="1.000000" />
@@ -13766,7 +13766,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -13822,7 +13822,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="4" />
@@ -13887,7 +13887,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="4">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -13970,7 +13970,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureVocalData" _index="0">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -14011,7 +14011,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -14054,7 +14054,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureWeirdMovementData" _index="2">
+				<Property name="Data" value="GcCreatureWeirdMovementData">
 					<Property name="GcCreatureWeirdMovementData">
 						<Property name="MoveMode" value="Roll" />
 						<Property name="Node" value="_Roll_SingleJoint" />
@@ -14124,7 +14124,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureVocalData" _index="0">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -14165,7 +14165,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -14208,7 +14208,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureWeirdMovementData" _index="2">
+				<Property name="Data" value="GcCreatureWeirdMovementData">
 					<Property name="GcCreatureWeirdMovementData">
 						<Property name="MoveMode" value="Float" />
 						<Property name="Node" value="_Weird_Float" />
@@ -14265,7 +14265,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureVocalData" _index="0">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -14306,7 +14306,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -14349,7 +14349,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureCrystalMovementData" _index="2">
+				<Property name="Data" value="GcCreatureCrystalMovementData">
 					<Property name="GcCreatureCrystalMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureCrystalMovementDataParams" _index="0">
@@ -14620,7 +14620,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcBirdData" _index="0">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="1.000000" />
 						<Property name="FlapSpeedMax" value="2.000000" />
@@ -14634,7 +14634,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -14690,7 +14690,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="4" />
 						<Property name="MaxCount" value="8" />
@@ -14755,7 +14755,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="3">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -14831,7 +14831,7 @@
 			<Property name="KillingBlowMessageID" value="FIEND_KILL" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -14874,7 +14874,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -14887,7 +14887,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFiendAttackData" _index="2">
+				<Property name="Data" value="GcCreatureFiendAttackData">
 					<Property name="GcCreatureFiendAttackData">
 						<Property name="NearDist" value="6.000000" />
 						<Property name="FarDist" value="10.000000" />
@@ -14932,7 +14932,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="NewBack1JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -15015,7 +15015,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -15058,7 +15058,7 @@
 						<Property name="IgnoreRotationInPounce" value="true" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -15071,7 +15071,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFiendAttackData" _index="2">
+				<Property name="Data" value="GcCreatureFiendAttackData">
 					<Property name="GcCreatureFiendAttackData">
 						<Property name="NearDist" value="6.000000" />
 						<Property name="FarDist" value="10.000000" />
@@ -15116,7 +15116,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="spine_C0_0_jnt" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -15199,7 +15199,7 @@
 			<Property name="KillingBlowMessageID" value="QUEEN_KILL" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -15242,7 +15242,7 @@
 						<Property name="IgnoreRotationInPounce" value="true" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -15255,7 +15255,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFiendAttackData" _index="2">
+				<Property name="Data" value="GcCreatureFiendAttackData">
 					<Property name="GcCreatureFiendAttackData">
 						<Property name="NearDist" value="10.000000" />
 						<Property name="FarDist" value="50.000000" />
@@ -15300,7 +15300,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="NewBack1JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -15337,7 +15337,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureDestroyInstancesData" _index="4">
+				<Property name="Data" value="GcCreatureDestroyInstancesData">
 					<Property name="GcCreatureDestroyInstancesData">
 						<Property name="Radius" value="1.750000" />
 						<Property name="Offset">
@@ -15395,7 +15395,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -15438,7 +15438,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -15451,7 +15451,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFiendAttackData" _index="2">
+				<Property name="Data" value="GcCreatureFiendAttackData">
 					<Property name="GcCreatureFiendAttackData">
 						<Property name="NearDist" value="3.000000" />
 						<Property name="FarDist" value="7.000000" />
@@ -15496,7 +15496,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="1" />
@@ -15607,7 +15607,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -15650,7 +15650,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -15663,7 +15663,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFiendAttackData" _index="2">
+				<Property name="Data" value="GcCreatureFiendAttackData">
 					<Property name="GcCreatureFiendAttackData">
 						<Property name="NearDist" value="6.000000" />
 						<Property name="FarDist" value="10.000000" />
@@ -15708,7 +15708,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="NewBack1JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -15791,7 +15791,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -15821,7 +15821,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -15834,7 +15834,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFiendAttackData" _index="2">
+				<Property name="Data" value="GcCreatureFiendAttackData">
 					<Property name="GcCreatureFiendAttackData">
 						<Property name="NearDist" value="3.000000" />
 						<Property name="FarDist" value="7.000000" />
@@ -15925,7 +15925,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -15968,7 +15968,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -15981,7 +15981,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFiendAttackData" _index="2">
+				<Property name="Data" value="GcCreatureFiendAttackData">
 					<Property name="GcCreatureFiendAttackData">
 						<Property name="NearDist" value="3.000000" />
 						<Property name="FarDist" value="7.000000" />
@@ -16072,7 +16072,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -16083,7 +16083,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -16139,7 +16139,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="8" />
 						<Property name="MaxCount" value="25" />
@@ -16250,7 +16250,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -16261,7 +16261,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -16317,7 +16317,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="8" />
 						<Property name="MaxCount" value="25" />
@@ -16428,7 +16428,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -16439,7 +16439,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -16495,7 +16495,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="8" />
 						<Property name="MaxCount" value="25" />
@@ -16560,7 +16560,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFiendAttackData" _index="3">
+				<Property name="Data" value="GcCreatureFiendAttackData">
 					<Property name="GcCreatureFiendAttackData">
 						<Property name="NearDist" value="6.000000" />
 						<Property name="FarDist" value="10.000000" />
@@ -16651,7 +16651,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -16662,7 +16662,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -16718,7 +16718,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="3" />
@@ -16829,7 +16829,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -16872,7 +16872,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -16931,7 +16931,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -16987,7 +16987,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="1" />
@@ -17052,7 +17052,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="2">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.400000" />
 						<Property name="FlapSpeedMax" value="1.000000" />
@@ -17112,7 +17112,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -17123,7 +17123,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -17179,7 +17179,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="8" />
 						<Property name="MaxCount" value="25" />
@@ -17290,7 +17290,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -17301,7 +17301,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -17357,7 +17357,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="5" />
@@ -17422,7 +17422,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="3">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -17452,7 +17452,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="4">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="upper" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -17530,12 +17530,12 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureParticleEffects" _index="0">
+				<Property name="Data" value="GcCreatureParticleEffects">
 					<Property name="GcCreatureParticleEffects">
 						<Property name="ParticleEffects" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureJellyBossAttackData" _index="1">
+				<Property name="Data" value="GcCreatureJellyBossAttackData">
 					<Property name="GcCreatureJellyBossAttackData">
 						<Property name="ExplodeOnPlayer" value="false" />
 						<Property name="IsSpooky" value="false" />
@@ -17568,7 +17568,7 @@
 						<Property name="DelayBetweenOrbAttacks" value="2.000000" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHealthData" _index="2">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -17579,7 +17579,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="3">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -17635,7 +17635,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="4">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="5" />
@@ -17700,7 +17700,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="5">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -17776,7 +17776,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -17787,7 +17787,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -17843,7 +17843,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="5" />
@@ -17908,7 +17908,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="3">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -17938,7 +17938,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureParticleEffects" _index="4">
+				<Property name="Data" value="GcCreatureParticleEffects">
 					<Property name="GcCreatureParticleEffects">
 						<Property name="ParticleEffects">
 							<Property name="ParticleEffects" value="GcCreatureParticleEffectData" _index="0">
@@ -18034,7 +18034,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSpookFiendAttackData" _index="5">
+				<Property name="Data" value="GcCreatureSpookFiendAttackData">
 					<Property name="GcCreatureSpookFiendAttackData">
 						<Property name="FadeTime" value="0.000000" />
 						<Property name="HideDuration">
@@ -18164,7 +18164,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="ROBO" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="0">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -18194,7 +18194,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHealthData" _index="1">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -18205,7 +18205,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -18261,7 +18261,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="8" />
 						<Property name="MaxCount" value="25" />
@@ -18326,7 +18326,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="4">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="upper" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -18404,7 +18404,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="0">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -18434,7 +18434,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHealthData" _index="1">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -18445,7 +18445,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -18501,7 +18501,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="8" />
 						<Property name="MaxCount" value="25" />
@@ -18566,7 +18566,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="4">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="upper" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -18648,7 +18648,7 @@
 			<Property name="KillingBlowMessageID" value="SPOOK_KILL" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -18659,7 +18659,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -18715,7 +18715,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="2">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="5" />
@@ -18780,7 +18780,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="3">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -18810,7 +18810,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureParticleEffects" _index="4">
+				<Property name="Data" value="GcCreatureParticleEffects">
 					<Property name="GcCreatureParticleEffects">
 						<Property name="ParticleEffects">
 							<Property name="ParticleEffects" value="GcCreatureParticleEffectData" _index="0">
@@ -18906,7 +18906,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSpookFiendAttackData" _index="5">
+				<Property name="Data" value="GcCreatureSpookFiendAttackData">
 					<Property name="GcCreatureSpookFiendAttackData">
 						<Property name="FadeTime" value="0.000000" />
 						<Property name="HideDuration">
@@ -19043,7 +19043,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -19054,7 +19054,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="1">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="1.000000" />
 						<Property name="FlapSpeedMax" value="1.200000" />
@@ -19068,7 +19068,7 @@
 						<Property name="CircleAttractor" value="" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -19098,7 +19098,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="5" />
@@ -19438,7 +19438,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="4">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -19598,7 +19598,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="5">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="WeirdUdderRootJNT2" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -20141,7 +20141,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -20197,7 +20197,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="7" />
@@ -20308,7 +20308,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -20364,7 +20364,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="1" />
@@ -20475,7 +20475,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureSwarmData" _index="0">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="1" />
@@ -20540,7 +20540,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -20596,7 +20596,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFlockMovementData" _index="2">
+				<Property name="Data" value="GcCreatureFlockMovementData">
 					<Property name="GcCreatureFlockMovementData">
 						<Property name="MinFlockMembers" value="7" />
 						<Property name="MaxFlockMembers" value="12" />
@@ -20670,7 +20670,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -20726,7 +20726,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="7" />
@@ -20837,7 +20837,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -20893,7 +20893,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="7" />
@@ -21004,7 +21004,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -21060,7 +21060,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="7" />
@@ -21171,7 +21171,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -21227,7 +21227,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="3" />
 						<Property name="MaxCount" value="7" />
@@ -21338,7 +21338,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -21394,7 +21394,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="2" />
@@ -21505,7 +21505,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims" />
 						<Property name="MoveRange" value="100.000000" />
@@ -21567,7 +21567,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -21623,7 +21623,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="1">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="1" />
 						<Property name="MaxCount" value="5" />
@@ -21741,7 +21741,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -21823,7 +21823,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -21864,7 +21864,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -21877,7 +21877,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Back3JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -21918,7 +21918,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -21984,7 +21984,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="ROBO" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -22066,7 +22066,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureVocalData" _index="1">
+				<Property name="Data" value="GcCreatureVocalData">
 					<Property name="GcCreatureVocalData">
 						<Property name="ScaleBias" value="1.000000" />
 						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
@@ -22107,7 +22107,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="2">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -22120,7 +22120,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="joint1" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -22193,7 +22193,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots">
 							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
@@ -22261,7 +22261,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -22291,7 +22291,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="1">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="NewBack1JNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -22328,7 +22328,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="2">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots" />
 					</Property>
@@ -22384,7 +22384,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="ROBO" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureMovementData" _index="0">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -22414,7 +22414,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureFootParticleData" _index="1">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -22427,7 +22427,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="2">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="SpringJNT1" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -22670,7 +22670,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="3">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots" />
 					</Property>
@@ -22726,7 +22726,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureHealthData" _index="0">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -22737,7 +22737,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="1">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -22793,7 +22793,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="2">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -22823,7 +22823,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="upper" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -22855,7 +22855,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="4">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="5" />
@@ -22971,7 +22971,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="ROBO" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureFootParticleData" _index="0">
+				<Property name="Data" value="GcCreatureFootParticleData">
 					<Property name="GcCreatureFootParticleData">
 						<Property name="ParticleData">
 							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
@@ -22984,7 +22984,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHealthData" _index="1">
+				<Property name="Data" value="GcCreatureHealthData">
 					<Property name="GcCreatureHealthData">
 						<Property name="HurtAnim" value="" />
 						<Property name="DeathAnim" value="" />
@@ -22995,7 +22995,7 @@
 						<Property name="DespawnOnDeathDescriptors" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -23038,7 +23038,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureRidingData" _index="3">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="Root" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -23075,7 +23075,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreaturePetData" _index="4">
+				<Property name="Data" value="GcCreaturePetData">
 					<Property name="GcCreaturePetData">
 						<Property name="AccessorySlots" />
 					</Property>
@@ -23131,7 +23131,7 @@
 			<Property name="KillingBlowMessageID" value="" />
 			<Property name="EggType" value="DEFAULT" />
 			<Property name="Data">
-				<Property name="Data" value="GcCreatureRidingData" _index="0">
+				<Property name="Data" value="GcCreatureRidingData">
 					<Property name="GcCreatureRidingData">
 						<Property name="JointName" value="TailJNT" />
 						<Property name="AdditionalScaleJoint" value="" />
@@ -23163,7 +23163,7 @@
 						<Property name="RidingAnims" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureHoverMovementData" _index="1">
+				<Property name="Data" value="GcCreatureHoverMovementData">
 					<Property name="GcCreatureHoverMovementData">
 						<Property name="Params">
 							<Property name="Params" value="GcCreatureHoverMovementDataParams" _index="0">
@@ -23193,7 +23193,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureMovementData" _index="2">
+				<Property name="Data" value="GcCreatureMovementData">
 					<Property name="GcCreatureMovementData">
 						<Property name="Anims">
 							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
@@ -23249,7 +23249,7 @@
 						<Property name="IgnoreRotationInPounce" value="false" />
 					</Property>
 				</Property>
-				<Property name="Data" value="GcCreatureSwarmData" _index="3">
+				<Property name="Data" value="GcCreatureSwarmData">
 					<Property name="GcCreatureSwarmData">
 						<Property name="MinCount" value="2" />
 						<Property name="MaxCount" value="3" />
@@ -23314,7 +23314,7 @@
 						</Property>
 					</Property>
 				</Property>
-				<Property name="Data" value="GcBirdData" _index="4">
+				<Property name="Data" value="GcBirdData">
 					<Property name="GcBirdData">
 						<Property name="FlapSpeedMin" value="0.400000" />
 						<Property name="FlapSpeedMax" value="1.000000" />
@@ -23347,6 +23347,208 @@
 					<Property name="Weighting" value="100" />
 				</Property>
 			</Property>
+		</Property>
+		<Property name="Table" value="GcCreatureData" _id="DIPLO_PET">
+			<Property name="Id" value="DIPLO_PET" />
+			<Property name="OnlySpawnWhenIdIsForced" value="false" />
+			<Property name="ForceType" value="GcCreatureTypes">
+				<Property name="CreatureType" value="None" />
+			</Property>
+			<Property name="RealType" value="GcCreatureTypes">
+				<Property name="CreatureType" value="None" />
+			</Property>
+			<Property name="EcoSystemCreature" value="false" />
+			<Property name="CanBeFemale" value="false" />
+			<Property name="Tags">
+				<Property name="Tags" value="GcCreatureTagAndRarity" _index="0">
+					<Property name="Tag" value="HERD" />
+					<Property name="RarityOverride" value="GcCreatureRarity">
+						<Property name="CreatureRarity" value="Common" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="MoveArea" value="Ground" />
+			<Property name="MinScale" value="0.400000" />
+			<Property name="MaxScale" value="12.000000" />
+			<Property name="FurLengthModifierAtMinScale" value="1.000000" />
+			<Property name="FurLengthModifierAtMaxScale" value="1.000000" />
+			<Property name="FurChance" value="0.300000" />
+			<Property name="Rarity" value="GcCreatureRarity">
+				<Property name="CreatureRarity" value="Uncommon" />
+			</Property>
+			<Property name="PredatorProbabilityModifier" value="GcCreatureRoleFrequencyModifier">
+				<Property name="CreatureRoleFrequencyModifier" value="Normal" />
+			</Property>
+			<Property name="HerbivoreProbabilityModifier" value="GcCreatureRoleFrequencyModifier">
+				<Property name="CreatureRoleFrequencyModifier" value="Normal" />
+			</Property>
+			<Property name="KillStatID" value="" />
+			<Property name="KillingBlowMessageID" value="" />
+			<Property name="EggType" value="DEFAULT" />
+			<Property name="Data">
+				<Property name="Data" value="GcCreatureMovementData">
+					<Property name="GcCreatureMovementData">
+						<Property name="Anims">
+							<Property name="Anims" value="GcCreatureMoveAnimData" _index="0">
+								<Property name="Anim" value="WALK" />
+								<Property name="AnimLeft" value="" />
+								<Property name="AnimRight" value="" />
+								<Property name="AnimSpeed" value="1.000000" />
+								<Property name="MinSpeedScale" value="1.000000" />
+								<Property name="MaxSpeedScale" value="1.000000" />
+								<Property name="MaxPredatorSpeedScale" value="1.000000" />
+								<Property name="MinPetSpeedScale" value="0.500000" />
+								<Property name="MaxPetSpeedScale" value="1.000000" />
+								<Property name="AnimMoveSpeed" value="0.000000" />
+								<Property name="AnimMoveSpeedCached" value="false" />
+							</Property>
+							<Property name="Anims" value="GcCreatureMoveAnimData" _index="1">
+								<Property name="Anim" value="RUN" />
+								<Property name="AnimLeft" value="" />
+								<Property name="AnimRight" value="" />
+								<Property name="AnimSpeed" value="1.000000" />
+								<Property name="MinSpeedScale" value="1.000000" />
+								<Property name="MaxSpeedScale" value="1.000000" />
+								<Property name="MaxPredatorSpeedScale" value="1.800000" />
+								<Property name="MinPetSpeedScale" value="1.000000" />
+								<Property name="MaxPetSpeedScale" value="0.700000" />
+								<Property name="AnimMoveSpeed" value="0.000000" />
+								<Property name="AnimMoveSpeedCached" value="false" />
+							</Property>
+						</Property>
+						<Property name="MoveRange" value="100.000000" />
+						<Property name="MoveSpeedScale" value="1.000000" />
+						<Property name="TurnRadiusScale" value="1.000000" />
+						<Property name="HeightMin" value="0.000000" />
+						<Property name="HeightMax" value="256.000000" />
+						<Property name="LimitHeightRange" value="false" />
+						<Property name="HeightRangeMin" value="0.000000" />
+						<Property name="HeightRangeMax" value="0.000000" />
+						<Property name="HeightTime" value="1.000000" />
+						<Property name="Herd" value="false" />
+						<Property name="IgnoreRotationInPounce" value="false" />
+					</Property>
+				</Property>
+				<Property name="Data" value="GcCreatureVocalData">
+					<Property name="GcCreatureVocalData">
+						<Property name="ScaleBias" value="1.000000" />
+						<Property name="IdleVocal" value="GcCreatureVocalSoundData">
+							<Property name="Id" value="" />
+							<Property name="VocalEmote" value="EmoteIdle" />
+							<Property name="PlayFrequency" value="0.350000" />
+							<Property name="MinCooldown" value="2.000000" />
+							<Property name="MaxCooldown" value="6.000000" />
+							<Property name="PlayImmediately" value="false" />
+							<Property name="PlayOnlyOnce" value="false" />
+						</Property>
+						<Property name="FleeVocal" value="GcCreatureVocalSoundData">
+							<Property name="Id" value="" />
+							<Property name="VocalEmote" value="EmoteFlee" />
+							<Property name="PlayFrequency" value="0.150000" />
+							<Property name="MinCooldown" value="2.000000" />
+							<Property name="MaxCooldown" value="6.000000" />
+							<Property name="PlayImmediately" value="true" />
+							<Property name="PlayOnlyOnce" value="false" />
+						</Property>
+						<Property name="DeathVocal" value="GcCreatureVocalSoundData">
+							<Property name="Id" value="" />
+							<Property name="VocalEmote" value="EmoteDie" />
+							<Property name="PlayFrequency" value="1.000000" />
+							<Property name="MinCooldown" value="5.000000" />
+							<Property name="MaxCooldown" value="15.000000" />
+							<Property name="PlayImmediately" value="true" />
+							<Property name="PlayOnlyOnce" value="true" />
+						</Property>
+						<Property name="AttackVocal" value="GcCreatureVocalSoundData">
+							<Property name="Id" value="" />
+							<Property name="VocalEmote" value="EmoteAttack" />
+							<Property name="PlayFrequency" value="1.000000" />
+							<Property name="MinCooldown" value="5.000000" />
+							<Property name="MaxCooldown" value="15.000000" />
+							<Property name="PlayImmediately" value="true" />
+							<Property name="PlayOnlyOnce" value="true" />
+						</Property>
+					</Property>
+				</Property>
+				<Property name="Data" value="GcCreatureFootParticleData">
+					<Property name="GcCreatureFootParticleData">
+						<Property name="ParticleData">
+							<Property name="ParticleData" value="GcCreatureFootParticleSingleData" _index="0">
+								<Property name="EffectName" value="FOOTFROZEN" />
+								<Property name="Scale" value="1.000000" />
+								<Property name="MinCreatureSize" value="0.500000" />
+								<Property name="MaxCreatureSize" value="100.000000" />
+								<Property name="MoveSpeed" value="Run" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+				<Property name="Data" value="GcCreatureRidingData">
+					<Property name="GcCreatureRidingData">
+						<Property name="JointName" value="spine_C0_4_jnt" />
+						<Property name="AdditionalScaleJoint" value="" />
+						<Property name="Offset">
+							<Property name="X" value="0.000000" />
+							<Property name="Y" value="0.880000" />
+							<Property name="Z" value="-0.420000" />
+						</Property>
+						<Property name="RotationOffset">
+							<Property name="X" value="30.000000" />
+							<Property name="Y" value="0.000000" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="VROffset">
+							<Property name="X" value="0.000000" />
+							<Property name="Y" value="0.000000" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="HeadCounterRotation" value="0.000000" />
+						<Property name="UprightStrength" value="0.500000" />
+						<Property name="LegSpread" value="true" />
+						<Property name="ScaleForNeutralLegSpread" value="0.100000" />
+						<Property name="ScaleForMinLegSpread" value="0.000000" />
+						<Property name="ScaleForMaxLegSpread" value="1.000000" />
+						<Property name="RequiresMatchingPartModifier" value="false" />
+						<Property name="PartModifiers" />
+						<Property name="IdleRidingAnim" value="RIDE_RDNT_IDLE" />
+						<Property name="DefaultRidingAnim" value="RIDE_RDNT_WALK" />
+						<Property name="RidingAnims" />
+					</Property>
+				</Property>
+				<Property name="Data" value="GcCreaturePetData">
+					<Property name="GcCreaturePetData">
+						<Property name="AccessorySlots">
+							<Property name="AccessorySlots" value="GcCreaturePetAccessory" _index="0">
+								<Property name="RequiredDescriptor" value="" />
+								<Property name="Slots">
+									<Property name="Slots" value="GcCreaturePetAccessorySlot" _index="0">
+										<Property name="AttachLocator" value="PETACC_diploL" />
+										<Property name="AccessoryGroup" value="LEFT" />
+									</Property>
+									<Property name="Slots" value="GcCreaturePetAccessorySlot" _index="1">
+										<Property name="AttachLocator" value="PETACC_diploR" />
+										<Property name="AccessoryGroup" value="RIGHT" />
+									</Property>
+								</Property>
+								<Property name="HideParts" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+			<Property name="PetBattlerTags" value="GcGameTablePetTag">
+				<Property name="PetTag" value="17833984" />
+			</Property>
+			<Property name="CanBeUsedInPetBattler" value="true" />
+			<Property name="PetBattlerSelectionWeight" value="1.000000" />
+			<Property name="PetBattleFlyerExtraOffset" value="0.000000" />
+			<Property name="PetBattlerForcedAffinity" value="GcPetBattlerAffinity">
+				<Property name="PetBattlerAffinity" value="Normal" />
+			</Property>
+			<Property name="PetBattlerShouldSwellOnAttack" value="false" />
+			<Property name="PetBattlerNodesToHide" />
+			<Property name="FlyerOffsetOverrides" />
+			<Property name="MoveSets" />
 		</Property>
 	</Property>
 </Data>
