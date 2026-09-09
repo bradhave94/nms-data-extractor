@@ -23,18 +23,16 @@ def main() -> None:
     parser.add_argument(
         "--baseline-snapshot",
         type=Path,
-        default=REPO / "reports" / "_baseline_snapshot",
-        help="Snapshot directory for Previous payloads on changed items (defaults to reports/_baseline_snapshot if present, else reports/_latest_snapshot)",
+        required=True,
+        help="Snapshot of the report's previous game version, used for both detection and Previous payloads",
     )
     args = parser.parse_args()
     report = json.loads(args.report.read_text(encoding="utf-8"))
     baseline_dir = args.baseline_snapshot
     if not baseline_dir.is_dir():
-        fallback = REPO / "reports" / "_latest_snapshot"
-        baseline_dir = fallback if fallback.is_dir() else None
+        parser.error(f"Previous-release snapshot does not exist: {baseline_dir}")
     doc = build_new_json_document(
         REPO,
-        report["files"],
         version_key=report["version_key"],
         previous_run=report.get("previous_run"),
         generated_at=report.get("generated_at"),

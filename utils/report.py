@@ -253,6 +253,7 @@ def _load_all_items_by_id_from_dir(json_dir: Path) -> dict[str, tuple[str, dict[
 _SKIP_CHANGE_DIFF_KEYS = frozenset(
     {
         "SourceFile",
+        "Slug",
         "Change",
         "Previous",
         "ChangedFields",
@@ -280,68 +281,42 @@ def _diff_changed_fields(previous: dict[str, Any], current: dict[str, Any]) -> l
 
 def build_new_json_document(
     repo_root: Path,
-    per_file: dict[str, dict[str, Any]],
     *,
     version_key: str,
     previous_run: dict[str, Any] | None,
     generated_at: str | None = None,
     baseline_snapshot_dir: Path | None = None,
 ) -> dict[str, Any]:
-    """Aggregate added/changed items since the last snapshot into one consumable payload."""
-    current_json_dir = repo_root / "data" / "json"
+    """Compare item IDs globally so category moves aren't game additions/removals."""
     all_by_id = _load_all_current_items_by_id(repo_root)
     if baseline_snapshot_dir is None:
-        preferred = repo_root / "reports" / "_baseline_snapshot"
-        baseline_snapshot_dir = preferred if preferred.is_dir() else repo_root / "reports" / "_latest_snapshot"
+        baseline_snapshot_dir = repo_root / "reports" / "_latest_snapshot"
+    if not baseline_snapshot_dir.is_dir():
+        raise ValueError(f"Previous-release snapshot is missing: {baseline_snapshot_dir}")
     baseline_by_id = _load_all_items_by_id_from_dir(baseline_snapshot_dir)
     added_items: list[dict[str, Any]] = []
     changed_items: list[dict[str, Any]] = []
-    seen_added: set[str] = set()
-    seen_changed: set[str] = set()
 
-    for filename in sorted(per_file):
-        info = per_file[filename]
-        new_by_id = _index_items_by_id(_load_json(current_json_dir / filename))
-        for iid in info.get("added_ids", []):
-            if iid in seen_added:
-                continue
-            item = new_by_id.get(iid)
-            source_file = filename
-            if item is None:
-                located = all_by_id.get(iid)
-                if located is None:
-                    continue
-                source_file, item = located
-            seen_added.add(iid)
-            entry = dict(item)
-            entry["SourceFile"] = source_file
+    for iid, (source_file, item) in sorted(all_by_id.items(), key=lambda pair: (pair[1][0], pair[0])):
+        entry = dict(item)
+        entry["SourceFile"] = source_file
+        baseline = baseline_by_id.get(iid)
+        if baseline is None:
             entry["Change"] = "added"
             added_items.append(entry)
-        for iid in info.get("changed_ids", []):
-            if iid in seen_changed:
-                continue
-            item = new_by_id.get(iid)
-            source_file = filename
-            if item is None:
-                located = all_by_id.get(iid)
-                if located is None:
-                    continue
-                source_file, item = located
-            seen_changed.add(iid)
-            entry = dict(item)
-            entry["SourceFile"] = source_file
+            continue
+        _source, previous_item = baseline
+        changed_fields = _diff_changed_fields(previous_item, item)
+        if changed_fields:
             entry["Change"] = "changed"
-            baseline = baseline_by_id.get(iid)
-            if baseline is not None:
-                _source, previous_item = baseline
-                entry["Previous"] = dict(previous_item)
-                entry["ChangedFields"] = _diff_changed_fields(previous_item, entry)
+            entry["Previous"] = dict(previous_item)
+            entry["ChangedFields"] = changed_fields
             changed_items.append(entry)
 
-    removed_ids: list[dict[str, str]] = []
-    for filename in sorted(per_file):
-        for iid in per_file[filename].get("removed_ids", []):
-            removed_ids.append({"Id": iid, "SourceFile": filename})
+    removed_ids = [
+        {"Id": iid, "SourceFile": baseline_by_id[iid][0]}
+        for iid in sorted(baseline_by_id.keys() - all_by_id.keys())
+    ]
 
     return {
         "VersionKey": version_key,
@@ -367,11 +342,10 @@ def write_new_json(repo_root: Path, document: dict[str, Any]) -> Path:
 
 def update_new_json(repo_root: Path) -> dict[str, Any]:
     """Write data/json/new.json from diff vs reports/_latest_snapshot (before snapshot is advanced)."""
-    per_file, version_key, previous_run = compare_against_snapshot(repo_root)
+    _, version_key, previous_run = compare_against_snapshot(repo_root)
     generated_at = datetime.now().astimezone().isoformat(timespec="seconds")
     document = build_new_json_document(
         repo_root,
-        per_file,
         version_key=version_key,
         previous_run=previous_run,
         generated_at=generated_at,
