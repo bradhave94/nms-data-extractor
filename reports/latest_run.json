@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-06-03T10:59:27-04:00",
-  "version_key": "6.40.0.1",
-  "report_markdown": "reports\\by_version\\6.40.0.1\\2026-06-03_10-59-27\\report.md",
-  "report_json": "reports\\by_version\\6.40.0.1\\2026-06-03_10-59-27\\report.json"
+  "generated_at": "2026-09-09T17:51:39-04:00",
+  "version_key": "7.00",
+  "report_markdown": "reports\\by_version\\7.00\\2026-09-09_17-51-43\\report.md",
+  "report_json": "reports\\by_version\\7.00\\2026-09-09_17-51-43\\report.json",
+  "release_manifest": "reports\\by_version\\7.00\\manifest.json"
 }

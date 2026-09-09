@@ -1,6 +1,6 @@
 """Parse Refinery recipes from MXML to JSON"""
 from .base_parser import EXMLParser
-from pathlib import Path
+from utils.workspace import workspace_root
 
 
 # Cache for item names lookup
@@ -49,7 +49,7 @@ def _load_item_names():
         return parser.translate(name_key, item_id)
 
     # Load from Products table
-    products_path = Path(__file__).parent.parent / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
+    products_path = workspace_root() / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
     if products_path.exists():
         root = parser.load_xml(str(products_path))
         table_prop = root.find('.//Property[@name="Table"]')
@@ -61,7 +61,7 @@ def _load_item_names():
                     _item_names_cache[item_id] = get_translated_name(item_id, name_key)
 
     # Load from Substances table
-    substances_path = Path(__file__).parent.parent / 'data' / 'mbin' / 'nms_reality_gcsubstancetable.MXML'
+    substances_path = workspace_root() / 'data' / 'mbin' / 'nms_reality_gcsubstancetable.MXML'
     if substances_path.exists():
         root = parser.load_xml(str(substances_path))
         table_prop = root.find('.//Property[@name="Table"]')
@@ -187,8 +187,7 @@ def parse_refinery(mxml_path: str, only_refinery: bool = True) -> list:
             recipe_counter += 1
 
         except Exception as e:
-            print(f"Warning: Skipped recipe due to error: {e}")
-            continue
+            raise ValueError(f"Skipped recipe due to error: {e}") from e
 
     recipe_type = "refinery" if only_refinery else "cooking"
     print(f"[OK] Parsed {len(recipes)} {recipe_type} recipes")

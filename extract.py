@@ -24,6 +24,8 @@ import re
 import shutil
 import subprocess
 import time
+import tempfile
+import hashlib
 from pathlib import Path
 
 from parsers.base_parts import parse_base_parts
@@ -52,15 +54,18 @@ from parsers.trade import parse_trade
 from utils.categorization import categorize_item, assert_unique_exact_group_owners
 from utils.building_variants import enrich_space_base_variants
 from utils.reward_variants import enrich_reward_variants
-from utils.clean import clean_data
+from utils.workspace import using_workspace, extraction_lock, publish_directories
 from utils.generate_controller_lookup import main as generate_controller_lookup_main
 from utils.images import extract_icons
 from utils.localization import build_localization_json
 from utils.mbin import consolidate_mbin
 from utils.report import generate_refresh_report, update_new_json
 from utils.smoke import run_smoke_check
+from utils.smoke import DISPLAY_FIELDS
+from utils.coverage import validate_building_coverage
 
-REPO_ROOT = Path(__file__).resolve().parent
+SOURCE_ROOT = Path(__file__).resolve().parent
+REPO_ROOT = SOURCE_ROOT
 DATA = REPO_ROOT / "data"
 EXTRACTED = DATA / "EXTRACTED"
 DEFAULT_PCBANKS = r"H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
@@ -100,37 +105,8 @@ MBIN_FILTERS = [
 ]
 
 EXPECTED_MXML_AFTER_REFRESH = [
-    "nms_reality_gcproducttable.MXML",
-    "consumableitemtable.MXML",
-    "nms_reality_gcrecipetable.MXML",
-    "nms_reality_gctechnologytable.MXML",
-    "basebuildingobjectstable.MXML",
-    "nms_reality_gcsubstancetable.MXML",
-    "fishdatatable.MXML",
-    "nms_modularcustomisationproducts.MXML",
-    "nms_basepartproducts.MXML",
-    "nms_reality_gcproceduraltechnologytable.MXML",
-    "rewardtable.MXML",
-    "peteggtraitmodifieroverridetable.MXML",
-    "nms_loc1_english.MXML",
-    "nms_loc4_english.MXML",
-    "nms_loc5_english.MXML",
-    "nms_loc6_english.MXML",
-    "nms_loc7_english.MXML",
-    "nms_loc8_english.MXML",
-    "nms_loc9_english.MXML",
-    "nms_update3_english.MXML",
-    "creaturedatatable.MXML",
-    "creaturefilenametable.MXML",
-    "petbattlermovestable.MXML",
-    "petbattlermovesetstable.MXML",
-    "gametablesdatatable.MXML",
-    "petshopitemstable.MXML",
-    "petaccessorytable.MXML",
-    "peteggspeciesoverridetable.MXML",
-    "creaturepetbehaviourtable.MXML",
-    "leveledstatstable.MXML",
-    "gccreatureglobals.MXML",
+    Path(pattern.rsplit("/", 1)[-1].lstrip("*")).stem + ".MXML"
+    for pattern in MBIN_FILTERS
 ]
 
 
@@ -147,11 +123,14 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--pcbanks", default="", help="Path to game PCBANKS. Enables full refresh prep.")
     parser.add_argument("--report", action="store_true", help="Generate refresh report.")
-    parser.add_argument("--no-strict", action="store_true", help="Skip strict smoke checks after extraction.")
+    parser.add_argument("--game-version", default="", help="Verified game release version, required for JSON publication.")
+    parser.add_argument("--check-only", action="store_true", help="Run the staged JSON pipeline without publishing any output.")
+    parser.add_argument("--list-sources", action="store_true", help="Print the source/output manifest without extracting anything.")
+    parser.add_argument("--no-strict", action="store_true", help="Skip output checks for diagnosis; requires --check-only and never publishes.")
     parser.add_argument("--images", action="store_true", help="Run only image extraction (skip JSON extraction).")
     parser.add_argument("--extracted", default="", help="Use an existing EXTRACTED folder for image extraction.")
     parser.add_argument("--keep-dds", action="store_true", help="Keep .dds files when PNGs are produced.")
-    parser.add_argument("--no-cleanup", action="store_true", help="Do not delete data/EXTRACTED or data/metadata after unpacking textures.")
+    parser.add_argument("--no-cleanup", action="store_true", help="Retain freshly unpacked textures under .refresh-backups for inspection.")
     return parser.parse_args()
 
 
@@ -179,7 +158,7 @@ def extract_mbins_with_hgpaktool(pcbanks: str, output_dir: Path, filters: list[s
     HGPAKFile, InvalidFileException = _load_hgpaktool_api()
     output_dir.mkdir(parents=True, exist_ok=True)
     file_count = 0
-    for fname in os.listdir(pcbanks):
+    for fname in sorted(os.listdir(pcbanks)):
         if not fname.lower().endswith(".pak"):
             continue
         pak_path = os.path.join(pcbanks, fname)
@@ -187,21 +166,57 @@ def extract_mbins_with_hgpaktool(pcbanks: str, output_dir: Path, filters: list[s
             print(f"  Reading {fname}...")
             with HGPAKFile(pak_path) as pak:
                 file_count += pak.unpack(str(output_dir), filters, upper=False, write_manifest=False)
-        except InvalidFileException:
-            continue
+        except InvalidFileException as e:
+            raise RuntimeError(f"Invalid game PAK: {fname}") from e
         except Exception as e:
-            print(f"  [WARN] Failed to extract from {fname}: {e}")
-            continue
+            raise RuntimeError(f"Failed to extract from {fname}: {e}") from e
     return file_count
 
 
-def run_full_refresh_prep(pcbanks_arg: str) -> None:
-    pcbanks = resolve_game_path(pcbanks_arg)
-    if not Path(pcbanks).exists():
-        raise SystemExit(f"Game path does not exist: {pcbanks}")
+def preflight_refresh(pcbanks_arg: str) -> str:
+    pcbanks = Path(resolve_game_path(pcbanks_arg)).resolve()
+    if not pcbanks.is_dir() or not any(path.is_file() and path.suffix.lower() == ".pak" for path in pcbanks.iterdir()):
+        raise ValueError(f"PCBANKS must be a readable directory containing .pak files: {pcbanks}")
+    _load_hgpaktool_api()
+    for name in ("MBINCompiler.exe", "libMBIN.dll"):
+        path = SOURCE_ROOT / "tools" / name
+        if not path.is_file() or path.stat().st_size == 0:
+            raise ValueError(f"Missing compiler package file: {path}")
+    return str(pcbanks)
 
-    print("\n--- Refresh Prep 1/3: Clean data ---")
-    clean_data(REPO_ROOT)
+
+def validate_mxml_sources(data_dir: Path, game_version: str = "") -> str:
+    missing = [name for name in EXPECTED_MXML_AFTER_REFRESH if not (data_dir / name).is_file()]
+    if missing:
+        raise ValueError(f"Missing required MXML sources: {', '.join(missing)}")
+    versions = set()
+    for name in EXPECTED_MXML_AFTER_REFRESH:
+        with (data_dir / name).open(encoding="utf-8-sig") as handle:
+            header = ''.join(handle.readline() for _ in range(6))
+        match = re.search(r"MBINCompiler version \(([^)]+)\)", header)
+        if not match:
+            raise ValueError(f"Missing compiler provenance in {name}")
+        versions.add(match.group(1))
+    if len(versions) != 1:
+        raise ValueError(f"Mixed compiler versions in source tables: {sorted(versions)}")
+    compiler_version = versions.pop()
+    if game_version:
+        def release_pair(value):
+            parts = re.match(r"^(\d+)\.(\d+)", value)
+            if not parts:
+                raise ValueError(f"Invalid numeric release version: {value}")
+            return tuple(int(part) for part in parts.groups())
+        if release_pair(game_version) != release_pair(compiler_version):
+            raise ValueError(f"Game {game_version} does not match compiler {compiler_version}")
+    return compiler_version
+
+
+def run_full_refresh_prep(pcbanks_arg: str) -> None:
+    if REPO_ROOT.resolve() == SOURCE_ROOT.resolve():
+        raise ValueError("Full refresh prep must run inside the staged workflow")
+    pcbanks = preflight_refresh(pcbanks_arg)
+    # main() supplies a new staging workspace. Never clean the live data tree.
+    DATA.mkdir(parents=True, exist_ok=True)
 
     print("\n--- Refresh Prep 2/3: Extract MBINs ---")
     file_count = extract_mbins_with_hgpaktool(pcbanks, DATA, MBIN_FILTERS)
@@ -212,7 +227,7 @@ def run_full_refresh_prep(pcbanks_arg: str) -> None:
 
     print("\n--- Refresh Prep 3/3: Convert MBIN -> MXML ---")
     mbin_dir = REPO_ROOT / "data" / "mbin"
-    compiler = REPO_ROOT / "tools" / "MBINCompiler.exe"
+    compiler = SOURCE_ROOT / "tools" / "MBINCompiler.exe"
     if not compiler.exists():
         raise SystemExit(f"MBINCompiler not found: {compiler}")
 
@@ -258,7 +273,7 @@ def unpack_all_game_files_to_extracted(pcbanks_arg: str, extracted_root: Path) -
     print("[INFO] Unpacking game files to EXTRACTED (no filter; this may take a while)...")
     file_count = 0
     pak_count = 0
-    for fname in os.listdir(pcbanks):
+    for fname in sorted(os.listdir(pcbanks)):
         if not fname.lower().endswith(".pak"):
             continue
         pak_path = os.path.join(pcbanks, fname)
@@ -267,11 +282,10 @@ def unpack_all_game_files_to_extracted(pcbanks_arg: str, extracted_root: Path) -
             with HGPAKFile(pak_path) as pak:
                 file_count += pak.unpack(str(extracted_root), None, upper=False, write_manifest=False)
             pak_count += 1
-        except InvalidFileException:
-            continue
+        except InvalidFileException as e:
+            raise RuntimeError(f"Invalid game PAK: {fname}") from e
         except Exception as e:
-            print(f"  [WARN] Failed to extract from {fname}: {e}")
-            continue
+            raise RuntimeError(f"Failed to extract from {fname}: {e}") from e
     print(f"  Unpacked {file_count} files from {pak_count} .pak files")
 
 
@@ -974,43 +988,41 @@ def enrich_creature_move_set_pool(base_data: dict) -> int:
     return enriched
 
 
-def run_json_extraction(*, report: bool, no_strict: bool) -> int:
+def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = "", baseline_json_dir: Path | None = None) -> int:
+    if REPO_ROOT.resolve() == SOURCE_ROOT.resolve():
+        raise ValueError("JSON extraction must run through the staged entry point")
     start_time = time.time()
     print("\n" + "=" * 70)
     print("NMS DATA EXTRACTION - FULL PIPELINE")
     print("=" * 70 + "\n")
 
     data_dir = REPO_ROOT / 'data' / 'mbin'
-    extracted_dir_env = os.environ.get("NMS_EXTRACTED", "").strip()
-    extracted_dir = Path(extracted_dir_env).expanduser() if extracted_dir_env else (Path(DEFAULT_PCBANKS).parent / "EXTRACTED")
-
+    compiler_version = validate_mxml_sources(data_dir, game_version)
     pet_trait_mxml = data_dir / 'peteggtraitmodifieroverridetable.MXML'
-    if not pet_trait_mxml.exists():
-        fallback = extracted_dir / 'metadata' / 'simulation' / 'ecosystem' / 'peteggtraitmodifieroverridetable.MXML'
-        if fallback.exists():
-            pet_trait_mxml = fallback
 
 
     print("STEP 0: Rebuilding localization...")
     print("-" * 70)
-    build_localization_json(REPO_ROOT)
+    localization_count = build_localization_json(REPO_ROOT, previous_path=(baseline_json_dir / "localization.json") if baseline_json_dir else None)
 
-    try:
-        print("Building controller lookup...")
-        lookup_exit = generate_controller_lookup_main(["--allow-missing"])
-        if lookup_exit != 0:
-            print("  [WARN] Could not refresh controller lookup (continuing).")
-    except Exception as e:
-        print(f"  [WARN] Controller lookup generation failed: {e}")
+    print("Building controller lookup...")
+    lookup_exit = generate_controller_lookup_main(["--allow-missing", "--output", str(DATA / "json" / "controllerLookup.generated.json")])
+    if lookup_exit != 0:
+        raise ValueError("Controller lookup generation failed")
 
     from parsers.base_parser import EXMLParser
     EXMLParser._localization = None
     EXMLParser._controller_lookup = None
     EXMLParser.clear_xml_cache()
+    import parsers.fish as fish_parser
+    import parsers.refinery as recipe_parser
+    fish_parser._product_cache = None
+    recipe_parser._item_names_cache = None
 
     print("STEP 1: Extracting base data from game files...")
     print("-" * 70 + "\n")
     base_data = {}
+    parser_counts = {}
     parsers = [
         ('Refinery', 'nms_reality_gcrecipetable.MXML', lambda p: parse_refinery(p, only_refinery=True)),
         ('NutrientProcessor', 'nms_reality_gcrecipetable.MXML', parse_nutrient_processor),
@@ -1042,16 +1054,16 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
         mxml_path = mxml_file if isinstance(mxml_file, Path) else (data_dir / mxml_file)
         print(f"[{i}/{len(parsers)}] Extracting {name}...")
         if not mxml_path.exists():
-            print(f"  [SKIP] {mxml_file} not found\n")
-            continue
+            raise ValueError(f"Required parser source missing: {mxml_file}")
         try:
             data = parser_func(str(mxml_path))
+            if not data:
+                raise ValueError(f"{name} returned empty output; source schema/coverage must be reviewed")
             base_data[name] = data
+            parser_counts[name] = len(data) if isinstance(data, list) else 1
             print(f"  [OK] {len(data) if isinstance(data, list) else 1} items extracted\n")
         except Exception as e:
-            print(f"  [ERROR] Failed: {e}\n")
-            import traceback
-            traceback.print_exc()
+            raise ValueError(f"Parser {name} failed: {e}") from e
 
     model_enriched = enrich_creatures_with_model_paths(base_data)
     if model_enriched:
@@ -1197,6 +1209,8 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     print(f"Skipped {total_skipped} items (saved to none.json for review)\n")
     if total_preseeded_dupe_skips:
         print(f"  [NORMALIZE] Skipped {total_preseeded_dupe_skips} duplicate IDs already present in seeded files")
+    if total_skipped and not no_strict:
+        raise ValueError(f"{total_skipped} uncategorized source items require review; update the explicit category rules")
 
     uncategorized_items, removed_uncategorized = filter_missing_icons(uncategorized_items)
     if removed_uncategorized:
@@ -1292,6 +1306,22 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     if adornment_dupes:
         print(f"  [NORMALIZE] Others.json: removed {adornment_dupes} Starship Interior Adornment display duplicates (T_BOBBLE_* tech variants)")
 
+    coverage = validate_building_coverage(data_dir, final_files)
+    # A few specialised parsers use localization dictionaries directly. Apply
+    # prompt normalization at the output boundary as well as translate().
+    from parsers.base_parser import normalize_control_tokens
+    def normalize_display(value):
+        if isinstance(value, dict):
+            for key, child in value.items():
+                if key in DISPLAY_FIELDS and isinstance(child, str):
+                    value[key] = normalize_control_tokens(child)
+                else:
+                    normalize_display(child)
+        elif isinstance(value, list):
+            for child in value:
+                normalize_display(child)
+    normalize_display(final_files)
+
     print("STEP 3: Saving final files...")
     print("-" * 70 + "\n")
     results = []
@@ -1323,7 +1353,8 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
     else:
         print("STEP 4: Running strict smoke checks...")
         print("-" * 70)
-        smoke_exit = run_smoke_check(REPO_ROOT, fail_on_duplicate_ids=True)
+        smoke_exit = run_smoke_check(REPO_ROOT, fail_on_duplicate_ids=True,
+                                     baseline_json_dir=baseline_json_dir, check_display_tokens=True)
         if smoke_exit != 0:
             print("[ERROR] Strict smoke checks failed.")
             return 1
@@ -1337,7 +1368,7 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
             f"(+{summary['Changed']} changed, -{summary['Removed']} removed)"
         )
     except Exception as e:
-        print(f"[WARN] new.json generation failed: {e}")
+        raise ValueError(f"new.json generation failed: {e}") from e
 
     if report:
         try:
@@ -1345,13 +1376,22 @@ def run_json_extraction(*, report: bool, no_strict: bool) -> int:
             report_rel = report_result["report_markdown"].relative_to(REPO_ROOT)
             print(f"[OK] Report: {report_rel}")
             print(
-                f"[OK] Report totals - added: {report_result['totals']['added']}, "
+                f"[OK] Report file-level deltas (including moves/aliases) - added: {report_result['totals']['added']}, "
                 f"removed: {report_result['totals']['removed']}, changed: {report_result['totals']['changed']}"
             )
         except Exception as e:
-            print(f"[WARN] Report generation failed: {e}")
+            raise ValueError(f"Report generation failed: {e}") from e
     else:
         print("[INFO] Report generation skipped (use --report to enable).")
+    manifest = {
+        "schemaVersion": 1, "gameVersion": game_version or new_result["version_key"],
+        "compilerVersion": compiler_version, "buildingCoverage": coverage,
+        "parserCounts": parser_counts, "localizationCount": localization_count,
+        "sources": {name: hashlib.sha256((data_dir / name).read_bytes()).hexdigest() for name in EXPECTED_MXML_AFTER_REFRESH},
+        "outputs": {path.name: hashlib.sha256(path.read_bytes()).hexdigest()
+                    for path in sorted((DATA / "json").glob("*.json")) if path.name != "extraction-manifest.json"},
+    }
+    save_json(manifest, "extraction-manifest.json")
     return 0
 
 
@@ -1368,9 +1408,21 @@ def run_image_extraction(
         if extracted_root.name.lower() == "textures":
             extracted_root = extracted_root.parent
     else:
-        extracted_root = EXTRACTED
-        unpack_all_game_files_to_extracted(pcbanks_arg, extracted_root)
-        normalize_to_extracted(extracted_root)
+        # Do not reuse old unpacked textures: a missing texture in this release
+        # must not be silently satisfied by an earlier release's file.
+        with tempfile.TemporaryDirectory(prefix=".refresh-stage-images-", dir=REPO_ROOT) as temporary:
+            extracted_root = Path(temporary) / "textures-source"
+            try:
+                unpack_all_game_files_to_extracted(pcbanks_arg, extracted_root)
+                normalize_to_extracted(extracted_root)
+                return run_image_extraction(pcbanks_arg="", extracted_arg=str(extracted_root),
+                                            keep_dds=keep_dds, no_cleanup=True)
+            finally:
+                if no_cleanup and extracted_root.is_dir():
+                    retained = REPO_ROOT / ".refresh-backups" / ("textures-" + Path(temporary).name)
+                    retained.parent.mkdir(parents=True, exist_ok=True)
+                    os.replace(extracted_root, retained)
+                    print(f"[INFO] Unpacked textures retained at {retained}")
 
     if not extracted_root.is_dir():
         print(f"[ERROR] EXTRACTED path not found: {extracted_root}")
@@ -1378,43 +1430,103 @@ def run_image_extraction(
 
     print("\n--- Image Extraction ---")
     success, skipped, used_magick = extract_icons(
-        DATA / "json", extracted_root, output_dir, copy_dds_if_no_magick=True, keep_dds=keep_dds
+        DATA / "json", extracted_root, output_dir, copy_dds_if_no_magick=False, keep_dds=keep_dds
     )
     print(f"[OK] Extracted: {success}  Skipped: {skipped}")
     if success and not used_magick:
         print("[TIP] Install ImageMagick (magick) and re-run to get .png instead of .dds")
     print(f"Output: {output_dir}")
 
-    if not extracted_arg and not no_cleanup:
-        to_remove = [DATA / name for name in ("metadata", "EXTRACTED") if (DATA / name).is_dir()]
-        if to_remove:
-            print("[INFO] Cleanup: removing data/metadata and data/EXTRACTED...")
-            for folder in to_remove:
-                shutil.rmtree(folder, ignore_errors=True)
-                print(f"  Removed {folder}/")
-    return 0 if success else 1
+    return 0 if success and not skipped and used_magick else 1
+
+
+def run_staged_json(args: argparse.Namespace, pcbanks: str) -> int:
+    global REPO_ROOT, DATA, EXTRACTED
+    original_roots = REPO_ROOT, DATA, EXTRACTED
+    live_root = REPO_ROOT
+    refresh = args.refresh or bool(args.pcbanks)
+    game_version = args.game_version or os.environ.get("NMS_GAME_VERSION", "")
+    if not game_version and not args.check_only:
+        raise ValueError("Publishing requires --game-version (the verified game release, not a compiler guess)")
+    if args.no_strict and not args.check_only:
+        raise ValueError("--no-strict is allowed only with --check-only; unvalidated output cannot be published")
+    if refresh:
+        pcbanks = preflight_refresh(pcbanks)
+    else:
+        validate_mxml_sources(live_root / "data" / "mbin", game_version)
+    previous_version = os.environ.get("NMS_GAME_VERSION")
+    with tempfile.TemporaryDirectory(prefix=".refresh-stage-", dir=live_root) as temporary:
+        stage = Path(temporary)
+        (stage / "data" / "json").mkdir(parents=True)
+        if (live_root / "reports").is_dir():
+            shutil.copytree(live_root / "reports", stage / "reports")
+        if not refresh:
+            shutil.copytree(live_root / "data" / "mbin", stage / "data" / "mbin")
+        elif (Path(pcbanks).parent / "INPUT" / "ACTIONS.JSON").is_file():
+            (stage / "data" / "input").mkdir()
+            shutil.copy2(Path(pcbanks).parent / "INPUT" / "ACTIONS.JSON", stage / "data" / "input" / "actions.json")
+        try:
+            REPO_ROOT, DATA, EXTRACTED = stage, stage / "data", stage / "data" / "EXTRACTED"
+            if game_version:
+                os.environ["NMS_GAME_VERSION"] = game_version
+            with using_workspace(stage):
+                if refresh:
+                    run_full_refresh_prep(pcbanks)
+                result = run_json_extraction(report=args.report, no_strict=args.no_strict,
+                                             game_version=game_version,
+                                             baseline_json_dir=live_root / "data" / "json")
+            if result:
+                return result
+            if args.check_only:
+                print("[OK] Staged extraction validated; --check-only left live data and reports unchanged.")
+                return 0
+            targets = ["data/json"]
+            if refresh:
+                targets.append("data/mbin")
+            if (stage / "reports").is_dir():
+                targets.append("reports")
+            backup = publish_directories(stage, live_root, targets)
+            print(f"[OK] Published validated output. Previous data retained at {backup}")
+            return 0
+        finally:
+            REPO_ROOT, DATA, EXTRACTED = original_roots
+            from parsers.base_parser import EXMLParser
+            EXMLParser._localization = None
+            EXMLParser._controller_lookup = None
+            EXMLParser.clear_xml_cache()
+            if previous_version is None:
+                os.environ.pop("NMS_GAME_VERSION", None)
+            else:
+                os.environ["NMS_GAME_VERSION"] = previous_version
 
 
 def main() -> int:
     args = parse_args()
+    if args.list_sources:
+        from utils.smoke import EXPECTED_JSON_FILES
+        print(json.dumps({"pakFilters": MBIN_FILTERS, "requiredMxml": EXPECTED_MXML_AFTER_REFRESH,
+                          "requiredDataJson": EXPECTED_JSON_FILES}, indent=2))
+        return 0
     pcbanks_arg_effective = args.pcbanks or (DEFAULT_PCBANKS if args.refresh else "")
-    if args.images:
-        return run_image_extraction(
-            pcbanks_arg=pcbanks_arg_effective,
-            extracted_arg=args.extracted,
-            keep_dds=args.keep_dds,
-            no_cleanup=args.no_cleanup,
-        )
-
-    refresh_requested = args.refresh or bool(args.pcbanks)
-    if refresh_requested:
-        run_full_refresh_prep(pcbanks_arg_effective)
-
-    extract_exit = run_json_extraction(report=args.report, no_strict=args.no_strict)
-    if extract_exit != 0:
-        return extract_exit
-
-    return 0
+    try:
+        with extraction_lock(REPO_ROOT):
+            if args.images:
+                if args.check_only or args.report:
+                    raise ValueError("--images is a separate operation; do not combine with --check-only or --report")
+                from utils.report import release_identity
+                release = json.loads((DATA / "json" / "new.json").read_text(encoding="utf-8"))
+                if not isinstance(release, dict) or not release.get("VersionKey"):
+                    raise ValueError("Images require JSON with verified release metadata; extract JSON first")
+                if args.game_version and release_identity(args.game_version) != release_identity(release["VersionKey"]):
+                    raise ValueError("Image release does not match the extracted JSON release")
+                return run_image_extraction(
+                    pcbanks_arg=pcbanks_arg_effective, extracted_arg=args.extracted,
+                    keep_dds=args.keep_dds, no_cleanup=args.no_cleanup,
+                )
+            return run_staged_json(args, pcbanks_arg_effective)
+    except (ValueError, RuntimeError, OSError, subprocess.SubprocessError) as error:
+        print(f"[ERROR] {error}")
+        return 1
 
 
 if __name__ == "__main__":

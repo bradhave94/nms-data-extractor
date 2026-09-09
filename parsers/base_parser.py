@@ -5,6 +5,8 @@ from typing import Any, Optional, Callable
 import json
 import os
 from pathlib import Path
+from utils.workspace import workspace_root
+from utils.generate_controller_lookup import CURATED_TOKEN_ICONS
 
 # Words that stay lowercase in title case (conjunctions, articles, short prepositions)
 _LOWERCASE_WORDS = frozenset({
@@ -111,7 +113,9 @@ def normalize_control_tokens(text: str) -> str:
         readable = _icon_to_readable(icon_path)
         if readable:
             return f"[{readable}]"
-        return token
+        # Prompt slots are not guaranteed to have a platform key mapping. Do not
+        # invent a binding: retain a readable slot label for unknown controls.
+        return f"[{token.removeprefix('FE_').replace('_', ' ')}]"
 
     return _FE_TOKEN_RE.sub(_token_label, text)
 
@@ -274,7 +278,7 @@ class EXMLParser:
     def load_localization(cls) -> dict:
         """Load and cache the English localization dictionary"""
         if cls._localization is None:
-            loc_path = Path(__file__).parent.parent / 'data' / 'json' / 'localization.json'
+            loc_path = workspace_root() / 'data' / 'json' / 'localization.json'
             if loc_path.exists():
                 with open(loc_path, 'r', encoding='utf-8') as f:
                     cls._localization = json.load(f)
@@ -288,9 +292,9 @@ class EXMLParser:
     def load_controller_lookup(cls) -> dict[str, dict[str, str]]:
         """Load token->icon mappings by platform from generated lookup JSON."""
         if cls._controller_lookup is None:
-            lookup_path = Path(__file__).parent.parent / "data" / "json" / "controllerLookup.generated.json"
+            lookup_path = workspace_root() / "data" / "json" / "controllerLookup.generated.json"
             if not lookup_path.exists():
-                cls._controller_lookup = {}
+                cls._controller_lookup = {key: dict(value) for key, value in CURATED_TOKEN_ICONS.items()}
                 return cls._controller_lookup
             try:
                 with open(lookup_path, "r", encoding="utf-8") as f:
@@ -308,9 +312,11 @@ class EXMLParser:
                         if isinstance(key, str) and isinstance(icon, str):
                             platform_map[key] = icon
                     parsed[platform] = platform_map
-                cls._controller_lookup = parsed
+                cls._controller_lookup = {key: dict(value) for key, value in CURATED_TOKEN_ICONS.items()}
+                for platform, tokens in parsed.items():
+                    cls._controller_lookup.setdefault(platform, {}).update({key: value for key, value in tokens.items() if value})
             except (OSError, json.JSONDecodeError):
-                cls._controller_lookup = {}
+                raise ValueError(f"Invalid controller lookup: {lookup_path}")
         return cls._controller_lookup
 
     @classmethod

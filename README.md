@@ -1,328 +1,128 @@
-# NMS Data Extractor
+# NMS data extractor
 
-Automated Python system to extract and parse No Man's Sky game data into JSON format. Use for my site [nomansskyrecipes.com]([nomansskyrecipes.com](https://nomansskyrecipes.com/))
+Extract No Man's Sky game tables and icons for [No Man's Sky Recipes](https://nomansskyrecipes.com/). The website is in the sibling `nms` repository.
 
 ## Requirements
 
-Before running the extractor you need:
+- Python and `pip install -r requirements.txt`.
+- A complete MBINCompiler package matched to the installed game release. Install `MBINCompiler.exe`, `libMBIN.dll`, and any mapping file distributed with that release in `tools/`. Do not mix versions. See [MBINCompiler releases](https://github.com/monkeyman192/MBINCompiler/releases) for runtime requirements.
+- ImageMagick (`magick` on PATH) for publishable PNG images. DDS files are not website-ready output.
+- The installed game's `GAMEDATA/PCBANKS` directory for a full refresh. The default is `H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS`.
+- A verified previous-release snapshot. Do not substitute an older snapshot just to make a command pass.
 
-1. **MBINCompiler**
-   - Download the latest release from [monkeyman192/MBINCompiler](https://github.com/monkeyman192/MBINCompiler).
-   - Requires [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0) (choose “Run desktop apps”).
-   - Put **MBINCompiler.exe** in the project’s **`tools/`** folder (create `tools/` if it doesn’t exist).
+## Check the current extraction
 
-2. **Python Dependencies**
-   - Install all required dependencies with: `pip install -r requirements.txt`
-   - This includes **hgpaktool** (PAK file extraction) and **zstandard** (compression support)
+These commands do not publish data or advance the live report snapshots:
 
-3. **Optional: ImageMagick** (for icon extraction)
-   - Download from [imagemagick.org](https://imagemagick.org/)
-   - Used to convert DDS textures to PNG format
-   - If not installed, icon extraction will output `.dds` files instead
-
-## Quick Start
-
-### Extract All Data (One Command)
-```bash
-python extract.py
-```
-
-This will:
-1. Extract all data from MXML files
-2. Categorize into output JSON files
-
-**Output:** JSON files in `data/json/`
-
-Duplicate `Id` entries are automatically deduplicated by default (no flags needed).
-`Food.json` keeps merge-style dedupe; other files use keep-first dedupe to avoid cross-schema field contamination.
-
-Strict validation is enabled by default and fails the run on smoke-check errors (including duplicate IDs).
-If you need to bypass strict checks temporarily:
-
-```bash
-python extract.py --no-strict
-```
-
-### Full refresh (new game version)
-
-To rebuild everything from the latest game files (clean → extract MBINs → convert → extract JSON) in one go:
-
-```bash
-# Use default PCBANKS path:
-python extract.py --refresh
-
-# Or pass a custom path:
-python extract.py --pcbanks "X:\...\PCBANKS"
-```
-
-After a game update, run once with `--report` to refresh `reports/_latest_snapshot` and regenerate `data/json/new.json` (delta vs the previous update).
-
-Requires **hgpaktool** library and **MBINCompiler.exe** in `tools/`.
-
-### Extract item icons (images)
-
-To unpack game textures and export one PNG per item (for CDN or app use):
-
-```bash
-# Reuse existing EXTRACTED folder:
-python extract.py --images --extracted "C:\path\to\EXTRACTED"
-
-# Or extract textures from game files then generate images:
-python extract.py --images --pcbanks "X:\...\PCBANKS"
-```
-
-`--images` runs image extraction only (it does not run JSON extraction).
-This will run `utils.images` to produce **`data/images/{id}.png`** (or `.dds` if ImageMagick is not installed).
-If `--extracted` is not provided, textures are unpacked from game files first.
-
-- **Requires:** hgpaktool library (installed via requirements.txt); **optional:** [ImageMagick](https://imagemagick.org/) (`magick`) for DDS→PNG.
-
-### Smoke checks
-
-Run lightweight validation on extracted JSON output:
-
-```bash
-# Default: validates file existence/JSON structure; duplicate IDs are warnings
-python -m utils.smoke
-
-# Strict: duplicate IDs are treated as errors
+```powershell
+python -m unittest discover -s tests
 python -m utils.smoke --strict-duplicates
+python extract.py --check-only --game-version 7.00
 ```
 
-### Generated Files
+Use the actual game release for `--game-version`. Compiler provenance is recorded separately, and all required MXML headers must agree. A compiler version is not proof of the installed game version.
 
-| File | Description |
-|------|-------------|
-| **Refinery.json** | Refinery recipes |
-| **NutrientProcessor.json** | Cooking recipes |
-| **Products.json** | Craftable products |
-| **RawMaterials.json** | Mineable substances |
-| **Technology.json** | Installable technologies |
-| **Buildings.json** | Base building parts |
-| **Food.json** | Edible items & ingredients |
-| **Corvette.json** | Corvette parts |
-| **Fish.json** | Catchable fish |
-| **Trade.json** | Trade goods & smuggled items |
-| **ConstructedTechnology.json** | Buildable tech items |
-| **TechnologyModule.json** | Upgrade modules |
-| **Curiosities.json** | Salvaged items & relics |
-| **new.json** | New IDs across the entire previous snapshot (`Items`); category moves, space-base product overrides of existing buildings, and identical reissued special-shop rewards are excluded. `ChangedItems` contains field changes with matching `Previous` values for item-page details. `RemovedIds` contains IDs absent from every current category. |
-| **Others.json** | Misc items (charts, cosmetics, etc.) |
-| **Creatures.json** | Creature species, battle moves, move sets, arena modes, medals, pet shop, accessories, egg overrides, behaviours |
+`--check-only` runs the JSON pipeline in a temporary workspace using existing MXML. Add `--report` to exercise report generation there too. `--no-strict` is available only with `--check-only` for diagnosis; it cannot publish output.
 
-## Project Structure
+## Refresh for a new game release
 
-```
-nms-data-extractor/
-├── data/
-│   ├── mbin/                # MXML files (converted from MBIN; gitignored)
-│   ├── json/                # Final JSON output
-│   ├── EXTRACTED/           # Game textures (from extract.py --images; gitignored)
-│   └── images/              # Item icons {id}.png (from extract.py --images; gitignored)
-├── parsers/
-│   ├── __init__.py
-│   ├── base_parser.py       # Shared utilities & translation
-│   ├── arena.py             # Move sets, arena modes, medals, pet shop, accessories, behaviours
-│   ├── base_parts.py
-│   ├── battle_moves.py      # Xeno Arena battle abilities
-│   ├── buildings.py
-│   ├── cooking.py
-│   ├── creatures.py         # Creature species data
-│   ├── fish.py
-│   ├── pet_eggs.py
-│   ├── procedural_tech.py
-│   ├── products.py
-│   ├── rawmaterials.py
-│   ├── refinery.py
-│   ├── ship_components.py
-│   ├── technology.py
-│   └── trade.py
-├── utils/
-│   ├── __init__.py
-│   ├── categorization.py    # Categorization rules
-│   ├── clean.py             # Wipe data/ for full refresh
-│   ├── mbin.py              # Copy MBINs into data/mbin, remove metadata/language
-│   ├── images.py            # EXTRACTED → data/images/{id}.png (used by extract.py)
-│   ├── localization.py      # Localization merger
-│   ├── report.py            # Refresh report generation
-│   └── smoke.py             # Post-extraction validation checks
-├── extract.py               # Single entrypoint (json extraction, refresh, images)
-└── tools/                   # gitignored
-    └── MBINCompiler.exe     # Not included in the repo
+Confirm the installed game version, install its matching compiler package, and check the previous-release snapshot. Then run a full refresh with an explicit version and a report. Do not delete `data/` first.
+
+```powershell
+python extract.py --refresh --game-version 7.00 --report
+# Or choose another game installation:
+python extract.py --pcbanks "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS" --game-version 7.00 --report
 ```
 
-## How It Works
+The command checks prerequisites, extracts into a temporary workspace, converts the required MBINs, parses the tables, validates the result, and publishes validated directories. Previous JSON, MXML, and reports are retained under `.refresh-backups/`. A JSON refresh does not delete existing images.
 
-1. **Extraction** (`extract.py`)
-   - Rebuilds localization, then extracts from MXML files
-   - Parses into base categories and categorizes into output files
-   - Full English translation from locale MXMLs
+Missing sources, parser errors, incompatible compiler headers, unresolved recipe references, uncategorized items, unsupported building objects, and count drops over 20% stop publication. Review the sources and update the relevant explicit rules or tests when a change is legitimate. Do not bypass validation to ship an update.
 
-2. **Categorization** (`utils/categorization.py`)
-   - Routes items based on `Group` field
-   - Splits items into the project output files
-   - Automatic icon path assignment
+Publication uses directory renames and rolls back ordinary failures. It is not one filesystem-wide atomic transaction: do not run site imports during publication. `.extraction.lock` prevents concurrent extractor commands. After a terminated process, inspect the lock's PID, staging directories, and backups before recovering. Never delete a lock belonging to a running process.
 
-3. **Output**
-   - JSON files matching your app structure
-   - Game IDs preserved
-   - English names included
+To regenerate JSON from existing MXML without unpacking the game:
 
-## Key Features
-
-- ✅ Full English translations from 8 localization files
-- ✅ Game IDs preserved (e.g., `CASING`, `NANOTUBES`, `TECHFRAG`)
-- ✅ English names included for all items
-- ✅ Complete recipe data with input/output details
-- ✅ Automatic categorization into output files
-- ✅ Fast extraction (~8 seconds total)
-
-## Customization
-
-### Modify Categorization Rules
-
-Edit `utils/categorization.py` to change which items go into which files:
-
-```python
-CATEGORIZATION_RULES = {
-    'Buildings.json': {
-        'keywords': ['Decoration', 'Unlockable', ...],
-        'exact': set()
-    },
-    # ... more rules
-}
+```powershell
+python extract.py --game-version 7.00 --report
 ```
 
-## Files Needed for Fresh Extraction
+## Images are a separate step
 
-The pipeline uses **30 MBIN files** from the game: 22 data tables and 8 English localization files. You do not need to extract all 177,974 game files.
+Run image extraction after JSON extraction so the icon inventory comes from the new data:
 
-### Data tables (22)
-
-| MBIN | Output / use |
-|------|------------------|
-| `nms_reality_gcproducttable.mbin` | Products, Trade, name/icon lookups |
-| `consumableitemtable.mbin` | Food.json |
-| `nms_reality_gcrecipetable.mbin` | Refinery.json, NutrientProcessor.json |
-| `nms_reality_gctechnologytable.mbin` | Technology.json |
-| `basebuildingobjectstable.mbin` | Buildings.json |
-| `nms_reality_gcsubstancetable.mbin` | RawMaterials.json |
-| `fishdatatable.mbin` | Fish.json |
-| `nms_modularcustomisationproducts.mbin` | Others.json (ship components) |
-| `nms_basepartproducts.mbin` | Buildings (freighter parts) |
-| `nms_reality_gcproceduraltechnologytable.mbin` | ConstructedTechnology, TechnologyModule |
-| `creaturedatatable.mbin` | Creatures.json (species) |
-| `creaturefilenametable.mbin` | Creatures.json (model scene paths for species thumbnails) |
-| `petbattlermovestable.mbin` | Creatures.json (battle moves) |
-| `petbattlermovesetstable.mbin` | Creatures.json (move sets) |
-| `gametablesdatatable.mbin` | Creatures.json (arena modes) |
-| `petshopitemstable.mbin` | Creatures.json (pet shop) |
-| `petaccessorytable.mbin` | Creatures.json (accessories) |
-| `peteggspeciesoverridetable.mbin` | Creatures.json (egg overrides) |
-| `creaturepetbehaviourtable.mbin` | Creatures.json (behaviours) |
-| `leveledstatstable.mbin` | Creatures.json (arena league medals) |
-
-### Localization (8)
-
-`nms_loc1_english.mbin`, `nms_loc4_english.mbin`, `nms_loc5_english.mbin`, `nms_loc6_english.mbin`, `nms_loc7_english.mbin`, `nms_loc8_english.mbin`, `nms_loc9_english.mbin`, `nms_update3_english.mbin` (product/fish names and descriptions come from these).
-
-### Automatic Extraction with HGPAKtool Library
-
-`extract.py --refresh` (default path) and `extract.py --pcbanks ...` (custom path) use hgpaktool as a Python library. The library is included in `requirements.txt` and will automatically extract the required files from your game's PCBANKS folder.
-
-If you want to manually extract with the hgpaktool command-line tool (e.g., for testing), you can do so. Point it at your game `PCBANKS` folder and use filters so only these 18 files are extracted.
-
-**Example; replace the path with your No Man's Sky install:**
-
-```
-hgpaktool -U `
-  -f="*REALITY/TABLES/nms_reality_gcproducttable.mbin" `
-  -f="*REALITY/TABLES/consumableitemtable.mbin" `
-  -f="*REALITY/TABLES/nms_reality_gcrecipetable.mbin" `
-  -f="*REALITY/TABLES/nms_reality_gctechnologytable.mbin" `
-  -f="*REALITY/TABLES/basebuildingobjectstable.mbin" `
-  -f="*REALITY/TABLES/nms_reality_gcsubstancetable.mbin" `
-  -f="*REALITY/TABLES/fishdatatable.mbin" `
-  -f="*REALITY/TABLES/nms_modularcustomisationproducts.mbin" `
-  -f="*REALITY/TABLES/nms_basepartproducts.mbin" `
-  -f="*REALITY/TABLES/nms_reality_gcproceduraltechnologytable.mbin" `
-  -f="*SIMULATION/ECOSYSTEM/creaturedatatable.mbin" `
-  -f="*SIMULATION/ECOSYSTEM/creaturefilenametable.mbin" `
-  -f="*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovestable.mbin" `
-  -f="*SIMULATION/GAMETABLES/PETBATTLER/petbattlermovesetstable.mbin" `
-  -f="*SIMULATION/GAMETABLES/gametablesdatatable.mbin" `
-  -f="*REALITY/TABLES/petshopitemstable.mbin" `
-  -f="*SIMULATION/ECOSYSTEM/petaccessorytable.mbin" `
-  -f="*SIMULATION/ECOSYSTEM/peteggspeciesoverridetable.mbin" `
-  -f="*SIMULATION/ECOSYSTEM/creaturepetbehaviourtable.mbin" `
-  -f="*GAMESTATE/STATS/leveledstatstable.mbin" `
-  -f="*LANGUAGE/nms_loc1_english.mbin" `
-  -f="*LANGUAGE/nms_loc4_english.mbin" `
-  -f="*LANGUAGE/nms_loc5_english.mbin" `
-  -f="*LANGUAGE/nms_loc6_english.mbin" `
-  -f="*LANGUAGE/nms_loc7_english.mbin" `
-  -f="*LANGUAGE/nms_loc8_english.mbin" `
-  -f="*LANGUAGE/nms_loc9_english.mbin" `
-  -f="*LANGUAGE/nms_update3_english.mbin" `
-  "H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+```powershell
+python extract.py --images --pcbanks "X:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+# Reuse textures only after verifying their game release:
+python extract.py --images --extracted "X:\verified-current-textures\EXTRACTED"
 ```
 
-Then convert MBIN → MXML with **MBINCompiler** (e.g. `tools\MBINCompiler.exe` in `data\mbin`), and run:
+The website requires complete PNG output. Missing textures, failed conversions, or missing ImageMagick fail the operation. Unpacking without `--extracted` uses a fresh temporary directory so stale textures cannot satisfy missing files. Image manifests record file integrity and coverage.
 
-```bash
-python extract.py
+Keep source data and images from the same release. A PNG existing on disk does not prove its source version or that its artwork is current.
+
+## Release identity and reports
+
+`new.json` contains genuinely added item IDs, `ChangedItems` for item-page details, and removed IDs. Category moves are not new items. Explicit building overrides and identical reissued rewards do not get duplicate new-item cards. Different expedition variants remain new and carry `ReleaseVariant` metadata.
+
+Reports archive their baseline and current inputs with integrity manifests. Same-release reruns retain the same previous-release baseline. Saved reports must be rebuilt from their archived inputs, not live JSON or a guessed snapshot directory.
+
+Do not repair a missing baseline by snapshotting the new release as its own predecessor. Recover a verified prior release first. Bootstrap is a separate explicit operation; follow the repository refresh skill.
+
+For an intentional migration of verified existing data, inspect the paths and versions first, then use the bootstrap interface:
+
+```powershell
+python scripts/rebuild_new_from_report.py --bootstrap --release-version 7.00 --previous-version 6.40 --baseline-snapshot "reports/_latest_snapshot" --current-snapshot "data/json" --building-mxml "data/mbin/basebuildingobjectstable.MXML"
 ```
 
-More detail (optional extraction, paths): `docs/REQUIRED_MBINS.md`.
+That example applies only when those directories have been verified as 6.40 and 7.00 respectively. Normal report generation migrates the existing verified legacy layout automatically. Legacy duplicate normalization is recorded in the snapshot manifest. It never changes the original legacy snapshot.
 
----
+To rebuild from a new archived report, run `python scripts/rebuild_new_from_report.py <report.json>`. This writes data/json/new.json. A historical rebuild is not a complete release export: regenerate and validate the extraction manifest before importing data into the site.
 
-## Workflow: New game version
+## Website handoff
 
-When a new No Man's Sky update is released, do a full refresh so all JSON comes from the new game data. Follow every step in order.
+Use the website's checked import workflow after data and images pass validation. Validate manifests, recipe references, PNG coverage, and release metadata before replacing `src/datav2` and generated files in `public/images/items`. Preserve manual artwork not owned by the extraction manifest.
 
-### 1. Clean the data folder
-
-Remove all generated and extracted data so you start from a clean state.
-
-- Delete everything inside **`data/`** (all subfolders and their contents):
-  - `data/EXTRACTED/` (if present)
-  - `data/mbin/` (old MBINs and MXMLs)
-  - `data/json/` (old output; will be recreated by the script)
-  - `data/images/` (optional; only if you want to regenerate icons)
-
-You can delete the folders themselves; the next steps will recreate what’s needed. Keep the **`data/`** directory.
-
-### 2. Run extract.py with --refresh (or --pcbanks)
-
-Run with the default PCBANKS path:
-
-```bash
-python extract.py --refresh
+```powershell
+pnpm run data:check
+pnpm run data:sync
 ```
 
-Or run with a custom path:
+Both commands default to the sibling extractor; `--source <path>` selects another checkout. Legacy output requires explicit `--allow-legacy` during import and must be reviewed separately. That flag does not establish current-release provenance for old PNG files.
 
-```bash
-python extract.py --pcbanks "H:\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS"
+Then run in the website repository:
+
+```powershell
+pnpm run check:all
+pnpm run test:data-import
+pnpm run test:route-eligible
+pnpm run build
+pnpm run test:new-items
+pnpm run test:legacy-redirects
 ```
 
-The script will:
-- Extract the 27 required MBIN files from your game's PAK files
-- Consolidate them into `data/mbin/`
-- Convert MBIN to MXML with MBINCompiler
-- Extract and categorize into output JSON files in `data/json/`
+Check /new, a changed item, expedition variants, creature search results, and images. Commit source changes and corresponding data deliberately. Push or deploy only when requested.
 
-### Checklist (new game version)
+## Source and output inventory
 
-| Step | Action |
-|------|--------|
-| 1 | Install dependencies: `pip install -r requirements.txt` |
-| 2 | Delete all contents (or subfolders) of `data/` |
-| 3 | Run `python extract.py --refresh` (or `python extract.py --pcbanks "X:\path\to\PCBANKS"`) |
+Print the actual manifests instead of maintaining a separate manual PAK filter list:
 
----
+```powershell
+python extract.py --list-sources
+```
+
+`MBIN_FILTERS` and `EXPECTED_MXML_AFTER_REFRESH` in extract.py define required game sources. `EXPECTED_JSON_FILES` in utils/smoke.py defines data outputs. This includes arena rewards, egg modifiers, and creature globals.
+
+There are currently 31 required MXML files (including eight English localization tables), 25 parser jobs, and 19 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
 
 ## Development
 
-- **Cursor Rules**: `.cursor/rules/nms-extraction.md`
+- Parsers must use `utils.workspace.workspace_root()` for related-table and localization lookups so staging cannot accidentally read live data.
+- utils/categorization.py owns exact group-to-file routing. The first matching category wins. New groups need explicit rules.
+- utils/coverage.py lists reviewed object-only building exceptions. Do not invent product names, icons, or recipes for object-table entries. New uncovered objects stop publication.
+- utils/smoke.py validates all data files, nested creature identities, recipe references, content, and count changes. Intentional ID overlaps have location-specific exceptions.
+- utils/report.py owns release snapshots and classification. utils/images.py owns icon inventory, conversion, and integrity.
+- .cursor/skills/new-game-version/SKILL.md is the release checklist; .cursor/rules/nms-extraction.md describes repository conventions.
+
+Use temporary fixtures for failure-path tests. Tests must not alter the real snapshots or game installation.
+
+Run `python -m unittest discover -s tests` and `python scripts/check_release_archive.py --game-version 7.00` to check failure handling and a detached real-data archive round trip.

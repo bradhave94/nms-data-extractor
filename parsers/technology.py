@@ -218,8 +218,7 @@ def parse_technology(mxml_path: str) -> list:
             tech_counter += 1
 
         except Exception as e:
-            print(f"Warning: Skipped technology due to error: {e}")
-            continue
+            raise ValueError(f"Skipped technology due to error: {e}") from e
 
     print(f"[OK] Parsed {len(technologies)} technologies")
     return technologies

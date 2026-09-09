@@ -83,7 +83,7 @@ LOCALE_MXML_FILES = [
 ]
 
 
-def build_localization_json(base_path: Path | None = None) -> int:
+def build_localization_json(base_path: Path | None = None, *, previous_path: Path | None = None) -> int:
     if base_path is None:
         base_path = Path(__file__).parent.parent
     search_dirs = [base_path / 'data' / 'mbin', base_path / 'data' / 'EXTRACTED' / 'language']
@@ -97,12 +97,18 @@ def build_localization_json(base_path: Path | None = None) -> int:
                 mxml_path = candidate
                 break
         if not mxml_path or not mxml_path.exists():
-            print(f"[SKIP] {mxml_file} not found")
-            continue
+            raise ValueError(f"Required localization source missing: {mxml_file}")
 
         print(f"  Parsing: {mxml_file}")
         translations = parse_localization(str(mxml_path))
+        if not translations:
+            raise ValueError(f"Required localization source is empty or incompatible: {mxml_file}")
         all_translations.update(translations)
+
+    if previous_path and previous_path.is_file():
+        previous = json.loads(previous_path.read_text(encoding='utf-8'))
+        if not isinstance(previous, dict) or len(all_translations) < len(previous) * 0.8:
+            raise ValueError("Localization coverage fell more than 20%; review the source tables before publication")
 
     output_path = base_path / 'data' / 'json' / 'localization.json'
     output_path.parent.mkdir(parents=True, exist_ok=True)

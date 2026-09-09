@@ -1,6 +1,7 @@
 """Parsers for pet egg sequencer metadata tables."""
 import os
 from pathlib import Path
+from utils.workspace import workspace_root
 
 from .base_parser import EXMLParser, normalize_game_icon_path
 from .product_lookup import load_product_lookup
@@ -15,7 +16,7 @@ _TRAIT_TO_INPUT_TYPE = {
 
 def _load_item_lookup() -> dict[str, dict]:
     """Build lookup from full source tables (not categorized JSON)."""
-    repo_root = Path(__file__).parent.parent
+    repo_root = workspace_root()
     data_dir = repo_root / "data" / "mbin"
     extracted_env = os.environ.get("NMS_EXTRACTED", "").strip()
     extracted_root = Path(extracted_env).expanduser() if extracted_env else None

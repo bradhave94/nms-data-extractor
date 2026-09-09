@@ -156,8 +156,7 @@ def parse_rawmaterials(mxml_path: str) -> list:
             material_counter += 1
 
         except Exception as e:
-            print(f"Warning: Skipped material due to error: {e}")
-            continue
+            raise ValueError(f"Skipped material due to error: {e}") from e
 
     print(f"[OK] Parsed {len(materials)} raw materials")
     return materials

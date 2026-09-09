@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+from utils.workspace import workspace_root
 
 
 # Curated defaults for the common FE prompt tokens.
@@ -125,21 +126,19 @@ def main(argv=None) -> int:
     actions_json_path = args.actions_json
     if actions_json_path is None:
         candidates = [
-            Path(r"X:/Steam/steamapps/common/No Man's Sky/GAMEDATA/INPUT/ACTIONS.JSON"),
-            Path(r"C:/Program Files (x86)/Steam/steamapps/common/No Man's Sky/GAMEDATA/INPUT/ACTIONS.JSON"),
-            Path("data/EXTRACTED/input/actions.json"),
-            Path("data/EXTRACTED/INPUT/ACTIONS.JSON"),
+            workspace_root() / "data" / "input" / "actions.json",
         ]
         actions_json_path = next((p for p in candidates if p.exists()), None)
 
     if actions_json_path is None or not actions_json_path.exists():
         if args.allow_missing:
-            print("[INFO] ACTIONS.JSON not found; skipping controller lookup generation.")
-            return 0
-        print("[ERROR] Could not locate ACTIONS.JSON. Pass --actions-json explicitly.")
-        return 1
+            print("[INFO] ACTIONS.JSON not found; generating deterministic default prompt mappings.")
+            actions_json_path = None
+        else:
+            print("[ERROR] Could not locate ACTIONS.JSON. Pass --actions-json explicitly.")
+            return 1
 
-    actions_data = _load_actions_json(actions_json_path)
+    actions_data = _load_actions_json(actions_json_path) if actions_json_path else {}
     action_labels = _extract_english_action_labels(actions_data)
     lookup = _build_lookup_payload(action_labels)
 

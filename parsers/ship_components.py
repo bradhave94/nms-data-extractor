@@ -150,8 +150,7 @@ def parse_ship_components(mxml_path: str) -> list:
             components.append(component)
 
         except Exception as e:
-            print(f"Warning: Error parsing ship component: {e}")
-            continue
+            raise ValueError(f"Error parsing ship component: {e}") from e
 
     print(f"[OK] Parsed {len(components)} ship components")
     return components

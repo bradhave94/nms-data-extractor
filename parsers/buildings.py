@@ -1,12 +1,12 @@
 """Parse Buildings from MXML to JSON"""
-from pathlib import Path
+from utils.workspace import workspace_root
 from .base_parser import EXMLParser, normalize_game_icon_path
 
 
 def _load_product_icon_lookup(parser: EXMLParser) -> dict:
     """Build product ID -> normalized icon path from product table (for IconOverrideProductID)."""
     product_icons = {}
-    products_path = Path(__file__).parent.parent / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
+    products_path = workspace_root() / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
     if not products_path.exists():
         return product_icons
     try:
@@ -234,8 +234,7 @@ def parse_buildings(mxml_path: str) -> list:
             building_counter += 1
 
         except Exception as e:
-            print(f"Warning: Skipped building due to error: {e}")
-            continue
+            raise ValueError(f"Skipped building due to error: {e}") from e
 
     print(f"[OK] Parsed {len(buildings)} buildings")
     return buildings

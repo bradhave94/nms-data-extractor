@@ -16,9 +16,11 @@ def consolidate_mbin(repo_root: Path) -> None:
     for folder in (metadata_dir, language_dir):
         if not folder.exists():
             continue
-        for path in folder.rglob("*.mbin"):
+        for path in sorted(folder.rglob("*.mbin")):
             if path.is_file():
                 dest = mbin_dir / path.name
+                if dest.exists() and dest.read_bytes() != path.read_bytes():
+                    raise ValueError(f"Conflicting MBIN sources share a basename: {path.name}")
                 shutil.copy2(path, dest)
                 copied += 1
                 print(f"  {path.relative_to(data_dir)} -> mbin/")
@@ -26,6 +28,8 @@ def consolidate_mbin(repo_root: Path) -> None:
     for path in data_dir.glob("*.mbin"):
         if path.is_file():
             dest = mbin_dir / path.name
+            if dest.exists() and dest.read_bytes() != path.read_bytes():
+                raise ValueError(f"Conflicting MBIN sources share a basename: {path.name}")
             shutil.copy2(path, dest)
             path.unlink()
             copied += 1

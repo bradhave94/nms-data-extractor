@@ -144,8 +144,7 @@ def parse_products(mxml_path: str, *, include_subtitle_key: bool = False) -> lis
             product_counter += 1
 
         except Exception as e:
-            print(f"Warning: Skipped product due to error: {e}")
-            continue
+            raise ValueError(f"Skipped product due to error: {e}") from e
 
     print(f"[OK] Parsed {len(products)} products")
     return products

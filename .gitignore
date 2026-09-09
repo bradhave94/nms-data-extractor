@@ -40,3 +40,6 @@ data/EXTRACTED/
 # data/language/
 
 tools/*
+.refresh-stage-*/
+.refresh-backups/
+.extraction.lock

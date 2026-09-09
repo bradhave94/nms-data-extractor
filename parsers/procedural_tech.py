@@ -180,8 +180,7 @@ def parse_procedural_tech(mxml_path: str) -> list:
             technologies.append(technology)
 
         except Exception as e:
-            print(f"Warning: Error parsing procedural tech: {e}")
-            continue
+            raise ValueError(f"Error parsing procedural tech: {e}") from e
 
     print(f"[OK] Parsed {len(technologies)} procedural technology upgrades")
     return technologies

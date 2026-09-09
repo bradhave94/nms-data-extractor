@@ -10,7 +10,7 @@ from .base_parser import (
     EXMLParser,
 )
 from .product_lookup import load_product_lookup
-from pathlib import Path
+from utils.workspace import workspace_root
 
 
 # Cache for product details (from game MXML)
@@ -107,7 +107,7 @@ def _load_product_details():
     parser = EXMLParser()
     localization = parser.load_localization()
 
-    products_path = Path(__file__).parent.parent / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
+    products_path = workspace_root() / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
     if products_path.exists():
         _product_cache = load_product_lookup(
             parser=parser,
@@ -265,8 +265,7 @@ def parse_fish(mxml_path: str) -> list:
             fish_counter += 1
 
         except Exception as e:
-            print(f"Warning: Skipped fish due to error: {e}")
-            continue
+            raise ValueError(f"Skipped fish due to error: {e}") from e
 
     print(f"[OK] Parsed {len(fish_list)} fish")
     return fish_list

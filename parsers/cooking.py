@@ -4,6 +4,7 @@ from .base_parser import (
 )
 from .product_lookup import load_product_lookup
 from pathlib import Path
+from utils.workspace import workspace_root
 from typing import Any
 
 
@@ -174,10 +175,10 @@ def parse_cooking(mxml_path: str) -> list:
     root = EXMLParser.load_xml(mxml_path)
     parser = EXMLParser()
     localization = parser.load_localization()
-    repo_root = Path(__file__).parent.parent
+    repo_root = workspace_root()
     reward_effect_lookup = _load_reward_effect_lookup(parser, repo_root)
 
-    products_path = Path(__file__).parent.parent / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
+    products_path = workspace_root() / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
     products_lookup = load_product_lookup(
         parser=parser,
         localization=localization,
@@ -284,8 +285,7 @@ def parse_cooking(mxml_path: str) -> list:
             cooking_items.append(cooking)
 
         except Exception as e:
-            print(f"Warning: Skipped cooking item due to error: {e}")
-            continue
+            raise ValueError(f"Skipped cooking item due to error: {e}") from e
 
     print(f"[OK] Parsed {len(cooking_items)} cooking items")
     return cooking_items

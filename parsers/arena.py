@@ -4,6 +4,7 @@ from .base_parser import (
     EXMLParser, humanize_id, normalize_game_icon_path, shared_texture_icon_name,
 )
 from .product_lookup import load_product_lookup
+from utils.workspace import workspace_root
 
 _ACCESSORY_TIP_INDEX = {
     "CargoCylinder": 1, "Containers": 2, "ShieldArmour": 3,
@@ -261,7 +262,7 @@ def parse_pet_shop(mxml_path: str) -> list:
     from pathlib import Path
     product_table_path = Path(mxml_path).parent / 'nms_reality_gcproducttable.MXML'
     if not product_table_path.exists():
-        product_table_path = Path(__file__).parent.parent / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
+        product_table_path = workspace_root() / 'data' / 'mbin' / 'nms_reality_gcproducttable.MXML'
     product_lookup = {}
     if product_table_path.exists():
         product_lookup = load_product_lookup(
