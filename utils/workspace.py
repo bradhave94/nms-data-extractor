@@ -28,7 +28,7 @@ def publish_directories(stage: Path, destination: Path, relatives: list[str]) ->
     Readers must not run during the short multi-directory commit. The caller holds
     the extraction lock. Backups deliberately remain after a successful commit.
     """
-    allowed = {"data/json", "data/mbin", "reports"}
+    allowed = {"data/json", "data/mbin", "data/power", "reports"}
     if not relatives or len(set(relatives)) != len(relatives) or not set(relatives) <= allowed:
         raise ValueError("Publication targets must be explicit extraction output directories")
     stage, destination = stage.resolve(), destination.resolve()

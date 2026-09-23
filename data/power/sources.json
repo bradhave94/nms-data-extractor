@@ -1,0 +1,9 @@
+{
+  "SteamBuildId": "25320008",
+  "CompilerVersion": "7.03.2.2",
+  "ObservedDate": "2026-09-22",
+  "Sources": {
+    "gcskyglobals.globals.MXML": "ffd181559be7d39c70caaec44defb7af00ec9b9ee1563484776f948b5066a2d2",
+    "regionhotspotstable.MXML": "630a0f32b4457334a51aecb014355869f4d519739a91fb483b1387a8c3d4209e"
+  }
+}

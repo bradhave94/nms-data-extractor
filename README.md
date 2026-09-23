@@ -116,6 +116,16 @@ There are currently 31 required MXML files (including eight English localization
 
 ## Development
 
+### Base power data
+
+`parsers/power.py` parses base-building grid metadata shared by building and product enrichment. Primary rates can belong to Power, Resources, Fuel, PlantGrowth, ByteBeat, or Portals. Electrical consumption/generation may instead live in `DependentConnections`; do not interpret all primary rates as electricity. Zero-rate dependencies and grids with a nonzero connection mask are retained, including switches, cables and conductive rooms. Inert default grids are omitted. `IsPlaceable=false` also describes snap-only parts such as powered corridors and doors; it must not be used to exclude all such parts from a power inventory.
+
+Full refresh also extracts `gcskyglobals.globals.mbin` and `METADATA/SIMULATION/SCANNING/REGIONHOTSPOTSTABLE.MBIN`. The verified MXML is retained under `data/power/` with `sources.json` containing release/build identity, compiler version and hashes. Parser-only regeneration validates these files and emits `PowerRules.json`. This supplementary output has its own provenance because the initial rules were observed on Steam build 25320008 while the item catalog remains 7.00. Source compiler versions are not used as game versions.
+
+The rules export cycle duration and hotspot class strengths, including mineral/gas strengths useful for future production tools. They do not infer solar phase durations, hotspot placement falloff, diminishing returns, or biofuel runtime. `SolarSchedule: null` expresses that limit explicitly. Compiler warnings now fail full refresh even if conversion exits with status zero.
+
+`tests/test_power.py` covers nested electrical dependencies, cross-category enrichment, source integrity and compiler-warning rejection. The sibling site's `pnpm run test:power` also checks the calculation against independent repeated-cycle simulations.
+
 - Parsers must use `utils.workspace.workspace_root()` for related-table and localization lookups so staging cannot accidentally read live data.
 - utils/categorization.py owns exact group-to-file routing. The first matching category wins. New groups need explicit rules.
 - utils/coverage.py lists reviewed object-only building exceptions. Do not invent product names, icons, or recipes for object-table entries. New uncovered objects stop publication.

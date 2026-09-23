@@ -1,5 +1,6 @@
 """Parse Buildings from MXML to JSON"""
 from utils.workspace import workspace_root
+from .power import parse_link_grid
 from .base_parser import EXMLParser, normalize_game_icon_path
 
 
@@ -91,16 +92,7 @@ def parse_buildings(mxml_path: str) -> list:
             buildable_space_base = parser.parse_value(parser.get_property_value(building_elem, 'BuildableOnSpaceBase', 'false'))
             buildable_freighter = parser.parse_value(parser.get_property_value(building_elem, 'BuildableOnFreighter', 'false'))
 
-            # LinkGridData (power/network)
-            link_grid_data = None
-            link_elem = building_elem.find('.//Property[@name="LinkGridData"]')
-            if link_elem is not None:
-                network_elem = link_elem.find('.//Property[@name="Network"]')
-                link_type = parser.get_nested_enum(network_elem, 'LinkNetworkType', 'LinkNetworkType', '') if network_elem is not None else ''
-                rate = parser.parse_value(parser.get_property_value(link_elem, 'Rate', '0'))
-                storage = parser.parse_value(parser.get_property_value(link_elem, 'Storage', '0'))
-                if link_type or rate or storage:
-                    link_grid_data = {'Network': link_type or None, 'Rate': rate, 'Storage': storage}
+            link_grid_data = parse_link_grid(building_elem)
 
             # Create building entry
             building = {

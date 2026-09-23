@@ -45,6 +45,7 @@ from parsers.arena import (
 from parsers.fish import parse_fish
 from parsers.pet_eggs import parse_pet_egg_trait_modifiers, parse_pet_egg_species_overrides
 from parsers.procedural_tech import parse_procedural_tech
+from parsers.power import parse_link_grid, parse_power_rules, power_source_provenance
 from parsers.products import parse_products
 from parsers.rawmaterials import parse_rawmaterials
 from parsers.refinery import parse_refinery, parse_nutrient_processor
@@ -102,6 +103,11 @@ MBIN_FILTERS = [
     "*SIMULATION/ECOSYSTEM/creaturepetbehaviourtable.mbin",
     "*GAMESTATE/STATS/leveledstatstable.mbin",
     "*gccreatureglobals.mbin",
+]
+
+POWER_MBIN_FILTERS = [
+    '*gcskyglobals.globals.mbin',
+    '*SIMULATION/SCANNING/regionhotspotstable.mbin',
 ]
 
 EXPECTED_MXML_AFTER_REFRESH = [
@@ -211,6 +217,12 @@ def validate_mxml_sources(data_dir: Path, game_version: str = "") -> str:
     return compiler_version
 
 
+def convert_mbin(compiler: Path, mbin: Path) -> None:
+    converted = subprocess.run([str(compiler), str(mbin)], capture_output=True, text=True, check=True)
+    if 'WARN' in converted.stdout + converted.stderr:
+        raise ValueError(f'Compiler warning for {mbin.name}; conversion is not safe to publish')
+
+
 def run_full_refresh_prep(pcbanks_arg: str) -> None:
     if REPO_ROOT.resolve() == SOURCE_ROOT.resolve():
         raise ValueError("Full refresh prep must run inside the staged workflow")
@@ -219,7 +231,7 @@ def run_full_refresh_prep(pcbanks_arg: str) -> None:
     DATA.mkdir(parents=True, exist_ok=True)
 
     print("\n--- Refresh Prep 2/3: Extract MBINs ---")
-    file_count = extract_mbins_with_hgpaktool(pcbanks, DATA, MBIN_FILTERS)
+    file_count = extract_mbins_with_hgpaktool(pcbanks, DATA, MBIN_FILTERS + POWER_MBIN_FILTERS)
     print(f"  Extracted {file_count} files from PCBANKS")
 
     print("\n--- Refresh Prep 2b: Consolidate MBINs ---")
@@ -232,7 +244,26 @@ def run_full_refresh_prep(pcbanks_arg: str) -> None:
         raise SystemExit(f"MBINCompiler not found: {compiler}")
 
     for mbin in sorted(mbin_dir.glob("*.mbin")):
-        run([str(compiler), str(mbin)])
+        convert_mbin(compiler, mbin)
+
+    # Supplemental rules retain their own release/compiler provenance.
+    power_dir = DATA / 'power'
+    power_dir.mkdir()
+    power_names = ['gcskyglobals.globals.MXML', 'regionhotspotstable.MXML']
+    for name in power_names:
+        shutil.copy2(mbin_dir / name, power_dir / name)
+    compiler_match = re.search(r'MBINCompiler version \(([^)]+)\)',
+                              (power_dir / power_names[0]).read_text(encoding='utf-8-sig'))
+    if compiler_match is None:
+        raise ValueError('Power source lacks compiler provenance')
+    power_compiler = compiler_match.group(1)
+    power_manifest = {
+        **power_source_provenance(Path(pcbanks), os.environ.get('NMS_GAME_VERSION')),
+        'CompilerVersion': power_compiler,
+        'Sources': {name: hashlib.sha256((power_dir / name).read_bytes()).hexdigest() for name in power_names},
+    }
+    (power_dir / 'sources.json').write_text(json.dumps(power_manifest, indent=2), encoding='utf-8')
+    parse_power_rules(power_dir)
 
     missing = [name for name in EXPECTED_MXML_AFTER_REFRESH if not (mbin_dir / name).exists()]
     if missing:
@@ -841,9 +872,8 @@ def enrich_exocraft_metadata(final_files: dict, data_dir: Path) -> int:
 
 
 def enrich_buildings_metadata(final_files: dict, data_dir: Path) -> int:
-    buildings_items = final_files.get('Buildings.json')
-    if not isinstance(buildings_items, list) or not buildings_items:
-        return 0
+    buildings_items = [(filename, item) for filename, rows in final_files.items() if isinstance(rows, list)
+                       for item in rows if isinstance(item, dict)]
     from parsers.base_parser import EXMLParser
 
     source_table = data_dir / 'basebuildingobjectstable.MXML'
@@ -875,18 +905,7 @@ def enrich_buildings_metadata(final_files: dict, data_dir: Path) -> int:
                 if group_name:
                     groups_list.append({'Group': group_name, 'SubGroupName': subgroup or None})
 
-        link_grid_data = None
-        link_elem = building_elem.find('.//Property[@name="LinkGridData"]')
-        if link_elem is not None:
-            network_elem = link_elem.find('.//Property[@name="Network"]')
-            link_type = (
-                parser.get_nested_enum(network_elem, 'LinkNetworkType', 'LinkNetworkType', '')
-                if network_elem is not None else ''
-            )
-            rate = parser.parse_value(parser.get_property_value(link_elem, 'Rate', '0'))
-            storage = parser.parse_value(parser.get_property_value(link_elem, 'Storage', '0'))
-            if link_type or rate or storage:
-                link_grid_data = {'Network': link_type or None, 'Rate': rate, 'Storage': storage}
+        link_grid_data = parse_link_grid(building_elem)
 
         metadata_by_id[item_id] = {
             'IconOverrideProductID': parser.get_property_value(building_elem, 'IconOverrideProductID', '') or None,
@@ -901,17 +920,20 @@ def enrich_buildings_metadata(final_files: dict, data_dir: Path) -> int:
             ),
             'Groups': groups_list if groups_list else None,
             'LinkGridData': link_grid_data,
+            **({'ShowInBuildMenu': parser.parse_value(parser.get_property_value(building_elem, 'ShowInBuildMenu', 'true')),
+                'IsPlaceable': parser.parse_value(parser.get_property_value(building_elem, 'IsPlaceable', 'true'))}
+               if link_grid_data is not None else {}),
         }
 
     enriched = 0
-    for item in buildings_items:
+    for filename, item in buildings_items:
         if not isinstance(item, dict):
             continue
         item_id = item.get('Id')
         if not isinstance(item_id, str):
             continue
         extra = metadata_by_id.get(item_id)
-        if not extra:
+        if not extra or (filename != 'Buildings.json' and extra['LinkGridData'] is None):
             continue
         item.update(extra)
         enriched += 1
@@ -1281,7 +1303,7 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
     enrich_space_base_variants(final_files, data_dir)
     enrich_reward_variants(final_files)
     if buildings_enriched:
-        print(f"  [ENRICH] Buildings.json: added base-building metadata to {buildings_enriched} items")
+        print(f"  [ENRICH] Catalog: added base-building metadata to {buildings_enriched} items")
 
     food = final_files.get('Food.json')
     if isinstance(food, list):
@@ -1347,6 +1369,12 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
     print("\n" + "=" * 70)
     print(f"Output location: {REPO_ROOT / 'data' / 'json'}")
     print("=" * 70 + "\n")
+
+    power_rules = parse_power_rules(DATA / 'power')
+    if power_rules is None and baseline_json_dir and (baseline_json_dir / 'PowerRules.json').exists():
+        raise ValueError('Power rule sources are missing; refusing to drop previously extracted rules')
+    if power_rules is not None:
+        save_json(power_rules, 'PowerRules.json')
 
     if no_strict:
         print("[INFO] Strict smoke checks skipped (--no-strict).")
@@ -1462,6 +1490,8 @@ def run_staged_json(args: argparse.Namespace, pcbanks: str) -> int:
             shutil.copytree(live_root / "reports", stage / "reports")
         if not refresh:
             shutil.copytree(live_root / "data" / "mbin", stage / "data" / "mbin")
+            if (live_root / "data" / "power").is_dir():
+                shutil.copytree(live_root / "data" / "power", stage / "data" / "power")
         elif (Path(pcbanks).parent / "INPUT" / "ACTIONS.JSON").is_file():
             (stage / "data" / "input").mkdir()
             shutil.copy2(Path(pcbanks).parent / "INPUT" / "ACTIONS.JSON", stage / "data" / "input" / "actions.json")
@@ -1482,7 +1512,7 @@ def run_staged_json(args: argparse.Namespace, pcbanks: str) -> int:
                 return 0
             targets = ["data/json"]
             if refresh:
-                targets.append("data/mbin")
+                targets.extend(["data/mbin", "data/power"])
             if (stage / "reports").is_dir():
                 targets.append("reports")
             backup = publish_directories(stage, live_root, targets)
@@ -1504,7 +1534,7 @@ def main() -> int:
     args = parse_args()
     if args.list_sources:
         from utils.smoke import EXPECTED_JSON_FILES
-        print(json.dumps({"pakFilters": MBIN_FILTERS, "requiredMxml": EXPECTED_MXML_AFTER_REFRESH,
+        print(json.dumps({"pakFilters": MBIN_FILTERS, "powerRulePakFilters": POWER_MBIN_FILTERS, "requiredMxml": EXPECTED_MXML_AFTER_REFRESH,
                           "requiredDataJson": EXPECTED_JSON_FILES}, indent=2))
         return 0
     pcbanks_arg_effective = args.pcbanks or (DEFAULT_PCBANKS if args.refresh else "")
