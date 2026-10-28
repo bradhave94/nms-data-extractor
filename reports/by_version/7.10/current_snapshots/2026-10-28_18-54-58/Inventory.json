@@ -1,0 +1,2214 @@
+{
+	"MaxSlots": {
+		"Freighter": {
+			"General": {
+				"C": 60,
+				"B": 80,
+				"A": 100,
+				"S": 120
+			},
+			"Tech": {
+				"C": 30,
+				"B": 40,
+				"A": 50,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Dropship": {
+			"General": {
+				"C": 60,
+				"B": 80,
+				"A": 100,
+				"S": 120
+			},
+			"Tech": {
+				"C": 30,
+				"B": 40,
+				"A": 50,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Fighter": {
+			"General": {
+				"C": 50,
+				"B": 70,
+				"A": 80,
+				"S": 100
+			},
+			"Tech": {
+				"C": 30,
+				"B": 40,
+				"A": 50,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Scientific": {
+			"General": {
+				"C": 60,
+				"B": 80,
+				"A": 90,
+				"S": 110
+			},
+			"Tech": {
+				"C": 30,
+				"B": 40,
+				"A": 50,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Shuttle": {
+			"General": {
+				"C": 50,
+				"B": 80,
+				"A": 90,
+				"S": 110
+			},
+			"Tech": {
+				"C": 25,
+				"B": 40,
+				"A": 50,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"PlayerFreighter": {
+			"General": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			},
+			"Tech": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Royal": {
+			"General": {
+				"C": 105,
+				"B": 105,
+				"A": 105,
+				"S": 105
+			},
+			"Tech": {
+				"C": 60,
+				"B": 60,
+				"A": 60,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Alien": {
+			"General": {
+				"C": 120,
+				"B": 120,
+				"A": 120,
+				"S": 120
+			},
+			"Tech": {
+				"C": 60,
+				"B": 60,
+				"A": 60,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Sail": {
+			"General": {
+				"C": 50,
+				"B": 70,
+				"A": 90,
+				"S": 110
+			},
+			"Tech": {
+				"C": 30,
+				"B": 40,
+				"A": 50,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Robot": {
+			"General": {
+				"C": 60,
+				"B": 80,
+				"A": 100,
+				"S": 120
+			},
+			"Tech": {
+				"C": 30,
+				"B": 40,
+				"A": 50,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"Corvette": {
+			"General": {
+				"C": 60,
+				"B": 80,
+				"A": 100,
+				"S": 120
+			},
+			"Tech": {
+				"C": 30,
+				"B": 40,
+				"A": 50,
+				"S": 60
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		},
+		"SwarmDrone": {
+			"General": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			},
+			"Tech": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			},
+			"Cargo": {
+				"C": 0,
+				"B": 0,
+				"A": 0,
+				"S": 0
+			}
+		}
+	},
+	"MultiToolMaxSlots": {
+		"C": 21,
+		"B": 30,
+		"A": 45,
+		"S": 60
+	},
+	"ClassOdds": {
+		"Poor": {
+			"C": 60.0,
+			"B": 30.0,
+			"A": 10.0,
+			"S": 0.0
+		},
+		"Average": {
+			"C": 49.0,
+			"B": 35.0,
+			"A": 15.0,
+			"S": 1.0
+		},
+		"Wealthy": {
+			"C": 30.0,
+			"B": 40.0,
+			"A": 28.0,
+			"S": 2.0
+		},
+		"Pirate": {
+			"C": 5.0,
+			"B": 5.0,
+			"A": 5.0,
+			"S": 5.0
+		}
+	},
+	"Layouts": {
+		"SciSmall": {
+			"MinSlots": 24,
+			"MaxSlots": 29,
+			"MinTechSlots": 14,
+			"MaxTechSlots": 19,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"SciMedium": {
+			"MinSlots": 24,
+			"MaxSlots": 32,
+			"MinTechSlots": 19,
+			"MaxTechSlots": 24,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"SciLarge": {
+			"MinSlots": 30,
+			"MaxSlots": 38,
+			"MinTechSlots": 24,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"FgtSmall": {
+			"MinSlots": 24,
+			"MaxSlots": 28,
+			"MinTechSlots": 14,
+			"MaxTechSlots": 19,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"FgtMedium": {
+			"MinSlots": 24,
+			"MaxSlots": 32,
+			"MinTechSlots": 14,
+			"MaxTechSlots": 24,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"FgtLarge": {
+			"MinSlots": 30,
+			"MaxSlots": 38,
+			"MinTechSlots": 19,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"ShuSmall": {
+			"MinSlots": 24,
+			"MaxSlots": 32,
+			"MinTechSlots": 12,
+			"MaxTechSlots": 19,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"ShtMedium": {
+			"MinSlots": 28,
+			"MaxSlots": 36,
+			"MinTechSlots": 18,
+			"MaxTechSlots": 26,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"ShtLarge": {
+			"MinSlots": 32,
+			"MaxSlots": 42,
+			"MinTechSlots": 18,
+			"MaxTechSlots": 28,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"DrpSmall": {
+			"MinSlots": 30,
+			"MaxSlots": 36,
+			"MinTechSlots": 12,
+			"MaxTechSlots": 18,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"DrpMedium": {
+			"MinSlots": 36,
+			"MaxSlots": 40,
+			"MinTechSlots": 18,
+			"MaxTechSlots": 24,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"DrpLarge": {
+			"MinSlots": 40,
+			"MaxSlots": 48,
+			"MinTechSlots": 20,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"RoySmall": {
+			"MinSlots": 24,
+			"MaxSlots": 30,
+			"MinTechSlots": 14,
+			"MaxTechSlots": 19,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"RoyMedium": {
+			"MinSlots": 24,
+			"MaxSlots": 30,
+			"MinTechSlots": 20,
+			"MaxTechSlots": 28,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"RoyLarge": {
+			"MinSlots": 24,
+			"MaxSlots": 32,
+			"MinTechSlots": 26,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"AlienSmall": {
+			"MinSlots": 36,
+			"MaxSlots": 36,
+			"MinTechSlots": 30,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"AlienMedium": {
+			"MinSlots": 36,
+			"MaxSlots": 36,
+			"MinTechSlots": 30,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"AlienLarge": {
+			"MinSlots": 36,
+			"MaxSlots": 36,
+			"MinTechSlots": 30,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"SailSmall": {
+			"MinSlots": 24,
+			"MaxSlots": 30,
+			"MinTechSlots": 13,
+			"MaxTechSlots": 18,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"SailMedium": {
+			"MinSlots": 24,
+			"MaxSlots": 32,
+			"MinTechSlots": 14,
+			"MaxTechSlots": 22,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"SailLarge": {
+			"MinSlots": 30,
+			"MaxSlots": 36,
+			"MinTechSlots": 20,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"RobotSmall": {
+			"MinSlots": 32,
+			"MaxSlots": 40,
+			"MinTechSlots": 22,
+			"MaxTechSlots": 28,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"RobotMedium": {
+			"MinSlots": 32,
+			"MaxSlots": 40,
+			"MinTechSlots": 22,
+			"MaxTechSlots": 28,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"RobotLarge": {
+			"MinSlots": 32,
+			"MaxSlots": 40,
+			"MinTechSlots": 22,
+			"MaxTechSlots": 28,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"WeaponSmall": {
+			"MinSlots": 9,
+			"MaxSlots": 18,
+			"MinTechSlots": 9,
+			"MaxTechSlots": 18,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"WeaponMedium": {
+			"MinSlots": 13,
+			"MaxSlots": 20,
+			"MinTechSlots": 13,
+			"MaxTechSlots": 20,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"WeaponLarge": {
+			"MinSlots": 17,
+			"MaxSlots": 30,
+			"MinTechSlots": 17,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"FreighterSmall": {
+			"MinSlots": 15,
+			"MaxSlots": 19,
+			"MinTechSlots": 8,
+			"MaxTechSlots": 12,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"FreighterMedium": {
+			"MinSlots": 24,
+			"MaxSlots": 34,
+			"MinTechSlots": 12,
+			"MaxTechSlots": 20,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"FreighterLarge": {
+			"MinSlots": 35,
+			"MaxSlots": 48,
+			"MinTechSlots": 18,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"VehicleSmall": {
+			"MinSlots": 30,
+			"MaxSlots": 30,
+			"MinTechSlots": 26,
+			"MaxTechSlots": 26,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 3
+		},
+		"VehicleMedium": {
+			"MinSlots": 40,
+			"MaxSlots": 40,
+			"MinTechSlots": 28,
+			"MaxTechSlots": 28,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 3
+		},
+		"VehicleLarge": {
+			"MinSlots": 50,
+			"MaxSlots": 50,
+			"MinTechSlots": 30,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 3
+		},
+		"ChestSmall": {
+			"MinSlots": 50,
+			"MaxSlots": 50,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"ChestMedium": {
+			"MinSlots": 50,
+			"MaxSlots": 50,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"ChestLarge": {
+			"MinSlots": 50,
+			"MaxSlots": 50,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"ChestCapsule": {
+			"MinSlots": 50,
+			"MaxSlots": 50,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"Suit": {
+			"MinSlots": 24,
+			"MaxSlots": 24,
+			"MinTechSlots": 12,
+			"MaxTechSlots": 12,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 3
+		},
+		"MaintObject": {
+			"MinSlots": 16,
+			"MaxSlots": 16,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"RocketLocker": {
+			"MinSlots": 21,
+			"MaxSlots": 21,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"FishBaitBox": {
+			"MinSlots": 1,
+			"MaxSlots": 1,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"FishingPlatform": {
+			"MinSlots": 60,
+			"MaxSlots": 60,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"FoodUnit": {
+			"MinSlots": 1,
+			"MaxSlots": 1,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		},
+		"Corvette": {
+			"MinSlots": 40,
+			"MaxSlots": 48,
+			"MinTechSlots": 20,
+			"MaxTechSlots": 30,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 4
+		},
+		"CorvetteStorage": {
+			"MinSlots": 160,
+			"MaxSlots": 160,
+			"MinTechSlots": 0,
+			"MaxTechSlots": 0,
+			"MinCargoSlots": 0,
+			"MaxCargoSlots": 0,
+			"MaxNumSpecialTechSlots": 0
+		}
+	},
+	"BaseStats": {
+		"Ships": {
+			"Freighter": {
+				"C": [
+					{
+						"Stat": "FREI_HYPERDRIVE",
+						"Min": 7.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "FREI_FLEET",
+						"Min": 1.0,
+						"Max": 10.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "FREI_HYPERDRIVE",
+						"Min": 10.0,
+						"Max": 19.0
+					},
+					{
+						"Stat": "FREI_FLEET",
+						"Min": 10.0,
+						"Max": 20.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "FREI_HYPERDRIVE",
+						"Min": 40.0,
+						"Max": 60.0
+					},
+					{
+						"Stat": "FREI_FLEET",
+						"Min": 20.0,
+						"Max": 40.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "FREI_HYPERDRIVE",
+						"Min": 60.0,
+						"Max": 80.0
+					},
+					{
+						"Stat": "FREI_FLEET",
+						"Min": 40.0,
+						"Max": 60.0
+					}
+				]
+			},
+			"Dropship": {
+				"C": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 18.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 0.0,
+						"Max": 0.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 3.0,
+						"Max": 8.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 40.0,
+						"Max": 55.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 0.0,
+						"Max": 5.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 60.0,
+						"Max": 75.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 23.0,
+						"Max": 37.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 5.0,
+						"Max": 10.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 15.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 95.0,
+						"Max": 125.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 45.0,
+						"Max": 58.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 10.0,
+						"Max": 15.0
+					}
+				]
+			},
+			"Fighter": {
+				"C": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 5.0,
+						"Max": 15.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 24.0,
+						"Max": 45.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 15.0,
+						"Max": 20.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 50.0,
+						"Max": 75.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 24.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 20.0,
+						"Max": 30.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 70.0,
+						"Max": 90.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 24.0,
+						"Max": 38.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 35.0,
+						"Max": 45.0
+					}
+				]
+			},
+			"Scientific": {
+				"C": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 5.0,
+						"Max": 10.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 4.0,
+						"Max": 16.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 30.0,
+						"Max": 45.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 10.0,
+						"Max": 20.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 50.0,
+						"Max": 85.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 20.0,
+						"Max": 25.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 30.0,
+						"Max": 40.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 90.0,
+						"Max": 120.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 25.0,
+						"Max": 32.0
+					}
+				]
+			},
+			"Shuttle": {
+				"C": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 0.0,
+						"Max": 0.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 3.0,
+						"Max": 8.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 3.0,
+						"Max": 8.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 3.0,
+						"Max": 8.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 3.0,
+						"Max": 5.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 8.0,
+						"Max": 15.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 25.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 25.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 25.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 15.0,
+						"Max": 35.0
+					}
+				]
+			},
+			"PlayerFreighter": {
+				"C": [],
+				"B": [],
+				"A": [],
+				"S": []
+			},
+			"Royal": {
+				"C": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 35.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 55.0,
+						"Max": 60.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 50.0,
+						"Max": 65.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 35.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 55.0,
+						"Max": 60.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 50.0,
+						"Max": 65.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 35.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 55.0,
+						"Max": 60.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 50.0,
+						"Max": 65.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 50.0,
+						"Max": 75.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 70.0,
+						"Max": 90.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 75.0,
+						"Max": 95.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 40.0,
+						"Max": 50.0
+					}
+				]
+			},
+			"Alien": {
+				"C": [],
+				"B": [],
+				"A": [],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 50.0,
+						"Max": 75.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 15.0,
+						"Max": 38.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 75.0,
+						"Max": 95.0
+					},
+					{
+						"Stat": "ALIEN_SHIP",
+						"Min": 1.0,
+						"Max": 1.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 10.0,
+						"Max": 15.0
+					}
+				]
+			},
+			"Sail": {
+				"C": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 5.0,
+						"Max": 10.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 23.0,
+						"Max": 45.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 8.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 15.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 10.0,
+						"Max": 20.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 45.0,
+						"Max": 60.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 23.0,
+						"Max": 38.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 30.0,
+						"Max": 45.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 20.0,
+						"Max": 30.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 60.0,
+						"Max": 75.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 23.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 38.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 35.0,
+						"Max": 40.0
+					}
+				]
+			},
+			"Robot": {
+				"C": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 3.0,
+						"Max": 8.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "ROBOT_SHIP",
+						"Min": 1.0,
+						"Max": 1.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 24.0,
+						"Max": 45.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 3.0,
+						"Max": 8.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 20.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "ROBOT_SHIP",
+						"Min": 1.0,
+						"Max": 1.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 50.0,
+						"Max": 75.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 12.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 3.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 20.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "ROBOT_SHIP",
+						"Min": 1.0,
+						"Max": 1.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 60.0,
+						"Max": 80.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 20.0,
+						"Max": 35.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 40.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "ROBOT_SHIP",
+						"Min": 1.0,
+						"Max": 1.0
+					}
+				]
+			},
+			"Corvette": {
+				"C": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 18.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 0.0,
+						"Max": 0.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 3.0,
+						"Max": 8.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 40.0,
+						"Max": 55.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 0.0,
+						"Max": 5.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 8.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 60.0,
+						"Max": 75.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 23.0,
+						"Max": 37.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 5.0,
+						"Max": 10.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "SHIP_DAMAGE",
+						"Min": 15.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "SHIP_SHIELD",
+						"Min": 95.0,
+						"Max": 125.0
+					},
+					{
+						"Stat": "SHIP_HYPERDRIVE",
+						"Min": 45.0,
+						"Max": 58.0
+					},
+					{
+						"Stat": "SHIP_AGILE",
+						"Min": 10.0,
+						"Max": 15.0
+					}
+				]
+			},
+			"SwarmDrone": {
+				"C": [],
+				"B": [],
+				"A": [],
+				"S": []
+			}
+		},
+		"Weapons": {
+			"Pistol": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 10.0,
+						"Max": 20.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 25.0,
+						"Max": 30.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 15.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 35.0,
+						"Max": 40.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 20.0,
+						"Max": 35.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 45.0,
+						"Max": 50.0
+					}
+				]
+			},
+			"Rifle": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 0.0,
+						"Max": 5.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 0.0,
+						"Max": 5.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 5.0,
+						"Max": 10.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 10.0,
+						"Max": 15.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 15.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 0.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 15.0,
+						"Max": 20.0
+					}
+				]
+			},
+			"Pristine": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 0.0,
+						"Max": 5.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 40.0,
+						"Max": 50.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 10.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 60.0,
+						"Max": 70.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 20.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 80.0,
+						"Max": 90.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 25.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 100.0,
+						"Max": 100.0
+					}
+				]
+			},
+			"Alien": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 5.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 20.0,
+						"Max": 25.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 15.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 30.0,
+						"Max": 35.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 20.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 40.0,
+						"Max": 45.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 25.0,
+						"Max": 35.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 15.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 50.0,
+						"Max": 60.0
+					}
+				]
+			},
+			"Royal": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 0.0,
+						"Max": 5.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 40.0,
+						"Max": 50.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 10.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 60.0,
+						"Max": 70.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 20.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 80.0,
+						"Max": 90.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 25.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 100.0,
+						"Max": 100.0
+					}
+				]
+			},
+			"Robot": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 5.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 20.0,
+						"Max": 25.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 30.0,
+						"Max": 35.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 20.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 35.0,
+						"Max": 45.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 32.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 45.0,
+						"Max": 55.0
+					}
+				]
+			},
+			"Atlas": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 20.0,
+						"Max": 25.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 30.0,
+						"Max": 35.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 20.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 35.0,
+						"Max": 45.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 35.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 40.0,
+						"Max": 50.0
+					}
+				]
+			},
+			"AtlasYellow": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 20.0,
+						"Max": 25.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 30.0,
+						"Max": 35.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 20.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 35.0,
+						"Max": 45.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 35.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 40.0,
+						"Max": 50.0
+					}
+				]
+			},
+			"AtlasBlue": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 20.0,
+						"Max": 25.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 30.0,
+						"Max": 35.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 20.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 35.0,
+						"Max": 45.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 35.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 40.0,
+						"Max": 50.0
+					}
+				]
+			},
+			"Staff": {
+				"C": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 10.0,
+						"Max": 20.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 0.0,
+						"Max": 5.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 20.0,
+						"Max": 25.0
+					}
+				],
+				"B": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 15.0,
+						"Max": 25.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 30.0,
+						"Max": 35.0
+					}
+				],
+				"A": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 20.0,
+						"Max": 30.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 5.0,
+						"Max": 10.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 35.0,
+						"Max": 45.0
+					}
+				],
+				"S": [
+					{
+						"Stat": "WEAPON_DAMAGE",
+						"Min": 25.0,
+						"Max": 50.0
+					},
+					{
+						"Stat": "WEAPON_MINING",
+						"Min": 10.0,
+						"Max": 15.0
+					},
+					{
+						"Stat": "WEAPON_SCAN",
+						"Min": 40.0,
+						"Max": 50.0
+					}
+				]
+			}
+		},
+		"Exocraft": {
+			"C": [],
+			"B": [],
+			"A": [],
+			"S": []
+		}
+	}
+}

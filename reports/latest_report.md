@@ -1,14 +1,14 @@
 # NMS Full Refresh Report
 
-- Generated: `2026-10-28T14:01:59-04:00`
+- Generated: `2026-10-28T19:28:01-04:00`
 - Version key: `7.10`
-- Previous run: `2026-10-28T13:01:28-04:00` (7.10)
+- Previous run: `2026-10-28T19:07:38-04:00` (7.10)
 
 ## Totals
 
 - Old total items: **7062**
-- New total items: **7947**
-- Added IDs: **885**
+- New total items: **8025**
+- Added IDs: **958**
 - Removed IDs: **0**
 - Changed IDs: **366**
 
@@ -26,7 +26,9 @@
 | Fish.json | 226 | 226 | 0 | 0 | 0 |
 | Food.json | 386 | 386 | 0 | 0 | 0 |
 | FrigateTraits.json | 0 | 178 | 178 | 0 | 0 |
+| Inventory.json | 0 | 5 | 0 | 0 | 0 |
 | ItemSources.json | 0 | 26 | 26 | 0 | 0 |
+| Milestones.json | 0 | 66 | 66 | 0 | 0 |
 | NutrientProcessor.json | 1323 | 1323 | 0 | 0 | 0 |
 | Others.json | 654 | 655 | 1 | 0 | 7 |
 | PowerRules.json | 5 | 5 | 0 | 0 | 0 |
@@ -40,6 +42,7 @@
 | TechnologyModule.json | 26 | 26 | 0 | 0 | 0 |
 | Titles.json | 0 | 346 | 346 | 0 | 0 |
 | Trade.json | 43 | 43 | 0 | 0 | 0 |
+| Trading.json | 0 | 7 | 7 | 0 | 0 |
 | Upgrades.json | 497 | 497 | 0 | 0 | 40 |
 | none.json | 0 | 0 | 0 | 0 | 0 |
 
@@ -73,9 +76,15 @@
 - Added (178): COMBAT_BAD_1, COMBAT_BAD_2, COMBAT_BAD_3, COMBAT_BAD_4, COMBAT_BAD_5, COMBAT_PRI, COMBAT_SEC_1, COMBAT_SEC_2, COMBAT_SEC_3, COMBAT_SEC_4, COMBAT_SEC_5, COMBAT_SEC_6, COMBAT_TER_1, COMBAT_TER_2, COMBAT_TER_3, COMBAT_TER_4, COMBAT_TER_5, COMBAT_TER_6, DEEPSPACE_1, DEEPSPACE_2, DEEPSPACE_3, DEEPSPACE_4, DEEPSPACE_5, EXPLORE_BAD_1, EXPLORE_BAD_2
   - ... and 153 more
 
+### Inventory.json
+
 ### ItemSources.json
 - Added (26): ?D_SPOOK_SHOP_WEAPON@None#0, ?EXP_NPC_DUST_CHAIN2_A_3@Explorers#0, ?EXP_NPC_DUST_CHAIN_3@Explorers#1, ?EXP_NPC_DUST_RET_3@Explorers#0, ?PP_TOXIC_FARM_INTERIM_CHAIN@Traders#0, ?TRA_NPC_COLD_CHAIN2_4@Traders#0, ?TRA_NPC_COLD_CHAIN3_4@Traders#0, ?TRA_NPC_COLD_CHAIN4_4@Traders#0, ?TRA_NPC_COLD_CHAIN_4@Traders#0, ?TRA_NPC_COLD_RET2_4@Traders#0, ?TRA_NPC_COLD_RET3_4@Traders#0, ?TRA_NPC_COLD_RET4_4@Traders#0, ?TRA_NPC_COLD_RET5_4@Traders#0, ?TRA_NPC_COLD_RET_4@Traders#0, ?TRA_NPC_LUSH_CHAIN_B_3@Traders#0, ?TRA_NPC_LUSH_CHAIN_B_3@Traders#1, ?TRA_NPC_LUSH_CHAIN_B_3@Traders#2, ?TRA_SCAVENGER_EXT_CHAIN_1@Traders#0, ?WAR_NPC_OUTPOST_CHAIN_A_1@Warriors#0, ?WAR_NPC_OUTPOST_CHAIN_B2_1@Warriors#0, ?WAR_NPC_OUTPOST_CHAIN_B_1@Warriors#0, EXP_NPC_16@Explorers#2, LIBRARY_MAP@Explorers#0, LIBRARY_MAP@Traders#0, LIBRARY_MAP@Warriors#0
   - ... and 1 more
+
+### Milestones.json
+- Added (66): ALIENS_MET, BDONE_MISSIONS, BOUNTIES, BUI_STANDING, BWORDS_LEARNT, DISC_ALL_CREATU, DISC_FLORA, DIST_WALKED, DIST_WARP, DRONE_SHARDS, EDONE_MISSIONS, EGDONE_MISSIONS, EGGS_HATCHED, EGUILD_STAND, ENEMIES_KILLED, ESEEN_SYSTEMS, EWORDS_LEARNT, EXP_STANDING, FIENDS_KILLED, FPODS_BROKEN, HEAD_REPAIRS, JOURNEY00, JOURNEY01, JOURNEY02, JOURNEY03
+  - ... and 41 more
 
 ### Others.json
 - Added (1): GRUB_HAT
@@ -103,6 +112,9 @@
 ### Titles.json
 - Added (346): T_ABANDLORE1, T_ABANDLORE2, T_ABANDLORE3, T_ABANDLORE4, T_ABYSS, T_ARTEMIS, T_ATLASDENY, T_ATLASPATH, T_BLACK_HOL, T_BONES1, T_BONES2, T_BONES3, T_BONES4, T_BONES5, T_BONES6, T_BOUNTY1, T_BOUNTY2, T_BUGHUNT1, T_BUGHUNT2, T_BUGHUNT3, T_BUGHUNT4, T_BUI1, T_BUI2, T_BUI3, T_BUI4
   - ... and 321 more
+
+### Trading.json
+- Added (7): Fusion, HighTech, Manufacturing, Mining, PowerGeneration, Scientific, Trading
 
 ### Upgrades.json
 - Changed (40): F_HACCESS1, F_HACCESS2, F_HACCESS3, F_HACCESS4, HDRIVEBOOST1, HDRIVEBOOST2, HDRIVEBOOST3, HDRIVEBOOST4, LASER_XO, MECH_FUEL, SUB_RECHARGE, UT_BOLT, UT_BOLTBOUNCE, UT_CANNON, UT_ENERGY, UT_JET, UT_JUMP, UT_LAUNCHCHARGE, UT_LAUNCHER, UT_PROTECT, UT_RAIL, UT_RAIL_STUN, UT_ROCKETS, UT_SCAN, UT_SHIPBLOB
