@@ -112,7 +112,7 @@ python extract.py --list-sources
 
 `MBIN_FILTERS` and `EXPECTED_MXML_AFTER_REFRESH` in extract.py define required game sources. `EXPECTED_JSON_FILES` in utils/smoke.py defines data outputs. This includes arena rewards, egg modifiers, and creature globals.
 
-There are currently 45 required MXML files (including nine English localization tables), 30 parser jobs, and 24 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
+There are currently 48 required MXML files (including nine English localization tables), 33 parser jobs, and 27 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
 
 ## Development
 
@@ -131,7 +131,14 @@ There are currently 45 required MXML files (including nine English localization 
 - `FrigateTraits.json` (`frigatetraittable`): each trait's stat, strength and the frigate types it rolls on. The numeric change for each strength comes from `FrigateTraitStrengths` in `gcfleetglobals`, and `Effect` is the game's own label with the amount filled in. Stats the game shows inverted (`StatDisplaysPositive=false`, e.g. fuel cost) are shown inverted.
 - `SettlementPerks.json` (`settlementperkstable`): each perk's flags and stat changes, with the min-max range for each strength from `PerkStatStrengthValues` in `gcsettlementglobals`. `Text` is the game's own effect wording (`UI_SETTLEMENT_STAT_*_POS_FMT`/`_NEG_FMT`, e.g. "+50,000–100,000 u/day maintenance") with the range filled in unscaled, as the game's format strings take it.
 - `ItemSources.json` (`unlockableseasonrewards`, `unlockabletwitchrewards`, `unlockableplatformrewards`, `purchaseablespecials`, `historicalseasondatatable`): where items come from, keyed by item ID. Expedition rewards use the expedition number players see (`DisplayNumber`, not the internal season number). `Exchanges` lists the dialog options in `nms_dialog_gcalienpuzzletable` that take a fixed cost from `costtable` (an item, substance or currency) and always give specific items through `rewardtable`; random or partial rewards are left out.
+- `ItemSources.json` also carries each expedition's description, final reward and the title it grants (`historicalseasondatatable`).
 - `ResearchTrees.json` (`unlockableitemtrees`): each station's trees, their currency and node order. A node's price is its item's `BlueprintCost`, paid in the tree's currency. The `Test` group is skipped.
+
+`parsers/progression_tables.py` writes three more:
+
+- `Milestones.json` (`leveledstatstable`, `journeymilestonetable`): every ladder's level names, thresholds and the game's description of what it counts (milestones, race, guild and Outlaw standing), and the Journey ranks with their points. Ladders the game never shows in its terminal may lack English text; a shown one may not.
+- `Inventory.json` (`inventorytable`): the most slots each ship type and the Multi-Tool can be upgraded to by class, class odds by system wealth, base stat ranges by class, and the game's names for each type (`BASESTATS_*`).
+- `Trading.json` (`tradingclassdatatable`): what each economy type sells and needs, its buy and sell multipliers, and how prices move per 100 sold.
 
 These are not item outputs. `REFERENCE_FILES` in `utils/report.py` keeps them out of `new.json` and the global item ID index; they are still archived in release snapshots and compared file by file in the report. Item IDs they reference that no output contains are printed as warnings; in 7.10 that is the whole corvette research tree, whose parts no longer exist.
 

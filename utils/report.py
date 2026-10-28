@@ -25,9 +25,12 @@ IGNORED_REPORT_FILES = {
 # and their rows reuse item IDs (research nodes, item sources).
 REFERENCE_FILES = {
     "FrigateTraits.json",
+    "Inventory.json",
     "ItemSources.json",
+    "Milestones.json",
     "ResearchTrees.json",
     "SettlementPerks.json",
+    "Trading.json",
 }
 # Fields an extractor fix corrected in a release, so the correction isn't reported as a game
 # change in that release's new.json. 7.10: technology BlueprintCost was a hard-coded 1 and is

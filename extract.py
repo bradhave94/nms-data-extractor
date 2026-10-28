@@ -37,6 +37,7 @@ from parsers.creatures import (
 )
 from parsers.battle_moves import parse_battle_moves
 from parsers.player_unlocks import parse_player_titles
+from parsers.progression_tables import parse_inventory, parse_milestones, parse_trading
 from parsers.reference_tables import (
     parse_frigate_traits, parse_item_sources, parse_research_trees, parse_settlement_perks,
 )
@@ -120,6 +121,9 @@ MBIN_FILTERS = [
     "*REALITY/TABLES/costtable.mbin",
     "*REALITY/TABLES/nms_dialog_gcalienpuzzletable.mbin",
     "*REALITY/TABLES/unlockableitemtrees.mbin",
+    "*GAMESTATE/STATS/journeymilestonetable.mbin",
+    "*REALITY/TABLES/inventorytable.mbin",
+    "*REALITY/TABLES/tradingclassdatatable.mbin",
     "*gccreatureglobals.mbin",
 ]
 
@@ -1113,6 +1117,9 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
         ('SettlementPerks', 'settlementperkstable.MXML', parse_settlement_perks),
         ('ItemSources', 'unlockableseasonrewards.MXML', parse_item_sources),
         ('ResearchTrees', 'unlockableitemtrees.MXML', parse_research_trees),
+        ('Milestones', 'leveledstatstable.MXML', parse_milestones),
+        ('Inventory', 'inventorytable.MXML', parse_inventory),
+        ('Trading', 'tradingclassdatatable.MXML', parse_trading),
     ]
     for i, (name, mxml_file, parser_func) in enumerate(parsers, 1):
         mxml_path = mxml_file if isinstance(mxml_file, Path) else (data_dir / mxml_file)
@@ -1177,7 +1184,7 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
     }
     if 'EggModifiers' in base_data:
         final_files['EggModifiers.json'] = base_data.get('EggModifiers', [])
-    for name in ('Titles', 'FrigateTraits', 'SettlementPerks', 'ItemSources', 'ResearchTrees'):
+    for name in ('Titles', 'FrigateTraits', 'SettlementPerks', 'ItemSources', 'ResearchTrees', 'Milestones', 'Inventory', 'Trading'):
         if name in base_data:
             final_files[f'{name}.json'] = base_data[name]
 

@@ -17,7 +17,7 @@ LOCALIZATION = {
     "TRAIT_GUNNERS": "Cowardly Gunners", "TRAIT_TANKS": "Large Tanks",
     "STAT_COMBAT": "%amount% Combat", "STAT_FUEL": "%amount% Expedition Fuel Cost",
     "PERK_WORMS": "Worm infestation", "PERK_WORMS_DESC": "Increases maintenance costs",
-    "SEASON_1": "The Pioneers", "OPTION_OFFER": "Make Offering", "GUN_GRUB": "Larva Cannon",
+    "SEASON_1": "The Pioneers", "SEASON_1_DESC": "The first expedition.", "TITLE_EXPD1": "Pioneer %NAME%", "OPTION_OFFER": "Make Offering", "GUN_GRUB": "Larva Cannon",
     "TREE_STATION": "<IMG>DIAMONDBULLET<> Basic Construction DIAMONDBULLET", "TREE_TIMBER": "Timber Structures",
     "FLEET_UI_TYPE_MINING": "Industrial", "FLEET_UI_TYPE_PIRATE": "RAIDER",
     "UI_SETTLEMENT_STAT_COST_NAME": "Upkeep Costs", "UI_SETTLEMENT_STAT_COST_POS_FMT": "+%NUM% u/day maintenance",
@@ -132,14 +132,17 @@ class ReferenceTablesTest(unittest.TestCase):
         self.write("unlockableplatformrewards.MXML", prop("Table", None, prop("Table", "Gc", prop("RewardId", "TGA_SHIP1"), prop("ProductId", "TGA_SHIP01"))))
         self.write("purchaseablespecials.MXML", prop("Table", None, prop("Table", "Gc", prop("ID", "BASE_DUST12"), prop("ShopNumber", "118"), prop("MissionTier", "3"))))
         self.write("historicalseasondatatable.MXML", prop("Table", None, prop("Table", "Gc", prop("SeasonName", "SEASON_1"),
-            prop("SeasonNumber", "1"), prop("RemixNumber", "0"), prop("DisplayNumber", "1"))))
+            prop("SeasonNumber", "1"), prop("RemixNumber", "0"), prop("DisplayNumber", "1"),
+            prop("Description", "SEASON_1_DESC"), prop("FinalReward", "RS_S1_COMPLETE"), prop("UnlockedTitle", "TITLE_EXPD1"))))
         path = self.write("unlockableseasonrewards.MXML", prop("Table", None, prop("Table", "Gc", prop("ID", "EXPD_TITLE23"),
             prop("SeasonIds", None, prop("SeasonIds", "23")), prop("StageIds", None, prop("StageIds", "5")))))
         sources = parse_item_sources(path)
         self.assertEqual(sources["Items"]["EXPD_TITLE23"], [{"Type": "Expedition", "Expeditions": [23], "Phases": [5], "SwitchExclusive": False}])
         self.assertEqual(sources["Items"]["S_POSTER29"], [{"Type": "Twitch", "Drop": "TWITCH_1"}])
         self.assertEqual(sources["Items"]["BASE_DUST12"], [{"Type": "Quicksilver", "Shop": 118, "MissionTier": 3}])
-        self.assertEqual(sources["Expeditions"], [{"Number": 1, "Remix": 0, "DisplayNumber": 1, "Name": "The Pioneers"}])
+        self.assertEqual(sources["Expeditions"], [{"Number": 1, "Remix": 0, "DisplayNumber": 1, "Name": "The Pioneers",
+                                                   "Description": "The first expedition.", "FinalReward": "RS_S1_COMPLETE",
+                                                   "Title": "Pioneer %NAME%"}])
         exchanges = {exchange["Id"]: exchange for exchange in sources["Exchanges"]}
         # The chart reward picks one of two at random, and C_FREE is never charged: neither is a fixed-price exchange.
         # The same dialog for another race is its own exchange.
