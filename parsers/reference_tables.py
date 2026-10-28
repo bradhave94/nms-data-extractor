@@ -101,6 +101,10 @@ def parse_frigate_traits(mxml_path: str) -> list:
 
 # ---------- settlement perks ----------
 
+# Settlement stats -> the game's effect wording ("+%NUM% u/day maintenance") for a rise and a fall.
+_SETTLEMENT_EFFECT_KEYS = {
+    "Happiness": "MOOD", "Production": "PROD", "Upkeep": "COST", "Sentinels": "SENT", "MaxPopulation": "MAX",
+}
 # Settlement stats -> the game's stat names (and the capacity wording for MaxPopulation).
 _SETTLEMENT_STAT_KEYS = {
     "Happiness": "UI_SETTLEMENT_STAT_MOOD_NAME", "Production": "UI_SETTLEMENT_STAT_PROD_NAME",
@@ -138,7 +142,16 @@ def parse_settlement_perks(mxml_path: str) -> list:
             if label:
                 label = label.replace("+%NUM%", "").strip()
                 label = label[:1].upper() + label[1:]
-            effects.append({"Stat": stat, "Label": label or stat, "Strength": strength, "Min": low, "Max": high,
+            if (low < 0) != (high < 0) or (low == 0) != (high == 0):
+                raise ValueError(f"Settlement perk {perk_id}: {stat}/{strength} range has no single sign ({low} to {high})")
+            effect_key = _SETTLEMENT_EFFECT_KEYS.get(stat)
+            if effect_key is None:
+                raise ValueError(f"Settlement perk {perk_id}: no game wording mapped for stat {stat}")
+            template = _text(f"UI_SETTLEMENT_STAT_{effect_key}_{'NEG' if min(low, high) < 0 else 'POS'}_FMT", problems)
+            amounts = sorted((abs(low), abs(high)))
+            amount = f"{amounts[0]:,}" if amounts[0] == amounts[1] else f"{amounts[0]:,}–{amounts[1]:,}"
+            effects.append({"Stat": stat, "Label": label or stat, "Text": template.replace("%NUM%", amount) if template else None,
+                            "Strength": strength, "Min": low, "Max": high,
                             "ChangesPopulation": _field(change, "DirectlyChangePopulation") == "true"})
         perks.append({
             "Id": perk_id,

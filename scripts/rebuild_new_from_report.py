@@ -142,10 +142,16 @@ def _run_rebuild(args: argparse.Namespace, parser: argparse.ArgumentParser) -> i
             }
         else:
             source_args = _legacy_archive_args(args, report_path, parser)
+        previous_run = report.get("previous_run")
+        baseline_manifest = Path(source_args["baseline_snapshot_dir"]) / "manifest.json"
+        if baseline_manifest.is_file():
+            baseline_version = json.loads(baseline_manifest.read_text(encoding="utf-8")).get("version_key")
+            if baseline_version:
+                previous_run = {**(previous_run or {}), "version_key": baseline_version}
         doc = build_new_json_document(
             repo_root,
             version_key=str(report["version_key"]),
-            previous_run=report.get("previous_run"),
+            previous_run=previous_run,
             generated_at=report.get("generated_at"),
             **source_args,
         )

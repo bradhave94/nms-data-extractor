@@ -186,6 +186,36 @@ class ReleaseLifecycleTest(unittest.TestCase):
                                         baseline_snapshot_dir=self.baseline)
         self.assertEqual([item["Id"] for item in later["Items"]], ["NEW", "T_EXISTING", "T_SPOOKPACKAGE"])
 
+    def test_reference_files_are_archived_but_not_release_items(self):
+        self.write(self.baseline, "Products.json", [{"Id": "OLD"}])
+        self.write(self.current, "Products.json", [{"Id": "OLD"}])
+        self.write(self.current, "ResearchTrees.json", {"Groups": [{"Id": "BaseParts", "Trees": [{"Nodes": [{"Id": "OLD"}]}]}]})
+        self.write(self.current, "FrigateTraits.json", [{"Id": "FUEL_PRI"}])
+        archive = bootstrap_release(self.repo, version_key="7.00")
+        self.assertTrue((archive["current_snapshot"] / "ResearchTrees.json").is_file())
+        document = build_new_json_document(self.repo, version_key="7.00", previous_run={"version_key": "6.40"},
+                                           baseline_snapshot_dir=self.baseline)
+        self.assertEqual(document["Items"], [])
+
+    def test_report_sees_changes_outside_rows_with_ids(self):
+        from utils.report import _compare_file
+        old = {"Exchanges": [{"Id": "A"}], "Items": {"BANNER": [{"Type": "Twitch"}]}}
+        new = {"Exchanges": [{"Id": "A"}], "Items": {"BANNER": [{"Type": "Quicksilver"}]}}
+        result = _compare_file(old, new, source_name="ItemSources.json")
+        self.assertTrue(result["has_changes"])
+        self.assertTrue(result["other_changes"])
+        self.assertFalse(_compare_file(old, old, source_name="ItemSources.json")["has_changes"])
+
+    def test_extraction_fixes_are_not_release_changes(self):
+        self.write(self.baseline, "Technology.json", [{"Id": "SUIT_ROCKET", "BlueprintCost": 1, "Value": 1}])
+        self.write(self.current, "Technology.json", [{"Id": "SUIT_ROCKET", "BlueprintCost": 90, "Value": 1}])
+        fixed = build_new_json_document(self.repo, version_key="7.10", previous_run={"version_key": "7.00"},
+                                        baseline_snapshot_dir=self.baseline)
+        self.assertEqual(fixed["ChangedItems"], [])
+        later = build_new_json_document(self.repo, version_key="7.20", previous_run={"version_key": "7.10"},
+                                        baseline_snapshot_dir=self.baseline)
+        self.assertEqual(later["ChangedItems"][0]["ChangedFields"], ["BlueprintCost"])
+
     def test_duplicate_identity_in_one_nested_section_fails_closed(self):
         self.write(self.baseline, "Products.json", [{"Id": "OLD"}])
         self.write(

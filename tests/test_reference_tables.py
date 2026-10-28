@@ -20,7 +20,8 @@ LOCALIZATION = {
     "SEASON_1": "The Pioneers", "OPTION_OFFER": "Make Offering", "GUN_GRUB": "Larva Cannon",
     "TREE_STATION": "<IMG>DIAMONDBULLET<> Basic Construction DIAMONDBULLET", "TREE_TIMBER": "Timber Structures",
     "FLEET_UI_TYPE_MINING": "Industrial", "FLEET_UI_TYPE_PIRATE": "RAIDER",
-    "UI_SETTLEMENT_STAT_COST_NAME": "Upkeep Costs",
+    "UI_SETTLEMENT_STAT_COST_NAME": "Upkeep Costs", "UI_SETTLEMENT_STAT_COST_POS_FMT": "+%NUM% u/day maintenance",
+    "UI_SETTLEMENT_STAT_COST_NEG_FMT": "-%NUM% u/day maintenance",
 }
 
 
@@ -83,8 +84,8 @@ class ReferenceTablesTest(unittest.TestCase):
         [perk] = parse_settlement_perks(path)
         self.assertEqual(perk["Name"], "Worm infestation")
         self.assertTrue(perk["IsNegative"] and perk["IsStarter"])
-        self.assertEqual(perk["Effects"], [{"Stat": "Upkeep", "Label": "Upkeep Costs", "Strength": "NegativeMedium",
-                                            "Min": -3, "Max": -2, "ChangesPopulation": False}])
+        self.assertEqual(perk["Effects"], [{"Stat": "Upkeep", "Label": "Upkeep Costs", "Text": "-2–3 u/day maintenance",
+                                            "Strength": "NegativeMedium", "Min": -3, "Max": -2, "ChangesPopulation": False}])
         self.assertEqual(perk["Buildings"], ["Settlement_Farm"])
 
     def test_item_sources_and_fixed_price_exchanges(self):
