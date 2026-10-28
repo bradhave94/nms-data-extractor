@@ -1,7 +1,616 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (7.00.0.1)-->
+<!--File created using MBINCompiler version (7.10.0.1)-->
 <Data template="cGcRewardTable">
 	<Property name="GenericTable">
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKCRATE">
+			<Property name="Id" value="R_SPOOKCRATE" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveFirst_ThenAlsoSelectAlwaysFromRest" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="0.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardRefreshHazProt">
+							<Property name="GcRewardRefreshHazProt">
+								<Property name="Amount" value="70.000000" />
+								<Property name="SetNotAdd" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SpecificHazard" value="GcPlayerHazardType">
+									<Property name="Hazard" value="Spook" />
+								</Property>
+								<Property name="RechargeDelay" value="30.000000" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="1">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE1" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="2">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE2" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="3">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE3" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="4">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE4" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="5">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE5" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="6">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE6" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKCRATE_HU">
+			<Property name="Id" value="R_SPOOKCRATE_HU" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="SelectAlways" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE1" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="1">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE2" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="2">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE3" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="3">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE4" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="4">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE5" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="5">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE6" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKCRATE_AF">
+			<Property name="Id" value="R_SPOOKCRATE_AF" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveFirst_ThenAlsoSelectAlwaysFromRest" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="0.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardRefreshHazProt">
+							<Property name="GcRewardRefreshHazProt">
+								<Property name="Amount" value="70.000000" />
+								<Property name="SetNotAdd" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SpecificHazard" value="GcPlayerHazardType">
+									<Property name="Hazard" value="Spook" />
+								</Property>
+								<Property name="RechargeDelay" value="30.000000" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="1">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE1" />
+								<Property name="AmountMin" value="2" />
+								<Property name="AmountMax" value="4" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="2">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE2" />
+								<Property name="AmountMin" value="2" />
+								<Property name="AmountMax" value="4" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="3">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE3" />
+								<Property name="AmountMin" value="2" />
+								<Property name="AmountMax" value="4" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="4">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE4" />
+								<Property name="AmountMin" value="2" />
+								<Property name="AmountMax" value="4" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="5">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE5" />
+								<Property name="AmountMin" value="2" />
+								<Property name="AmountMax" value="4" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="6">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE6" />
+								<Property name="AmountMin" value="2" />
+								<Property name="AmountMax" value="4" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKPACKAGE1">
+			<Property name="Id" value="R_SPOOKPACKAGE1" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE1" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKPACKAGE2">
+			<Property name="Id" value="R_SPOOKPACKAGE2" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE2" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKPACKAGE3">
+			<Property name="Id" value="R_SPOOKPACKAGE3" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE3" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKPACKAGE4">
+			<Property name="Id" value="R_SPOOKPACKAGE4" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE4" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKPACKAGE5">
+			<Property name="Id" value="R_SPOOKPACKAGE5" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE5" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_SPOOKPACKAGE6">
+			<Property name="Id" value="R_SPOOKPACKAGE6" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="SPOOK_PACKAGES" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="SPOOK_PACKAGE6" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
 		<Property name="GenericTable" value="GcGenericRewardTableEntry" _id="R_POSTIE_SE_MIX">
 			<Property name="Id" value="R_POSTIE_SE_MIX" />
 			<Property name="List" value="GcRewardTableItemList">
@@ -1434,6 +2043,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -1536,6 +2146,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -1658,6 +2269,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -1780,6 +2392,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -1902,6 +2515,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -2023,6 +2637,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -2124,6 +2739,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -3329,11 +3945,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -4281,11 +4903,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -4736,11 +5364,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -9208,11 +9842,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="2" />
@@ -9393,11 +10033,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="2" />
@@ -10993,6 +11639,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -11232,10 +11879,13 @@
 					<Property name="List" value="GcRewardTableItem" _index="0">
 						<Property name="PercentageChance" value="100.000000" />
 						<Property name="LabelID" value="" />
-						<Property name="Reward" value="GcRewardOpenPage">
-							<Property name="GcRewardOpenPage">
-								<Property name="PageToOpen" value="FreighterShipTransfer" />
-								<Property name="ReinteractWhenComplete" value="false" />
+						<Property name="Reward" value="GcRewardCreateJoinGameTable">
+							<Property name="GcRewardCreateJoinGameTable">
+								<Property name="GameTableInteractionType" value="Create" />
+								<Property name="Mode" value="GcGameTableMode">
+									<Property name="GameTableMode" value="PetBattler" />
+								</Property>
+								<Property name="GameConfigOverride" value="PB_GAME_PVE_NEXUS" />
 							</Property>
 						</Property>
 					</Property>
@@ -12249,10 +12899,12 @@
 					<Property name="List" value="GcRewardTableItem" _index="0">
 						<Property name="PercentageChance" value="100.000000" />
 						<Property name="LabelID" value="" />
-						<Property name="Reward" value="GcRewardMissionMessage">
-							<Property name="GcRewardMissionMessage">
-								<Property name="MessageID" value="YOU_GOT_MAIL" />
+						<Property name="Reward" value="GcRewardMissionMessageSeeded">
+							<Property name="GcRewardMissionMessageSeeded">
+								<Property name="MessageID" value="MAIL_DELIVERED" />
 								<Property name="BroadcastInMultiplayer" value="false" />
+								<Property name="BroadcastToActiveMultiplayerMission" value="false" />
+								<Property name="SpecificMissionID" value="SO_POSTIE_PL_SR" />
 							</Property>
 						</Property>
 					</Property>
@@ -12874,6 +13526,16 @@
 						</Property>
 					</Property>
 					<Property name="List" value="GcRewardTableItem" _index="1">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardIncrementStat">
+							<Property name="GcRewardIncrementStat">
+								<Property name="Stat" value="POI_HULK_COMMON" />
+								<Property name="Amount" value="1" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="2">
 						<Property name="PercentageChance" value="5.000000" />
 						<Property name="LabelID" value="" />
 						<Property name="Reward" value="GcRewardSpecificProductFromList">
@@ -12946,11 +13608,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -12986,6 +13654,31 @@
 								<Property name="UseFuelMultiplier" value="false" />
 								<Property name="Silent" value="false" />
 								<Property name="UseMissionBoardDifficultyScale" value="false" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="DestructionTable" value="GcGenericRewardTableEntry" _id="DE_SPOOKPACKAGE">
+			<Property name="Id" value="DE_SPOOKPACKAGE" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="true" />
+				<Property name="IncrementStat" value="" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardMoney">
+							<Property name="GcRewardMoney">
+								<Property name="AmountMin" value="20" />
+								<Property name="AmountMax" value="45" />
+								<Property name="RoundNumber" value="false" />
+								<Property name="Currency" value="GcCurrency">
+									<Property name="Currency" value="Nanites" />
+								</Property>
 							</Property>
 						</Property>
 					</Property>
@@ -17987,11 +18680,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -21617,6 +22316,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -22133,6 +22833,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -22158,6 +22859,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -22183,6 +22885,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -23096,6 +23799,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -29066,11 +29771,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="2" />
 								<Property name="AmountMax" value="3" />
@@ -42028,6 +42739,236 @@
 		</Property>
 	</Property>
 	<Property name="SpecialRewardTable">
+		<Property name="SpecialRewardTable" value="GcGenericRewardTableEntry" _id="R_GRUB_GUN">
+			<Property name="Id" value="R_GRUB_GUN" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificWeapon">
+							<Property name="GcRewardSpecificWeapon">
+								<Property name="WeaponInventory" value="GcInventoryContainer">
+									<Property name="Slots">
+										<Property name="Slots" value="GcInventoryElement" _id="LASER">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="LASER" />
+											<Property name="Amount" value="200" />
+											<Property name="MaxAmount" value="200" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="STRONGLASER">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="STRONGLASER" />
+											<Property name="Amount" value="0" />
+											<Property name="MaxAmount" value="100" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="UT_MINER">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="UT_MINER" />
+											<Property name="Amount" value="0" />
+											<Property name="MaxAmount" value="100" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="SCANBINOC1">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="SCANBINOC1" />
+											<Property name="Amount" value="0" />
+											<Property name="MaxAmount" value="100" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="SCAN1">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="SCAN1" />
+											<Property name="Amount" value="0" />
+											<Property name="MaxAmount" value="100" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="UP_SCANX">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="UP_SCANX" />
+											<Property name="Amount" value="0" />
+											<Property name="MaxAmount" value="100" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="TERRAINEDITOR">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="TERRAINEDITOR" />
+											<Property name="Amount" value="600" />
+											<Property name="MaxAmount" value="600" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="BOLT">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="BOLT" />
+											<Property name="Amount" value="0" />
+											<Property name="MaxAmount" value="100" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="UT_BOLT">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="UT_BOLT" />
+											<Property name="Amount" value="0" />
+											<Property name="MaxAmount" value="100" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+										<Property name="Slots" value="GcInventoryElement" _id="UP_BOLTX">
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+											<Property name="Id" value="UP_BOLTX" />
+											<Property name="Amount" value="0" />
+											<Property name="MaxAmount" value="100" />
+											<Property name="DamageFactor" value="0.000000" />
+											<Property name="FullyInstalled" value="true" />
+											<Property name="AddedAutomatically" value="false" />
+											<Property name="Index" value="GcInventoryIndex">
+												<Property name="X" value="-1" />
+												<Property name="Y" value="-1" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ValidSlotIndices" />
+									<Property name="Class" value="GcInventoryClass">
+										<Property name="InventoryClass" value="A" />
+									</Property>
+									<Property name="StackSizeGroup" value="GcInventoryStackSizeGroup">
+										<Property name="InventoryStackSizeGroup" value="Default" />
+									</Property>
+									<Property name="BaseStatValues" />
+									<Property name="SpecialSlots" />
+									<Property name="Width" value="0" />
+									<Property name="Height" value="0" />
+									<Property name="IsCool" value="false" />
+									<Property name="Name" value="" />
+									<Property name="Version" value="0" />
+									<Property name="NumSlotsFromTech" value="0" />
+								</Property>
+								<Property name="WeaponLayout" value="GcInventoryLayout">
+									<Property name="Slots" value="19" />
+									<Property name="Seed" value="1" />
+									<Property name="Level" value="1" />
+								</Property>
+								<Property name="WeaponResource" value="GcExactResource">
+									<Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/GRUBCANNONMULTITOOL.SCENE.MBIN" />
+									<Property name="GenerationSeed" value="0" />
+								</Property>
+								<Property name="WeaponType" value="GcWeaponClasses">
+									<Property name="WeaponStatClass" value="Alien" />
+								</Property>
+								<Property name="InventorySizeOverride" value="GcInventoryLayoutSizeType">
+									<Property name="SizeType" value="AlienLarge" />
+								</Property>
+								<Property name="NameOverride" value="UI_EXPD_GUN_GRUB_NAME_L" />
+								<Property name="IsGift" value="true" />
+								<Property name="IsRewardWeapon" value="true" />
+								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="true" />
+								<Property name="RefundCostOnDecline" value="C_SPOOKSHOP_GUN" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="SpecialRewardTable" value="GcGenericRewardTableEntry" _id="R_OPN_SPOOKSHOP">
+			<Property name="Id" value="R_OPN_SPOOKSHOP" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardOpenPage">
+							<Property name="GcRewardOpenPage">
+								<Property name="PageToOpen" value="SpookShop" />
+								<Property name="ReinteractWhenComplete" value="false" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
 		<Property name="SpecialRewardTable" value="GcGenericRewardTableEntry" _id="R_S18_BRK_DATA">
 			<Property name="Id" value="R_S18_BRK_DATA" />
 			<Property name="List" value="GcRewardTableItemList">
@@ -48187,6 +49128,29 @@
 							</Property>
 						</Property>
 					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="1">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardModifyStat">
+							<Property name="GcRewardModifyStat">
+								<Property name="Stat" value="ABAND_FREIGHTER" />
+								<Property name="OtherStat" value="" />
+								<Property name="Amount" value="1" />
+								<Property name="UseOtherStat" value="false" />
+								<Property name="ModifyType" value="GcStatModifyType">
+									<Property name="ModifyType" value="Add" />
+								</Property>
+								<Property name="CanSetToValueLowerThanCurrent" value="true" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="2">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardCompleteSpacePOI">
+							<Property name="GcRewardCompleteSpacePOI" />
+						</Property>
+					</Property>
 				</Property>
 			</Property>
 		</Property>
@@ -48377,11 +49341,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="2" />
 								<Property name="AmountMax" value="3" />
@@ -51070,6 +52040,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -51095,6 +52066,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="None" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -56079,11 +57051,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -59116,6 +60094,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -67942,11 +68922,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -70224,11 +71210,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -72250,11 +73242,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -73480,11 +74478,17 @@
 									<Property name="ProductList" value="B_CON_7" _index="64" />
 									<Property name="ProductList" value="B_CON_8" _index="65" />
 									<Property name="ProductList" value="B_CON_9" _index="66" />
-									<Property name="ProductList" value="B_CON2_0" _index="67" />
-									<Property name="ProductList" value="B_CON2_1" _index="68" />
-									<Property name="ProductList" value="B_CON2_2" _index="69" />
-									<Property name="ProductList" value="B_CON2_3" _index="70" />
-									<Property name="ProductList" value="B_CON_L_2" _index="71" />
+									<Property name="ProductList" value="B_CON_10" _index="67" />
+									<Property name="ProductList" value="B_CON_11" _index="68" />
+									<Property name="ProductList" value="B_CON_12" _index="69" />
+									<Property name="ProductList" value="B_CON_13" _index="70" />
+									<Property name="ProductList" value="B_CON_14" _index="71" />
+									<Property name="ProductList" value="B_CON_15" _index="72" />
+									<Property name="ProductList" value="B_CON2_0" _index="73" />
+									<Property name="ProductList" value="B_CON2_1" _index="74" />
+									<Property name="ProductList" value="B_CON2_2" _index="75" />
+									<Property name="ProductList" value="B_CON2_3" _index="76" />
+									<Property name="ProductList" value="B_CON_L_2" _index="77" />
 								</Property>
 								<Property name="AmountMin" value="1" />
 								<Property name="AmountMax" value="1" />
@@ -78249,6 +79253,8 @@
 					<Property name="IsGift" value="false" />
 					<Property name="IsRewardWeapon" value="false" />
 					<Property name="FormatAsSeasonal" value="false" />
+					<Property name="MarkInteractionComplete" value="false" />
+					<Property name="RefundCostOnDecline" value="" />
 				</Property>
 			</Property>
 		</Property>
@@ -78526,6 +79532,8 @@
 					<Property name="IsGift" value="false" />
 					<Property name="IsRewardWeapon" value="false" />
 					<Property name="FormatAsSeasonal" value="false" />
+					<Property name="MarkInteractionComplete" value="false" />
+					<Property name="RefundCostOnDecline" value="" />
 				</Property>
 			</Property>
 		</Property>
@@ -78632,6 +79640,8 @@
 					<Property name="IsGift" value="false" />
 					<Property name="IsRewardWeapon" value="false" />
 					<Property name="FormatAsSeasonal" value="false" />
+					<Property name="MarkInteractionComplete" value="false" />
+					<Property name="RefundCostOnDecline" value="" />
 				</Property>
 			</Property>
 		</Property>
@@ -99142,6 +100152,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -99289,6 +100301,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -99436,6 +100450,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -99568,6 +100584,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -99715,6 +100733,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -99862,6 +100882,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -100009,6 +101031,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -100156,6 +101180,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -100318,6 +101344,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -100480,6 +101508,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -100657,6 +101687,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -100819,6 +101851,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -100981,6 +102015,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -101143,6 +102179,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -101320,6 +102358,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -101497,6 +102537,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -101674,6 +102716,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -101866,6 +102910,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -102043,6 +103089,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -102205,6 +103253,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -102367,6 +103417,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -102544,6 +103596,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -102721,6 +103775,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -102898,6 +103954,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -103075,6 +104133,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -103252,6 +104312,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -103444,6 +104506,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -103606,6 +104670,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -103783,6 +104849,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -103960,6 +105028,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -104122,6 +105192,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -104284,6 +105356,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -104461,6 +105535,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -105631,6 +106707,8 @@
 								<Property name="IsGift" value="false" />
 								<Property name="IsRewardWeapon" value="false" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -109394,6 +110472,71 @@
 				</Property>
 			</Property>
 		</Property>
+		<Property name="GameTableRewards" value="GcGenericRewardTableEntry" _id="R_PB_PVE_OUTP_W">
+			<Property name="Id" value="R_PB_PVE_OUTP_W" />
+			<Property name="List" value="GcRewardTableItemList">
+				<Property name="RewardChoice" value="GiveAll" />
+				<Property name="OverrideZeroSeed" value="false" />
+				<Property name="UseInventoryChoiceOverride" value="false" />
+				<Property name="IncrementStat" value="" />
+				<Property name="List">
+					<Property name="List" value="GcRewardTableItem" _index="0">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardMoney">
+							<Property name="GcRewardMoney">
+								<Property name="AmountMin" value="15" />
+								<Property name="AmountMax" value="30" />
+								<Property name="RoundNumber" value="false" />
+								<Property name="Currency" value="GcCurrency">
+									<Property name="Currency" value="Nanites" />
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="1">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardIncrementStat">
+							<Property name="GcRewardIncrementStat">
+								<Property name="Stat" value="PB_WINS" />
+								<Property name="Amount" value="1" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="2">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardIncrementStat">
+							<Property name="GcRewardIncrementStat">
+								<Property name="Stat" value="PB_CHALL_WINS" />
+								<Property name="Amount" value="1" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="3">
+						<Property name="PercentageChance" value="8.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProduct">
+							<Property name="GcRewardSpecificProduct">
+								<Property name="Default" value="GcDefaultMissionProductEnum">
+									<Property name="DefaultProductType" value="None" />
+								</Property>
+								<Property name="ID" value="TREAT_FREELEVEL" />
+								<Property name="AmountMin" value="1" />
+								<Property name="AmountMax" value="1" />
+								<Property name="HideAmountInMessage" value="false" />
+								<Property name="ForceSpecialMessage" value="false" />
+								<Property name="HideInSeasonRewards" value="false" />
+								<Property name="Silent" value="false" />
+								<Property name="SeasonRewardListFormat" value="" />
+								<Property name="RequiresTech" value="" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
 		<Property name="GameTableRewards" value="GcGenericRewardTableEntry" _id="R_PB_PVE_PLAC_W">
 			<Property name="Id" value="R_PB_PVE_PLAC_W" />
 			<Property name="List" value="GcRewardTableItemList">
@@ -111452,6 +112595,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -114705,6 +115850,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -150804,6 +151951,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -151554,6 +152703,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -165821,6 +166972,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="Spook" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -165846,6 +166998,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="Spook" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -165897,6 +167050,7 @@
 								<Property name="SpecificHazard" value="GcPlayerHazardType">
 									<Property name="Hazard" value="Spook" />
 								</Property>
+								<Property name="RechargeDelay" value="0.000000" />
 							</Property>
 						</Property>
 					</Property>
@@ -169722,6 +170876,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -170860,6 +172016,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -173441,6 +174599,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -174113,6 +175273,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -186286,6 +187448,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -186551,6 +187715,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -188820,6 +189986,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -190092,6 +191260,8 @@
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardWeapon" value="true" />
 								<Property name="FormatAsSeasonal" value="true" />
+								<Property name="MarkInteractionComplete" value="false" />
+								<Property name="RefundCostOnDecline" value="" />
 							</Property>
 						</Property>
 					</Property>
@@ -190404,9 +191574,9 @@
 									<Property name="Version" value="0" />
 									<Property name="NumSlotsFromTech" value="0" />
 								</Property>
-								<Property name="CostAmount" value="1400" />
+								<Property name="CostAmount" value="0" />
 								<Property name="CostCurrency" value="GcCurrency">
-									<Property name="Currency" value="Nanites" />
+									<Property name="Currency" value="Units" />
 								</Property>
 								<Property name="ShipType" value="GcSpaceshipClasses">
 									<Property name="ShipClass" value="Fighter" />
@@ -190418,7 +191588,7 @@
 								<Property name="NameOverride" value="UI_EXPD_SHIP_23A_NAME_L" />
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardShip" value="true" />
-								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="FormatAsSeasonal" value="true" />
 								<Property name="ModelViewOverride" value="GcModelViews">
 									<Property name="ModelViews" value="None" />
 								</Property>
@@ -190724,9 +191894,9 @@
 									<Property name="Version" value="0" />
 									<Property name="NumSlotsFromTech" value="0" />
 								</Property>
-								<Property name="CostAmount" value="1400" />
+								<Property name="CostAmount" value="0" />
 								<Property name="CostCurrency" value="GcCurrency">
-									<Property name="Currency" value="Nanites" />
+									<Property name="Currency" value="Units" />
 								</Property>
 								<Property name="ShipType" value="GcSpaceshipClasses">
 									<Property name="ShipClass" value="Robot" />
@@ -190738,7 +191908,7 @@
 								<Property name="NameOverride" value="UI_EXPD_SHIP_23B_NAME_L" />
 								<Property name="IsGift" value="true" />
 								<Property name="IsRewardShip" value="true" />
-								<Property name="FormatAsSeasonal" value="false" />
+								<Property name="FormatAsSeasonal" value="true" />
 								<Property name="ModelViewOverride" value="GcModelViews">
 									<Property name="ModelViews" value="None" />
 								</Property>
@@ -191811,6 +192981,18 @@
 						<Property name="LabelID" value="" />
 						<Property name="Reward" value="GcRewardSpecificProductRecipe">
 							<Property name="GcRewardSpecificProductRecipe">
+								<Property name="ID" value="SUBFUEL" />
+								<Property name="Silent" value="false" />
+								<Property name="HideInSeasonRewards" value="true" />
+								<Property name="SeasonRewardFormat" value="UI_BLUEPRINT_REWARD_FORMAT" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="List" value="GcRewardTableItem" _index="3">
+						<Property name="PercentageChance" value="100.000000" />
+						<Property name="LabelID" value="" />
+						<Property name="Reward" value="GcRewardSpecificProductRecipe">
+							<Property name="GcRewardSpecificProductRecipe">
 								<Property name="ID" value="MIRROR" />
 								<Property name="Silent" value="false" />
 								<Property name="HideInSeasonRewards" value="false" />
@@ -191818,7 +193000,7 @@
 							</Property>
 						</Property>
 					</Property>
-					<Property name="List" value="GcRewardTableItem" _index="3">
+					<Property name="List" value="GcRewardTableItem" _index="4">
 						<Property name="PercentageChance" value="100.000000" />
 						<Property name="LabelID" value="" />
 						<Property name="Reward" value="GcRewardMultiSpecificItems">
@@ -194043,7 +195225,7 @@
 										<Property name="ProcTechQuality" value="0" />
 										<Property name="IllegalProcTech" value="false" />
 										<Property name="SentinelProcTech" value="false" />
-										<Property name="AlsoTeachTechBoxRecipe" value="false" />
+										<Property name="AlsoTeachTechBoxRecipe" value="true" />
 										<Property name="ProcProdType" value="GcProceduralProductCategory">
 											<Property name="ProceduralProductCategory" value="Loot" />
 										</Property>

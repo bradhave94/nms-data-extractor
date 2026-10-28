@@ -1,0 +1,52 @@
+{
+	"Provenance": {
+		"GameVersion": "7.10",
+		"ObservedDate": "2026-10-28",
+		"CompilerVersion": "7.10.0.1",
+		"Sources": {
+			"gcskyglobals.globals.MXML": "8efcf079684eb172906ba355bbbfae47ff74f660ba11dc3241f4509ba8c770d6",
+			"regionhotspotstable.MXML": "d6f51a7d5fbe46150b0182f3af64e77af9bf3da714b9600090d9e4a133b54571"
+		}
+	},
+	"DayCycleSeconds": 1800,
+	"HotspotClassStrengths": {
+		"Power": {
+			"C": 150,
+			"B": 220,
+			"A": 250,
+			"S": 300
+		},
+		"Mineral1": {
+			"C": 1,
+			"B": 1.5,
+			"A": 2,
+			"S": 2.5
+		},
+		"Mineral2": {
+			"C": 1,
+			"B": 1.5,
+			"A": 2,
+			"S": 2.5
+		},
+		"Mineral3": {
+			"C": 1,
+			"B": 1.5,
+			"A": 2,
+			"S": 2.5
+		},
+		"Gas1": {
+			"C": 1,
+			"B": 1.5,
+			"A": 2,
+			"S": 2.5
+		},
+		"Gas2": {
+			"C": 1,
+			"B": 1.5,
+			"A": 2,
+			"S": 2.5
+		}
+	},
+	"SolarSchedule": null,
+	"Notes": "Cycle length and class strengths are extracted. Solar phase durations and location-dependent output are not established by these fields."
+}

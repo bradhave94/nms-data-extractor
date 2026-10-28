@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (7.00.0.1)-->
+<!--File created using MBINCompiler version (7.10.0.1)-->
 <Data template="cTkLocalisationTable">
 	<Property name="Table">
 		<Property name="Table" value="TkLocalisationEntry" _id="UPDATE6_TITLE">
@@ -5004,7 +5004,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="ITEMGEN_SPACEFEAR_NOUN_17">
 			<Property name="Id" value="ITEMGEN_SPACEFEAR_NOUN_17" />
-			<Property name="English" value="Lavae" />
+			<Property name="English" value="Larvae" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -11702,9 +11702,29 @@
 			<Property name="Japanese" value="" />
 			<Property name="USEnglish" value="" />
 		</Property>
+		<Property name="Table" value="TkLocalisationEntry" _id="UI_REWARD_DECLINE_EXPED_TEXT">
+			<Property name="Id" value="UI_REWARD_DECLINE_EXPED_TEXT" />
+			<Property name="English" value="Do you wish to decline this reward in your current expedition? It will still be available to redeem in other saves." />
+			<Property name="French" value="" />
+			<Property name="Italian" value="" />
+			<Property name="German" value="" />
+			<Property name="Spanish" value="" />
+			<Property name="Russian" value="" />
+			<Property name="Polish" value="" />
+			<Property name="Dutch" value="" />
+			<Property name="Portuguese" value="" />
+			<Property name="LatinAmericanSpanish" value="" />
+			<Property name="BrazilianPortuguese" value="" />
+			<Property name="SimplifiedChinese" value="" />
+			<Property name="TraditionalChinese" value="" />
+			<Property name="TencentChinese" value="" />
+			<Property name="Korean" value="" />
+			<Property name="Japanese" value="" />
+			<Property name="USEnglish" value="" />
+		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_REWARD_DECLINE_FOREVER_YES">
 			<Property name="Id" value="UI_REWARD_DECLINE_FOREVER_YES" />
-			<Property name="English" value="Decline Forever" />
+			<Property name="English" value="Decline" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -11724,7 +11744,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_REWARD_DECLINE_FOREVER_NO">
 			<Property name="Id" value="UI_REWARD_DECLINE_FOREVER_NO" />
-			<Property name="English" value="Claim Later" />
+			<Property name="English" value="Cancel" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194284,7 +194304,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_GUIDED_OBJ_TIP">
 			<Property name="Id" value="UI_PHOTO_BIO_GUIDED_OBJ_TIP" />
-			<Property name="English" value="The client requires photos of specific worlds.&#xA;Reach the target planet." />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of specific worlds.&#xA;Reach the target planet." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194304,7 +194324,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_GUIDED_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_GUIDED_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of specific worlds&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of specific worlds&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194344,7 +194364,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_LUSH_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_LUSH_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a tropical world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a tropical world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194364,7 +194384,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_TOX_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_TOX_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a toxic world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a toxic world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194384,7 +194404,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_HOT_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_HOT_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a scorched world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a scorched world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194404,7 +194424,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_RADIO_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_RADIO_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a radioactive world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a radioactive world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194424,7 +194444,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_COLD_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_COLD_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a frozen world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a frozen world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194444,7 +194464,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_DUST_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_DUST_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a desert world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a desert world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194464,7 +194484,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_DEAD_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_DEAD_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of an airless world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of an airless world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194484,7 +194504,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_WEIRD_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_WEIRD_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a strange world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a strange world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194504,7 +194524,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_SWAMP_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_SWAMP_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a marsh world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a marsh world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194524,7 +194544,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_LAVA_OBJ_MSG1">
 			<Property name="Id" value="UI_PHOTO_BIO_LAVA_OBJ_MSG1" />
-			<Property name="English" value="The client requires photos of a volcanic world&#xA;Reach the target planet" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of a volcanic world&#xA;Reach the target planet" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194584,7 +194604,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_GUIDED_OBJ2_TIP">
 			<Property name="Id" value="UI_PHOTO_BIO_GUIDED_OBJ2_TIP" />
-			<Property name="English" value="Take a photo for the client.&#xA;Activate photo mode with &lt;IMG&gt;QUICK_MENU&lt;&gt;." />
+			<Property name="English" value="Take a photo for &lt;STELLAR&gt;%CLIENT%&lt;&gt;.&#xA;Activate photo mode with &lt;IMG&gt;QUICK_MENU&lt;&gt;." />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />
@@ -194604,7 +194624,7 @@
 		</Property>
 		<Property name="Table" value="TkLocalisationEntry" _id="UI_PHOTO_BIO_GUIDED_OBJ2_MSG">
 			<Property name="Id" value="UI_PHOTO_BIO_GUIDED_OBJ2_MSG" />
-			<Property name="English" value="The client requires photos of %BIOME%&#xA;Scan planets from space with &lt;IMG&gt;SHIPSCAN&lt;&gt;" />
+			<Property name="English" value="&lt;STELLAR&gt;%CLIENT%&lt;&gt; requires photos of %BIOME%&#xA;Scan planets from space with &lt;IMG&gt;SHIPSCAN&lt;&gt;" />
 			<Property name="French" value="" />
 			<Property name="Italian" value="" />
 			<Property name="German" value="" />

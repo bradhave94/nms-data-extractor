@@ -1,0 +1,1042 @@
+[
+	{
+		"Id": "ENT_REZOSUZ",
+		"Name": null,
+		"RewardTable": "EntitlementTable",
+		"Class": "C",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 6,
+		"Technology": [
+			"LASER",
+			"SCAN1",
+			"SCANBINOC1",
+			"BOLT",
+			"LASER"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "ENT_XO_GUN_DIG",
+		"Name": "Vetric-LX",
+		"RewardTable": "EntitlementTable",
+		"Class": "C",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 6,
+		"Technology": [
+			"LASER",
+			"SCAN1",
+			"SCANBINOC1",
+			"LASER_XO"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "ENT_XO_GUN_RET",
+		"Name": "Artios-VI",
+		"RewardTable": "EntitlementTable",
+		"Class": "C",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 6,
+		"Technology": [
+			"LASER",
+			"SCAN1",
+			"SCANBINOC1",
+			"LASER_XO"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S12_PHASE3",
+		"Name": "Atlas Sceptre",
+		"RewardTable": "SeasonRewardTable12",
+		"Class": "A",
+		"WeaponClass": "Staff",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"ATLAS_LASER",
+			"SCANBINOC1",
+			"SCAN1",
+			"STRONGLASER",
+			"UT_MINER",
+			"TERRAINEDITOR",
+			"CANNON",
+			"UT_CANNON",
+			"UP_CANN4",
+			"UP_CANN4",
+			"STUN_GREN",
+			"UT_STUNDMG"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLATLAS.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S12_STAFF",
+		"Name": "Atlas Sceptre",
+		"RewardTable": "SeasonRewardTable12",
+		"Class": "A",
+		"WeaponClass": "Staff",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"ATLAS_LASER",
+			"SCANBINOC1",
+			"SCAN1",
+			"STRONGLASER",
+			"UT_MINER",
+			"TERRAINEDITOR",
+			"CANNON",
+			"UT_CANNON",
+			"UP_CANN4",
+			"UP_CANN4",
+			"STUN_GREN",
+			"UT_STUNDMG"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLATLAS.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S17_PHASE4",
+		"Name": "Pillar of Titan",
+		"RewardTable": "SeasonRewardTable17",
+		"Class": "A",
+		"WeaponClass": "Staff",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"SCANBINOC1",
+			"SCAN1",
+			"STRONGLASER",
+			"UT_MINER",
+			"TERRAINEDITOR",
+			"RAILGUN",
+			"UT_RAIL",
+			"UP_RAIL4",
+			"UP_RAIL4",
+			"UT_RAIL_STUN"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLRUIN.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S17_STAFF",
+		"Name": "Pillar of Titan",
+		"RewardTable": "SeasonRewardTable17",
+		"Class": "A",
+		"WeaponClass": "Staff",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"SCANBINOC1",
+			"SCAN1",
+			"STRONGLASER",
+			"UT_MINER",
+			"TERRAINEDITOR",
+			"RAILGUN",
+			"UT_RAIL",
+			"UP_RAIL4",
+			"UP_RAIL4",
+			"UT_RAIL_STUN"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLRUIN.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S18_PHASE3",
+		"Name": "Basilisk Crown",
+		"RewardTable": "SeasonRewardTable18",
+		"Class": "A",
+		"WeaponClass": "Staff",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_SCAN4",
+			"UP_SCAN4",
+			"TERRAINEDITOR",
+			"TERRAIN_GREN",
+			"BOLT",
+			"UT_BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLBONE.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S18_STAFF",
+		"Name": "Basilisk Crown",
+		"RewardTable": "SeasonRewardTable18",
+		"Class": "A",
+		"WeaponClass": "Staff",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_SCAN4",
+			"UP_SCAN4",
+			"TERRAINEDITOR",
+			"TERRAIN_GREN",
+			"BOLT",
+			"UT_BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLBONE.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S1_PHASE2",
+		"Name": null,
+		"RewardTable": "SeasonRewardTable1",
+		"Class": "B",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 14,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_SCAN3",
+			"UT_SCAN",
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"BOLT",
+			"UT_BOLT",
+			"SCOPE",
+			"TERRAINEDITOR"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S1_S5M4",
+		"Name": null,
+		"RewardTable": "SeasonRewardTable1",
+		"Class": "S",
+		"WeaponClass": "Alien",
+		"Size": "SciSmall",
+		"Slots": 28,
+		"Technology": [
+			"UP_RAIL4",
+			"RAILGUN",
+			"UT_RAIL",
+			"UP_RAIL4",
+			"UP_RAIL4",
+			"SCOPE",
+			"SCANBINOC1",
+			"SCAN1",
+			"TERRAINEDITOR",
+			"GROUND_SHIELD",
+			"LASER",
+			"STRONGLASER"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S22_GUN",
+		"Name": "Direwasp Disintegrator",
+		"RewardTable": "SeasonRewardTable22",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_SCAN4",
+			"UP_SCAN4",
+			"TERRAINEDITOR",
+			"TERRAIN_GREN",
+			"BOLT",
+			"UT_BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/SWARMMULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S22_PHASE2",
+		"Name": "Direwasp Disintegrator",
+		"RewardTable": "SeasonRewardTable22",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_SCAN4",
+			"UP_SCAN4",
+			"TERRAINEDITOR",
+			"TERRAIN_GREN",
+			"BOLT",
+			"UT_BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/SWARMMULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S23_GUN",
+		"Name": "Starbound v0.27",
+		"RewardTable": "SeasonRewardTable23",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_SCAN4",
+			"UP_SCAN4",
+			"TERRAINEDITOR",
+			"TERRAIN_GREN",
+			"BOLT",
+			"UT_BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/RETROMULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "RS_S23_PHASE3",
+		"Name": "Starbound v0.27",
+		"RewardTable": "SeasonRewardTable23",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_SCAN4",
+			"UP_SCAN4",
+			"TERRAINEDITOR",
+			"TERRAIN_GREN",
+			"BOLT",
+			"UT_BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/RETROMULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_GRUB_GUN",
+		"Name": "Larva Cannon",
+		"RewardTable": "SpecialRewardTable",
+		"Class": "A",
+		"WeaponClass": "Alien",
+		"Size": "AlienLarge",
+		"Slots": 19,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_SCANX",
+			"TERRAINEDITOR",
+			"BOLT",
+			"UT_BOLT",
+			"UP_BOLTX"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/GRUBCANNONMULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_STAFF_GUN",
+		"Name": "Voltaic Staff",
+		"RewardTable": "InteractionTable",
+		"Class": "B",
+		"WeaponClass": "Staff",
+		"Size": "WeaponLarge",
+		"Slots": 19,
+		"Technology": [
+			"UT_BUI_SCAN2",
+			"SCANBINOC1",
+			"SCAN1",
+			"LASER",
+			"STRONGLASER",
+			"TERRAINEDITOR",
+			"RAILGUN",
+			"UT_RAIL_STUN",
+			"STEALTH"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_SWIT_GUN01",
+		"Name": "Infinite Neon Mark XXII",
+		"RewardTable": "SpecialRewardTable",
+		"Class": "S",
+		"WeaponClass": "Rifle",
+		"Size": "SciSmall",
+		"Slots": 18,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"RAILGUN",
+			"UT_RAIL",
+			"LASER",
+			"SCOPE"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/SWITCHMULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TRA_CS_5_WEAP",
+		"Name": null,
+		"RewardTable": "NPCPlanetSiteTable",
+		"Class": "C",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 15,
+		"Technology": [
+			"LASER",
+			"SCAN1",
+			"SCANBINOC1",
+			"BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN01",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "SciSmall",
+		"Slots": 12,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"RAILGUN",
+			"UT_RAIL",
+			"LASER",
+			"SCOPE"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN02",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 14,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"LASER",
+			"BOLT",
+			"UT_BOLT",
+			"GROUND_SHIELD"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN03",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 13,
+		"Technology": [
+			"SCANBINOC1",
+			"LASER",
+			"STRONGLASER",
+			"UT_MINER",
+			"SCAN1",
+			"TERRAINEDITOR"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN04",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pristine",
+		"Size": "SciSmall",
+		"Slots": 8,
+		"Technology": [
+			"SCAN1",
+			"LASER",
+			"SCANBINOC1",
+			"UT_SCAN",
+			"UP_SCAN2"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN05",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "SciSmall",
+		"Slots": 16,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"LASER",
+			"GRENADE",
+			"SMG",
+			"UT_SMG"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN06",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 16,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"LASER",
+			"UP_LASER3",
+			"CANNON",
+			"UT_CANNON"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN07",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 15,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"LASER",
+			"STUN_GREN",
+			"RAILGUN",
+			"UT_RAIL"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN08",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 17,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"LASER",
+			"BOLT",
+			"UT_BOLT",
+			"STEALTH"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN09",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Alien",
+		"Size": "SciSmall",
+		"Slots": 16,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"SMG",
+			"UT_SMG",
+			"UT_SMG_DOT",
+			"UP_SMG4",
+			"LASER"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN10",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "SciSmall",
+		"Slots": 22,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"LASER",
+			"RAILGUN",
+			"UT_RAIL",
+			"UT_RAIL_STUN",
+			"UP_RAIL4"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN11",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 16,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"GROUND_SHIELD",
+			"LASER",
+			"UP_LASER2",
+			"UP_LASER3",
+			"GRENADE",
+			"UP_GREN3"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN12",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 13,
+		"Technology": [
+			"SCAN1",
+			"UP_SCAN2",
+			"UP_SCAN2",
+			"UP_SCAN3",
+			"LASER",
+			"SCANBINOC1",
+			"UT_SURVEY"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN13",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SCAN1",
+			"RAILGUN",
+			"UT_RAIL",
+			"UT_RAIL_STUN",
+			"LASER",
+			"SCANBINOC1",
+			"TERRAINEDITOR"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN14",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SCAN1",
+			"LASER",
+			"SCANBINOC1",
+			"TERRAINEDITOR",
+			"SMG",
+			"UT_SMG",
+			"UP_SMG4"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN15",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SCAN1",
+			"LASER",
+			"GRENADE",
+			"UP_GREN2",
+			"UP_GREN2",
+			"SCANBINOC1",
+			"TERRAINEDITOR",
+			"BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN16",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"RAILGUN",
+			"LASER",
+			"UP_RAIL3",
+			"UP_RAIL3",
+			"BOLT",
+			"SCANBINOC1",
+			"SCAN1",
+			"UP_LASER3"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN17",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SHOTGUN",
+			"UP_SHOT3",
+			"UP_SHOT3",
+			"UT_STUNDMG",
+			"SCAN1",
+			"SCANBINOC1",
+			"LASER",
+			"TERRAINEDITOR"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN18",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UP_LASER4",
+			"TERRAINEDITOR",
+			"UT_SURVEY",
+			"SCANBINOC1",
+			"SCAN1",
+			"UT_SCAN",
+			"BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN19",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SCAN1",
+			"LASER",
+			"TERRAINEDITOR",
+			"SCANBINOC1",
+			"SMG",
+			"UT_SMG",
+			"UP_SMG2",
+			"UP_SMG2"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN20",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Alien",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"LASER",
+			"TERRAINEDITOR",
+			"SCANBINOC1",
+			"SCAN1",
+			"SHOTGUN",
+			"UT_SHOT",
+			"STUN_GREN"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN21",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pristine",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"LASER",
+			"TERRAINEDITOR",
+			"SCANBINOC1",
+			"SCAN1",
+			"UT_SCAN",
+			"UP_SCAN4",
+			"BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN22",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Alien",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"LASER",
+			"TERRAINEDITOR",
+			"SCANBINOC1",
+			"SCAN1",
+			"SMG",
+			"UP_SMG2",
+			"UT_SMG",
+			"CANNON"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN23",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "C",
+		"WeaponClass": "Staff",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SHOTGUN",
+			"UP_SHOT3",
+			"UT_SHOT",
+			"SCAN1",
+			"SCANBINOC1",
+			"UT_SURVEY",
+			"TERRAINEDITOR",
+			"LASER"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN24",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"RAILGUN",
+			"UT_RAIL",
+			"UT_STUNDMG",
+			"STUN_GREN",
+			"SCAN1",
+			"SCANBINOC1",
+			"LASER",
+			"TERRAINEDITOR"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN25",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SCAN1",
+			"LASER",
+			"TERRAINEDITOR",
+			"SCANBINOC1",
+			"SMG",
+			"UT_SMG",
+			"UP_SMG2",
+			"UP_SMG2"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN26",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"RAILGUN",
+			"UT_RAIL",
+			"UT_STUNDMG",
+			"STUN_GREN",
+			"SCAN1",
+			"SCANBINOC1",
+			"LASER",
+			"TERRAINEDITOR"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN27",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"LASER",
+			"STRONGLASER",
+			"UP_LASER4",
+			"TERRAINEDITOR",
+			"UT_SURVEY",
+			"SCANBINOC1",
+			"SCAN1",
+			"UT_SCAN",
+			"BOLT"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN28",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SCAN1",
+			"STUN_GREN",
+			"TERRAIN_GREN",
+			"LASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"FISHLASER"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN29",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"LASER",
+			"BOLT",
+			"UT_BOLT",
+			"UP_BOLT1",
+			"UT_BOLTBOUNCE",
+			"SCAN1",
+			"SCANBINOC1",
+			"TERRAINEDITOR"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN30",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "SciSmall",
+		"Slots": 16,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"SCOPE",
+			"LASER",
+			"RAILGUN",
+			"UT_RAIL_STUN",
+			"GRENADE",
+			"UP_GREN3"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN31",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Rifle",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SCAN1",
+			"STUN_GREN",
+			"TERRAIN_GREN",
+			"LASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"FISHLASER"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN32",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 10,
+		"Technology": [
+			"SCAN1",
+			"STUN_GREN",
+			"TERRAIN_GREN",
+			"LASER",
+			"UT_MINER",
+			"SCANBINOC1",
+			"FISHLASER"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	},
+	{
+		"Id": "R_TWIT_GUN33",
+		"Name": null,
+		"RewardTable": "TwitchRewardTable",
+		"Class": "A",
+		"WeaponClass": "Pistol",
+		"Size": "WeaponMedium",
+		"Slots": 16,
+		"Technology": [
+			"SCANBINOC1",
+			"SCAN1",
+			"SCOPE",
+			"LASER",
+			"RAILGUN",
+			"UT_RAIL_STUN",
+			"GRENADE",
+			"UP_GREN3"
+		],
+		"Model": "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"
+	}
+]

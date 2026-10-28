@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "version_key": "7.10",
+  "previous_version_key": "7.00",
+  "created_at": "2026-10-28T11:08:22-04:00",
+  "baseline_snapshot": "baseline_snapshot",
+  "current_snapshot": "current_snapshot",
+  "current_snapshots_root": "current_snapshots",
+  "baseline_manifest": "baseline_snapshot\\manifest.json",
+  "current_manifest": "current_snapshot\\manifest.json",
+  "building_mxml": null,
+  "building_sha256": null
+}

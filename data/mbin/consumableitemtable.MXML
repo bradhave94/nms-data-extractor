@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (7.00.0.1)-->
+<!--File created using MBINCompiler version (7.10.0.1)-->
 <Data template="cGcConsumableItemTable">
 	<Property name="Table">
 		<Property name="Table" value="GcConsumableItem" _id="S23_BEACON">
@@ -63,6 +63,12 @@
 			<Property name="RewardOverrideTable">
 				<Property name="RewardOverrideTable" value="GcRewardMissionOverride" _index="0">
 					<Property name="Mission" value="HULK_CHRT_TUT" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Reward" value="R_CHRT_HULK_ONL" />
+					<Property name="ForceLocalMissionSelection" value="" />
+				</Property>
+				<Property name="RewardOverrideTable" value="GcRewardMissionOverride" _index="1">
+					<Property name="Mission" value="HULK_CHRT_BIGGS" />
 					<Property name="OptionalMissionSeed" value="NONE" />
 					<Property name="Reward" value="R_CHRT_HULK_ONL" />
 					<Property name="ForceLocalMissionSelection" value="" />
