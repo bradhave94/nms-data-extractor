@@ -14,7 +14,10 @@ from .base_parser import EXMLParser, strip_markup_tags
 
 # Keys the game references but ships no English text for (checked in every nms_loc*_english
 # table for 7.10). They become null; any other missing key stops the run.
-KNOWN_MISSING_KEYS = frozenset({"UI_PLAYER_TDESC_OLD"})
+KNOWN_MISSING_KEYS = frozenset({
+    "UI_PLAYER_TDESC_OLD",    # hint of the T_OLD title
+    "UI_BIGGS_COCKPIT_TREE",  # a corvette research tree whose parts no longer exist
+})
 # Values used as literal text instead of a localization key: the bare player name and
 # "-" (no earned text). Anything else that isn't a key is an unknown format and fails.
 _LITERALS = frozenset({"%NAME%", "-"})

@@ -19,6 +19,12 @@ IGNORED_REPORT_FILES = {
     "extraction-manifest.json",
     "localization.json",
     "new.json",
+    # Reference tables, not items: they have no item pages, and their rows reuse item IDs
+    # (research nodes, item sources) or would share the item ID namespace (traits, perks).
+    "FrigateTraits.json",
+    "ItemSources.json",
+    "ResearchTrees.json",
+    "SettlementPerks.json",
 }
 NEW_JSON_FILENAME = "new.json"
 # Output files added to the extractor after their content was already in the game. In the
