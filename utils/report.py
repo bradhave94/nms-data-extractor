@@ -20,6 +20,21 @@ IGNORED_REPORT_FILES = {
     "localization.json",
     "new.json",
 }
+# Reference tables, not items. They are archived in release snapshots and compared file by file
+# in the report, but stay out of new.json and the global item ID index: they have no item pages,
+# and their rows reuse item IDs (research nodes, item sources).
+REFERENCE_FILES = {
+    "FrigateTraits.json",
+    "ItemSources.json",
+    "ResearchTrees.json",
+    "SettlementPerks.json",
+}
+# Fields an extractor fix corrected in a release, so the correction isn't reported as a game
+# change in that release's new.json. 7.10: technology BlueprintCost was a hard-coded 1 and is
+# now the game's FragmentCost.
+EXTRACTION_FIXES = {
+    "7.10": {"BlueprintCost"},
+}
 NEW_JSON_FILENAME = "new.json"
 # Output files added to the extractor after their content was already in the game. In the
 # release they were first extracted, only the listed rows are game introductions (each one
@@ -294,13 +309,17 @@ def _compare_file(old_data: Any, new_data: Any, *, source_name: str | None = Non
             if json.dumps(old_by_id[key], sort_keys=True, ensure_ascii=False)
             != json.dumps(new_by_id[key], sort_keys=True, ensure_ascii=False)
         )
+        # Rows with an Id are compared one by one; anything else in the file (a dict keyed by
+        # item, rows without an Id, scalar settings) is caught by comparing the whole file.
+        other_changes = old_data != new_data and not (added_ids or removed_ids or changed_ids)
         return {
             "old_count": len(old_by_id),
             "new_count": len(new_by_id),
             "added_ids": added_ids,
             "removed_ids": removed_ids,
             "changed_ids": changed_ids,
-            "has_changes": bool(added_ids or removed_ids or changed_ids),
+            "other_changes": other_changes,
+            "has_changes": bool(added_ids or removed_ids or changed_ids or other_changes),
             "mode": "id-list",
         }
 
@@ -1049,6 +1068,8 @@ def _build_markdown(*, version_key: str, generated_at: str, previous_run: dict[s
             continue
         changes_found = True
         lines.append(f"### {filename}")
+        if info.get("other_changes"):
+            lines.append("- Content outside the per-row comparison changed (sections without row IDs)")
         if info["added_ids"]:
             preview = ", ".join(info["added_ids"][:25])
             lines.append(f"- Added ({len(info['added_ids'])}): {preview}")
@@ -1142,7 +1163,7 @@ def _load_all_items_by_id_from_dir(
     if not json_dir.is_dir():
         return combined
     for path in sorted(json_dir.glob("*.json")):
-        if path.name in IGNORED_REPORT_FILES or path.name == SNAPSHOT_MANIFEST_FILENAME:
+        if path.name in IGNORED_REPORT_FILES or path.name in REFERENCE_FILES or path.name == SNAPSHOT_MANIFEST_FILENAME:
             continue
         data = _load_json_strict(path)
         if legacy_normalize:
@@ -1181,11 +1202,11 @@ _SKIP_CHANGE_DIFF_KEYS = frozenset(
 )
 
 
-def _diff_changed_fields(previous: dict[str, Any], current: dict[str, Any]) -> list[str]:
+def _diff_changed_fields(previous: dict[str, Any], current: dict[str, Any], fixed: set[str] = frozenset()) -> list[str]:
     keys = set(previous) | set(current)
     changed: list[str] = []
     for key in sorted(keys):
-        if key in _SKIP_CHANGE_DIFF_KEYS:
+        if key in _SKIP_CHANGE_DIFF_KEYS or key in fixed:
             continue
         if previous.get(key) != current.get(key):
             changed.append(key)
@@ -1245,6 +1266,8 @@ def build_new_json_document(
                         if (signature := reward_identity(item)) is not None}
     newly_extracted = {name: entry["additions"] for name, entry in FIRST_EXTRACTED_IN.items()
                        if release_identity(entry["release"]) == release_identity(version_key)}
+    fixed_fields = set().union(*(fields for release, fields in EXTRACTION_FIXES.items()
+                                 if release_identity(release) == release_identity(version_key)))
     added_items: list[dict[str, Any]] = []
     changed_items: list[dict[str, Any]] = []
 
@@ -1286,7 +1309,7 @@ def build_new_json_document(
             added_items.append(entry)
             continue
         _source, previous_item = baseline
-        changed_fields = _diff_changed_fields(previous_item, item)
+        changed_fields = _diff_changed_fields(previous_item, item, fixed_fields)
         if changed_fields:
             entry["Change"] = "changed"
             entry["Previous"] = dict(previous_item)

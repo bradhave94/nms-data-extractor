@@ -173,7 +173,8 @@ def parse_technology(mxml_path: str) -> list:
                 'Value': value,
                 'Colour': colour,
                 'Usages': usages,
-                'BlueprintCost': 1,
+                # What the blueprint costs at a research station (paid in the tree's currency).
+                'BlueprintCost': fragment_cost,
                 'BlueprintCostType': 'Nanites',
                 'BlueprintSource': 0,
                 'RequiredItems': required_items,
