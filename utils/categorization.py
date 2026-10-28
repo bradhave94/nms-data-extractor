@@ -114,6 +114,7 @@ CATEGORIZATION_RULES = {
             'Environmental decoration',
             'Autonomous Agriculture Unit',
             'Recycled Construction Component',
+            'Advanced Construction Component',
             'Advanced Freighter Module',
             'Agricultural Module',
             'Alloy Construction Component',
@@ -247,6 +248,7 @@ CATEGORIZATION_RULES = {
             'Pulsating Biomass',
             'Priceless Fragment',
             'Antivitreous Device Memento',
+            'Haunting Memento',
             'Genetic Mutator',
             'Window to a Dream',
         }

@@ -36,6 +36,10 @@ from parsers.creatures import (
     parse_creatures,
 )
 from parsers.battle_moves import parse_battle_moves
+from parsers.player_unlocks import parse_player_titles
+from parsers.reference_tables import (
+    parse_frigate_traits, parse_item_sources, parse_research_trees, parse_settlement_perks,
+)
 from parsers.arena import (
     parse_move_sets, parse_arena_modes, parse_arena_league_medals,
     parse_arena_ai_configs, parse_arena_rewards,
@@ -91,6 +95,7 @@ MBIN_FILTERS = [
     "*LANGUAGE/nms_loc7_english.mbin",
     "*LANGUAGE/nms_loc8_english.mbin",
     "*LANGUAGE/nms_loc9_english.mbin",
+    "*LANGUAGE/nms_loc10_english.mbin",
     "*LANGUAGE/nms_update3_english.mbin",
     "*SIMULATION/ECOSYSTEM/creaturedatatable.mbin",
     "*SIMULATION/ECOSYSTEM/creaturefilenametable.mbin",
@@ -102,6 +107,19 @@ MBIN_FILTERS = [
     "*SIMULATION/ECOSYSTEM/peteggspeciesoverridetable.mbin",
     "*SIMULATION/ECOSYSTEM/creaturepetbehaviourtable.mbin",
     "*GAMESTATE/STATS/leveledstatstable.mbin",
+    "*GAMESTATE/PLAYERDATA/playertitledata.mbin",
+    "*REALITY/TABLES/frigatetraittable.mbin",
+    "*gcfleetglobals.global.mbin",
+    "*REALITY/TABLES/settlementperkstable.mbin",
+    "*gcsettlementglobals.mbin",
+    "*REALITY/TABLES/unlockableseasonrewards.mbin",
+    "*REALITY/TABLES/unlockabletwitchrewards.mbin",
+    "*REALITY/TABLES/unlockableplatformrewards.mbin",
+    "*REALITY/TABLES/purchaseablespecials.mbin",
+    "*REALITY/TABLES/historicalseasondatatable.mbin",
+    "*REALITY/TABLES/costtable.mbin",
+    "*REALITY/TABLES/nms_dialog_gcalienpuzzletable.mbin",
+    "*REALITY/TABLES/unlockableitemtrees.mbin",
     "*gccreatureglobals.mbin",
 ]
 
@@ -325,6 +343,25 @@ def save_json(data, filename: str) -> float:
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent="\t", ensure_ascii=False)
     return output_path.stat().st_size / 1024
+
+
+def report_unresolved_references(final_files: dict) -> None:
+    """Item IDs that reference tables point at but no output contains. Listed, never dropped:
+    a stale research tree (7.10's corvette tree names parts that no longer exist) is game data."""
+    item_ids = {row.get('Id') for rows in final_files.values() if isinstance(rows, list)
+                for row in rows if isinstance(row, dict)}
+    unresolved: dict[str, set] = {}
+    for group in (final_files.get('ResearchTrees.json') or {}).get('Groups', []):
+        for tree in group['Trees']:
+            for node in tree['Nodes']:
+                if node['Id'] not in item_ids:
+                    unresolved.setdefault(f"research tree {group['Id']}", set()).add(node['Id'])
+    for item_id in (final_files.get('ItemSources.json') or {}).get('Items', {}):
+        if item_id not in item_ids:
+            unresolved.setdefault('item sources', set()).add(item_id)
+    for where, ids in sorted(unresolved.items()):
+        preview = ', '.join(sorted(ids)[:6]) + (' ...' if len(ids) > 6 else '')
+        print(f"  [WARN] {len(ids)} unresolved item IDs in {where}: {preview}")
 
 
 def apply_slugs(final_files: dict) -> None:
@@ -1071,6 +1108,11 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
         ('EggOverrides', 'peteggspeciesoverridetable.MXML', parse_pet_egg_species_overrides),
         ('PetBehaviours', 'creaturepetbehaviourtable.MXML', parse_pet_behaviours),
         ('CreatureGlobals', 'gccreatureglobals.MXML', parse_creature_globals),
+        ('Titles', 'playertitledata.MXML', parse_player_titles),
+        ('FrigateTraits', 'frigatetraittable.MXML', parse_frigate_traits),
+        ('SettlementPerks', 'settlementperkstable.MXML', parse_settlement_perks),
+        ('ItemSources', 'unlockableseasonrewards.MXML', parse_item_sources),
+        ('ResearchTrees', 'unlockableitemtrees.MXML', parse_research_trees),
     ]
     for i, (name, mxml_file, parser_func) in enumerate(parsers, 1):
         mxml_path = mxml_file if isinstance(mxml_file, Path) else (data_dir / mxml_file)
@@ -1135,6 +1177,9 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
     }
     if 'EggModifiers' in base_data:
         final_files['EggModifiers.json'] = base_data.get('EggModifiers', [])
+    for name in ('Titles', 'FrigateTraits', 'SettlementPerks', 'ItemSources', 'ResearchTrees'):
+        if name in base_data:
+            final_files[f'{name}.json'] = base_data[name]
 
     # Build Creatures.json as a nested object (not a flat list)
     creatures_data = {}
@@ -1329,6 +1374,7 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
         print(f"  [NORMALIZE] Others.json: removed {adornment_dupes} Starship Interior Adornment display duplicates (T_BOBBLE_* tech variants)")
 
     coverage = validate_building_coverage(data_dir, final_files)
+    report_unresolved_references(final_files)
     # A few specialised parsers use localization dictionaries directly. Apply
     # prompt normalization at the output boundary as well as translate().
     from parsers.base_parser import normalize_control_tokens

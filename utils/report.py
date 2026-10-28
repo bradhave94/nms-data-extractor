@@ -20,7 +20,30 @@ IGNORED_REPORT_FILES = {
     "localization.json",
     "new.json",
 }
+# Reference tables, not items. They are archived in release snapshots and compared file by file
+# in the report, but stay out of new.json and the global item ID index: they have no item pages,
+# and their rows reuse item IDs (research nodes, item sources).
+REFERENCE_FILES = {
+    "FrigateTraits.json",
+    "ItemSources.json",
+    "ResearchTrees.json",
+    "SettlementPerks.json",
+}
+# Fields an extractor fix corrected in a release, so the correction isn't reported as a game
+# change in that release's new.json. 7.10: technology BlueprintCost was a hard-coded 1 and is
+# now the game's FragmentCost.
+EXTRACTION_FIXES = {
+    "7.10": {"BlueprintCost"},
+}
 NEW_JSON_FILENAME = "new.json"
+# Output files added to the extractor after their content was already in the game. In the
+# release they were first extracted, only the listed rows are game introductions (each one
+# checked against the previous release's sources); from the next release on these files are
+# diffed like any other.
+FIRST_EXTRACTED_IN = {
+    # Every title's name key is in the 7.00 localization except UI_PLAYER_TITLE_SPOOK_PACKAGES.
+    "Titles.json": {"release": "7.10", "additions": {"T_SPOOKPACKAGE"}},
+}
 SNAPSHOT_MANIFEST_FILENAME = "manifest.json"
 RELEASE_MANIFEST_FILENAME = "manifest.json"
 REPORT_SCHEMA_VERSION = 2
@@ -286,13 +309,17 @@ def _compare_file(old_data: Any, new_data: Any, *, source_name: str | None = Non
             if json.dumps(old_by_id[key], sort_keys=True, ensure_ascii=False)
             != json.dumps(new_by_id[key], sort_keys=True, ensure_ascii=False)
         )
+        # Rows with an Id are compared one by one; anything else in the file (a dict keyed by
+        # item, rows without an Id, scalar settings) is caught by comparing the whole file.
+        other_changes = old_data != new_data and not (added_ids or removed_ids or changed_ids)
         return {
             "old_count": len(old_by_id),
             "new_count": len(new_by_id),
             "added_ids": added_ids,
             "removed_ids": removed_ids,
             "changed_ids": changed_ids,
-            "has_changes": bool(added_ids or removed_ids or changed_ids),
+            "other_changes": other_changes,
+            "has_changes": bool(added_ids or removed_ids or changed_ids or other_changes),
             "mode": "id-list",
         }
 
@@ -1041,6 +1068,8 @@ def _build_markdown(*, version_key: str, generated_at: str, previous_run: dict[s
             continue
         changes_found = True
         lines.append(f"### {filename}")
+        if info.get("other_changes"):
+            lines.append("- Content outside the per-row comparison changed (sections without row IDs)")
         if info["added_ids"]:
             preview = ", ".join(info["added_ids"][:25])
             lines.append(f"- Added ({len(info['added_ids'])}): {preview}")
@@ -1134,7 +1163,7 @@ def _load_all_items_by_id_from_dir(
     if not json_dir.is_dir():
         return combined
     for path in sorted(json_dir.glob("*.json")):
-        if path.name in IGNORED_REPORT_FILES or path.name == SNAPSHOT_MANIFEST_FILENAME:
+        if path.name in IGNORED_REPORT_FILES or path.name in REFERENCE_FILES or path.name == SNAPSHOT_MANIFEST_FILENAME:
             continue
         data = _load_json_strict(path)
         if legacy_normalize:
@@ -1173,11 +1202,11 @@ _SKIP_CHANGE_DIFF_KEYS = frozenset(
 )
 
 
-def _diff_changed_fields(previous: dict[str, Any], current: dict[str, Any]) -> list[str]:
+def _diff_changed_fields(previous: dict[str, Any], current: dict[str, Any], fixed: set[str] = frozenset()) -> list[str]:
     keys = set(previous) | set(current)
     changed: list[str] = []
     for key in sorted(keys):
-        if key in _SKIP_CHANGE_DIFF_KEYS:
+        if key in _SKIP_CHANGE_DIFF_KEYS or key in fixed:
             continue
         if previous.get(key) != current.get(key):
             changed.append(key)
@@ -1235,6 +1264,10 @@ def build_new_json_document(
     space_base_variants = load_space_base_variants(mxml_dir)
     previous_rewards = {signature for _, item in baseline_by_id.values()
                         if (signature := reward_identity(item)) is not None}
+    newly_extracted = {name: entry["additions"] for name, entry in FIRST_EXTRACTED_IN.items()
+                       if release_identity(entry["release"]) == release_identity(version_key)}
+    fixed_fields = set().union(*(fields for release, fields in EXTRACTION_FIXES.items()
+                                 if release_identity(release) == release_identity(version_key)))
     added_items: list[dict[str, Any]] = []
     changed_items: list[dict[str, Any]] = []
 
@@ -1246,6 +1279,8 @@ def build_new_json_document(
             entry["SourceSection"] = section
         baseline = baseline_by_id.get(iid)
         if baseline is None:
+            if source_file in newly_extracted and item.get("Id") not in newly_extracted[source_file]:
+                continue
             if any(_record_id(key, candidate) == str(item.get("RewardVariantOf")) for key, (_, candidate) in all_by_id.items()):
                 continue
             if reward_identity(item) in previous_rewards:
@@ -1274,7 +1309,7 @@ def build_new_json_document(
             added_items.append(entry)
             continue
         _source, previous_item = baseline
-        changed_fields = _diff_changed_fields(previous_item, item)
+        changed_fields = _diff_changed_fields(previous_item, item, fixed_fields)
         if changed_fields:
             entry["Change"] = "changed"
             entry["Previous"] = dict(previous_item)
@@ -1313,11 +1348,17 @@ def write_new_json(repo_root: Path, document: dict[str, Any]) -> Path:
 
 
 def _baseline_for_release(repo_root: Path, version_key: str) -> Path | None:
+    return _archived_baseline(repo_root, version_key)[0]
+
+
+def _archived_baseline(repo_root: Path, version_key: str) -> tuple[Path | None, str | None]:
+    """The release archive's fixed baseline and the release it was taken from."""
     version_dir = repo_root / "reports" / "by_version" / release_identity(version_key)
     if _archive_component_present(version_dir):
         archive = _validate_release_archive(version_dir, version_key=version_key)
-        return archive["baseline_snapshot"]
-    return None
+        previous = archive["release_manifest"].get("previous_version_key")
+        return archive["baseline_snapshot"], str(previous) if previous else None
+    return None, None
 
 
 def update_new_json(
@@ -1336,7 +1377,15 @@ def update_new_json(
     """
     repo_root = Path(repo_root).resolve()
     resolved_version = explicit_version_key(version_key) or detect_version_key(repo_root)
-    baseline = Path(baseline_snapshot_dir) if baseline_snapshot_dir is not None else _baseline_for_release(repo_root, resolved_version)
+    baseline_version = None
+    if baseline_snapshot_dir is not None:
+        baseline = Path(baseline_snapshot_dir)
+    else:
+        baseline, baseline_version = _archived_baseline(repo_root, resolved_version)
+    if baseline is None and _latest_run_metadata(repo_root):
+        # First run of a new release: its archive is created later by the report, so
+        # use the same previous-release snapshot the report will archive.
+        baseline, baseline_version = _select_baseline_source(repo_root, version_key=resolved_version, baseline_snapshot_dir=None)
     if baseline is None:
         baseline = repo_root / "reports" / "_latest_snapshot"
     current = Path(current_snapshot_dir) if current_snapshot_dir is not None else None
@@ -1346,6 +1395,9 @@ def update_new_json(
         current_json_dir=current,
         version_key=resolved_version,
     )
+    if baseline_version:
+        # Name the release the baseline came from, not the latest run (a rerun of this release).
+        previous_run = {**(previous_run or {}), "version_key": baseline_version}
     generated_at = datetime.now().astimezone().isoformat(timespec="seconds")
     document = build_new_json_document(
         repo_root,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--File created using MBINCompiler version (7.00.0.1)-->
+<!--File created using MBINCompiler version (7.10.0.1)-->
 <Data template="cGcCreatureGlobals">
 	<Property name="SpherePusherOffset">
 		<Property name="Small" value="0.400000" />
@@ -700,6 +700,94 @@
 			<Property name="TimerAccelerator" value="0.200000" />
 			<Property name="SpawnChance" value="1.000000" />
 			<Property name="SpawnID" value="SPOOK_FIEND_GRP" />
+			<Property name="MaxNumSpawns" value="6" />
+		</Property>
+	</Property>
+	<Property name="SpookFiendsSpawnDataPermanentSpook">
+		<Property name="SpookFiendsSpawnDataPermanentSpook" value="GcSpookFiendSpawnData" _index="0">
+			<Property name="ThresholdSpookLevel" value="0.000000" />
+			<Property name="TimerAccelerator" value="1.000000" />
+			<Property name="SpawnChance" value="0.000000" />
+			<Property name="SpawnID" value="SPOOK_FIEND" />
+			<Property name="MaxNumSpawns" value="0" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataPermanentSpook" value="GcSpookFiendSpawnData" _index="1">
+			<Property name="ThresholdSpookLevel" value="0.200000" />
+			<Property name="TimerAccelerator" value="10.000000" />
+			<Property name="SpawnChance" value="1.000000" />
+			<Property name="SpawnID" value="SPOOK_FIEND" />
+			<Property name="MaxNumSpawns" value="1" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataPermanentSpook" value="GcSpookFiendSpawnData" _index="2">
+			<Property name="ThresholdSpookLevel" value="0.500000" />
+			<Property name="TimerAccelerator" value="5.000000" />
+			<Property name="SpawnChance" value="0.500000" />
+			<Property name="SpawnID" value="SPOOK_FIEND" />
+			<Property name="MaxNumSpawns" value="2" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataPermanentSpook" value="GcSpookFiendSpawnData" _index="3">
+			<Property name="ThresholdSpookLevel" value="0.750000" />
+			<Property name="TimerAccelerator" value="2.000000" />
+			<Property name="SpawnChance" value="0.150000" />
+			<Property name="SpawnID" value="SPOOK_FIEND" />
+			<Property name="MaxNumSpawns" value="4" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataPermanentSpook" value="GcSpookFiendSpawnData" _index="4">
+			<Property name="ThresholdSpookLevel" value="0.900000" />
+			<Property name="TimerAccelerator" value="0.500000" />
+			<Property name="SpawnChance" value="1.000000" />
+			<Property name="SpawnID" value="SPOOK_FIEND_GRP" />
+			<Property name="MaxNumSpawns" value="5" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataPermanentSpook" value="GcSpookFiendSpawnData" _index="5">
+			<Property name="ThresholdSpookLevel" value="1.000000" />
+			<Property name="TimerAccelerator" value="0.200000" />
+			<Property name="SpawnChance" value="1.000000" />
+			<Property name="SpawnID" value="SPOOK_FIEND_GRP" />
+			<Property name="MaxNumSpawns" value="6" />
+		</Property>
+	</Property>
+	<Property name="SpookFiendsSpawnDataSpace">
+		<Property name="SpookFiendsSpawnDataSpace" value="GcSpookFiendSpawnData" _index="0">
+			<Property name="ThresholdSpookLevel" value="0.000000" />
+			<Property name="TimerAccelerator" value="1.000000" />
+			<Property name="SpawnChance" value="0.000000" />
+			<Property name="SpawnID" value="SPACE_SPOOK" />
+			<Property name="MaxNumSpawns" value="0" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataSpace" value="GcSpookFiendSpawnData" _index="1">
+			<Property name="ThresholdSpookLevel" value="0.200000" />
+			<Property name="TimerAccelerator" value="10.000000" />
+			<Property name="SpawnChance" value="1.000000" />
+			<Property name="SpawnID" value="SPACE_SPOOK" />
+			<Property name="MaxNumSpawns" value="1" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataSpace" value="GcSpookFiendSpawnData" _index="2">
+			<Property name="ThresholdSpookLevel" value="0.500000" />
+			<Property name="TimerAccelerator" value="5.000000" />
+			<Property name="SpawnChance" value="0.500000" />
+			<Property name="SpawnID" value="SPACE_SPOOK" />
+			<Property name="MaxNumSpawns" value="2" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataSpace" value="GcSpookFiendSpawnData" _index="3">
+			<Property name="ThresholdSpookLevel" value="0.750000" />
+			<Property name="TimerAccelerator" value="2.000000" />
+			<Property name="SpawnChance" value="0.150000" />
+			<Property name="SpawnID" value="SPACE_SPOOK" />
+			<Property name="MaxNumSpawns" value="4" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataSpace" value="GcSpookFiendSpawnData" _index="4">
+			<Property name="ThresholdSpookLevel" value="0.900000" />
+			<Property name="TimerAccelerator" value="0.500000" />
+			<Property name="SpawnChance" value="1.000000" />
+			<Property name="SpawnID" value="SPACE_SPOOK_GRP" />
+			<Property name="MaxNumSpawns" value="5" />
+		</Property>
+		<Property name="SpookFiendsSpawnDataSpace" value="GcSpookFiendSpawnData" _index="5">
+			<Property name="ThresholdSpookLevel" value="1.000000" />
+			<Property name="TimerAccelerator" value="0.200000" />
+			<Property name="SpawnChance" value="1.000000" />
+			<Property name="SpawnID" value="SPACE_SPOOK_GRP" />
 			<Property name="MaxNumSpawns" value="6" />
 		</Property>
 	</Property>

@@ -112,9 +112,28 @@ python extract.py --list-sources
 
 `MBIN_FILTERS` and `EXPECTED_MXML_AFTER_REFRESH` in extract.py define required game sources. `EXPECTED_JSON_FILES` in utils/smoke.py defines data outputs. This includes arena rewards, egg modifiers, and creature globals.
 
-There are currently 31 required MXML files (including eight English localization tables), 25 parser jobs, and 19 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
+There are currently 45 required MXML files (including nine English localization tables), 30 parser jobs, and 24 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
 
 ## Development
+
+### Player titles
+
+`parsers/player_unlocks.py` writes `Titles.json` from `playertitledata`: each title's name, the game's hint and earned text, and its unlock condition (a stat threshold or milestone rank, a product, a mission, a trophy or an alien interaction). Titles granted by a reward (`GcRewardUnlockTitle` in `rewardtable`, e.g. expedition milestones) list those rewards in `GrantedByRewards`. Titles with neither are printed as a warning. Localization keys must resolve; the only allowed gaps are listed in `KNOWN_MISSING_KEYS`. `%NUM%` in title text is filled with the stat threshold, as the game does.
+
+`Titles.json` was first extracted in 7.10, after most titles were already in the game. `FIRST_EXTRACTED_IN` in `utils/report.py` lists the rows that really are new in that release (checked against the 7.00 sources), so the rest stay out of its `new.json`; from the next release on the file is diffed like any other. Add an entry there whenever a new output file covers content that already existed.
+
+`EXTRACTION_FIXES` in `utils/report.py` lists fields an extractor fix corrected in a release, so the correction isn't reported as a game change in that release's `new.json`. 7.10: technology `BlueprintCost` was a hard-coded 1 and is now the game's `FragmentCost`.
+
+### Reference tables
+
+`parsers/reference_tables.py` writes four files the site lists without giving their rows item pages. Each parser reads one table and the related tables beside it in the same MXML folder:
+
+- `FrigateTraits.json` (`frigatetraittable`): each trait's stat, strength and the frigate types it rolls on. The numeric change for each strength comes from `FrigateTraitStrengths` in `gcfleetglobals`, and `Effect` is the game's own label with the amount filled in. Stats the game shows inverted (`StatDisplaysPositive=false`, e.g. fuel cost) are shown inverted.
+- `SettlementPerks.json` (`settlementperkstable`): each perk's flags and stat changes, with the min-max range for each strength from `PerkStatStrengthValues` in `gcsettlementglobals`. `Text` is the game's own effect wording (`UI_SETTLEMENT_STAT_*_POS_FMT`/`_NEG_FMT`, e.g. "+50,000–100,000 u/day maintenance") with the range filled in unscaled, as the game's format strings take it.
+- `ItemSources.json` (`unlockableseasonrewards`, `unlockabletwitchrewards`, `unlockableplatformrewards`, `purchaseablespecials`, `historicalseasondatatable`): where items come from, keyed by item ID. Expedition rewards use the expedition number players see (`DisplayNumber`, not the internal season number). `Exchanges` lists the dialog options in `nms_dialog_gcalienpuzzletable` that take a fixed cost from `costtable` (an item, substance or currency) and always give specific items through `rewardtable`; random or partial rewards are left out.
+- `ResearchTrees.json` (`unlockableitemtrees`): each station's trees, their currency and node order. A node's price is its item's `BlueprintCost`, paid in the tree's currency. The `Test` group is skipped.
+
+These are not item outputs. `REFERENCE_FILES` in `utils/report.py` keeps them out of `new.json` and the global item ID index; they are still archived in release snapshots and compared file by file in the report. Item IDs they reference that no output contains are printed as warnings; in 7.10 that is the whole corvette research tree, whose parts no longer exist.
 
 ### Base power data
 
