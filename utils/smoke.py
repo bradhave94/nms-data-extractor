@@ -18,7 +18,9 @@ EXPECTED_JSON_FILES = [
     "Fish.json",
     "Food.json",
     "FrigateTraits.json",
+    "Inventory.json",
     "ItemSources.json",
+    "Milestones.json",
     "NutrientProcessor.json",
     "Others.json",
     "Products.json",
@@ -31,11 +33,12 @@ EXPECTED_JSON_FILES = [
     "TechnologyModule.json",
     "Titles.json",
     "Trade.json",
+    "Trading.json",
     "Upgrades.json",
 ]
 
 # Files whose top-level structure is a dict with section keys, not a flat list.
-_DICT_STRUCTURED_FILES = {"Creatures.json", "ItemSources.json", "ResearchTrees.json"}
+_DICT_STRUCTURED_FILES = {"Creatures.json", "Inventory.json", "ItemSources.json", "Milestones.json", "ResearchTrees.json", "Trading.json"}
 _CREATURES_REQUIRED_SECTIONS = {
     "Species",
     "Affinities",

@@ -1,0 +1,130 @@
+{
+  "schema_version": 2,
+  "files": {
+    "Buildings.json": {
+      "sha256": "f4b19793bf9a36c09d04d5a77fdd0819f59838dab714b4eb1eda234524f9111c",
+      "size": 3581676
+    },
+    "ConstructedTechnology.json": {
+      "sha256": "a33ff83062a3b36d38c94ad210e20f25d44f7331607a5fb3d3086745dd364301",
+      "size": 233733
+    },
+    "Corvette.json": {
+      "sha256": "c1cca4dcfd0f9319b8a75e51b400049310fb3b8364c94525b628eb5b7d6d165d",
+      "size": 1919634
+    },
+    "Creatures.json": {
+      "sha256": "b14e82ab7e3ca88aebfbefb7b17ce162466ca731a2a04679ebb087f12a627bc5",
+      "size": 302929
+    },
+    "Curiosities.json": {
+      "sha256": "c32deda99dab74bc0ad48f1e3ed79115395939db536d47d23fe15aee1ca4a1f3",
+      "size": 543598
+    },
+    "EggModifiers.json": {
+      "sha256": "a2066fffd603905edc61c4f1bc3cc1f23bbca1f3660665c0b9e0dcdada3baeb9",
+      "size": 13924
+    },
+    "Exocraft.json": {
+      "sha256": "27afb76c91bdee9b3234ad402e83e758d442beec39ae1133ee9685027c83ec04",
+      "size": 106324
+    },
+    "Fish.json": {
+      "sha256": "991ed1f3ca74d48d7c793135a690cde478815449b80d0fd58ebadc4da05a61b5",
+      "size": 565195
+    },
+    "Food.json": {
+      "sha256": "a94ebce418ff1ce625d9a2dd168116e6edcd87e913d09715d9a87de25d1a340d",
+      "size": 941304
+    },
+    "FrigateTraits.json": {
+      "sha256": "a016faf3f678137698c3d5fdb9b1c131953de07239cb80f5c41f59c515fcc504",
+      "size": 73682
+    },
+    "Inventory.json": {
+      "sha256": "ef981292b4f12ce25de5fe7a09d7fb1b9b10aef301e703a66a268277d8e4075e",
+      "size": 28802
+    },
+    "ItemSources.json": {
+      "sha256": "18f212045136b2d6df047903f6b48e83f69b49619c376a45315ea8f67188985b",
+      "size": 137786
+    },
+    "Milestones.json": {
+      "sha256": "06b126e913ec30d3d194d7309e19d9193e1fdab757f77b069626f73560f5bb03",
+      "size": 58535
+    },
+    "none.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "size": 2
+    },
+    "NutrientProcessor.json": {
+      "sha256": "5cd92d03221d680c03c7160a362cb54df235c6719dca0474d3762a3e8b16b93b",
+      "size": 559197
+    },
+    "Others.json": {
+      "sha256": "87ffd177891d984dc5f5b2ae4edb32230f58ddfa3d5475ed1641a1805cdb69ba",
+      "size": 1439514
+    },
+    "PowerRules.json": {
+      "sha256": "b63cc6af4e705bca50351cb3c12ae5336d28ab4b52455fdc072ff50cafdf117a",
+      "size": 1044
+    },
+    "Products.json": {
+      "sha256": "528c2d143c87bdf08ad3eb2465343bb33e8593bc9b922e3ce35dfb7aba42df14",
+      "size": 253994
+    },
+    "RawMaterials.json": {
+      "sha256": "7c15aa73dc153318f75001d003b64731e6c9806dfa38ab1517ab28a7ecef6c06",
+      "size": 103111
+    },
+    "Refinery.json": {
+      "sha256": "850c9bed6a1ee55302d3f7661ae6715834dfedc087d2dfea6a3a1b83eb9ba2a0",
+      "size": 145933
+    },
+    "ResearchTrees.json": {
+      "sha256": "f1c76657b77d8e98302fdbb7d919db3bc52ad6e542e363c621bbc78de5784e4a",
+      "size": 133061
+    },
+    "SettlementPerks.json": {
+      "sha256": "d9d526e67c055e0691181b77672d83e82ff737fa816e7be3503d8c9ee42b7f8a",
+      "size": 46237
+    },
+    "Starships.json": {
+      "sha256": "106a5f3d0efcee6a81f62c6dd8c65234f9137100d8424fc66eae70c6d99dc157",
+      "size": 611340
+    },
+    "Technology.json": {
+      "sha256": "4046842bfd80a7a26c0d4d5b82aae2d30f73d1b43c2cd80041c2204e5153eaf5",
+      "size": 490652
+    },
+    "TechnologyModule.json": {
+      "sha256": "22ef116bc95139afef7d532ada3aeb50b201d7af5bc0e2cbdfa1f53b6d075359",
+      "size": 32732
+    },
+    "Titles.json": {
+      "sha256": "477ca552f0ef2adecb7c848a8d391664a034579776b8445a65368ee9df4d59c3",
+      "size": 126052
+    },
+    "Trade.json": {
+      "sha256": "9edfae4e8d15c2329e25e8044a5bd3b2364f9b2a3891b37a4c681a8e8dfcd2fa",
+      "size": 97558
+    },
+    "Trading.json": {
+      "sha256": "2cddf11ac1fea12d586867684c732fec5f5fe778dec61ad3f3929dd4249bf66c",
+      "size": 4281
+    },
+    "Upgrades.json": {
+      "sha256": "78e3a41cfa810cb87812f2839b90483cd66aa251190b97c58375e29f3b24ba08",
+      "size": 1008767
+    }
+  },
+  "snapshot_digest": "88eaa0228c2a948381780492bdbe28125100f850cbfdd633f10885d8105c633e",
+  "version_key": "7.10",
+  "role": "current",
+  "created_at": "2026-10-28T19:28:03-04:00",
+  "building_mxml": {
+    "path": "building\\basebuildingobjectstable.MXML",
+    "sha256": "aaf363148bf8ce59eff9d97dbfcdfcc47ef2239fcc194a58d338afc1972db625",
+    "size": 14571293
+  }
+}

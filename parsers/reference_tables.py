@@ -319,6 +319,9 @@ def parse_item_sources(mxml_path: str) -> dict:
             "Remix": int(_number(_field(row, "RemixNumber"))),
             "DisplayNumber": int(_number(_field(row, "DisplayNumber"))),
             "Name": _text(_field(row, "SeasonName"), problems),
+            "Description": _text(_field(row, "Description"), problems),
+            "FinalReward": _field(row, "FinalReward") or None,
+            "Title": _text(_field(row, "UnlockedTitle"), problems),
         })
 
     shown_numbers = {row["DisplayNumber"] for row in expeditions}
