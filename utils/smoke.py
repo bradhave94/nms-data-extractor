@@ -25,6 +25,7 @@ EXPECTED_JSON_FILES = [
     "Starships.json",
     "Technology.json",
     "TechnologyModule.json",
+    "Titles.json",
     "Trade.json",
     "Upgrades.json",
 ]

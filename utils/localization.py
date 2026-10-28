@@ -79,6 +79,7 @@ LOCALE_MXML_FILES = [
     'nms_loc7_english.MXML',
     'nms_loc8_english.MXML',
     'nms_loc9_english.MXML',
+    'nms_loc10_english.MXML',
     'nms_update3_english.MXML',
 ]
 

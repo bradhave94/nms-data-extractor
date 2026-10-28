@@ -112,9 +112,15 @@ python extract.py --list-sources
 
 `MBIN_FILTERS` and `EXPECTED_MXML_AFTER_REFRESH` in extract.py define required game sources. `EXPECTED_JSON_FILES` in utils/smoke.py defines data outputs. This includes arena rewards, egg modifiers, and creature globals.
 
-There are currently 31 required MXML files (including eight English localization tables), 25 parser jobs, and 19 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
+There are currently 33 required MXML files (including nine English localization tables), 26 parser jobs, and 20 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
 
 ## Development
+
+### Player titles
+
+`parsers/player_unlocks.py` writes `Titles.json` from `playertitledata`: each title's name, the game's hint and earned text, and its unlock condition (a stat threshold or milestone rank, a product, a mission, a trophy or an alien interaction). Titles granted by a reward (`GcRewardUnlockTitle` in `rewardtable`, e.g. expedition milestones) list those rewards in `GrantedByRewards`. Titles with neither are printed as a warning. Localization keys must resolve; the only allowed gaps are listed in `KNOWN_MISSING_KEYS`. `%NUM%` in title text is filled with the stat threshold, as the game does.
+
+`Titles.json` was first extracted in 7.10, after most titles were already in the game. `FIRST_EXTRACTED_IN` in `utils/report.py` lists the rows that really are new in that release (checked against the 7.00 sources), so the rest stay out of its `new.json`; from the next release on the file is diffed like any other. Add an entry there whenever a new output file covers content that already existed.
 
 ### Base power data
 

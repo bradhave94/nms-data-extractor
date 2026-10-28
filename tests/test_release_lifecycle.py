@@ -11,6 +11,7 @@ from utils.report import (
     build_new_json_document,
     generate_refresh_report,
     resolve_report_archive,
+    update_new_json,
 )
 
 
@@ -155,6 +156,35 @@ class ReleaseLifecycleTest(unittest.TestCase):
             next_release["previous_version_key"],
             corrected["version_key"],
         )
+
+    def test_first_run_of_next_release_compares_new_items_against_previous_release(self):
+        self.write(self.baseline, "Products.json", [{"Id": "OLD"}])
+        self.write(self.current, "Products.json", [{"Id": "OLD"}, {"Id": "MID"}])
+        generate_refresh_report(self.repo, version_key="7.00")
+
+        self.write(self.current, "Products.json", [{"Id": "OLD"}, {"Id": "MID"}, {"Id": "NEW"}])
+        result = update_new_json(self.repo, version_key="7.01")
+
+        document = json.loads(result["path"].read_text(encoding="utf-8"))
+        self.assertEqual([item["Id"] for item in document["Items"]], ["NEW"])
+
+        generate_refresh_report(self.repo, version_key="7.01")
+        rerun = json.loads(update_new_json(self.repo, version_key="7.01")["path"].read_text(encoding="utf-8"))
+        self.assertEqual([item["Id"] for item in rerun["Items"]], ["NEW"])
+        self.assertEqual(rerun["PreviousVersionKey"], "7.00")
+
+    def test_rows_of_a_newly_extracted_file_are_not_release_additions(self):
+        self.write(self.baseline, "Products.json", [{"Id": "OLD"}])
+        self.write(self.current, "Products.json", [{"Id": "OLD"}, {"Id": "NEW"}])
+        self.write(self.current, "Titles.json", [{"Id": "T_EXISTING"}, {"Id": "T_SPOOKPACKAGE"}])
+
+        first = build_new_json_document(self.repo, version_key="7.10", previous_run={"version_key": "7.00"},
+                                        baseline_snapshot_dir=self.baseline)
+        self.assertEqual([item["Id"] for item in first["Items"]], ["NEW", "T_SPOOKPACKAGE"])
+
+        later = build_new_json_document(self.repo, version_key="7.20", previous_run={"version_key": "7.10"},
+                                        baseline_snapshot_dir=self.baseline)
+        self.assertEqual([item["Id"] for item in later["Items"]], ["NEW", "T_EXISTING", "T_SPOOKPACKAGE"])
 
     def test_duplicate_identity_in_one_nested_section_fails_closed(self):
         self.write(self.baseline, "Products.json", [{"Id": "OLD"}])

@@ -36,6 +36,7 @@ from parsers.creatures import (
     parse_creatures,
 )
 from parsers.battle_moves import parse_battle_moves
+from parsers.player_unlocks import parse_player_titles
 from parsers.arena import (
     parse_move_sets, parse_arena_modes, parse_arena_league_medals,
     parse_arena_ai_configs, parse_arena_rewards,
@@ -91,6 +92,7 @@ MBIN_FILTERS = [
     "*LANGUAGE/nms_loc7_english.mbin",
     "*LANGUAGE/nms_loc8_english.mbin",
     "*LANGUAGE/nms_loc9_english.mbin",
+    "*LANGUAGE/nms_loc10_english.mbin",
     "*LANGUAGE/nms_update3_english.mbin",
     "*SIMULATION/ECOSYSTEM/creaturedatatable.mbin",
     "*SIMULATION/ECOSYSTEM/creaturefilenametable.mbin",
@@ -102,6 +104,7 @@ MBIN_FILTERS = [
     "*SIMULATION/ECOSYSTEM/peteggspeciesoverridetable.mbin",
     "*SIMULATION/ECOSYSTEM/creaturepetbehaviourtable.mbin",
     "*GAMESTATE/STATS/leveledstatstable.mbin",
+    "*GAMESTATE/PLAYERDATA/playertitledata.mbin",
     "*gccreatureglobals.mbin",
 ]
 
@@ -1071,6 +1074,7 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
         ('EggOverrides', 'peteggspeciesoverridetable.MXML', parse_pet_egg_species_overrides),
         ('PetBehaviours', 'creaturepetbehaviourtable.MXML', parse_pet_behaviours),
         ('CreatureGlobals', 'gccreatureglobals.MXML', parse_creature_globals),
+        ('Titles', 'playertitledata.MXML', parse_player_titles),
     ]
     for i, (name, mxml_file, parser_func) in enumerate(parsers, 1):
         mxml_path = mxml_file if isinstance(mxml_file, Path) else (data_dir / mxml_file)
@@ -1135,6 +1139,8 @@ def run_json_extraction(*, report: bool, no_strict: bool, game_version: str = ""
     }
     if 'EggModifiers' in base_data:
         final_files['EggModifiers.json'] = base_data.get('EggModifiers', [])
+    if 'Titles' in base_data:
+        final_files['Titles.json'] = base_data['Titles']
 
     # Build Creatures.json as a nested object (not a flat list)
     creatures_data = {}
