@@ -275,6 +275,8 @@ def parse_cooking(mxml_path: str) -> list:
                 'GiveRewardOnSpecialPurchase': product_info.get('GiveRewardOnSpecialPurchase'),
                 'FoodBonusStat': product_info.get('FoodBonusStat'),
                 'FoodBonusStatAmount': product_info.get('FoodBonusStatAmount', 0),
+                'FoodBonusStatName': product_info.get('FoodBonusStatName'),
+                'FoodBonusDurationSeconds': product_info.get('FoodBonusDurationSeconds'),
                 'IsTechbox': product_info.get('IsTechbox', False),
                 'CanSendToOtherPlayers': product_info.get('CanSendToOtherPlayers', True),
                 'RewardID': reward_id or None,

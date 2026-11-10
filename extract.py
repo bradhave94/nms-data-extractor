@@ -111,6 +111,7 @@ MBIN_FILTERS = [
     "*GAMESTATE/PLAYERDATA/playertitledata.mbin",
     "*REALITY/TABLES/frigatetraittable.mbin",
     "*gcfleetglobals.global.mbin",
+    "*gcgameplayglobals.global.mbin",
     "*REALITY/TABLES/settlementperkstable.mbin",
     "*gcsettlementglobals.mbin",
     "*REALITY/TABLES/unlockableseasonrewards.mbin",
