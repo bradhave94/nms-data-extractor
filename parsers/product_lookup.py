@@ -1,10 +1,35 @@
 """Shared product-table lookup helpers for parser modules."""
 from pathlib import Path
 
+from utils.workspace import workspace_root
+
 from .base_parser import EXMLParser, normalize_game_icon_path, unresolved_localization_key_count
 
 _PRODUCT_LOOKUP_CACHE: dict[tuple[str, float, bool, bool], dict[str, dict]] = {}
 
+
+
+def base_food_duration() -> float:
+    """BaseFoodDuration (seconds) from gcgameplayglobals.global.MXML, a required source.
+
+    The Nutrient Ingestor runs one unit of food for BaseFoodDuration x the product's CookingValue
+    (600 s in 7.10; e.g. CookingValue 0.66 gives 6:36, matching the in-game timer)."""
+    path = workspace_root() / 'data' / 'mbin' / 'gcgameplayglobals.global.MXML'
+    if not path.exists():
+        raise ValueError(f"Missing {path.name}: needed for Nutrient Ingestor durations")
+    key = (str(path), path.stat().st_mtime)
+    if key not in _BASE_FOOD_DURATION_CACHE:
+        root = EXMLParser.load_xml(str(path))
+        prop = root.find('./Property[@name="BaseFoodDuration"]')
+        value = float(prop.get('value')) if prop is not None and prop.get('value') else 0.0
+        if value <= 0:
+            raise ValueError(f"{path.name} has no positive BaseFoodDuration")
+        _BASE_FOOD_DURATION_CACHE.clear()
+        _BASE_FOOD_DURATION_CACHE[key] = value
+    return _BASE_FOOD_DURATION_CACHE[key]
+
+
+_BASE_FOOD_DURATION_CACHE: dict = {}
 
 def parse_product_element(
     *,
@@ -111,7 +136,20 @@ def parse_product_element(
     buildable_ship_tech_id = parser.get_property_value(item, 'BuildableShipTechID', '')
     group_id = parser.get_property_value(item, 'GroupID', '')
     give_reward_on_special_purchase = parser.get_property_value(item, 'GiveRewardOnSpecialPurchase', '')
-    food_bonus_stat = parser.get_nested_enum(item, 'FoodBonusStat', 'ConsumableBonusStat', '')
+    # MXML nests the stat as <Property name="FoodBonusStat" value="GcStatsTypes"><Property name="StatsType" .../>.
+    # "Unspecified" means the item gives no Nutrient Ingestor bonus.
+    food_bonus_stat = parser.get_nested_enum(item, 'FoodBonusStat', 'StatsType', '')
+    if food_bonus_stat == 'Unspecified':
+        food_bonus_stat = ''
+    food_bonus_stat_name = None
+    food_bonus_duration = None
+    if food_bonus_stat:
+        food_bonus_stat_name = localization.get(food_bonus_stat.upper())
+        if not food_bonus_stat_name:
+            raise ValueError(f"{item_id}: no English label for food bonus stat {food_bonus_stat}")
+        # CookingValue 0 (salvage, Nanotubes and similar) has a stat but no ingestor duration.
+        if isinstance(cooking_value, (int, float)) and cooking_value > 0:
+            food_bonus_duration = round(base_food_duration() * cooking_value, 1)
     food_bonus_stat_amount = parser.parse_value(parser.get_property_value(item, 'FoodBonusStatAmount', '0'))
 
     colour_elem = item.find('.//Property[@name="Colour"]')
@@ -193,6 +231,8 @@ def parse_product_element(
         'GiveRewardOnSpecialPurchase': give_reward_on_special_purchase or None,
         'FoodBonusStat': food_bonus_stat or None,
         'FoodBonusStatAmount': food_bonus_stat_amount,
+        'FoodBonusStatName': food_bonus_stat_name,
+        'FoodBonusDurationSeconds': food_bonus_duration,
         'IsTechbox': is_techbox,
         'CanSendToOtherPlayers': can_send_to_other_players,
     }

@@ -134,6 +134,8 @@ def parse_products(mxml_path: str, *, include_subtitle_key: bool = False) -> lis
                 'GiveRewardOnSpecialPurchase': row['GiveRewardOnSpecialPurchase'],
                 'FoodBonusStat': row['FoodBonusStat'],
                 'FoodBonusStatAmount': row['FoodBonusStatAmount'],
+                'FoodBonusStatName': row['FoodBonusStatName'],
+                'FoodBonusDurationSeconds': row['FoodBonusDurationSeconds'],
                 'IsTechbox': row['IsTechbox'],
                 'CanSendToOtherPlayers': row['CanSendToOtherPlayers'],
             }

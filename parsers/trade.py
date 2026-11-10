@@ -96,6 +96,8 @@ def parse_trade(mxml_path: str) -> list:
             'GiveRewardOnSpecialPurchase': product.get('GiveRewardOnSpecialPurchase'),
             'FoodBonusStat': product.get('FoodBonusStat'),
             'FoodBonusStatAmount': product.get('FoodBonusStatAmount', 0),
+            'FoodBonusStatName': product.get('FoodBonusStatName'),
+            'FoodBonusDurationSeconds': product.get('FoodBonusDurationSeconds'),
             'IsTechbox': product.get('IsTechbox', False),
             'CanSendToOtherPlayers': product.get('CanSendToOtherPlayers', True),
         })

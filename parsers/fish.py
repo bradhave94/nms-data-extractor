@@ -258,6 +258,8 @@ def parse_fish(mxml_path: str) -> list:
                 'GiveRewardOnSpecialPurchase': product_details.get('GiveRewardOnSpecialPurchase'),
                 'FoodBonusStat': product_details.get('FoodBonusStat'),
                 'FoodBonusStatAmount': product_details.get('FoodBonusStatAmount', 0),
+                'FoodBonusStatName': product_details.get('FoodBonusStatName'),
+                'FoodBonusDurationSeconds': product_details.get('FoodBonusDurationSeconds'),
                 'IsTechbox': product_details.get('IsTechbox', False),
                 'CanSendToOtherPlayers': product_details.get('CanSendToOtherPlayers', True),
             }

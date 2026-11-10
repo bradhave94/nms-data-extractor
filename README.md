@@ -112,7 +112,7 @@ python extract.py --list-sources
 
 `MBIN_FILTERS` and `EXPECTED_MXML_AFTER_REFRESH` in extract.py define required game sources. `EXPECTED_JSON_FILES` in utils/smoke.py defines data outputs. This includes arena rewards, egg modifiers, and creature globals.
 
-There are currently 48 required MXML files (including nine English localization tables), 33 parser jobs, and 27 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
+There are currently 49 required MXML files (including nine English localization tables), 33 parser jobs, and 27 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
 
 ## Development
 
@@ -123,6 +123,10 @@ There are currently 48 required MXML files (including nine English localization 
 `Titles.json` was first extracted in 7.10, after most titles were already in the game. `FIRST_EXTRACTED_IN` in `utils/report.py` lists the rows that really are new in that release (checked against the 7.00 sources), so the rest stay out of its `new.json`; from the next release on the file is diffed like any other. Add an entry there whenever a new output file covers content that already existed.
 
 `EXTRACTION_FIXES` in `utils/report.py` lists fields an extractor fix corrected in a release, so the correction isn't reported as a game change in that release's `new.json`. 7.10: technology `BlueprintCost` was a hard-coded 1 and is now the game's `FragmentCost`.
+
+### Nutrient Ingestor bonus
+
+Product rows in `Food.json`, `Fish.json`, `Products.json` and the others built from the product table): `FoodBonusStat` is the product's `FoodBonusStat.StatsType` (`None` when the game says `Unspecified`), `FoodBonusStatName` is its English stat label, and `FoodBonusDurationSeconds` is `BaseFoodDuration` from `gcgameplayglobals` times the product's `CookingValue` (600 s in 7.10). `FoodBonusStatAmount` is 0 in the product table for every item: the strength is not stored per food (the game takes it from `FoodStatValues` in `DEFAULTREALITY`), so it stays 0; the site doesn't use it.
 
 ### Reference tables
 
