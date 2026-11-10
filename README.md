@@ -112,7 +112,7 @@ python extract.py --list-sources
 
 `MBIN_FILTERS` and `EXPECTED_MXML_AFTER_REFRESH` in extract.py define required game sources. `EXPECTED_JSON_FILES` in utils/smoke.py defines data outputs. This includes arena rewards, egg modifiers, and creature globals.
 
-There are currently 48 required MXML files (including nine English localization tables), 33 parser jobs, and 27 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
+There are currently 49 required MXML files (including nine English localization tables), 33 parser jobs, and 27 data JSON outputs. Supporting output includes localization, controller mappings, uncategorized diagnostics, new.json, and extraction-manifest.json. The extraction manifest records source/output hashes and game/compiler versions.
 
 ## Development
 
@@ -124,12 +124,15 @@ There are currently 48 required MXML files (including nine English localization 
 
 `EXTRACTION_FIXES` in `utils/report.py` lists fields an extractor fix corrected in a release, so the correction isn't reported as a game change in that release's `new.json`. 7.10: technology `BlueprintCost` was a hard-coded 1 and is now the game's `FragmentCost`.
 
+### Nutrient Ingestor bonus
+
+Product rows in `Food.json`, `Fish.json`, `Products.json` and the others built from the product table): `FoodBonusStat` is the product's `FoodBonusStat.StatsType` (`None` when the game says `Unspecified`), `FoodBonusStatName` is its English stat label, and `FoodBonusDurationSeconds` is `BaseFoodDuration` from `gcgameplayglobals` times the product's `CookingValue` (600 s in 7.10). `FoodBonusStatAmount` is 0 in the product table for every item: the strength is not stored per food (the game takes it from `FoodStatValues` in `DEFAULTREALITY`), so it stays 0; the site doesn't use it.
+
 ### Reference tables
 
 `parsers/reference_tables.py` writes four files the site lists without giving their rows item pages. Each parser reads one table and the related tables beside it in the same MXML folder:
 
 - `FrigateTraits.json` (`frigatetraittable`): each trait's stat, strength and the frigate types it rolls on. The numeric change for each strength comes from `FrigateTraitStrengths` in `gcfleetglobals`, and `Effect` is the game's own label with the amount filled in. Stats the game shows inverted (`StatDisplaysPositive=false`, e.g. fuel cost) are shown inverted.
-- Nutrient Ingestor bonus (product rows in `Food.json`, `Fish.json`, `Products.json` and the others built from the product table): `FoodBonusStat` is the product's `FoodBonusStat.StatsType` (`None` when the game says `Unspecified`), `FoodBonusStatName` is its English stat label, and `FoodBonusDurationSeconds` is `BaseFoodDuration` from `gcgameplayglobals` times the product's `CookingValue` (600 s in 7.10). `FoodBonusStatAmount` is 0 in the product table for every item: the strength is not stored per food (the game takes it from `FoodStatValues` in `DEFAULTREALITY`), so it isn't exported.
 - `SettlementPerks.json` (`settlementperkstable`): each perk's flags and stat changes, with the min-max range for each strength from `PerkStatStrengthValues` in `gcsettlementglobals`. `Text` is the game's own effect wording (`UI_SETTLEMENT_STAT_*_POS_FMT`/`_NEG_FMT`, e.g. "+50,000–100,000 u/day maintenance") with the range filled in unscaled, as the game's format strings take it.
 - `ItemSources.json` (`unlockableseasonrewards`, `unlockabletwitchrewards`, `unlockableplatformrewards`, `purchaseablespecials`, `historicalseasondatatable`): where items come from, keyed by item ID. Expedition rewards use the expedition number players see (`DisplayNumber`, not the internal season number). `Exchanges` lists the dialog options in `nms_dialog_gcalienpuzzletable` that take a fixed cost from `costtable` (an item, substance or currency) and always give specific items through `rewardtable`; random or partial rewards are left out.
 - `ItemSources.json` also carries each expedition's description, final reward and the title it grants (`historicalseasondatatable`).

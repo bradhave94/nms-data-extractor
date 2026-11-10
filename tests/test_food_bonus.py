@@ -23,10 +23,11 @@ def lookup():
 
 
 class BaseFoodDurationTest(unittest.TestCase):
-    def test_reads_gameplay_globals_and_is_none_when_absent(self):
+    def test_reads_gameplay_globals_and_fails_loudly_when_absent(self):
         with tempfile.TemporaryDirectory() as tmp:
             with using_workspace(Path(tmp)):
-                self.assertIsNone(product_lookup.base_food_duration())
+                with self.assertRaises(ValueError):
+                    product_lookup.base_food_duration()
                 mbin = Path(tmp) / "data" / "mbin"
                 mbin.mkdir(parents=True)
                 (mbin / "gcgameplayglobals.global.MXML").write_text(

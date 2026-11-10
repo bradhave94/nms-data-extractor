@@ -9,21 +9,23 @@ _PRODUCT_LOOKUP_CACHE: dict[tuple[str, float, bool, bool], dict[str, dict]] = {}
 
 
 
-def base_food_duration() -> float | None:
-    """BaseFoodDuration (seconds) from gcgameplayglobals.global.MXML, or None when that file is absent.
+def base_food_duration() -> float:
+    """BaseFoodDuration (seconds) from gcgameplayglobals.global.MXML, a required source.
 
     The Nutrient Ingestor runs one unit of food for BaseFoodDuration x the product's CookingValue
     (600 s in 7.10; e.g. CookingValue 0.66 gives 6:36, matching the in-game timer)."""
     path = workspace_root() / 'data' / 'mbin' / 'gcgameplayglobals.global.MXML'
     if not path.exists():
-        return None
+        raise ValueError(f"Missing {path.name}: needed for Nutrient Ingestor durations")
     key = (str(path), path.stat().st_mtime)
     if key not in _BASE_FOOD_DURATION_CACHE:
         root = EXMLParser.load_xml(str(path))
         prop = root.find('./Property[@name="BaseFoodDuration"]')
-        value = float(prop.get('value')) if prop is not None and prop.get('value') else None
+        value = float(prop.get('value')) if prop is not None and prop.get('value') else 0.0
+        if value <= 0:
+            raise ValueError(f"{path.name} has no positive BaseFoodDuration")
         _BASE_FOOD_DURATION_CACHE.clear()
-        _BASE_FOOD_DURATION_CACHE[key] = value if value and value > 0 else None
+        _BASE_FOOD_DURATION_CACHE[key] = value
     return _BASE_FOOD_DURATION_CACHE[key]
 
 
@@ -139,13 +141,15 @@ def parse_product_element(
     food_bonus_stat = parser.get_nested_enum(item, 'FoodBonusStat', 'StatsType', '')
     if food_bonus_stat == 'Unspecified':
         food_bonus_stat = ''
-    food_bonus_stat_name = localization.get(food_bonus_stat.upper()) if food_bonus_stat else None
-    food_base_duration = base_food_duration() if food_bonus_stat else None
-    food_bonus_duration = (
-        round(food_base_duration * cooking_value, 1)
-        if food_base_duration and isinstance(cooking_value, (int, float)) and cooking_value > 0
-        else None
-    )
+    food_bonus_stat_name = None
+    food_bonus_duration = None
+    if food_bonus_stat:
+        food_bonus_stat_name = localization.get(food_bonus_stat.upper())
+        if not food_bonus_stat_name:
+            raise ValueError(f"{item_id}: no English label for food bonus stat {food_bonus_stat}")
+        # CookingValue 0 (salvage, Nanotubes and similar) has a stat but no ingestor duration.
+        if isinstance(cooking_value, (int, float)) and cooking_value > 0:
+            food_bonus_duration = round(base_food_duration() * cooking_value, 1)
     food_bonus_stat_amount = parser.parse_value(parser.get_property_value(item, 'FoodBonusStatAmount', '0'))
 
     colour_elem = item.find('.//Property[@name="Colour"]')
